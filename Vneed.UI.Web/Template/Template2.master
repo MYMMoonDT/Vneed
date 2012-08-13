@@ -1,0 +1,55 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Template/Template1.Master" AutoEventWireup="true" CodeBehind="Template2.master.cs" Inherits="Vneed.UI.Web.Template.Template2" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <asp:ContentPlaceHolder ID="head2" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
+    <div class="titleMainDiv">
+        <div class="titleWrapperDiv myVneedTitleWrapperDiv">
+            <div id="myVneedTitleDiv1">
+                <span>我的Vneed</span>
+            </div>
+            <div id="myVneedTitleDiv2">
+                <div id="myVneedTitleDiv21">
+                    <div><span class="myVneedTitleFont1">MYMMoonDT</span></div>
+                    <div><span class="myVneedTitleFont2">初级会员</span></div>
+                </div>
+                <div id="myVneedTitleDiv22">
+                    <asp:Image ID="Image1" runat="server" CssClass="myVneedTitlePortrait" ImageUrl="~/Image/Portrait/Default.jpg" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="divider1"></div>
+    <div class="contentMainDiv">
+        <div class="contentWrapperDiv vneedContentWrapperDiv">
+            <table class="myVneedTable">
+                <tr>
+                    <td class="myVneedLeftNavTD">
+                        <div class="myVneedLeftNavMainDiv">
+                            <div class="myVneedLeftNavDiv"><span class="myVneedLeftNavFont1">交易管理</span></div>
+                            <div class="myVneedLeftNavDiv2"><span class="myVneedLeftNavFont2">我的订单</span></div>
+                            <div class="myVneedLeftNavDiv2"><span class="myVneedLeftNavFont2">我的收藏</span></div>
+                            <div class="myVneedLeftNavDiv2"><span class="myVneedLeftNavFont2">我的积分</span></div>
+                            <div class="myVneedLeftNavDiv2"><span class="myVneedLeftNavFont2">我的反馈</span></div>
+
+                            <div class="myVneedLeftNavDiv"><span class="myVneedLeftNavFont1">个人资料</span></div>
+                            <div class="myVneedLeftNavDiv2"><span class="myVneedLeftNavFont2">个人信息</span></div>
+                            <div class="myVneedLeftNavDiv2"><span class="myVneedLeftNavFont2">收货信息</span></div>
+                            <div class="myVneedLeftNavDiv2"><span class="myVneedLeftNavFont2">密码管理</span></div>
+                            <div class="myVneedLeftNavDiv2"><span class="myVneedLeftNavFont2">邮件订阅</span></div>
+                        </div>    
+                    </td>
+                    <td class="myVneedRightContentTD">
+                        <div class="myVneedRightMainDiv">
+                            <asp:ContentPlaceHolder ID="MainContentRightPlaceHolder" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div style="height:100px;"></div>
+    </div>
+</asp:Content>

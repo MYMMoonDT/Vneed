@@ -1,0 +1,53 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Template1.master.cs" Inherits="Vneed.UI.Web.Template.Template1" %>
+
+<%@ Register src="~/WebUserControl/NavBarWebUserControl1.ascx" tagname="NavBarWebUserControl1" tagprefix="uc1" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="../Resource/CSS/StyleSheet.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <script type="text/javascript">
+        function load() {
+            Sys.WebForms.PageRequestManager.getInstance().add_endRequest(EndRequestHandler1);
+            Sys.WebForms.PageRequestManager.getInstance().add_endRequest(EndRequestHandler2);
+        }
+    </script>
+</head>
+<body onload="load()">
+    <script type="text/javascript" src='<%=ResolveClientUrl("../Resource/JS/jquery-1.7.2.js")%>'></script>
+    <script type="text/javascript" src='<%=ResolveClientUrl("../Resource/JS/jquery.simplemodal-1.4.2.js")%>'></script>
+    <form id="MainForm" runat="server">
+    <asp:scriptmanager ID="MainScriptManager" runat="server">
+    </asp:scriptmanager>
+    <div>
+        <div>
+            <uc1:NavBarWebUserControl1 ID="NavBarWebUserControl11" runat="server" />
+        </div>
+        
+        <asp:ContentPlaceHolder ID="MainContentPlaceHolder" runat="server">
+        
+        </asp:ContentPlaceHolder>
+
+        <div id="foot">
+            <div id="footDiv1">
+    	    <div id="footDiv2">
+       	      <div id="footContactDiv">
+              <a href="#" class="footFont1">关于我们</a>
+              <a href="#" class="footFont1">联系我们</a>	
+              </div>
+              <div id="footCompanyInfoDiv">
+          	    <span class="font2 footFont2">&copy; Copyright 2012. www.vneed.org. All Rights Reserved</span>
+                <span class="font2 footFont2">Design by Vneed Group</span>
+              </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    </form>
+</body>
+</html>
