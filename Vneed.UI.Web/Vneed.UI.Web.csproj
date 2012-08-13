@@ -1187,11 +1187,8 @@
     <None Include="ckeditor\_samples\php\standalone.php" />
     <None Include="ckeditor\_samples\sample_posteddata.php" />
     <Content Include="Template\Template1.Master" />
-    <None Include="Resource\Image\header\header_cartlogo_1.psd" />
     <None Include="Resource\Image\header\header_logo.psd" />
     <None Include="Resource\Image\header\header_searchbar_normal.psd" />
-    <None Include="Resource\Image\popup_collection.psd" />
-    <None Include="Resource\Image\pop_up\buy.psd" />
     <Content Include="Template\Template2.master" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
