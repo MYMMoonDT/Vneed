@@ -38,14 +38,17 @@ namespace Vneed.UI.Web.Page.Account
 
         protected void RegisterButton_Click(object sender, EventArgs e)
         {
-            Vneed.Model.User newUser = new Vneed.Model.User();
-            newUser.Username = this.RegisterNameTextBox.Text;
-            newUser.Password = this.RegisterPasswordTextBox.Text;
-            newUser.Email = this.RegisterEmailTextBox.Text;
-            newUser.RoleID = 1;
-            UserService.RegisterNewUser(newUser);
-            AuthenticationService.Login(this.RegisterNameTextBox.Text);
-            Response.Redirect("/Page/Account/registerSuccess.aspx");
+            if (this.IsValid)
+            {
+                Vneed.Model.User newUser = new Vneed.Model.User();
+                newUser.Username = this.RegisterNameTextBox.Text;
+                newUser.Password = this.RegisterPasswordTextBox.Text;
+                newUser.Email = this.RegisterEmailTextBox.Text;
+                newUser.RoleID = 1;
+                UserService.RegisterNewUser(newUser);
+                AuthenticationService.Login(this.RegisterNameTextBox.Text);
+                Response.Redirect("/Page/Account/registerSuccess.aspx");
+            }
         }
     }
 }

@@ -903,8 +903,13 @@
     <Content Include="ckeditor\_source\skins\v2\toolbar.css" />
     <Content Include="ckeditor\_source\themes\default\theme.js" />
     <Content Include="External\CKEditor.NET.dll" />
+    <Content Include="Image\Gallery\test5.jpg" />
     <Content Include="Image\ItemImage\default.jpg" />
     <Content Include="Image\Portrait\Default.jpg" />
+    <Content Include="Image\Gallery\test1.jpg" />
+    <Content Include="Image\Gallery\test2.jpg" />
+    <Content Include="Image\Gallery\test3.jpg" />
+    <Content Include="Image\Gallery\test4.jpg" />
     <Content Include="Page\Account\register.aspx" />
     <Content Include="Page\Account\registerSuccess.aspx" />
     <Content Include="Page\Business\product.aspx" />
@@ -988,7 +993,9 @@
     <Content Include="Resource\JS\index.js" />
     <Content Include="Resource\JS\jquery-1.7.2.js" />
     <Content Include="Resource\JS\jquery.simplemodal-1.4.2.js" />
+    <Content Include="Resource\JS\jquery.timer.js" />
     <Content Include="Resource\JS\register.js" />
+    <Content Include="Resource\JS\util.js" />
     <Content Include="Test\AuthenticationTest.aspx" />
     <Content Include="Test\CatalogListTest.aspx" />
     <Content Include="Test\CommentTest.aspx" />

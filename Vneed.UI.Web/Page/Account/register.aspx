@@ -17,13 +17,13 @@
             <ContentTemplate>
             <div id="registerContentTextDiv">
                 <asp:TextBox ID="RegisterNameTextBox" runat="server" 
-                    CssClass="registerContentTextBox text" ClientIDMode="Static">用户名</asp:TextBox>
+                    CssClass="registerContentTextBox text" ClientIDMode="Static" ValidationGroup="RegisterGroup">用户名</asp:TextBox>
                 <asp:TextBox ID="RegisterPasswordTextBox" runat="server" 
-                    CssClass="registerContentTextBox text" ClientIDMode="Static">设置密码</asp:TextBox>
+                    CssClass="registerContentTextBox text" ClientIDMode="Static" ValidationGroup="RegisterGroup">设置密码</asp:TextBox>
                 <asp:TextBox ID="RegisterPasswordAgainTextBox" runat="server" 
-                    CssClass="registerContentTextBox text" ClientIDMode="Static">重复一遍密码</asp:TextBox>
+                    CssClass="registerContentTextBox text" ClientIDMode="Static" ValidationGroup="RegisterGroup">重复一遍密码</asp:TextBox>
                 <asp:TextBox ID="RegisterEmailTextBox" runat="server" 
-                    CssClass="registerContentTextBox text" ClientIDMode="Static">邮箱</asp:TextBox>
+                    CssClass="registerContentTextBox text" ClientIDMode="Static" ValidationGroup="RegisterGroup">邮箱</asp:TextBox>
                 <asp:Button ID="RegisterButton" runat="server" Text="同意以下协议并注册" 
                     CssClass="registerContentButton button" ClientIDMode="Static" 
                     ValidationGroup="RegisterGroup" 
@@ -35,7 +35,7 @@
                     <asp:CustomValidator ID="RegisterNameCustomValidator" runat="server" 
                         ErrorMessage="该用户名已经存在" ControlToValidate="RegisterNameTextBox" 
                         EnableClientScript="False" ValidationGroup="RegisterGroup" 
-                        onservervalidate="RegisterNameCustomValidator_ServerValidate">
+                        onservervalidate="RegisterNameCustomValidator_ServerValidate" Display="Dynamic">
                         <div class="error">该用户名已经存在</div>
                     </asp:CustomValidator>
                 </div>
@@ -49,7 +49,7 @@
                     <asp:CustomValidator ID="RegisterEmailCustomValidator" runat="server" 
                         ErrorMessage="该邮箱地址已经被使用" ControlToValidate="RegisterEmailTextBox" 
                         EnableClientScript="False" ValidationGroup="RegisterGroup" 
-                        onservervalidate="RegisterEmailCustomValidator_ServerValidate">
+                        onservervalidate="RegisterEmailCustomValidator_ServerValidate" Display="Dynamic">
                         <div class="error">该邮箱地址已经被使用</div>
                     </asp:CustomValidator>
                 </div>

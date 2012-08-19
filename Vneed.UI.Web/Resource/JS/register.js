@@ -76,42 +76,7 @@ function RegisterValidationFunc() {
 }
 
 $(document).ready(function () {
-    $("#RegisterNameTextBox").focus(function () {
-        if ($("#RegisterNameTextBox").val() == "用户名")
-            $("#RegisterNameTextBox").val("");
-    }).blur(function () {
-        if ($("#RegisterNameTextBox").val() == "")
-            $("#RegisterNameTextBox").val("用户名");
-    });
-    $("#RegisterPasswordTextBox").focus(function () {
-        if ($("#RegisterPasswordTextBox").val() == "设置密码") {
-            $("#RegisterPasswordTextBox").val("");
-            document.getElementById("RegisterPasswordTextBox").type = "password";
-        }
-    }).blur(function () {
-        if ($("#RegisterPasswordTextBox").val() == "") {
-            $("#RegisterPasswordTextBox").val("设置密码");
-            document.getElementById("RegisterPasswordTextBox").type = "text";
-        }
-    });
-    $("#RegisterPasswordAgainTextBox").focus(function () {
-        if ($("#RegisterPasswordAgainTextBox").val() == "重复一遍密码") {
-            $("#RegisterPasswordAgainTextBox").val("");
-            document.getElementById("RegisterPasswordAgainTextBox").type = "password";
-        }
-    }).blur(function () {
-        if ($("#RegisterPasswordAgainTextBox").val() == "") {
-            $("#RegisterPasswordAgainTextBox").val("重复一遍密码");
-            document.getElementById("RegisterPasswordAgainTextBox").type = "text";
-        }
-    });
-    $("#RegisterEmailTextBox").focus(function () {
-        if ($("#RegisterEmailTextBox").val() == "邮箱")
-            $("#RegisterEmailTextBox").val("");
-    }).blur(function () {
-        if ($("#RegisterEmailTextBox").val() == "")
-            $("#RegisterEmailTextBox").val("邮箱");
-    });
+    EndRequestHandler2();
 });
         
     

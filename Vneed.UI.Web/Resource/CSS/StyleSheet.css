@@ -451,7 +451,8 @@ a:hover
     left:90px;
     position:absolute;
 }
-#showAreaPicsDiv #showAreaCenterPicDiv
+
+#showAreaPicsDiv .showAreaCenterPicDiv
 {
     width: 388px;
     height: 326px;
@@ -460,8 +461,42 @@ a:hover
     position: absolute;
     background-image: url('../Image/index/showarea/index_showarea_space_center.png');
     z-index:1000;
+    opacity:1;
 }
-#showAreaPicsDiv #showAreaLeftPicDiv
+.showAreaCenterPicDiv .showAreaCenterPic
+{
+    border: 2px solid #FFFFFF;
+    background-color: #C0C0C0;
+    width:380px;
+    height:299px;
+    position:absolute;
+    overflow:hidden;
+}
+.showAreaCenterImageShow
+{
+    position:absolute;
+    height:299px;
+    width:380px;
+    top:0;
+    left:0;
+}
+.showAreaCenterImageLeftHidden
+{
+    position:absolute;
+    height:299px;
+    width:380px;
+    top:0;
+    left:-380px;
+}
+.showAreaCenterImageRightHidden
+{
+    position:absolute;
+    height:299px;
+    width:380px;
+    top:0;
+    left:380px;
+}
+#showAreaPicsDiv .showAreaLeftPicDiv
 {
     width: 314px;
     height: 265px;
@@ -470,54 +505,92 @@ a:hover
     position: absolute;
     background-image: url('../Image/index/showarea/index_showarea_space_side.png');
     z-index:500;
+    opacity:0.5;
 }
-#showAreaPicsDiv #showAreaRightPicDiv
+.showAreaLeftPicDiv .showAreaLeftPic
+{
+    border: 2px solid #FFFFFF;
+    background-color: #C0C0C0;
+    width:306px;
+    height:241px;
+    position:absolute;
+    overflow:hidden;
+}
+#showAreaPicsDiv .showAreaRightPicDiv
 {
     width: 314px;
     height: 265px;
     top:40px;
-    right:0px;
+    left:490px;
     position:absolute;
     background-image: url('../Image/index/showarea/index_showarea_space_side.png');
     z-index:500;
+    opacity:0.5;
+}
+.showAreaRightPicDiv .showAreaRightPic
+{
+    border: 2px solid #FFFFFF;
+    background-color: #C0C0C0;
+    width:306px;
+    height:241px;
+    position:absolute;
+    overflow:hidden;
+}
+.showAreaLeftRightImageShow
+{
+    position:absolute;
+    width:306px;
+    height:241px;
+    top:0;
+    left:0;
+}
+.showAreaLeftRightImageLeftHidden
+{
+    position:absolute;
+    width:306px;
+    height:241px;
+    top:0;
+    left:-306px;
+}
+.showAreaLeftRightImageRightHidden
+{
+    position:absolute;
+    width:306px;
+    height:241px;
+    top:0;
+    left:306px;
 }
 #showAreaContentDiv #showAreaBottomButtonsDiv
 {
-    width:63px;
-    height:9px;
-    position:absolute;
-    bottom:8px;
-    left:460px;
+    width: 980px;
+    height: 9px;
+    position: absolute;
+    bottom: 8px;
+    left: 0px;
+    text-align: center;
 }
-#showAreaContentDiv #showAreaBottomButtonsDiv #showAreaBottomLeftButtonDiv
+#showAreaContentDiv #showAreaBottomButtonsDiv #showAreaBottomButtons
+{
+    margin-left:auto;
+    margin-right:auto;
+}
+.showAreaBottomButtonUnChoose
 {
     width: 9px;
     height: 9px;
+    margin-right: 9px;
     background-image: url('../Image/index/showarea/index_showarea_positon_unchoose.png');
     background-repeat: no-repeat;
-    position:absolute;
-    left:0;
-    top:0;
+    float:left;
 }
-#showAreaContentDiv #showAreaBottomButtonsDiv #showAreaBottomCenterButtonDiv
+.showAreaBottomButtonChoose
 {
-    width:9px;
-    height:9px;
-    background-image: url('../Image/index/showarea/index_showarea_positon_unchoose.png');
+    width: 9px;
+    height: 9px;
+    margin-right: 9px;
+    background-image: url('../Image/index/showarea/index_showarea_positon_choose.png');
     background-repeat: no-repeat;
-    position:absolute;
-    top:0;
-    left:27px;
-}
-#showAreaContentDiv #showAreaBottomButtonsDiv #showAreaBottomRightButtonDiv
-{
-    width:9px;
-    height:9px;
-    background-image: url('../Image/index/showarea/index_showarea_positon_unchoose.png');
-    background-repeat: no-repeat;
-    position:absolute;
-    right:0;
-    top:0;
+    float:left;
 }
 #dividerDiv
 {

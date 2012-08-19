@@ -33,26 +33,7 @@
                     closeHTML: '<a class="modalCloseImg" title="关闭"></a>'
                 });
             });
-            $("#NavBarWebUserControl11_loginName").focus(function () {
-                if ($("#NavBarWebUserControl11_loginName").val() == "请输入您的用户名")
-                    $("#NavBarWebUserControl11_loginName").val("").removeClass("loginFont1").addClass("loginFont2");
-            });
-            $("#NavBarWebUserControl11_loginPassword").focus(function () {
-                if ($("#NavBarWebUserControl11_loginPassword").val() == "请输入您的密码") {
-                    $("#NavBarWebUserControl11_loginPassword").val("").removeClass("loginFont1").addClass("loginFont2");
-                    document.getElementById("NavBarWebUserControl11_loginPassword").type = "password";
-                }
-            });
-            $("#NavBarWebUserControl11_loginName").blur(function () {
-                if ($("#NavBarWebUserControl11_loginName").val() == "")
-                    $("#NavBarWebUserControl11_loginName").val("请输入您的用户名").removeClass("loginFont2").addClass("loginFont1");
-            });
-            $("#NavBarWebUserControl11_loginPassword").blur(function () {
-                if ($("#NavBarWebUserControl11_loginPassword").val() == "") {
-                    $("#NavBarWebUserControl11_loginPassword").val("请输入您的密码").removeClass("loginFont2").addClass("loginFont1");
-                    document.getElementById("NavBarWebUserControl11_loginPassword").type = "text";
-                }
-            });
+            EndRequestHandler1();
         });
         function LoginValidationFunc() {
             $("#loginErrorDiv").html("");
