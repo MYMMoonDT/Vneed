@@ -56,9 +56,14 @@
             return true;
         }
     </script>
+
     <div id="headDiv1">
     	<div id="headDiv2">
-        	<div id="headLogoDiv"></div>
+        	<div id="headLogoDiv">
+                <asp:HyperLink ID="HomepageHyperLink" runat="server" NavigateUrl="~/Page/index.aspx">
+                    <asp:Image ID="headLogoImage" runat="server" ImageUrl="~/Resource/Image/header/header_logo.png" />
+                </asp:HyperLink>
+            </div>
             <div class="headDividerDiv" style="left:230px;"></div>
             <div class="headDividerDiv" style="left:750px;"></div>
             <div id="headSearchTextDiv">
@@ -70,8 +75,10 @@
        	  	</div>
           	<div id="headMyVneedDiv">
                   <asp:Panel ID="headMyVneedDiv1" runat="server" ClientIDMode="Static">
-                    <a href=""><span class="font1 headFont1">我的Vneed</span></a>
+                  <asp:HyperLink ID="MyVneedHyperLink" runat="server" CssClass="font1 headFont1" NavigateUrl="~/Page/User/orderList.aspx">我的Vneed</asp:HyperLink>
+                  <asp:HyperLink ID="MyCartHyperLink" runat="server" NavigateUrl="~/Page/Business/cart.aspx">
                     <asp:Image ID="ProductNumImage" runat="server" CssClass="headImg1" ImageUrl="~/Resource/Image/header/header_cartlogo_1.png" />
+                  </asp:HyperLink>
                   </asp:Panel>
                   <asp:Panel ID="headMyVneedDiv2" runat="server" ClientIDMode="Static">
                     <asp:HyperLink ID="RegisterHyperLink" CssClass="font1 headFont2" runat="server" 

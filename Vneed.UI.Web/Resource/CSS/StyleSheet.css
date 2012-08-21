@@ -141,6 +141,10 @@ a:hover
 	left:0px;
 	top:0px;
 }
+#headLogoDiv img
+{
+    margin-top:32px;
+}
 .headDividerDiv
 {
 	width:2px;
@@ -211,6 +215,10 @@ a:hover
     position: absolute;
     left: 20px;
     top: 45px;
+}
+#headMyVneedDiv #headMyVneedDiv1 .headFont1:hover
+{
+    text-decoration: none;
 }
 #headMyVneedDiv #headMyVneedDiv1 .headImg1
 {
@@ -1471,4 +1479,86 @@ a:hover
     width:70px;
     height:35px;
     font-size:14px;
+}
+/*cart*/
+.cartContentWrapperDiv
+{
+    height: 1000px;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+    border-right-color: #EBEBEB;
+    border-bottom-color: #EBEBEB;
+    border-left-color: #EBEBEB;
+}
+.cartContentDiv
+{
+    margin-left:20px;
+    margin-right:20px;
+    height:1000px;
+    width:940px;
+}
+.cartContentDiv table
+{
+    width:940px;
+    text-align:left;
+}
+.cartContentDiv table .cartTitleTR
+{
+    height: 70px;
+    line-height: 70px;
+    font-size: 22px;
+}
+.cartContentDiv table .cartTitleTR .carTitleProductTH
+{
+    width: 430px;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-bottom-color: #EBEBEB;
+}
+.cartContentDiv table .cartTitleTR .carTitleOtherTH
+{
+    width:170px;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-bottom-color: #EBEBEB;
+}
+.cartContentDiv table .cartContentTR
+{
+    height:135px;
+    font-size:16px;
+}
+.cartContentDiv table .cartContentTR .cartContentTD
+{
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-bottom-color: #EBEBEB;
+}
+.cartProductDiv
+{
+    margin-top:18px;
+    margin-bottom:17px;
+    height:100px;
+}
+.cartProductDiv .cartProductImage
+{
+    float:left;
+    width:170px;
+    height:100px;
+    margin-left:10px;
+}
+.cartProductDiv .cartProductImage img
+{
+    height:100px;
+    width:135px;
+}
+.cartProductDiv .cartProductTitle
+{
+    float:left;
+    margin-top:10px;
+    height:90px;
+    width:230px;
 }

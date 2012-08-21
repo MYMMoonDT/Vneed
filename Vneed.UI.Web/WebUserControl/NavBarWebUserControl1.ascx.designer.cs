@@ -13,6 +13,24 @@ namespace Vneed.UI.Web.WebUserControl {
     public partial class NavBarWebUserControl1 {
         
         /// <summary>
+        /// HomepageHyperLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink HomepageHyperLink;
+        
+        /// <summary>
+        /// headLogoImage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image headLogoImage;
+        
+        /// <summary>
         /// searchContent control.
         /// </summary>
         /// <remarks>
@@ -38,6 +56,24 @@ namespace Vneed.UI.Web.WebUserControl {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel headMyVneedDiv1;
+        
+        /// <summary>
+        /// MyVneedHyperLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink MyVneedHyperLink;
+        
+        /// <summary>
+        /// MyCartHyperLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink MyCartHyperLink;
         
         /// <summary>
         /// ProductNumImage control.
