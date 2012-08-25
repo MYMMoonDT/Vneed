@@ -913,6 +913,7 @@
     <Content Include="Page\Account\register.aspx" />
     <Content Include="Page\Account\registerSuccess.aspx" />
     <Content Include="Page\Business\cart.aspx" />
+    <Content Include="Page\Business\orderDetail.aspx" />
     <Content Include="Page\Business\product.aspx" />
     <Content Include="Page\index.aspx" />
     <Content Include="Page\User\orderList.aspx" />
@@ -1041,6 +1042,13 @@
     </Compile>
     <Compile Include="Page\Business\cart.aspx.designer.cs">
       <DependentUpon>cart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Page\Business\orderDetail.aspx.cs">
+      <DependentUpon>orderDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\Business\orderDetail.aspx.designer.cs">
+      <DependentUpon>orderDetail.aspx</DependentUpon>
     </Compile>
     <Compile Include="Page\Business\product.aspx.cs">
       <DependentUpon>product.aspx</DependentUpon>
