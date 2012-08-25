@@ -56,8 +56,12 @@ namespace Vneed.UI.Web.WebUserControl
                 productDisTitleItem.CssClass = "productDisTitleItem2";
                 Panel productDisTypeItem = new Panel();
                 productDisTypeItem.CssClass = "productDisTypeItem2";
-                Label title = new Label();
+                //Label title = new Label();
+                //title.Text = item.Title;
+                //yizhenfei show the hyperlink
+                HyperLink title = new HyperLink();
                 title.Text = item.Title;
+                title.NavigateUrl = "/Page/Business/product.aspx?product=" + item.ItemID;
                 Label type = new Label();
                 type.Text = "";
                 productDisTitleItem.Controls.Add(title);
