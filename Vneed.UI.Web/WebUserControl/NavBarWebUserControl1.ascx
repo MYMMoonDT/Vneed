@@ -110,6 +110,9 @@
             </div>
             
         </div>
+        <script type="text/javascript">
+            EndRequestHandler1();
+        </script>
         </ContentTemplate>
         </asp:UpdatePanel>
         <div style="height:10px;"></div>

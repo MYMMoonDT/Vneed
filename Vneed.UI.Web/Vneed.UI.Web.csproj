@@ -962,6 +962,9 @@
     <Content Include="Resource\Image\index\showarea\index_showarea_positon_unchoose.png" />
     <Content Include="Resource\Image\index\showarea\index_showarea_space_center.png" />
     <Content Include="Resource\Image\index\showarea\index_showarea_space_side.png" />
+    <Content Include="Resource\Image\order\order_process_background.png" />
+    <Content Include="Resource\Image\order\order_radio_normal.png" />
+    <Content Include="Resource\Image\order\order_radio_selected.png" />
     <Content Include="Resource\Image\popup_collection.png" />
     <Content Include="Resource\Image\popup_login.png" />
     <Content Include="Resource\Image\pop_up\collection\pop-up_collection_base.png" />
@@ -1018,6 +1021,7 @@
     <Content Include="WebUserControl\CommentBox.ascx" />
     <Content Include="WebUserControl\ItemDescriptionBox.ascx" />
     <Content Include="WebUserControl\NavBarWebUserControl1.ascx" />
+    <Content Include="WebUserControl\OrderProcessWebUserControl.ascx" />
     <Content Include="WebUserControl\RecommendedItemList.ascx" />
     <Content Include="WebUserControl\ShowAreaWebUserControl1.ascx" />
   </ItemGroup>
@@ -1169,6 +1173,13 @@
     </Compile>
     <Compile Include="WebUserControl\NavBarWebUserControl1.ascx.designer.cs">
       <DependentUpon>NavBarWebUserControl1.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControl\OrderProcessWebUserControl.ascx.cs">
+      <DependentUpon>OrderProcessWebUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControl\OrderProcessWebUserControl.ascx.designer.cs">
+      <DependentUpon>OrderProcessWebUserControl.ascx</DependentUpon>
     </Compile>
     <Compile Include="WebUserControl\RecommendedItemList.ascx.cs">
       <DependentUpon>RecommendedItemList.ascx</DependentUpon>
