@@ -1,26 +1,32 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="NavBarWebUserControl1.ascx.cs" Inherits="Vneed.UI.Web.WebUserControl.NavBarWebUserControl1" %>
     <script type="text/javascript">
         function EndRequestHandler1() {
-            $("#NavBarWebUserControl11_loginName").focus(function () {
-                if ($("#NavBarWebUserControl11_loginName").val() == "请输入您的用户名")
-                    $("#NavBarWebUserControl11_loginName").val("").removeClass("loginFont1").addClass("loginFont2");
-            });
-            $("#NavBarWebUserControl11_loginPassword").focus(function () {
-                if ($("#NavBarWebUserControl11_loginPassword").val() == "请输入您的密码") {
-                    $("#NavBarWebUserControl11_loginPassword").val("").removeClass("loginFont1").addClass("loginFont2");
-                    document.getElementById("NavBarWebUserControl11_loginPassword").type = "password";
-                }
-            });
-            $("#NavBarWebUserControl11_loginName").blur(function () {
-                if ($("#NavBarWebUserControl11_loginName").val() == "")
-                    $("#NavBarWebUserControl11_loginName").val("请输入您的用户名").removeClass("loginFont2").addClass("loginFont1");
-            });
-            $("#NavBarWebUserControl11_loginPassword").blur(function () {
-                if ($("#NavBarWebUserControl11_loginPassword").val() == "") {
-                    $("#NavBarWebUserControl11_loginPassword").val("请输入您的密码").removeClass("loginFont2").addClass("loginFont1");
-                    document.getElementById("NavBarWebUserControl11_loginPassword").type = "text";
-                }
-            });
+            var loginInfo = [["#NavBarWebUserControl11_loginName", "请输入您的用户名", "focus", "text"],
+                             ["#NavBarWebUserControl11_loginPassword", "请输入您的密码", "focus", "password"],
+                             ["#NavBarWebUserControl11_loginName", "请输入您的用户名", "blur", "text"],
+                             ["#NavBarWebUserControl11_loginPassword", "请输入您的密码", "blur", "password"]];
+            for (var i = 0; i < loginInfo.length; i++) {
+                (function () {
+                    var loginItem = loginInfo[i];
+                    if (loginItem[2] == "focus") {
+                        $(loginItem[0]).focus(function () {
+                            if ($(loginItem[0]).val() == loginItem[1]) {
+                                $(loginItem[0]).val("").removeClass("loginFont1").addClass("loginFont2");
+                                if (loginItem[3] == "password")
+                                    document.getElementById(loginItem[0].substr(1)).type = "password";
+                            }
+                        });
+                    } else if (loginItem[2] == "blur") {
+                        $(loginItem[0]).blur(function () {
+                            if ($(loginItem[0]).val() == "") {
+                                $(loginItem[0]).val(loginItem[1]).removeClass("loginFont2").addClass("loginFont1");
+                                if (loginItem[3] == "password")
+                                    document.getElementById(loginItem[0].substr(1)).type = "text";
+                            }
+                        });
+                    }
+                })();
+            }
         }
     </script>
     <script type="text/javascript">
@@ -37,21 +43,22 @@
         });
         function LoginValidationFunc() {
             $("#loginErrorDiv").html("");
-            if ($("#NavBarWebUserControl11_loginName").val() == "请输入您的用户名" || $("#NavBarWebUserControl11_loginName").val() == "") {
-                $("#loginErrorDiv").html("<div class='error'>用户名不能为空</div>");
-                return false;
-            }
-            if ($("#NavBarWebUserControl11_loginPassword").val() == "请输入您的密码" || $("#NavBarWebUserControl11_loginPassword").val() == "") {
-                $("#loginErrorDiv").html("<div class='error'>密码不能为空</div>");
-                return false;
-            }
-            if ($("#NavBarWebUserControl11_loginName").val().length < 6 || $("#NavBarWebUserControl11_loginName").val().length > 16) {
-                $("#loginErrorDiv").html("<div class='error'>用户名长度在6~16个字符之间</div>");
-                return false;
-            }
-            if ($("#NavBarWebUserControl11_loginPassword").val().length < 6 || $("#NavBarWebUserControl11_loginPassword").val().length > 16) {
-                $("#loginErrorDiv").html("<div class='error'>密码长度为6~16个字符之间</div>");
-                return false;
+            var loginInfo = [["#NavBarWebUserControl11_loginName", "请输入您的用户名", "用户名不能为空", "null"],
+                             ["#NavBarWebUserControl11_loginPassword", "请输入您的密码", "密码不能为空", "null"],
+                             ["#NavBarWebUserControl11_loginName", "", "用户名长度在6~16个字符之间", "length"],
+                             ["#NavBarWebUserControl11_loginPassword", "", "密码长度为6~16个字符之间", "length"]];
+            for (var i = 0; i < loginInfo.length; i++) {
+                if (loginInfo[i][3] == "null") {
+                    if ($(loginInfo[i][0]).val() == loginInfo[i][1] || $(loginInfo[i][0]).val() == "") {
+                        $("#loginErrorDiv").html("<div class='error'>" + loginInfo[i][2] + "</div>");
+                        return false;
+                    }
+                } else if (loginInfo[i][3] == "length") {
+                    if ($(loginInfo[i][0]).val().length < 6 || $(loginInfo[i][0]).val().length > 16) {
+                        $("#loginErrorDiv").html("<div class='error'>"+ loginInfo[i][2] +"</div>");
+                        return false;
+                    }
+                }
             }
             return true;
         }
@@ -110,6 +117,9 @@
             </div>
             
         </div>
+        <script type="text/javascript">
+            EndRequestHandler1();
+        </script>
         </ContentTemplate>
         </asp:UpdatePanel>
         <div style="height:10px;"></div>

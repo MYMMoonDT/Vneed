@@ -1,77 +1,62 @@
 ﻿function EndRequestHandler2() {
-    $("#RegisterNameTextBox").focus(function () {
-        if ($("#RegisterNameTextBox").val() == "用户名")
-            $("#RegisterNameTextBox").val("");
-    }).blur(function () {
-        if ($("#RegisterNameTextBox").val() == "")
-            $("#RegisterNameTextBox").val("用户名");
-    });
-    $("#RegisterPasswordTextBox").focus(function () {
-        if ($("#RegisterPasswordTextBox").val() == "设置密码") {
-            $("#RegisterPasswordTextBox").val("");
-            document.getElementById("RegisterPasswordTextBox").type = "password";
-        }
-    }).blur(function () {
-        if ($("#RegisterPasswordTextBox").val() == "") {
-            $("#RegisterPasswordTextBox").val("设置密码");
-            document.getElementById("RegisterPasswordTextBox").type = "text";
-        }
-    });
-    $("#RegisterPasswordAgainTextBox").focus(function () {
-        if ($("#RegisterPasswordAgainTextBox").val() == "重复一遍密码") {
-            $("#RegisterPasswordAgainTextBox").val("");
-            document.getElementById("RegisterPasswordAgainTextBox").type = "password";
-        }
-    }).blur(function () {
-        if ($("#RegisterPasswordAgainTextBox").val() == "") {
-            $("#RegisterPasswordAgainTextBox").val("重复一遍密码");
-            document.getElementById("RegisterPasswordAgainTextBox").type = "text";
-        }
-    });
-    $("#RegisterEmailTextBox").focus(function () {
-        if ($("#RegisterEmailTextBox").val() == "邮箱")
-            $("#RegisterEmailTextBox").val("");
-    }).blur(function () {
-        if ($("#RegisterEmailTextBox").val() == "")
-            $("#RegisterEmailTextBox").val("邮箱");
-    });
+    var registerInfo = [["#RegisterNameTextBox", "用户名","text"],
+                        ["#RegisterPasswordTextBox", "设置密码","password"],
+                        ["#RegisterPasswordAgainTextBox", "重复一遍密码","password"],
+                        ["#RegisterEmailTextBox", "邮箱","text"]];
+    for (var i = 0; i < registerInfo.length; i++) {
+        (function () {
+            var registerItem = registerInfo[i];
+            $(registerItem[0]).focus(function () {
+                if ($(registerItem[0]).val() == registerItem[1]) {
+                    $(registerItem[0]).val("");
+                    if (registerItem[2] == "password")
+                        document.getElementById(registerItem[0].substr(1)).type = "password"
+                }
+            }).blur(function () {
+                if ($(registerItem[0]).val() == "") {
+                    $(registerItem[0]).val(registerItem[1]);
+                    if (registerItem[2] == "password")
+                        document.getElementById(registerItem[0].substr(1)).type = "text"
+                }
+            });
+        })();
+    }
 }
 function RegisterValidationFunc() {
-    $("#registerNameError").html("");
-    $("#registerPasswordError").html("");
-    $("#registerPassword2Error").html("");
-    $("#registerEmailError").html("");
-    if ($("#RegisterNameTextBox").val() == "" || $("#RegisterNameTextBox").val() == "用户名") {
-        $("#registerNameError").html("<div class='error'>请输入用户名</div>");
-        return false;
+    var registerError = ["#registerNameError", "#registerPasswordError", "#registerPassword2Error", "#registerEmailError"];
+    for (var j = 0; j < registerError.length; j++) {
+        $(registerError[j]).html("");
     }
-    if ($("#RegisterNameTextBox").val().length < 6 || $("#RegisterNameTextBox").val().length > 16) {
-        $("#registerNameError").html("<div class='error'>用户名长度必须在6~16个字符之间</div>");
-        return false;
-    }
-    if ($("#RegisterPasswordTextBox").val() == "" || $("#RegisterPasswordTextBox").val() == "设置密码") {
-        $("#registerPasswordError").html("<div class='error'>请输入密码</div>");
-        return false;
-    }
-    if ($("#RegisterPasswordTextBox").val().length < 6 || $("#RegisterPasswordTextBox").val().length > 16) {
-        $("#registerPasswordError").html("<div class='error'>密码长度必须在6~16个字符之间</div>");
-        return false;
-    }
-    if ($("#RegisterPasswordAgainTextBox").val() == "" || $("#RegisterPasswordAgainTextBox").val() == "重复一遍密码") {
-        $("#registerPassword2Error").html("<div class='error'>请输入密码</div>");
-        return false;
-    }
-    if ($("#RegisterPasswordAgainTextBox").val() != $("#RegisterPasswordTextBox").val()) {
-        $("#registerPassword2Error").html("<div class='error'>两次密码不一致</div>");
-        return false;
-    }
-    if ($("#RegisterEmailTextBox").val() == "" || $("#RegisterEmailTextBox").val() == "邮箱") {
-        $("#registerEmailError").html("<div class='error'>请输入电子邮箱地址</div>");
-        return false;
-    }
-    if (!$("#RegisterEmailTextBox").val().match(/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/)) {
-        $("#registerEmailError").html("<div class='error'>请输入正确的邮箱地址</div>");
-        return false;
+    var registerInfo = [["#RegisterNameTextBox", "用户名", "请输入用户名", "null", "#registerNameError"],
+                        ["#RegisterNameTextBox", "", "用户名长度必须在6~16个字符之间", "length", "#registerNameError"],
+                        ["#RegisterPasswordTextBox", "设置密码", "请输入密码", "null", "#registerPasswordError"],
+                        ["#RegisterPasswordTextBox", "", "密码长度必须在6~16个字符之间", "length", "#registerPasswordError"],
+                        ["#RegisterPasswordAgainTextBox", "重复一遍密码", "请输入密码", "null", "#registerPassword2Error"],
+                        ["#RegisterPasswordAgainTextBox", "", "两次密码不一致", "same", "#registerPassword2Error"],
+                        ["#RegisterEmailTextBox", "邮箱", "请输入电子邮箱地址", "null", "#registerEmailError"],
+                        ["#RegisterEmailTextBox", "", "请输入正确的邮箱地址", "email", "#registerEmailError"]];
+    for (var i = 0; i < registerInfo.length; i++) {
+        if (registerInfo[i][3] == "null") {
+            if ($(registerInfo[i][0]).val() == "" || $(registerInfo[i][0]).val() == registerInfo[i][1]) {
+                $(registerInfo[i][4]).html("<div class='error'>" + registerInfo[i][2] + "</div>");
+                return false;
+            }
+        } else if (registerInfo[i][3] == "length") {
+            if ($(registerInfo[i][0]).val().length < 6 || $(registerInfo[i][0]).val().length > 16) {
+                $(registerInfo[i][4]).html("<div class='error'>"+ registerInfo[i][2] +"</div>");
+                return false;
+            }
+        } else if (registerInfo[i][3] == "same") {
+            if ($(registerInfo[i][0]).val() != $("#RegisterPasswordTextBox").val()) {
+                $(registerInfo[i][4]).html("<div class='error'>" + registerInfo[i][2] + "</div>");
+                return false;
+            }
+        } else if (registerInfo[i][3] == "email") {
+            if (!$(registerInfo[i][0]).val().match(/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/)) {
+                $(registerInfo[i][4]).html("<div class='error'>" + registerInfo[i][2] + "</div>");
+                return false;
+            }
+        }
     }
 }
 

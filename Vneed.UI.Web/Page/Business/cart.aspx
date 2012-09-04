@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Template/Template3.master" AutoEventWireup="true" CodeBehind="cart.aspx.cs" Inherits="Vneed.UI.Web.Page.Business.cart" %>
+<%@ Register src="../../WebUserControl/OrderProcessWebUserControl.ascx" tagname="OrderProcessWebUserControl" tagprefix="uc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head2" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="TitleContentPlaceHolder" runat="server">
@@ -6,8 +7,9 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
 <div class="contentWrapperDiv cartContentWrapperDiv">
+    <uc1:OrderProcessWebUserControl ID="OrderProcessWebUserControl1" runat="server" />
     <div class="cartContentDiv">
-        <table cellpadding="0" cellspacing="0">
+        <table id="cartTable" cellpadding="0" cellspacing="0">
             <tr class="cartTitleTR">
                 <th class="carTitleProductTH">商品</th>
                 <th class="carTitleOtherTH">数量</th>
@@ -54,6 +56,17 @@
                 <td class="cartContentTD"></td>
             </tr>
         </table>
+        <div class="cartClearingDiv">
+            <div class="cartClearingPriceDiv">
+                <span>合计:&nbsp</span>
+                <span>$XXXX</span>
+            </div>
+            <div class="cartClearingOptionDiv">
+                <asp:HyperLink ID="HyperLink1" runat="server" CssClass="cartOptionLink" NavigateUrl="#">继续购物&gt</asp:HyperLink>
+                <asp:Button ID="Button1" runat="server" Text="更新" CssClass="button cartOptionButton"/>
+                <asp:Button ID="Button2" runat="server" Text="结算" CssClass="button cartOptionButton"/>
+            </div>
+        </div>
     </div>
 </div>
 </asp:Content>

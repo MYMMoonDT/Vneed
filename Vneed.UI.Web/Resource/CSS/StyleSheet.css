@@ -1483,7 +1483,6 @@ a:hover
 /*cart*/
 .cartContentWrapperDiv
 {
-    height: 1000px;
     border-right-style: solid;
     border-bottom-style: solid;
     border-left-style: solid;
@@ -1500,6 +1499,7 @@ a:hover
     margin-right:20px;
     height:1000px;
     width:940px;
+    position:relative;
 }
 .cartContentDiv table
 {
@@ -1543,6 +1543,12 @@ a:hover
     margin-bottom:17px;
     height:100px;
 }
+.cartContentTitleDiv
+{
+    font-size:32px;
+    font-weight:900;
+    line-height:100px;
+}
 .cartProductDiv .cartProductImage
 {
     float:left;
@@ -1561,4 +1567,187 @@ a:hover
     margin-top:10px;
     height:90px;
     width:230px;
+}
+.cartContentDiv .cartClearingDiv
+{
+    float:right;
+    width:320px;
+    height:150px;
+}
+.cartContentDiv .cartClearingDiv .cartClearingPriceDiv
+{
+    font-size: 22px;
+    font-weight:bold;
+    line-height:70px;
+    height:70px;
+    margin-bottom:20px;
+}
+.cartContentDiv .cartClearingDiv .cartClearingOptionDiv
+{
+    
+}
+.cartClearingOptionDiv .cartOptionButton
+{
+    width:110px;
+    height:60px;
+    line-height:60px;
+    font-size:22px;
+}
+.cartClearingOptionDiv .cartOptionLink
+{
+    font-size: 16px;
+    text-decoration: underline;
+    font-weight:400;
+    color:Black;
+}
+/*OrderProcessWebUserControl*/
+.orderProcessWrapper
+{
+    width:980px;
+    height:170px;
+    position:relative;
+}
+.orderProcessWrapper .orderProcessDiv
+{
+    width: 500px;
+    height:170px;
+    margin-left:auto;
+    margin-right:auto;
+}
+.orderProcessDiv .orderProcessContentDiv
+{
+    background-position: bottom;
+    width: 450px;
+    background-image: url('../Image/order/order_process_background.png');
+    background-repeat: no-repeat;
+    height: 110px;
+    margin-left:25px;
+    margin-right:25px;
+}
+.orderProcessDiv .orderProcessTextDiv
+{
+    font-size: 14px;
+    color: #01A7C8;
+    font-weight:bold;
+    line-height:30px;
+    width:500px;
+}
+.orderProcessTextDiv .orderProcessCenterItem
+{
+    width:250px;
+    text-align:center;
+    float:left;
+}
+.orderProcessTextDiv .orderProcessLeftRightItem
+{
+    width:125px;
+    text-align:center;
+    float:left;
+}
+/*orderDetail*/
+.orderDetailContentWrapperDiv
+{
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+    border-right-color: #EBEBEB;
+    border-bottom-color: #EBEBEB;
+    border-left-color: #EBEBEB;
+}
+.orderDetailContentDiv
+{
+    height:1500px;
+    width:980px;
+    position:relative;
+}
+.orderDetailContentDiv .orderDetailTable
+{
+    width:980px;
+}
+.orderDetailTable .orderDetailTableLeftTD
+{
+    width:490px;
+}
+.orderDetailTable .orderDetailTableRightTD
+{
+    width:490px;
+}
+.orderDetailContactDiv
+{
+    margin-left:25px;
+    width:465px;
+    height:470px;
+}
+.orderDetailContactDiv .orderDetailContactTitle
+{
+    font-size:32px;
+    font-weight:900;
+    line-height:100px;
+}
+.orderDetailContactDiv .orderDetailContactTextBox
+{
+    height:36px;
+    width:360px;
+    font-size:22px;
+    line-height:36px;
+    margin-bottom:35px;
+    font-weight:bold;
+}
+.orderDetailDistributionDiv
+{
+    margin-left:25px;
+    width:465px;
+    height:235px;
+}
+.orderDetailDistributionDiv .orderDetailDistributionTitle
+{
+    font-size:32px;
+    font-weight:900;
+    line-height:100px;
+}
+.orderDetailPaymentDiv
+{
+    margin-left:25px;
+    width:465px;
+    height:235px;
+}
+.orderDetailPaymentDiv .orderDetailPaymentTitle
+{
+    font-size:32px;
+    font-weight:900;
+    line-height:100px;
+}
+.orderDetailRadioGroup1
+{
+    margin-left:20px;
+}
+.orderDetailRadioGroup2
+{
+    margin-left:20px;
+}
+.orderDetailRadioGroup1 input, .orderDetailRadioGroup2 input
+{
+    display:none;
+}
+.orderDetailRadioGroup1 label, .orderDetailRadioGroup2 label
+{
+    background-position: left;
+    background-image: url('../Image/order/order_radio_normal.png');
+    background-repeat: no-repeat;
+    padding-left: 40px;
+    height: 40px;
+    line-height:40px;
+    font-size:23px;
+    font-weight:bold;
+}
+.orderDetailRadioGroup1 label.checked, .orderDetailRadioGroup2 label.checked
+{
+    background-image: url('../Image/order/order_radio_selected.png');
+}
+.orderDetailOptionButton
+{
+    float:right;
 }
