@@ -964,10 +964,14 @@
     <Content Include="Resource\Image\index\showarea\index_showarea_space_center.png" />
     <Content Include="Resource\Image\index\showarea\index_showarea_space_side.png" />
     <Content Include="Resource\Image\order\order_process_background.png" />
+    <Content Include="Resource\Image\order\order_process_completed.png" />
+    <Content Include="Resource\Image\order\order_process_step.png" />
+    <Content Include="Resource\Image\order\order_process_step_background.png" />
     <Content Include="Resource\Image\order\order_radio_normal.png" />
     <Content Include="Resource\Image\order\order_radio_selected.png" />
     <Content Include="Resource\Image\popup_collection.png" />
     <Content Include="Resource\Image\popup_login.png" />
+    <Content Include="Resource\Image\pop_up\cart\pop_up_cart_base.png" />
     <Content Include="Resource\Image\pop_up\collection\pop-up_collection_base.png" />
     <Content Include="Resource\Image\pop_up\collection\pop-up_collection_button_collect&amp;share_normal.png" />
     <Content Include="Resource\Image\pop_up\collection\pop-up_collection_button_collect_normal.png" />
@@ -991,6 +995,7 @@
     <Content Include="Resource\Image\product_page\product_button_buy_press.png" />
     <Content Include="Resource\Image\product_page\product_button_collection_normal.png" />
     <Content Include="Resource\Image\product_page\product_button_collection_press.png" />
+    <Content Include="Resource\Image\product_page\product_icon_collection.png" />
     <Content Include="Resource\Image\product_page\product_productItem.png" />
     <Content Include="Resource\Image\product_page\product_productlogo.png" />
     <Content Include="Resource\Image\product_page\product_productlogo_cover.png" />

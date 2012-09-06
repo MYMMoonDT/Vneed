@@ -3,8 +3,18 @@
 <div class="orderProcessWrapper">
     <div class="orderProcessDiv">
         <div class="orderProcessContentDiv">
-            <asp:Panel ID="orderProcessPanel" runat="server">
-                
+            <asp:Panel ID="orderProcessPanel" runat="server" CssClass="orderProcessStepContainer">
+                <asp:Panel ID="orderProcessStep1Panel" runat="server" ClientIDMode="Static">
+                    <asp:Label ID="orderProcessStep1Label" runat="server" Text="" ClientIDMode="Static"></asp:Label>
+                </asp:Panel>
+                <asp:Panel ID="orderProcessStep1to2Panel" runat="server" ClientIDMode="Static"></asp:Panel>
+                <asp:Panel ID="orderProcessStep2Panel" runat="server" ClientIDMode="Static">
+                    <asp:Label ID="orderProcessStep2Label" runat="server" ClientIDMode="Static"></asp:Label>
+                </asp:Panel>
+                <asp:Panel ID="orderProcessStep2to3Panel" runat="server" ClientIDMode="Static"></asp:Panel>
+                <asp:Panel ID="orderProcessStep3Panel" runat="server" ClientIDMode="Static">
+                    <asp:Label ID="orderProcessStep3Label" runat="server" ClientIDMode="Static"></asp:Label>
+                </asp:Panel>
             </asp:Panel>
         </div>
         <div class="orderProcessTextDiv">

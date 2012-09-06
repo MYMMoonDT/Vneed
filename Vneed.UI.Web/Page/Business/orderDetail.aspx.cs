@@ -11,7 +11,7 @@ namespace Vneed.UI.Web.Page.Business
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            this.OrderProcessWebUserControl1.StepNum = 2;
         }
     }
 }

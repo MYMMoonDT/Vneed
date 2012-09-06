@@ -922,17 +922,16 @@ a:hover
 #productMainLeftContentDiv
 {
 	width:575px;
-	position:relative;
-	float:left;
 	border-right-color: #D8D8D8;
     border-right-width: 1px;
     border-right-style: solid;
+    height:100%;
 }
 #productMainRightContentDiv
 {
-	width:400px;
-	position:relative;
-	float:left;
+    width: 400px;
+    height: 100%;
+    vertical-align: top;
 }
 #productMainLeftContentDiv #productLeftDiv1
 {
@@ -959,19 +958,19 @@ a:hover
 #productMainRightContentDiv #productRightDiv1
 {
 	width:400px;
-	height:220px;
+	height:200px;
 	position:relative;
 }
 #productMainRightContentDiv #productRightDiv2
 {
 	width:355px;
+	margin-left:35px;
 	position:relative;
-	margin-left:45px;
 }
 #productMainRightContentDiv #productRightDiv2 #productRightDiv21
 {
 	height:40px;
-	width:345px;
+	width:330px;
 	font-size:22px;
 	font-weight:bold;
 	border-bottom-width: 1px;
@@ -980,10 +979,10 @@ a:hover
 } 
 #productMainRightContentDiv #productRightDiv1 #productRightDiv11
 {
-	width:340px;
+	width:400px;
 	height:63px;
 	position:absolute;
-	left:60px;
+	left:30px;
 	top:70px;
 }
 .productItem3
@@ -1032,10 +1031,27 @@ a:hover
 }
 .productButton1
 {
-	width:113px;
-	height:63px;
 	float:left;
 	font-size:22px;
+	padding:15px 10px 15px 10px;
+}
+.productButton2
+{
+    border-style: none;
+    background-position: left center;
+    float: left;
+    font-size: 16px;
+    background-image: url('../Image/product_page/product_icon_collection.png');
+    background-repeat: no-repeat;
+    background-color: #FFFFFF;
+    padding-left:22px;
+    line-height:22px;
+    margin-top:17px;
+    color:#000;
+}
+.productButton2:hover
+{
+    color: #EF8000;
 }
 
 #dividerDiv5
@@ -1052,7 +1068,7 @@ a:hover
     margin-left:40px;
     font-size:22px;
     line-height:70px;
-    
+    font-weight:bold;
 }
 #collectDialogDiv
 {
@@ -1155,6 +1171,14 @@ a:hover
 {
     background-image: url('../Image/pop_up/collection/pop-up_collection_switch_on.png');
     background-repeat: no-repeat;
+}
+#cartDialogDiv
+{
+    width: 618px;
+    height: 518px;
+    background-image: url('../Image/pop_up/cart/pop_up_cart_base.png');
+    display:none;
+    position:relative;
 }
 /*register*/
 .titleMainDiv
@@ -1623,6 +1647,89 @@ a:hover
     height: 110px;
     margin-left:25px;
     margin-right:25px;
+    position:relative;
+}
+.orderProcessContentDiv .orderProcessStepContainer
+{
+    width:450px;
+    height:60px;
+    position:absolute;
+    top:43px;
+}
+.orderProcessStepContainer #orderProcessStep1Panel
+{
+    width:60px;
+    height:60px;
+    position:absolute;
+    left:10px;
+    top:0;
+    text-align:center;
+}
+.orderProcessStepContainer #orderProcessStep1to2Panel
+{
+    height:60px;
+    width:150px;
+    position:absolute;
+    left:58px;
+    top:0;
+}
+.orderProcessStepContainer #orderProcessStep2Panel
+{
+    width:60px;
+    height:60px;
+    position:absolute;
+    left:195px;
+    top:0;
+    text-align:center;
+}
+.orderProcessStepContainer #orderProcessStep2to3Panel
+{
+    height:60px;
+    width:150px;
+    position:absolute;
+    left:240px;
+    top:0;
+}
+.orderProcessStepContainer #orderProcessStep3Panel
+{
+    width:60px;
+    height:60px;
+    position:absolute;
+    left:379px;
+    top:0;
+    text-align:center;
+}
+.orderProcessStepContainer .orderProcessStepDiv
+{
+    background-image: url('../Image/order/order_process_step.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.orderProcessStepContainer .orderProcessStepBackDiv
+{
+    background-image: url('../Image/order/order_process_step_background.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.orderProcessStepContainer .orderProcessStepCompletedDiv
+{
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url('../Image/order/order_process_completed.png');
+}
+.orderProcessStepContainer .orderProcessStepText
+{
+    line-height: 60px;
+    font-size: 26px;
+    font-weight: 500;
+    color: #FFFFFF;
+}
+.orderProcessStepContainer .orderProcessNormalText
+{
+    line-height: 60px;
+    font-size: 26px;
+    font-weight: 500;
+    color: #4A4A4A;
 }
 .orderProcessDiv .orderProcessTextDiv
 {
