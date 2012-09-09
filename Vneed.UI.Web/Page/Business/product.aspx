@@ -22,9 +22,16 @@
                 });
             });
             var collectDialog = new CollectDialog();
+            var cartDialog = new CartDialog();
         });
     </script>
     <script type="text/javascript">
+        function CartDialog() {
+            this.init();
+        }
+        CartDialog.prototype.init = function () { 
+            
+        };
         function CollectDialog() {
             this.init();
         }
@@ -83,7 +90,28 @@
     </div>
 
     <div id="cartDialogDiv">
-        
+        <div id="cartDialogTitleDiv">
+            <span class="collectDialogTitleFont1">新东方XXXXXXXXX</span>
+            <span class="collectDialogTitleFont2">培训班</span>
+        </div>
+        <div id="cartDialogContentDiv">
+            <div class="cartDialogContentTitle">
+                <span>购物车中还有:</span>
+            </div>
+            <div class="cartDialogProductContainer">
+                <asp:Panel ID="CartDialogImgContainerPanel" runat="server" CssClass="cartDialogProductImgContainer">
+                </asp:Panel>
+                <asp:Panel ID="CartDialogProductBottomPanel" runat="server" CssClass="cartDialogProductBottom">            
+                    <asp:Panel ID="CartDialogProductBottomButtons" runat="server" CssClass="cartDialogProductBottomButtons">                  
+                    </asp:Panel>
+                </asp:Panel>
+            </div>
+            <div class="cartDialogClearingPriceDiv">
+                <span class="cartDialogClearingPriceFont1">总计:</span>
+                <span class="cartDialogClearingPriceFont2">$XXXX</span>
+                <asp:Button ID="Button3" runat="server" Text="去结算" CssClass="button cartDialogClearingButton"/>
+            </div>
+        </div>
     </div>
 
     <div id="productTitleDiv">

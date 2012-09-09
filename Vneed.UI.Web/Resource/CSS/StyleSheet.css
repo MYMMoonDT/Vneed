@@ -1180,6 +1180,119 @@ a:hover
     display:none;
     position:relative;
 }
+#cartDialogTitleDiv
+{
+    position:absolute;
+    top:55px;
+    left:38px;
+    width:570px;
+    height:80px;
+}
+#cartDialogContentDiv
+{
+    position:absolute;
+    left:38px;
+    top:150px;
+    width:500px;
+}
+.cartDialogContentTitle
+{
+    font-size:22px;
+    line-height:60px;
+    font-weight:bold;
+}
+.cartDialogProductContainer
+{
+    width:465px;
+    height:225px;
+    margin-left:45px;
+}
+.cartDialogProductImgContainer
+{
+    width:465px;
+    height:160px;
+    overflow:hidden;
+    position:relative;
+}
+.cartDialogProductImgDiv
+{
+    /*
+    width:155px;
+    height:140px;
+    margin-top:10px;
+    text-align: center;
+    float:left;
+    position:relative;
+    */
+    width:155px;
+    height:140px;
+    position:absolute;
+    top:10px;
+    left:0;
+    text-align: center;
+}
+.cartDialogProductImgDiv .cartDialogProductImg
+{
+    border: 2px solid #FFFFFF;
+    width: 130px;
+    height: 100px;
+}
+.cartDialogProductImgDiv .cartDialogProductDelete
+{
+    background-image: url('../Image/pop_up/cart/pop_up_cart_delete.png');
+    background-repeat: no-repeat;
+    width:32px;
+    height:31px;
+    position:absolute;
+    top:-12px;
+    right:0;
+}
+.cartDialogProductImgDiv .cartDialogProductPrice
+{
+    width: 130px;
+    height:40px;
+    line-height: 40px;
+    font-size: 16px;
+    color: #019EBC;
+    font-weight:bold;
+}
+.cartDialogProductBottom
+{
+    width:465px;
+    height:9px;
+    text-align:center;
+    position:relative;
+}
+.cartDialogProductBottomButtons
+{
+    margin-left:auto;
+    margin-right:auto;
+}
+.cartDialogClearingPriceDiv
+{
+    height:50px;
+    width:540px;
+}
+.cartDialogClearingPriceFont1
+{
+    font-size:22px;
+    line-height:50px;
+    font-weight:bold;
+}
+.cartDialogClearingPriceFont2
+{
+    color: #019EBC;
+    font-size:28px;
+    line-height:50px;
+    font-weight:bold;
+}
+.cartDialogClearingButton
+{
+    font-size:18px;
+    width:100px;
+    height:45px;
+    float:right;
+}
 /*register*/
 .titleMainDiv
 {
