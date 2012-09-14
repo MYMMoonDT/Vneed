@@ -76,6 +76,51 @@ namespace Vneed.UI.Web.Page.Business {
         protected global::System.Web.UI.WebControls.Button Button3;
         
         /// <summary>
+        /// productTitleImage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image productTitleImage;
+        
+        /// <summary>
+        /// productTitleLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label productTitleLabel;
+        
+        /// <summary>
+        /// productVneedPriceLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label productVneedPriceLabel;
+        
+        /// <summary>
+        /// productPriceLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label productPriceLabel;
+        
+        /// <summary>
+        /// productDescriptionLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label productDescriptionLabel;
+        
+        /// <summary>
         /// BuyButton control.
         /// </summary>
         /// <remarks>

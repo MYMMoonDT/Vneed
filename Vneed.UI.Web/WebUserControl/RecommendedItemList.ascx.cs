@@ -60,6 +60,7 @@ namespace Vneed.UI.Web.WebUserControl
                 //title.Text = item.Title;
                 //yizhenfei show the hyperlink
                 HyperLink title = new HyperLink();
+                title.CssClass = "";
                 title.Text = item.Title;
                 title.NavigateUrl = "/Page/Business/product.aspx?product=" + item.ItemID;
                 Label type = new Label();

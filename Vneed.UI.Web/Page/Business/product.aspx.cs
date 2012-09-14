@@ -4,13 +4,25 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Vneed.BLL;
+using Vneed.Model;
 
 namespace Vneed.UI.Web.Page.Business
 {
     public partial class product : System.Web.UI.Page
     {
+        private String productID;
+        private Item productItem;
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            this.productID = this.Request.QueryString["product"];
+            this.productItem = ItemService.GetItemByItemID(productID);
+            this.productTitleLabel.Text = productItem.Title;
+            this.productVneedPriceLabel.Text = "￥" + productItem.Price;
+            this.productPriceLabel.Text = "￥" + productItem.OriginalPrice;
+            this.productDescriptionLabel.Text = productItem.Description;
+            this.productTitleImage.ImageUrl = productItem.ImageUrl;
             this.CartDialogInit();
         }
         private void CartDialogInit() {
@@ -34,7 +46,7 @@ namespace Vneed.UI.Web.Page.Business
                 cartDialogProductImg.ImageUrl = "~/Image/ItemImage/default.jpg";
                 Label cartDialogProductPrice = new Label();
                 cartDialogProductPrice.CssClass = "cartDialogProductPrice";
-                cartDialogProductPrice.Text = "$XX";
+                cartDialogProductPrice.Text = "$" + index;
                 ImageButton cartDialogProductDelete = new ImageButton();
                 cartDialogProductDelete.CssClass = "cartDialogProductDelete";
                 cartDialogProductDelete.ImageUrl = "~/Resource/Image/pop_up/cart/pop_up_cart_delete.png";

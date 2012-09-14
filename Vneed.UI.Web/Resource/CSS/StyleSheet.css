@@ -17,7 +17,7 @@ body
 }
 .button 
 {
-   background-color: rgba(2,197,219,1);
+   background-color: rgba(2,158,188,1);
    background-image: -webkit-linear-gradient(top, rgba(2,197,219,1) 0%,rgba(1,165,198,1) 100%);
    background-image:    -moz-linear-gradient(top, rgba(2,197,219,1) 0%,rgba(1,165,198,1) 100%);
    background-image:     -ms-linear-gradient(top, rgba(2,197,219,1) 0%,rgba(1,165,198,1) 100%);
@@ -180,8 +180,7 @@ a:hover
 }
 #headSearchTextDiv #headSearchTextDiv1 .searchButton
 {
-    width: 74px;
-    height: 41px;
+    padding:8px 15px 7px 15px;
     float: left;
     cursor: pointer;
     font-size:22px;
@@ -811,6 +810,14 @@ a:hover
 	color: #000;
 	font-weight: bold;
 }
+.productDisTitleItem2 a
+{
+    color: #3E3E3E;
+}
+.productDisTitleItem2 a:hover
+{
+    color: #FF5500;
+}
 .productDisTypeItem2
 {
 	margin-left:5px;
@@ -842,6 +849,11 @@ a:hover
     left:11px;
     top:11px;
     background-image: url('../Image/product_page/product_productlogo.png');
+}
+#productTitlePicDic .productTitlePic
+{
+    width: 80px;
+    height: 80px;
 }
 #productTitleContentDiv #productTitleText1
 {
@@ -921,11 +933,12 @@ a:hover
 }
 #productMainLeftContentDiv
 {
-	width:575px;
-	border-right-color: #D8D8D8;
+    width: 575px;
+    border-right-color: #D8D8D8;
     border-right-width: 1px;
     border-right-style: solid;
-    height:100%;
+    height: 100%;
+    vertical-align: top;
 }
 #productMainRightContentDiv
 {
@@ -1205,7 +1218,7 @@ a:hover
 {
     width:465px;
     height:225px;
-    margin-left:45px;
+    margin-left:35px;
 }
 .cartDialogProductImgContainer
 {
@@ -1216,14 +1229,6 @@ a:hover
 }
 .cartDialogProductImgDiv
 {
-    /*
-    width:155px;
-    height:140px;
-    margin-top:10px;
-    text-align: center;
-    float:left;
-    position:relative;
-    */
     width:155px;
     height:140px;
     position:absolute;
@@ -1236,6 +1241,7 @@ a:hover
     border: 2px solid #FFFFFF;
     width: 130px;
     height: 100px;
+    display:block;
 }
 .cartDialogProductImgDiv .cartDialogProductDelete
 {
@@ -1292,6 +1298,28 @@ a:hover
     width:100px;
     height:45px;
     float:right;
+}
+.cartDialogPreButton
+{
+    background-position: center center;
+    width: 40px;
+    height: 40px;
+    background-image: url('../Image/pop_up/cart/pop_up_cart_prev_hover.png');
+    background-repeat: no-repeat;
+    position:absolute;
+    left:-5px;
+    top:105px;
+}
+.cartDialogNextButton
+{
+    background-position: center center;
+    width: 40px;
+    height: 40px;
+    background-image: url('../Image/pop_up/cart/pop_up_cart_next_hover.png');
+    background-repeat: no-repeat;
+    position:absolute;
+    right:-40px;
+    top:105px;
 }
 /*register*/
 .titleMainDiv

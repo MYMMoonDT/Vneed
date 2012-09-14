@@ -67,9 +67,10 @@
     <div id="headDiv1">
     	<div id="headDiv2">
         	<div id="headLogoDiv">
-                <asp:HyperLink ID="HomepageHyperLink" runat="server" NavigateUrl="~/Page/index.aspx">
+                <%--<asp:HyperLink ID="HomepageHyperLink" runat="server" NavigateUrl="~/Page/index.aspx">--%>
                     <asp:Image ID="headLogoImage" runat="server" ImageUrl="~/Resource/Image/header/header_logo.png" />
-                </asp:HyperLink>
+                <%--</asp:HyperLink>--%>
+
             </div>
             <div class="headDividerDiv" style="left:230px;"></div>
             <div class="headDividerDiv" style="left:750px;"></div>

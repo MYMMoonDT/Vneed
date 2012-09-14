@@ -973,6 +973,10 @@
     <Content Include="Resource\Image\popup_login.png" />
     <Content Include="Resource\Image\pop_up\cart\pop_up_cart_base.png" />
     <Content Include="Resource\Image\pop_up\cart\pop_up_cart_delete.png" />
+    <Content Include="Resource\Image\pop_up\cart\pop_up_cart_next.png" />
+    <Content Include="Resource\Image\pop_up\cart\pop_up_cart_next_hover.png" />
+    <Content Include="Resource\Image\pop_up\cart\pop_up_cart_prev.png" />
+    <Content Include="Resource\Image\pop_up\cart\pop_up_cart_prev_hover.png" />
     <Content Include="Resource\Image\pop_up\collection\pop-up_collection_base.png" />
     <Content Include="Resource\Image\pop_up\collection\pop-up_collection_button_collect&amp;share_normal.png" />
     <Content Include="Resource\Image\pop_up\collection\pop-up_collection_button_collect_normal.png" />
