@@ -25,9 +25,9 @@ namespace Vneed.BLL
             return ItemRepository.FindItemsByRecommendList();
         }
 
-        public static List<Item> GetBestSellers()
+        public static List<Item> GetBestsellers()
         {
-            return null;
+            return ItemRepository.FindItemsByBestsellerList();
         }
 
         public static List<Item> GetBestSellersByCatalog(int catalogID)

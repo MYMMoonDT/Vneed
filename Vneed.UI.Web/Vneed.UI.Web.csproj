@@ -30,6 +30,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DeployIisAppPath>vneed</DeployIisAppPath>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AjaxControlToolkit, Version=4.1.60501.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
@@ -1013,6 +1014,7 @@
     <Content Include="Resource\JS\register.js" />
     <Content Include="Resource\JS\util.js" />
     <Content Include="Test\AuthenticationTest.aspx" />
+    <Content Include="Test\BestsellerListTestaspx.aspx" />
     <Content Include="Test\CatalogListTest.aspx" />
     <Content Include="Test\CommentTest.aspx" />
     <Content Include="Test\CookieTest.aspx" />
@@ -1028,6 +1030,7 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <Content Include="WebUserControl\BestsellerItemList.ascx" />
     <Content Include="WebUserControl\CatalogList.ascx" />
     <Content Include="WebUserControl\CommentBox.ascx" />
     <Content Include="WebUserControl\ItemDescriptionBox.ascx" />
@@ -1115,6 +1118,13 @@
     <Compile Include="Test\AuthenticationTest.aspx.designer.cs">
       <DependentUpon>AuthenticationTest.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Test\BestsellerListTestaspx.aspx.cs">
+      <DependentUpon>BestsellerListTestaspx.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test\BestsellerListTestaspx.aspx.designer.cs">
+      <DependentUpon>BestsellerListTestaspx.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Test\CatalogListTest.aspx.cs">
       <DependentUpon>CatalogListTest.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1156,6 +1166,13 @@
     </Compile>
     <Compile Include="Test\UserTest.aspx.designer.cs">
       <DependentUpon>UserTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControl\BestsellerItemList.ascx.cs">
+      <DependentUpon>BestsellerItemList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControl\BestsellerItemList.ascx.designer.cs">
+      <DependentUpon>BestsellerItemList.ascx</DependentUpon>
     </Compile>
     <Compile Include="WebUserControl\CatalogList.ascx.cs">
       <DependentUpon>CatalogList.ascx</DependentUpon>

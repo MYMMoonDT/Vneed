@@ -110,6 +110,33 @@ namespace Vneed.DAL.Repository
             return result;
         }
 
+        public static List<Item> FindItemsByBestsellerList()
+        {
+            List<Item> result = new List<Item>();
+
+            string connectionString = WebConfigurationManager.ConnectionStrings["defaultConnectionString"].ToString();
+            SqlConnection sqlConn = new SqlConnection(connectionString);
+            sqlConn.Open();
+
+            string cmdString = "SELECT [Item].[ItemSerialNumber],[Item].[ItemID],[Item].[Title],[Item].[Description],[Item].[ImageUrl],[Item].[Price],[Item].[OriginalPrice],[Item].[CatalogID],[Item].[ModifiedDate]" +
+                               "FROM Item INNER JOIN BestsellerList ON Item.ItemID = BestsellerList.ItemID";
+            SqlCommand sqlCmd = new SqlCommand(cmdString, sqlConn);
+
+            SqlDataReader sqlDataReader = sqlCmd.ExecuteReader();
+            if (sqlDataReader.HasRows)
+            {
+                while (sqlDataReader.Read())
+                {
+                    Item newItem = new Item();
+                    FillItem(sqlDataReader, newItem);
+                    result.Add(newItem);
+                }
+                sqlDataReader.Close();
+            }
+
+            return result;
+        }
+
         public static List<Item> FindItemsBySalesVolume()
         {
             List<Item> result = new List<Item>();
