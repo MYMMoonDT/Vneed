@@ -105,8 +105,8 @@
                     <asp:Panel ID="CartDialogProductBottomButtons" runat="server" CssClass="cartDialogProductBottomButtons">                  
                     </asp:Panel>
                 </asp:Panel>
-                <div class="cartDialogPreButton"></div>
-                <div class="cartDialogNextButton"></div>
+                <asp:Panel ID="cartDialogPreButtonPanel" runat="server" CssClass="cartDialogPreButton"></asp:Panel>
+                <asp:Panel ID="cartDialogNextButtonPanel" runat="server" CssClass="cartDialogNextButton"></asp:Panel>
             </div>
             <div class="cartDialogClearingPriceDiv">
                 <span class="cartDialogClearingPriceFont1">总计:</span>
@@ -147,20 +147,6 @@
                             <span>商品详情</span>
                         </div>
                         <div class="productLeftText">
-                            <%--课次：36
-                            <br /><br />
-                            上课时间：2012/5/6至2012/3/5周二至周五9:00-11:00,20:00-21:00(4.30-5.4休息)
-                            <br /><br />
-                            上课地点：VIP黄浦南京东路中心4教(南京东路409号置地广场东16楼)
-                            <br /><br />
-                            报到时间：开课当天至VIP学习中心领教材 021-63513703(南京东路)
-                            <br /><br />
-                            备注：
-                            <br /><br />
-                            课程简介：听力、口语、阅读、写作、词汇共5科，每科6节课（每节课2小时）。
-                            <br /><br />
-                            教学目标：详细讲解托福考试考点，重点培养学生在听说读写方面的能力，讲解托福考试高频核心词汇，为托福强化班方法技巧的讲解做好充分的准备。
-                            <br /><br />--%>
                             <asp:Label ID="productDescriptionLabel" runat="server" Text=""></asp:Label>
                         </div>
                     </td>

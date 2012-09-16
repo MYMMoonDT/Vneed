@@ -67,18 +67,21 @@
     <div id="headDiv1">
     	<div id="headDiv2">
         	<div id="headLogoDiv">
-                <%--<asp:HyperLink ID="HomepageHyperLink" runat="server" NavigateUrl="~/Page/index.aspx">--%>
+                <asp:HyperLink ID="HomepageHyperLink" runat="server" NavigateUrl="~/Page/index.aspx">
                     <asp:Image ID="headLogoImage" runat="server" ImageUrl="~/Resource/Image/header/header_logo.png" />
-                <%--</asp:HyperLink>--%>
-
+                </asp:HyperLink>
             </div>
             <div class="headDividerDiv" style="left:230px;"></div>
             <div class="headDividerDiv" style="left:750px;"></div>
             <div id="headSearchTextDiv">
             	<div id="headSearchTextDiv1">
-                    <asp:TextBox ID="searchContent" runat="server" CssClass="text searchText"></asp:TextBox>
-                    <asp:Button ID="searchButton" runat="server" Text="搜索" 
-                        CssClass="button searchButton"/>
+                    <table cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td><asp:TextBox ID="searchContent" runat="server" CssClass="text searchText"></asp:TextBox></td>
+                            <td><asp:Button ID="searchButton" runat="server" Text="搜索" 
+                            CssClass="button searchButton"/></td>
+                        </tr>
+                    </table>
                 </div>
        	  	</div>
           	<div id="headMyVneedDiv">
@@ -104,7 +107,7 @@
     	<div id="loginTextDiv">
             <asp:TextBox ID="loginName" runat="server" CssClass="text loginText1 loginFont1">请输入您的用户名</asp:TextBox>
             <div style="height:10px;"></div>
-            <asp:TextBox ID="loginPassword" runat="server" CssClass="text loginText1 loginFont1" >请输入您的密码</asp:TextBox>
+            <asp:TextBox ID="loginPassword" runat="server" CssClass="text loginText1 loginFont1" autocomplete="off">请输入您的密码</asp:TextBox>
             <div style="height:10px;"></div>
             <asp:Button ID="loginButton" runat="server" Text="登陆" 
                 CssClass="button loginButton1" OnClientClick="return LoginValidationFunc();" 

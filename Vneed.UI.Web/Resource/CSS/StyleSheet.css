@@ -11,62 +11,44 @@ body
 }
 .text
 {
-	border: 2px solid #00A8C8;
-	color: #00A8C8;
+	border: 2px solid #01A8C8;
+	color: #01A8C8;
 	border-radius:5px;
 }
-.button 
+.button
 {
-   background-color: rgba(2,158,188,1);
-   background-image: -webkit-linear-gradient(top, rgba(2,197,219,1) 0%,rgba(1,165,198,1) 100%);
-   background-image:    -moz-linear-gradient(top, rgba(2,197,219,1) 0%,rgba(1,165,198,1) 100%);
-   background-image:     -ms-linear-gradient(top, rgba(2,197,219,1) 0%,rgba(1,165,198,1) 100%);
-   background-image:      -o-linear-gradient(top, rgba(2,197,219,1) 0%,rgba(1,165,198,1) 100%);
-   background-image:         linear-gradient(top, rgba(2,197,219,1) 0%,rgba(1,165,198,1) 100%);
-   -webkit-box-shadow: 0px 1px 0px 0px rgba(255,255,255,0.4)inset, 1px 0px 0px 0px rgba(255,255,255,0.4)inset, -1px 0px 0px 0px rgba(255,255,255,0.4)inset;
-      -moz-box-shadow: 0px 1px 0px 0px rgba(255,255,255,0.4)inset, 1px 0px 0px 0px rgba(255,255,255,0.4)inset, -1px 0px 0px 0px rgba(255,255,255,0.4)inset;
-           box-shadow: 0px 1px 0px 0px rgba(255,255,255,0.4)inset, 1px 0px 0px 0px rgba(255,255,255,0.4)inset, -1px 0px 0px 0px rgba(255,255,255,0.4)inset;
-   -webkit-border-radius: 5px;
-      -moz-border-radius: 5px;
-           border-radius: 5px;
-   display: inline-block;
-   text-align: center;
-   font-weight:bold;
-   border-style:none;
-   color: rgba(255,255,255,1);
-   text-shadow: 0px 1px 1px rgba(0,0,0,0.33)
+    border: 2px solid #02B9D3;
+    background-position: center center;
+    border-radius: 5px;
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+    color: #FFFFFF;
+    background-image: url('../Image/icon/button_back.png');
+    background-repeat: repeat;
+    background-attachment: scroll;
+    vertical-align: middle;
 }
-.button:hover 
+.button:hover
 {
-   background-color: rgba(47,144,213,1);
-   border-style:none;
-   background-image: -webkit-linear-gradient(top, rgba(47,144,213,1) 0%,rgba(3,81,183,1) 100%);
-   background-image:    -moz-linear-gradient(top, rgba(47,144,213,1) 0%,rgba(3,81,183,1) 100%);
-   background-image:     -ms-linear-gradient(top, rgba(47,144,213,1) 0%,rgba(3,81,183,1) 100%);
-   background-image:      -o-linear-gradient(top, rgba(47,144,213,1) 0%,rgba(3,81,183,1) 100%);
-   background-image:         linear-gradient(top, rgba(47,144,213,1) 0%,rgba(3,81,183,1) 100%);
-   -webkit-box-shadow: 0px 1px 0px 0px rgba(255,255,255,0.4)inset, 0px -1px 0px 0px rgba(255,255,255,0.2)inset;
-      -moz-box-shadow: 0px 1px 0px 0px rgba(255,255,255,0.4)inset, 0px -1px 0px 0px rgba(255,255,255,0.2)inset;
-           box-shadow: 0px 1px 0px 0px rgba(255,255,255,0.4)inset, 0px -1px 0px 0px rgba(255,255,255,0.2)inset;
+    border: 2px solid #02B9D3;
+    background-image:none;
+    background-color: #01A8C8;
+    border-radius: 5px;
 }
-.button:active 
+.button:active
 {
-   border-style:none;
-   background-image: none;
-   -webkit-box-shadow: 0px 0px 8px 2px rgba(0,61,127,0.4)inset, 0px 0px 2px 2px rgba(0,60,125,0.2)inset;
-      -moz-box-shadow: 0px 0px 8px 2px rgba(0,61,127,0.4)inset, 0px 0px 2px 2px rgba(0,60,125,0.2)inset;
-           box-shadow: 0px 0px 8px 2px rgba(0,61,127,0.4)inset, 0px 0px 2px 2px rgba(0,60,125,0.2)inset;
-   border: solid 1px rgba(0,70,131,1);
-   -webkit-border-radius: 6px;
-      -moz-border-radius: 6px;
-           border-radius: 6px;
+    border-radius: 6px;
+    background-image: none;
+    background-color: #01A8C8;
+    border: 2px solid #01A8C8;
 }
 
 .font1
 {
-	font-size: 22px;
-	font-weight: bolder;
-	color: #008DA8;
+    font-size: 22px;
+    font-weight: bolder;
+    color: #01A8C8;
 }
 .font2
 {
@@ -144,6 +126,7 @@ a:hover
 #headLogoDiv img
 {
     margin-top:32px;
+    border:none;
 }
 .headDividerDiv
 {
@@ -163,11 +146,12 @@ a:hover
 }
 #headSearchTextDiv #headSearchTextDiv1
 {
-	position:absolute;
-	width:490px;
-	height:45px;
-	left:20px;
-	top:55px;
+    position: absolute;
+    width: 490px;
+    height: 45px;
+    left: 20px;
+    top: 55px;
+    vertical-align: middle;
 }
 
 #headSearchTextDiv #headSearchTextDiv1 .searchText
@@ -176,12 +160,10 @@ a:hover
 	height:36px;
 	font-size:20px;
 	line-height:36px;
-	float:left;
 }
 #headSearchTextDiv #headSearchTextDiv1 .searchButton
 {
-    padding:8px 15px 7px 15px;
-    float: left;
+    padding:5px 15px 5px 15px;
     cursor: pointer;
     font-size:22px;
 }
@@ -226,6 +208,7 @@ a:hover
 	position:absolute;
 	left:143px;
 	top:22px;
+	border:none;
 }
 #headMyVneedDiv #headMyVneedDiv2
 {
@@ -472,7 +455,7 @@ a:hover
 }
 .showAreaCenterPicDiv .showAreaCenterPic
 {
-    border: 2px solid #FFFFFF;
+    border: 3px solid #FFFFFF;
     background-color: #C0C0C0;
     width:380px;
     height:299px;
@@ -516,7 +499,7 @@ a:hover
 }
 .showAreaLeftPicDiv .showAreaLeftPic
 {
-    border: 2px solid #FFFFFF;
+    border: 3px solid #FFFFFF;
     background-color: #C0C0C0;
     width:306px;
     height:241px;
@@ -536,7 +519,7 @@ a:hover
 }
 .showAreaRightPicDiv .showAreaRightPic
 {
-    border: 2px solid #FFFFFF;
+    border: 3px solid #FFFFFF;
     background-color: #C0C0C0;
     width:306px;
     height:241px;
@@ -700,15 +683,32 @@ a:hover
 	top:25px;
 	
 }
+.productItem1 .productPicItem1Pic
+{
+    width:93px;
+	height:67px;
+	margin:2px 2px 2px 2px;
+	border-radius:3px;
+	border:none;
+}
 .productItem1 .productDisItem1
 {
-	position:absolute;
-	left:165px;
-	top:30px;
-	height:65px;
-	width:150px;
-	color: #C3C3C3;
-	font-weight: bold;
+    position: absolute;
+    left: 165px;
+    top: 30px;
+    height: 65px;
+    width: 150px;
+    color: #565656;
+    font-weight: bold;
+    font-size:12px;
+}
+.productItem1 .productDisItem1 a
+{
+    color: #565656;
+}
+.productItem1 .productDisItem1 a:hover
+{
+    color: #FF5500;
 }
 .productItem1 .productItemDivider1
 {
@@ -794,6 +794,7 @@ a:hover
 {
     width:133px;
     height:100px;
+    border:none;
 }
 .productDisItem2
 {
@@ -1218,7 +1219,7 @@ a:hover
 {
     width:465px;
     height:225px;
-    margin-left:35px;
+    margin-left:46px;
 }
 .cartDialogProductImgContainer
 {
@@ -1232,7 +1233,7 @@ a:hover
     width:155px;
     height:140px;
     position:absolute;
-    top:10px;
+    top:15px;
     left:0;
     text-align: center;
 }
@@ -1247,10 +1248,10 @@ a:hover
 {
     background-image: url('../Image/pop_up/cart/pop_up_cart_delete.png');
     background-repeat: no-repeat;
-    width:32px;
-    height:31px;
+    width:41px;
+    height:41px;
     position:absolute;
-    top:-12px;
+    top:-15px;
     right:0;
 }
 .cartDialogProductImgDiv .cartDialogProductPrice
@@ -1259,7 +1260,7 @@ a:hover
     height:40px;
     line-height: 40px;
     font-size: 16px;
-    color: #019EBC;
+    color: #01A8C8;
     font-weight:bold;
 }
 .cartDialogProductBottom
@@ -1287,7 +1288,7 @@ a:hover
 }
 .cartDialogClearingPriceFont2
 {
-    color: #019EBC;
+    color: #01A8C8;
     font-size:28px;
     line-height:50px;
     font-weight:bold;
@@ -1302,24 +1303,32 @@ a:hover
 .cartDialogPreButton
 {
     background-position: center center;
-    width: 40px;
-    height: 40px;
-    background-image: url('../Image/pop_up/cart/pop_up_cart_prev_hover.png');
+    width: 60px;
+    height: 55px;
+    background-image: url('../Image/pop_up/cart/pop_up_cart_prev.png');
     background-repeat: no-repeat;
     position:absolute;
-    left:-5px;
+    left:-15px;
     top:105px;
+}
+.cartDialogPreButton:hover
+{
+    background-image: url('../Image/pop_up/cart/pop_up_cart_prev_hover.png');
 }
 .cartDialogNextButton
 {
     background-position: center center;
-    width: 40px;
-    height: 40px;
-    background-image: url('../Image/pop_up/cart/pop_up_cart_next_hover.png');
+    width: 60px;
+    height: 55px;
+    background-image: url('../Image/pop_up/cart/pop_up_cart_next.png');
     background-repeat: no-repeat;
     position:absolute;
-    right:-40px;
+    right:-50px;
     top:105px;
+}
+.cartDialogNextButton:hover
+{
+    background-image: url('../Image/pop_up/cart/pop_up_cart_next_hover.png');
 }
 /*register*/
 .titleMainDiv
@@ -1762,8 +1771,12 @@ a:hover
 {
     font-size: 16px;
     text-decoration: underline;
-    font-weight:400;
-    color:Black;
+    font-weight: 400;
+    color: #000000;
+}
+.cartClearingOptionDiv .cartOptionLink:hover
+{
+    color: #FF5500;
 }
 /*OrderProcessWebUserControl*/
 .orderProcessWrapper

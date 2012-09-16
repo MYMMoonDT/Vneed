@@ -22,6 +22,15 @@ namespace Vneed.UI.Web.Page {
         protected global::Vneed.UI.Web.WebUserControl.ShowAreaWebUserControl1 ShowAreaWebUserControl11;
         
         /// <summary>
+        /// BestsellerItemList1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Vneed.UI.Web.WebUserControl.BestsellerItemList BestsellerItemList1;
+        
+        /// <summary>
         /// CatalogList1 control.
         /// </summary>
         /// <remarks>

@@ -67,6 +67,24 @@ namespace Vneed.UI.Web.Page.Business {
         protected global::System.Web.UI.WebControls.Panel CartDialogProductBottomButtons;
         
         /// <summary>
+        /// cartDialogPreButtonPanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel cartDialogPreButtonPanel;
+        
+        /// <summary>
+        /// cartDialogNextButtonPanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel cartDialogNextButtonPanel;
+        
+        /// <summary>
         /// Button3 control.
         /// </summary>
         /// <remarks>

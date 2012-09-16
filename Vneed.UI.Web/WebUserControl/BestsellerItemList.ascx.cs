@@ -24,15 +24,17 @@ namespace Vneed.UI.Web.WebUserControl
                 productItem.CssClass = "productItem1";
                 Panel productPicItem = new Panel();
                 productPicItem.CssClass = "productPicItem1";
+                HyperLink imglink = new HyperLink();
+                imglink.NavigateUrl = "/Page/Business/product.aspx?product=" + item.ItemID;
                 Image img = new Image();
                 img.ImageUrl = item.ImageUrl;
-                img.CssClass = "productPicItem2Image"; //TODO: 这里是不是要改
-                productPicItem.Controls.Add(img);
+                img.CssClass = "productPicItem1Pic";
+                imglink.Controls.Add(img);
+                productPicItem.Controls.Add(imglink);
                 productItem.Controls.Add(productPicItem);
                 Panel productDisItem = new Panel();
                 productDisItem.CssClass = "productDisItem1";
                 HyperLink title = new HyperLink();
-                title.CssClass = "";
                 title.Text = item.Title;
                 title.NavigateUrl = "/Page/Business/product.aspx?product=" + item.ItemID;
                 productDisItem.Controls.Add(title);
@@ -40,10 +42,36 @@ namespace Vneed.UI.Web.WebUserControl
                 Panel productDivider = new Panel();
                 productDivider.CssClass = "productItemDivider1";
                 productItem.Controls.Add(productDivider);
+
                 tc.Controls.Add(productItem);
                 trProduct.Controls.Add(tc);
                 Table.Rows.Add(trProduct);
                 trProduct = new TableRow();
+
+                //Panel productItem = new Panel();
+                //productItem.CssClass = "productItem1";
+                //Panel productPicItem = new Panel();
+                //productPicItem.CssClass = "productPicItem1";
+                //Image img = new Image();
+                //img.ImageUrl = item.ImageUrl;
+                //img.CssClass = "productPicItem2Image"; //TODO: 这里是不是要改
+                //productPicItem.Controls.Add(img);
+                //productItem.Controls.Add(productPicItem);
+                //Panel productDisItem = new Panel();
+                //productDisItem.CssClass = "productDisItem1";
+                //HyperLink title = new HyperLink();
+                //title.CssClass = "";
+                //title.Text = item.Title;
+                //title.NavigateUrl = "/Page/Business/product.aspx?product=" + item.ItemID;
+                //productDisItem.Controls.Add(title);
+                //productItem.Controls.Add(productDisItem);
+                //Panel productDivider = new Panel();
+                //productDivider.CssClass = "productItemDivider1";
+                //productItem.Controls.Add(productDivider);
+                //tc.Controls.Add(productItem);
+                //trProduct.Controls.Add(tc);
+                //Table.Rows.Add(trProduct);
+                //trProduct = new TableRow();
             }
         }
     }
