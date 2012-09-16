@@ -1015,6 +1015,7 @@
     <Content Include="Resource\JS\util.js" />
     <Content Include="Test\AuthenticationTest.aspx" />
     <Content Include="Test\BestsellerListTestaspx.aspx" />
+    <Content Include="Test\CartTest.aspx" />
     <Content Include="Test\CatalogListTest.aspx" />
     <Content Include="Test\CommentTest.aspx" />
     <Content Include="Test\CookieTest.aspx" />
@@ -1124,6 +1125,13 @@
     </Compile>
     <Compile Include="Test\BestsellerListTestaspx.aspx.designer.cs">
       <DependentUpon>BestsellerListTestaspx.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Test\CartTest.aspx.cs">
+      <DependentUpon>CartTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test\CartTest.aspx.designer.cs">
+      <DependentUpon>CartTest.aspx</DependentUpon>
     </Compile>
     <Compile Include="Test\CatalogListTest.aspx.cs">
       <DependentUpon>CatalogListTest.aspx</DependentUpon>

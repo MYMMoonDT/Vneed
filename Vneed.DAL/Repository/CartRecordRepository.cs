@@ -20,29 +20,26 @@ namespace Vneed.DAL.Repository
             string cmdString; 
             SqlCommand sqlCmd = new SqlCommand();
             //删除旧值
-            if(newCartRecord.UserID != null)
-            {
-                cmdString = "DELETE FROM CartRecord WHERE UserID=@userID AND ItemID=@itemID";
-                sqlCmd = new SqlCommand(cmdString, sqlConn);
-                sqlCmd.Parameters.Add(new SqlParameter("userID", newCartRecord.UserID));
-                sqlCmd.Parameters.Add(new SqlParameter("itemID", newCartRecord.ItemID));
-            }
-            else if (newCartRecord.Ip != null)
-            {
-                cmdString = "DELETE FROM CartRecord WHERE Ip=@ip AND ItemID=@itemID";
-                sqlCmd = new SqlCommand(cmdString, sqlConn);
-                sqlCmd.Parameters.Add(new SqlParameter("ip", newCartRecord.Ip));
-                sqlCmd.Parameters.Add(new SqlParameter("itemID", newCartRecord.ItemID));
-            }
+            cmdString = "DELETE FROM CartRecord WHERE UserID=@userID AND ItemID=@itemID";
+            sqlCmd = new SqlCommand(cmdString, sqlConn);
+            sqlCmd.Parameters.Add(new SqlParameter("userID", newCartRecord.UserID));
+            sqlCmd.Parameters.Add(new SqlParameter("itemID", newCartRecord.ItemID));
+//             else if (newCartRecord.Ip != null)
+//             {
+//                 cmdString = "DELETE FROM CartRecord WHERE Ip=@ip AND ItemID=@itemID";
+//                 sqlCmd = new SqlCommand(cmdString, sqlConn);
+//                 sqlCmd.Parameters.Add(new SqlParameter("ip", newCartRecord.Ip));
+//                 sqlCmd.Parameters.Add(new SqlParameter("itemID", newCartRecord.ItemID));
+//             }
             sqlCmd.ExecuteNonQuery();
             //添加新值
-            cmdString = "INSERT INTO CartRecord (UserID, ItemID, Count, ModifiedDate, Ip) VALUES (@userID, @itemID, @count, @modifiedDate, @ip)";
+            cmdString = "INSERT INTO CartRecord (UserID, ItemID, Count, ModifiedDate) VALUES (@userID, @itemID, @count, @modifiedDate)";
             sqlCmd = new SqlCommand(cmdString, sqlConn);
             sqlCmd.Parameters.Add(new SqlParameter("userID", newCartRecord.UserID));
             sqlCmd.Parameters.Add(new SqlParameter("itemID", newCartRecord.ItemID));
             sqlCmd.Parameters.Add(new SqlParameter("count", newCartRecord.Count));
             sqlCmd.Parameters.Add(new SqlParameter("modifiedDate", DateTime.Now));
-            sqlCmd.Parameters.Add(new SqlParameter("ip", newCartRecord.Ip));
+            //sqlCmd.Parameters.Add(new SqlParameter("ip", newCartRecord.Ip));
             sqlCmd.ExecuteNonQuery();
 
             sqlConn.Close();
@@ -57,20 +54,20 @@ namespace Vneed.DAL.Repository
             string cmdString;
             SqlCommand sqlCmd = new SqlCommand();
 
-            if (newCartRecord.UserID != null)
-            {
+//             if (newCartRecord.UserID != null)
+//             {
                 cmdString = "DELETE FROM CartRecord WHERE UserID=@userID AND ItemID=@itemID";
                 sqlCmd = new SqlCommand(cmdString, sqlConn);
                 sqlCmd.Parameters.Add(new SqlParameter("userID", newCartRecord.UserID));
                 sqlCmd.Parameters.Add(new SqlParameter("itemID", newCartRecord.ItemID));
-            }
-            else if (newCartRecord.Ip != null)
-            {
-                cmdString = "DELETE FROM CartRecord WHERE Ip=@ip AND ItemID=@itemID";
-                sqlCmd = new SqlCommand(cmdString, sqlConn);
-                sqlCmd.Parameters.Add(new SqlParameter("ip", newCartRecord.Ip));
-                sqlCmd.Parameters.Add(new SqlParameter("itemID", newCartRecord.ItemID));
-            }
+//             }
+//             else if (newCartRecord.Ip != null)
+//             {
+//                 cmdString = "DELETE FROM CartRecord WHERE Ip=@ip AND ItemID=@itemID";
+//                 sqlCmd = new SqlCommand(cmdString, sqlConn);
+//                 sqlCmd.Parameters.Add(new SqlParameter("ip", newCartRecord.Ip));
+//                 sqlCmd.Parameters.Add(new SqlParameter("itemID", newCartRecord.ItemID));
+//             }
             sqlCmd.ExecuteNonQuery();
         }
 
@@ -107,7 +104,7 @@ namespace Vneed.DAL.Repository
             newCardRecord.ItemID = (string)sqlDataReader["ItemID"];
             newCardRecord.Count = (int)sqlDataReader["Count"];
             newCardRecord.ModifiedDate = (DateTime)sqlDataReader["ModifiedDate"];
-            newCardRecord.Ip = (string)sqlDataReader["Ip"];
+            //newCardRecord.Ip = (string)sqlDataReader["Ip"];
         }
     }
 }

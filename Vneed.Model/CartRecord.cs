@@ -11,6 +11,6 @@ namespace Vneed.Model
         public string ItemID;
         public int Count;
         public DateTime ModifiedDate;
-        public string Ip;
+        //public string Ip;
     }
 }
