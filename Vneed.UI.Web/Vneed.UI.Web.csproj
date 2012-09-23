@@ -1020,6 +1020,7 @@
     <Content Include="Test\CommentTest.aspx" />
     <Content Include="Test\CookieTest.aspx" />
     <Content Include="Test\DescriptionTest.aspx" />
+    <Content Include="Test\OrderTest.aspx" />
     <Content Include="Test\RecommendedItemListTest.aspx" />
     <Content Include="Test\UserTest.aspx" />
     <Content Include="Web.config">
@@ -1160,6 +1161,13 @@
     </Compile>
     <Compile Include="Test\DescriptionTest.aspx.designer.cs">
       <DependentUpon>DescriptionTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Test\OrderTest.aspx.cs">
+      <DependentUpon>OrderTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test\OrderTest.aspx.designer.cs">
+      <DependentUpon>OrderTest.aspx</DependentUpon>
     </Compile>
     <Compile Include="Test\RecommendedItemListTest.aspx.cs">
       <DependentUpon>RecommendedItemListTest.aspx</DependentUpon>

@@ -71,6 +71,19 @@ namespace Vneed.DAL.Repository
             sqlCmd.ExecuteNonQuery();
         }
 
+        public static void DeletaCartRecordByUserID(int UserID)
+        {
+            string connectionString = WebConfigurationManager.ConnectionStrings["defaultConnectionString"].ToString();
+            SqlConnection sqlConn = new SqlConnection(connectionString);
+            sqlConn.Open();
+
+            string cmdString = "DELETE FROM [CartRecord] WHERE UserID = @userID";
+            SqlCommand sqlCmd = new SqlCommand(cmdString, sqlConn);
+            sqlCmd.Parameters.Add(new SqlParameter("userID", UserID));
+
+            sqlCmd.ExecuteNonQuery();
+        }
+
         public static List<CartRecord> FindCartRecordByUserID(int UserID)
         {
             List<CartRecord> result = new List<CartRecord>();

@@ -25,5 +25,10 @@ namespace Vneed.BLL
         {
             return CartRecordRepository.FindCartRecordByUserID(UserID);
         }
+
+        public static void DeletaCartRecordByUserID(int UserID)
+        {
+            CartRecordRepository.DeletaCartRecordByUserID(UserID);
+        }
     }
 }
