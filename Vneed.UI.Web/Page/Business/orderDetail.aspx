@@ -16,6 +16,9 @@
     function OrderDetailText() {
         this.init();
     }
+    OrderDetailText.prototype.validation = function () {
+        return false;
+    };
     OrderDetailText.prototype.init = function () {
         var orderDetailTextInfo = [{ id: "#NameTextBox", defaultStr: "姓名" },
                                    { id: "#SchoolTextBox", defaultStr: "学校" },
@@ -167,7 +170,9 @@
                     </div>
                     <div class="cartClearingOptionDiv">
                         <asp:Button ID="CommmitButton" runat="server" Text="确认订单" 
-                            CssClass="button orderDetailOptionButton" onclick="CommmitButton_Click" />
+                            CssClass="button orderDetailOptionButton" 
+                            onclick="CommmitButton_Click" 
+                            OnClientClick="return orderDetailText.validation();" />
                     </div>
                 </div>
             </div>

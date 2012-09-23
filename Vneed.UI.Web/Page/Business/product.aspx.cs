@@ -78,12 +78,19 @@ namespace Vneed.UI.Web.Page.Business
 
         protected void AddCartButton_Click(object sender, EventArgs e)
         {
-            CartRecord cartRecord = new CartRecord();
-            cartRecord.UserID = AuthenticationService.GetUser().UserID;
-            cartRecord.ItemID = productItem.ItemID;
-            cartRecord.Count = int.Parse(this.ProductNumTextBox.Text);
-            CartService.AddCartRecord(cartRecord);
-            Response.Redirect("/Page/Business/cart.aspx");
+            if (AuthenticationService.GetUsername() == null)
+            {
+                Response.Redirect("/Page/index.aspx");
+            }
+            else
+            {
+                CartRecord cartRecord = new CartRecord();
+                cartRecord.UserID = AuthenticationService.GetUser().UserID;
+                cartRecord.ItemID = productItem.ItemID;
+                cartRecord.Count = int.Parse(this.ProductNumTextBox.Text);
+                CartService.AddCartRecord(cartRecord);
+                Response.Redirect("/Page/Business/cart.aspx");
+            }
         }
 
         protected void BuyButton_Click(object sender, EventArgs e)
