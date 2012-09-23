@@ -21,6 +21,8 @@ namespace Vneed.UI.Web.WebUserControl
             {
                 this.headMyVneedDiv1.Visible = true;
                 this.headMyVneedDiv2.Visible = false;
+                this.ProductNumImage.ImageUrl = "~/Resource/Image/header/header_cartlogo_" + 
+                    CartService.GetCartRecodByUserID(AuthenticationService.GetUser().UserID).Count.ToString() + ".png";
             }
         }
 
@@ -46,6 +48,15 @@ namespace Vneed.UI.Web.WebUserControl
         {
             if (AuthenticationService.GetUsername() != null)
                 Response.Redirect(Request.Url.ToString());
+        }
+
+        protected void MyVneedLogoutButton_Click(object sender, EventArgs e)
+        {
+            if (AuthenticationService.GetUsername() != null)
+            {
+                AuthenticationService.Logout();
+                Response.Redirect(Request.Url.ToString());
+            }
         }
     }
 }

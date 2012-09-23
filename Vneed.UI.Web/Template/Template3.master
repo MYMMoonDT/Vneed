@@ -13,7 +13,7 @@
             </div>
             <div id="myVneedTitleDiv2">
                 <div id="myVneedTitleDiv21">
-                    <div><span class="myVneedTitleFont1">MYMMoonDT</span></div>
+                    <asp:Label ID="myVneedTitleLabel" runat="server" Text="" CssClass="myVneedTitleFont1"></asp:Label>
                     <div><span class="myVneedTitleFont2">初级会员</span></div>
                 </div>
                 <div id="myVneedTitleDiv22">

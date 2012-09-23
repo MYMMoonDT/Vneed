@@ -45,10 +45,13 @@ namespace Vneed.UI.Web.WebUserControl
                 productItem.CssClass = "productItem2";
                 Panel productPicItem = new Panel();
                 productPicItem.CssClass = "productPicItem2";
+                HyperLink imglink = new HyperLink();
+                imglink.NavigateUrl = "/Page/Business/product.aspx?product=" + item.ItemID;
                 Image img = new Image();
                 img.ImageUrl = item.ImageUrl;
                 img.CssClass = "productPicItem2Image";
-                productPicItem.Controls.Add(img);
+                imglink.Controls.Add(img);
+                productPicItem.Controls.Add(imglink);
                 productItem.Controls.Add(productPicItem);
                 Panel productDisItem = new Panel();
                 productDisItem.CssClass = "productDisItem2";

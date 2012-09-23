@@ -940,6 +940,7 @@
     <Content Include="Resource\Image\header\header_searchbar_press.png" />
     <Content Include="Resource\Image\header\header_searchbutton_normal.png" />
     <Content Include="Resource\Image\header\header_searchbutton_press.png" />
+    <Content Include="Resource\Image\icon\button_back.png" />
     <Content Include="Resource\Image\icon\icons_alert.png" />
     <Content Include="Resource\Image\icon\icons_red.png" />
     <Content Include="Resource\Image\index site.png" />

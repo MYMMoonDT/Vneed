@@ -2,6 +2,7 @@
 <%@ Register src="../WebUserControl/ShowAreaWebUserControl1.ascx" tagname="ShowAreaWebUserControl1" tagprefix="uc1" %>
 <%@ Register src="../WebUserControl/RecommendedItemList.ascx" tagname="RecommendedItemList" tagprefix="uc2" %>
 <%@ Register src="../WebUserControl/CatalogList.ascx" tagname="CatalogList" tagprefix="uc3" %>
+<%@ Register src="../WebUserControl/BestsellerItemList.ascx" tagname="BestsellerItemList" tagprefix="uc4" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
@@ -24,7 +25,7 @@
                     <div id="dividerDiv2"></div>
                     <div id="leftAreaContentDiv">
                         <div id="rankTabContent" style="display:block;">
-                    		<!--ProductItem-->
+                    		<%--<!--ProductItem-->
                             <div class="productItem1">
                               <div class="productPicItem1"></div>
                                 <div class="productDisItem1">
@@ -47,15 +48,11 @@
                                 	<span>索尼爱立信S5830s</span>
                                 WCDMA/GSM LT18i 3G手机优惠</div>
                                 <div class="productItemDivider1"></div>
-                            </div>
+                            </div>--%>
+                            <uc4:BestsellerItemList ID="BestsellerItemList1" runat="server" />
                         </div>
 
                         <div id="classTabContent" style="display:none;">
-                            <%--<div class="catalogItemFirst">
-                                <span>培训班</span>
-                                <div class="catalogItemSecond">早教</div>
-                                <div class="catalogItemSecond">学前</div>
-                            </div>--%>
                             <uc3:CatalogList ID="CatalogList1" runat="server" />
                         </div> 
                     </div>
@@ -64,18 +61,6 @@
                 	<div id="dividerDiv3"></div>
                     <div id="rightAreaContentDiv">
                     	<div id="rightAreaItemContainer">                
-                        	<%--<!--ProductItem-->
-                   	        <div class="productItem2">
-                            	<div class="productPicItem2"></div>
-                                <div class="productDisItem2">
-                                	<div class="productDisTitleItem2">
-                                    	<span>新东方TOFEL强化走读班 白金10人</span>
-                                    </div>
-                                    <div class="productDisTypeItem2">
-                                    	<span>培训班</span>
-                                    </div>
-                                </div>
-                   	        </div>--%>
                             <uc2:RecommendedItemList ID="RecommendedItemList1" runat="server" />
                         </div>
                     </div>

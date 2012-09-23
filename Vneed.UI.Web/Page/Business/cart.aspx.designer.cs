@@ -22,31 +22,13 @@ namespace Vneed.UI.Web.Page.Business {
         protected global::Vneed.UI.Web.WebUserControl.OrderProcessWebUserControl OrderProcessWebUserControl1;
         
         /// <summary>
-        /// cartProductImage control.
+        /// cartTable control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image cartProductImage;
-        
-        /// <summary>
-        /// Image1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image1;
-        
-        /// <summary>
-        /// Image2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image2;
+        protected global::System.Web.UI.WebControls.Table cartTable;
         
         /// <summary>
         /// HyperLink1 control.
