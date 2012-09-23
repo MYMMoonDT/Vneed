@@ -63,13 +63,15 @@
         <div class="cartClearingDiv">
             <div class="cartClearingPriceDiv">
                 <span>合计:&nbsp</span>
-                <span>$XXXX</span>
+                <%--<span>$XXXX</span>--%>
+                <asp:Label ID="cartClearingPriceLabel" runat="server" Text=""></asp:Label>
                 <%--<asp:Label ID="TotalPriceLabel" runat="server" Text=""></asp:Label>--%>
             </div>
             <div class="cartClearingOptionDiv">
                 <asp:HyperLink ID="HyperLink1" runat="server" CssClass="cartOptionLink" NavigateUrl="#">继续购物&gt</asp:HyperLink>
-                <asp:Button ID="Button1" runat="server" Text="更新" CssClass="button cartOptionButton"/>
-                <asp:Button ID="Button2" runat="server" Text="结算" CssClass="button cartOptionButton"/>
+                <asp:Button ID="UpdateCartButton" runat="server" Text="更新" CssClass="button cartOptionButton"/>
+                <asp:Button ID="PayCartButton" runat="server" Text="结算" 
+                    CssClass="button cartOptionButton" onclick="PayCartButton_Click"/>
             </div>
         </div>
     </div>

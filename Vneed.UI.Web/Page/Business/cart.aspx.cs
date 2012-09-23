@@ -15,7 +15,7 @@ namespace Vneed.UI.Web.Page.Business
         {
             //设置目前流程步骤
             this.OrderProcessWebUserControl1.StepNum = 1;
-
+            //获取显示购物车数据
             Table cartTable = this.cartTable;
             TableRow cartTableHead = new TableRow();
             cartTableHead.CssClass = "cartTitleTR";
@@ -42,6 +42,7 @@ namespace Vneed.UI.Web.Page.Business
             cartTable.Controls.Add(cartTableHead);
 
             List<CartRecord> currentCart = CartService.GetCartRecodByUserID(AuthenticationService.GetUser().UserID);
+            decimal totalPrice = 0;
             foreach(CartRecord carRecord in currentCart)
             {
                 TableRow cartTableRow = new TableRow();
@@ -73,6 +74,7 @@ namespace Vneed.UI.Web.Page.Business
                 cartTableCell = new TableCell();
                 cartTableCell.CssClass = "cartContentTD";
                 cartTableCell.Text = "￥" + ItemService.GetItemByItemID(carRecord.ItemID).Price.ToString();
+                totalPrice += ItemService.GetItemByItemID(carRecord.ItemID).Price * carRecord.Count;
                 cartTableRow.Controls.Add(cartTableCell);
 
                 cartTableCell = new TableCell();
@@ -81,6 +83,12 @@ namespace Vneed.UI.Web.Page.Business
 
                 cartTable.Controls.Add(cartTableRow);
             }
+            this.cartClearingPriceLabel.Text = totalPrice.ToString();
+        }
+
+        protected void PayCartButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/Page/Business/orderDetail.aspx");
         }
     }
 }

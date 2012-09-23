@@ -76,48 +76,39 @@ namespace Vneed.UI.Web.Page.Business {
         protected global::System.Web.UI.WebControls.RadioButton OfflinePayRadioButton;
         
         /// <summary>
-        /// RadioButton6 control.
+        /// AlipayRadioButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton RadioButton6;
+        protected global::System.Web.UI.WebControls.RadioButton AlipayRadioButton;
         
         /// <summary>
-        /// cartProductImage control.
+        /// cartTable control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image cartProductImage;
+        protected global::System.Web.UI.WebControls.Table cartTable;
         
         /// <summary>
-        /// Image1 control.
+        /// cartClearingPriceLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image1;
+        protected global::System.Web.UI.WebControls.Label cartClearingPriceLabel;
         
         /// <summary>
-        /// Image2 control.
+        /// CommmitButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image2;
-        
-        /// <summary>
-        /// Button1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button CommmitButton;
     }
 }

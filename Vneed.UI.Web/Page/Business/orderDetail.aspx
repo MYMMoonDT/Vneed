@@ -96,7 +96,7 @@
                                     GroupName="PaymentGroup" 
                                     Text="线下支付（请填写个人资料）" Checked="True" CssClass="orderDetailRadioGroup2" ClientIDMode="Static" /></div>
                                 <div>
-                                    <asp:RadioButton ID="RadioButton6" runat="server" 
+                                    <asp:RadioButton ID="AlipayRadioButton" runat="server" 
                                     GroupName="PaymentGroup" 
                                     Text="支付宝付款" CssClass="orderDetailRadioGroup2" ClientIDMode="Static"/></div>
                             </div>
@@ -109,7 +109,10 @@
             </table>
             <div class="cartContentDiv">
                 <div class="cartContentTitleDiv"><span>商品清单:</span></div>
-                 <table id="cartTable" cellpadding="0" cellspacing="0">
+                <asp:Table ID="cartTable" runat="server" CellPadding="0" CellSpacing="0" ClientIDMode="Static">
+            
+                </asp:Table>
+                 <%--<table id="cartTable" cellpadding="0" cellspacing="0">
                     <tr class="cartTitleTR">
                         <th class="carTitleProductTH">商品</th>
                         <th class="carTitleOtherTH">数量</th>
@@ -155,15 +158,16 @@
                         <td class="cartContentTD">$XXXX</td>
                         <td class="cartContentTD"></td>
                     </tr>
-                </table>
+                </table>--%>
                 <div class="cartClearingDiv">
                     <div class="cartClearingPriceDiv">
                         <span>合计:&nbsp</span>
-                        <span>$XXXX</span>
+                        <%--<span>$XXXX</span>--%>
+                        <asp:Label ID="cartClearingPriceLabel" runat="server" Text=""></asp:Label>
                     </div>
                     <div class="cartClearingOptionDiv">
-                        <asp:Button ID="Button1" runat="server" Text="确认订单" 
-                            CssClass="button orderDetailOptionButton" />
+                        <asp:Button ID="CommmitButton" runat="server" Text="确认订单" 
+                            CssClass="button orderDetailOptionButton" onclick="CommmitButton_Click" />
                     </div>
                 </div>
             </div>

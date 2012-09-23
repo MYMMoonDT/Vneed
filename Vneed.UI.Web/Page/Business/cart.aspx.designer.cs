@@ -31,6 +31,15 @@ namespace Vneed.UI.Web.Page.Business {
         protected global::System.Web.UI.WebControls.Table cartTable;
         
         /// <summary>
+        /// cartClearingPriceLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label cartClearingPriceLabel;
+        
+        /// <summary>
         /// HyperLink1 control.
         /// </summary>
         /// <remarks>
@@ -40,21 +49,21 @@ namespace Vneed.UI.Web.Page.Business {
         protected global::System.Web.UI.WebControls.HyperLink HyperLink1;
         
         /// <summary>
-        /// Button1 control.
+        /// UpdateCartButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button UpdateCartButton;
         
         /// <summary>
-        /// Button2 control.
+        /// PayCartButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
+        protected global::System.Web.UI.WebControls.Button PayCartButton;
     }
 }
