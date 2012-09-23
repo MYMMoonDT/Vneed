@@ -7,13 +7,14 @@ body
 	margin:0;
 	padding:0;
 	font-size:12px;
-	font-family: tahoma,simsun,'microsoft yahei',Helvetica,Arial,'sans-serif';
+	font-family: 'microsoft yahei',tahoma,simsun,Helvetica,Arial,'sans-serif';
 }
 .text
 {
 	border: 2px solid #01A8C8;
 	color: #01A8C8;
 	border-radius:5px;
+	font-family: 'microsoft yahei',tahoma,simsun,Helvetica,Arial,'sans-serif';
 }
 .button
 {
@@ -22,12 +23,12 @@ body
     border-radius: 5px;
     display: inline-block;
     text-align: center;
-    font-weight: bold;
     color: #FFFFFF;
     background-image: url('../Image/icon/button_back.png');
     background-repeat: repeat;
     background-attachment: scroll;
     vertical-align: middle;
+    font-family: 'microsoft yahei',tahoma,simsun,Helvetica,Arial,'sans-serif';
 }
 .button:hover
 {
@@ -47,7 +48,7 @@ body
 .font1
 {
     font-size: 22px;
-    font-weight: bolder;
+    font-weight: 500;
     color: #01A8C8;
 }
 .font2
@@ -163,9 +164,11 @@ a:hover
 }
 #headSearchTextDiv #headSearchTextDiv1 .searchButton
 {
-    padding:5px 15px 5px 15px;
+    padding: 5px 6px 5px 8px;
     cursor: pointer;
-    font-size:22px;
+    font-size: 20px;
+    letter-spacing: 5px;
+    font-weight: 500;
 }
 #headSearchTextDiv #headSearchTextDiv1 .searchButtonPress
 {
@@ -209,6 +212,18 @@ a:hover
 	left:143px;
 	top:22px;
 	border:none;
+}
+#headMyVneedDiv #headMyVneedDiv1 .headFont2
+{
+    border-style: none;
+    position: absolute;
+    left: 90px;
+    top: 70px;
+    font-family: 'microsoft yahei';
+    font-size: 14px;
+    font-weight: 600;
+    background-color: transparent;
+    cursor: pointer;
 }
 #headMyVneedDiv #headMyVneedDiv2
 {
@@ -296,7 +311,7 @@ a:hover
 #loginDialogDiv #loginSelectDiv .loginFont3
 {
 	font-size: 14px;
-	font-weight: bold;
+	font-weight: 500;
 }
 #loginDialogDiv #loginErrorDiv
 {
@@ -698,9 +713,9 @@ a:hover
     top: 30px;
     height: 65px;
     width: 150px;
-    color: #565656;
-    font-weight: bold;
-    font-size:12px;
+    color: #646464;
+    font-weight: 500;
+    font-size: 14px;
 }
 .productItem1 .productDisItem1 a
 {
@@ -725,7 +740,7 @@ a:hover
     color: #01A8C8;
     line-height:45px;
     margin-left:12px;
-    font-weight:600;
+    font-weight:500;
 }
 .catalogItemSecond
 {
@@ -733,7 +748,7 @@ a:hover
     color: #909090;
     line-height:25px;
     margin-left:15px;
-    font-weight:800;
+    font-weight:500;
 }
 #dividerDiv2
 {
@@ -806,14 +821,14 @@ a:hover
 	margin-left:5px;
 	margin-right:5px;
 	margin-top:14px;
-	font-size: 14px;
+	font-size: 16px;
 	line-height: 16px;
 	color: #000;
-	font-weight: bold;
+	font-weight: 500;
 }
 .productDisTitleItem2 a
 {
-    color: #3E3E3E;
+    color: #000000;
 }
 .productDisTitleItem2 a:hover
 {
@@ -879,20 +894,20 @@ a:hover
 .productTitleFont1
 {
     font-size:28px;
-    font-weight:bold;
+    font-weight:500;
     line-height:110px;
 }
 .productTitleFont2
 {
     font-size: 22px;
     line-height: 110px;
-    font-weight: bold;
+    font-weight: 500;
     color: #767676;
 }
 .productTitleFont3
 {
     font-size: 28px;
-    font-weight: bold;
+    font-weight: 500;
     color: #019EBC;
     float:right;
 }
@@ -958,7 +973,7 @@ a:hover
     border-bottom-style: solid;
     border-bottom-width: 1px;
     border-bottom-color: #CCCCCC;
-    font-weight: bold;
+    font-weight: 500;
 }
 #productMainLeftContentDiv .productLeftText
 {
@@ -966,7 +981,7 @@ a:hover
     margin-left: 40px;
     font-size: 16px;
     color: #5D5D5D;
-    font-weight:bold;
+    font-weight:500;
     margin-top:20px;
 }
 #productMainRightContentDiv #productRightDiv1
@@ -986,7 +1001,7 @@ a:hover
 	height:40px;
 	width:330px;
 	font-size:22px;
-	font-weight:bold;
+	font-weight:500;
 	border-bottom-width: 1px;
 	border-bottom-style: solid;
 	border-bottom-color: #B1B1B1;	
@@ -998,6 +1013,19 @@ a:hover
 	position:absolute;
 	left:30px;
 	top:70px;
+}
+#productMainRightContentDiv #productRightDiv1 #productRightDiv12
+{
+	width:400px;
+	height:50px;
+	position:absolute;
+	left:30px;
+	top:25px;
+	font-size:14px;
+}
+#productMainRightContentDiv #productRightDiv1 #productRightDiv12 .productNumTextBox
+{
+    width:30px;
 }
 .productItem3
 {
@@ -1016,14 +1044,14 @@ a:hover
 }
 .productItem3 .productItemDis3
 {
-	position:absolute;
-	width:145px;
-	height:60px;
-	top: 20px;
-	left: 135px;
-	color: #A6A6A6;	
-	font-size:13px;
-	font-weight:bold;
+    position: absolute;
+    width: 145px;
+    height: 60px;
+    top: 20px;
+    left: 135px;
+    color: #868686;
+    font-size: 13px;
+    font-weight: 500;
 }
 .productItem3 .productItemDivider3
 {
@@ -1060,8 +1088,9 @@ a:hover
     background-color: #FFFFFF;
     padding-left:22px;
     line-height:22px;
-    margin-top:17px;
+    margin-top:22px;
     color:#000;
+    font-weight:500;
 }
 .productButton2:hover
 {
@@ -1082,7 +1111,7 @@ a:hover
     margin-left:40px;
     font-size:22px;
     line-height:70px;
-    font-weight:bold;
+    font-weight:500;
 }
 #collectDialogDiv
 {
@@ -1103,14 +1132,14 @@ a:hover
 .collectDialogTitleFont1
 {
     font-size:32px;
-    font-weight:bold;
+    font-weight:500;
     line-height:80px;
 }
 .collectDialogTitleFont2
 {
     font-size: 22px;
     line-height: 80px;
-    font-weight: bold;
+    font-weight: 500;
     color: #767676;
 }
 #collectDialogTextBoxDiv
@@ -1157,7 +1186,8 @@ a:hover
     padding: 10px 15px 10px 15px;
     float: right;
     font-size: 22px;
-    font-weight: bold;
+    font-weight: 500;
+    margin-left:10px;
 }
 .collectDialogOptionShareItemImage1
 {
@@ -1213,7 +1243,7 @@ a:hover
 {
     font-size:22px;
     line-height:60px;
-    font-weight:bold;
+    font-weight:500;
 }
 .cartDialogProductContainer
 {
@@ -1224,7 +1254,7 @@ a:hover
 .cartDialogProductImgContainer
 {
     width:465px;
-    height:160px;
+    height:200px;
     overflow:hidden;
     position:relative;
 }
@@ -1257,11 +1287,20 @@ a:hover
 .cartDialogProductImgDiv .cartDialogProductPrice
 {
     width: 130px;
-    height:40px;
-    line-height: 40px;
+    line-height: 20px;
+    font-size: 14px;
+    color: #01A8C8;
+    font-weight: 500;
+    display: block;
+}
+.cartDialogProductImgDiv .cartDialogProductTitle
+{
+    width: 130px;
+    line-height: 30px;
     font-size: 16px;
     color: #01A8C8;
-    font-weight:bold;
+    font-weight:500;
+    display: block;
 }
 .cartDialogProductBottom
 {
@@ -1284,14 +1323,14 @@ a:hover
 {
     font-size:22px;
     line-height:50px;
-    font-weight:bold;
+    font-weight:500;
 }
 .cartDialogClearingPriceFont2
 {
     color: #01A8C8;
     font-size:28px;
     line-height:50px;
-    font-weight:bold;
+    font-weight:500;
 }
 .cartDialogClearingButton
 {
@@ -1346,10 +1385,11 @@ a:hover
 }
 #registerTitleDiv1
 {
-    font-size:30px;
-    line-height:110px;
-    font-weight:bold;
-    margin-left:10px;
+    font-size: 30px;
+    line-height: 110px;
+    font-weight: 500;
+    margin-left: 10px;
+    color: #474747;
 }
 .divider1
 {
@@ -1479,11 +1519,12 @@ a:hover
     position:relative;
 }
 #myVneedTitleDiv1
-{   
-    font-size:30px;
-    line-height:110px;
-    font-weight:bold;
-    margin-left:10px;
+{
+    font-size: 30px;
+    line-height: 110px;
+    font-weight: 500;
+    margin-left: 10px;
+    color: #474747;
 }
 #myVneedTitleDiv2
 {
@@ -1506,10 +1547,12 @@ a:hover
     margin-top:20px;
 }
 .myVneedTitleFont1
-{
+{ 
     font-size:25px;
-    font-weight:bold;
+    font-weight:500;
+    color: #474747; 
 }
+
 .myVneedTitleFont2
 {
     font-size:12px;
@@ -1580,7 +1623,7 @@ a:hover
     line-height:70px;
     font-size:22px;
     margin-left:5px;
-    font-weight:bold;
+    font-weight:500;
 }
 .myVneedLeftNavDiv2
 {
@@ -1608,7 +1651,7 @@ a:hover
     line-height:70px;
     font-size:22px;
     margin-left:35px;
-    font-weight:bold;
+    font-weight:500;
 }
 .myOrderContentItemDiv
 {
@@ -1692,6 +1735,7 @@ a:hover
     border-bottom-style: solid;
     border-bottom-width: 2px;
     border-bottom-color: #EBEBEB;
+    font-weight:500;
 }
 .cartContentDiv table .cartTitleTR .carTitleOtherTH
 {
@@ -1699,6 +1743,7 @@ a:hover
     border-bottom-style: solid;
     border-bottom-width: 2px;
     border-bottom-color: #EBEBEB;
+    font-weight:500;
 }
 .cartContentDiv table .cartContentTR
 {
@@ -1720,7 +1765,7 @@ a:hover
 .cartContentTitleDiv
 {
     font-size:32px;
-    font-weight:900;
+    font-weight:500;
     line-height:100px;
 }
 .cartProductDiv .cartProductImage
@@ -1732,8 +1777,9 @@ a:hover
 }
 .cartProductDiv .cartProductImage img
 {
-    height:100px;
-    width:135px;
+    border: 2px solid #FFFFFF;
+    height: 100px;
+    width: 135px;
 }
 .cartProductDiv .cartProductTitle
 {
@@ -1751,7 +1797,7 @@ a:hover
 .cartContentDiv .cartClearingDiv .cartClearingPriceDiv
 {
     font-size: 22px;
-    font-weight:bold;
+    font-weight:500;
     line-height:70px;
     height:70px;
     margin-bottom:20px;
@@ -1762,10 +1808,10 @@ a:hover
 }
 .cartClearingOptionDiv .cartOptionButton
 {
-    width:110px;
-    height:60px;
-    line-height:60px;
-    font-size:22px;
+    padding:10px 10px 10px 20px;
+    line-height: 60px;
+    font-size: 22px;
+    letter-spacing: 10px;
 }
 .cartClearingOptionDiv .cartOptionLink
 {
@@ -1934,7 +1980,8 @@ a:hover
 }
 .orderDetailTable .orderDetailTableRightTD
 {
-    width:490px;
+    width: 490px;
+    vertical-align: top;
 }
 .orderDetailContactDiv
 {
@@ -1945,7 +1992,7 @@ a:hover
 .orderDetailContactDiv .orderDetailContactTitle
 {
     font-size:32px;
-    font-weight:900;
+    font-weight:500;
     line-height:100px;
 }
 .orderDetailContactDiv .orderDetailContactTextBox
@@ -1955,7 +2002,12 @@ a:hover
     font-size:22px;
     line-height:36px;
     margin-bottom:35px;
-    font-weight:bold;
+    font-weight:500;
+    padding-left:10px;
+}
+.orderDetailContactDiv .orderDetailContactDefault
+{
+    color: #D9D9D9;
 }
 .orderDetailDistributionDiv
 {
@@ -1966,7 +2018,7 @@ a:hover
 .orderDetailDistributionDiv .orderDetailDistributionTitle
 {
     font-size:32px;
-    font-weight:900;
+    font-weight:500;
     line-height:100px;
 }
 .orderDetailPaymentDiv
@@ -1978,8 +2030,17 @@ a:hover
 .orderDetailPaymentDiv .orderDetailPaymentTitle
 {
     font-size:32px;
-    font-weight:900;
+    font-weight:500;
     line-height:100px;
+}
+.orderDetailPaymentDiv .orderDetailOfflineLabel
+{
+    color: #4D4D4D;
+    font-size:16px;
+    font-weight:600;
+    width:270px;
+    margin-left:40px;
+    margin-top:10px;
 }
 .orderDetailRadioGroup1
 {
@@ -2002,7 +2063,7 @@ a:hover
     height: 40px;
     line-height:40px;
     font-size:23px;
-    font-weight:bold;
+    font-weight:500;
 }
 .orderDetailRadioGroup1 label.checked, .orderDetailRadioGroup2 label.checked
 {
@@ -2010,5 +2071,9 @@ a:hover
 }
 .orderDetailOptionButton
 {
-    float:right;
+    float: right;
+    font-size: 22px;
+    letter-spacing: 2px;
+    line-height: 60px;
+    padding: 10px 13px 10px 20px
 }

@@ -90,6 +90,9 @@
                   <asp:HyperLink ID="MyCartHyperLink" runat="server" NavigateUrl="~/Page/Business/cart.aspx">
                     <asp:Image ID="ProductNumImage" runat="server" CssClass="headImg1" ImageUrl="~/Resource/Image/header/header_cartlogo_1.png" />
                   </asp:HyperLink>
+                  <asp:Button ID="MyVneedLogoutButton" runat="server" Text="退出" 
+                          CssClass="font1 headFont2" onclick="MyVneedLogoutButton_Click"/>
+
                   </asp:Panel>
                   <asp:Panel ID="headMyVneedDiv2" runat="server" ClientIDMode="Static">
                     <asp:HyperLink ID="RegisterHyperLink" CssClass="font1 headFont2" runat="server" 
@@ -121,9 +124,6 @@
             </div>
             
         </div>
-        <script type="text/javascript">
-            EndRequestHandler1();
-        </script>
         </ContentTemplate>
         </asp:UpdatePanel>
         <div style="height:10px;"></div>

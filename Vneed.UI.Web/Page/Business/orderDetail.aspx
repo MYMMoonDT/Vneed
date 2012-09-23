@@ -8,30 +8,57 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
 <script type="text/javascript">
     $(document).ready(function () {
-        CheckOrderDetailRadio();
-        $(".orderDetailRadioGroup1 input").click(function () {
-            $(".orderDetailRadioGroup1 input").removeAttr("checked");
-            $(this).attr("checked", "checked");
-            CheckOrderDetailRadio();
-        });
+        var orderDetailRadio = new OrderDetailRadio();
+        var orderDetailText = new OrderDetailText();
+    });
+</script>
+<script type="text/javascript">
+    function OrderDetailText() {
+        this.init();
+    }
+    OrderDetailText.prototype.init = function () {
+        var orderDetailTextInfo = [{ id: "#NameTextBox", defaultStr: "姓名" },
+                                   { id: "#SchoolTextBox", defaultStr: "学校" },
+                                   { id: "#ContactTextBox", defaultStr: "联系方式" },
+                                   { id: "#IDNumTextBox", defaultStr: "身份证号(用以报班使用)" },
+                                   { id: "#EmailTextBox", defaultStr: "邮箱(选填)"}];
+        for (var index = 0; index < orderDetailTextInfo.length; ++index) {
+            (function () {
+                var orderDetailTextBox = orderDetailTextInfo[index];
+                $(orderDetailTextBox.id).blur(function () {
+                    if ($(orderDetailTextBox.id).val() == "" || $(orderDetailTextBox.id).val() == orderDetailTextBox.defaultStr) {
+                        $(orderDetailTextBox.id).val(orderDetailTextBox.defaultStr);
+                        $(orderDetailTextBox.id).addClass("orderDetailContactDefault");
+                    }
+                }).focus(function () {
+                    if ($(orderDetailTextBox.id).val() == orderDetailTextBox.defaultStr) {
+                        $(orderDetailTextBox.id).val("");
+                        $(orderDetailTextBox.id).removeClass("orderDetailContactDefault");
+                    }
+                });
+            })();
+        }
+    };
+
+    function OrderDetailRadio() {
+        this.init();
+    }
+    OrderDetailRadio.prototype.init = function () {
+        var orderRadio = this;
+        orderRadio.check();
         $(".orderDetailRadioGroup2 input").click(function () {
             $(".orderDetailRadioGroup2 input").removeAttr("checked");
             $(this).attr("checked", "checked");
-            CheckOrderDetailRadio();
-        });
-    });
-    function CheckOrderDetailRadio() {
-        var radioList1 = $(".orderDetailRadioGroup1");
-        var radioList2 = $(".orderDetailRadioGroup2");
-        for (var i = 0; i < radioList1.length; i++) {
-            var input1 = $(radioList1[i]).children().get(0);
-            var label1 = $(radioList1[i]).children().get(1);
-            if ($(input1).attr("checked") == "checked") {
-                $(label1).addClass("checked");
+            if (this.id == "OfflinePayRadioButton") {
+                $("#orderDetailOfflineLabel").show();
             } else {
-                $(label1).removeClass("checked");
+                $("#orderDetailOfflineLabel").hide();
             }
-        }
+            orderRadio.check();
+        });
+    };
+    OrderDetailRadio.prototype.check = function () {
+        var radioList2 = $(".orderDetailRadioGroup2");
         for (var i = 0; i < radioList2.length; i++) {
             var input2 = $(radioList2[i]).children().get(0);
             var label2 = $(radioList2[i]).children().get(1);
@@ -41,7 +68,7 @@
                 $(label2).removeClass("checked");
             }
         }
-    }
+    };
 </script>
     <div class="contentWrapperDiv orderDetailContentWrapperDiv">
         <uc1:OrderProcessWebUserControl ID="OrderProcessWebUserControl1" runat="server" />
@@ -52,46 +79,29 @@
                         <div class="orderDetailContactDiv"> 
                             <div class="orderDetailContactTitle"><span>个人资料:</span></div>
                             <div>
-                                <asp:TextBox ID="NameTextBox" runat="server" CssClass="text orderDetailContactTextBox"></asp:TextBox>
-                                <asp:TextBox ID="SchoolTextBox" runat="server" CssClass="text orderDetailContactTextBox"></asp:TextBox>
-                                <asp:TextBox ID="ContactTextBox" runat="server" CssClass="text orderDetailContactTextBox"></asp:TextBox>
-                                <asp:TextBox ID="MajorTextBox" runat="server" CssClass="text orderDetailContactTextBox"></asp:TextBox>
-                                <asp:TextBox ID="GradeTextBox" runat="server" CssClass="text orderDetailContactTextBox"></asp:TextBox>
+                                <asp:TextBox ID="NameTextBox" runat="server" CssClass="text orderDetailContactTextBox orderDetailContactDefault" Text="姓名" ClientIDMode="Static"></asp:TextBox>
+                                <asp:TextBox ID="SchoolTextBox" runat="server" CssClass="text orderDetailContactTextBox orderDetailContactDefault" Text="学校" ClientIDMode="Static"></asp:TextBox>
+                                <asp:TextBox ID="ContactTextBox" runat="server" CssClass="text orderDetailContactTextBox orderDetailContactDefault" Text="联系方式" ClientIDMode="Static"></asp:TextBox>
+                                <asp:TextBox ID="IDNumTextBox" runat="server" CssClass="text orderDetailContactTextBox orderDetailContactDefault" Text="身份证号(用以报班使用)" ClientIDMode="Static"></asp:TextBox>
+                                <asp:TextBox ID="EmailTextBox" runat="server" CssClass="text orderDetailContactTextBox orderDetailContactDefault" Text="邮箱(选填)" ClientIDMode="Static"></asp:TextBox>
                             </div>
                         </div>
                     </td>
                     <td class="orderDetailTableRightTD">
-                        <div class="orderDetailDistributionDiv">
-                            <div class="orderDetailDistributionTitle"><span>配送方式:</span></div>
-                            <div>
-                                <div><asp:RadioButton ID="RadioButton1" runat="server" GroupName="DistributionGroup" 
-                                    Text="普通快递 6元" Checked="True" CssClass="orderDetailRadioGroup1" 
-                                        ClientIDMode="Static" /></div>
-                                <div>
-                                    <asp:RadioButton ID="RadioButton2" runat="server" 
-                                    GroupName="DistributionGroup" 
-                                    Text="EMS 20元" CssClass="orderDetailRadioGroup1" ClientIDMode="Static"/></div>
-                                <div>
-                                    <asp:RadioButton ID="RadioButton3" runat="server" 
-                                    GroupName="DistributionGroup" 
-                                    Text="货物自提" CssClass="orderDetailRadioGroup1" ClientIDMode="Static"/></div>
-                            </div>
-                        </div>
                         <div class="orderDetailPaymentDiv">
                             <div class="orderDetailPaymentTitle"><span>付款方式:</span></div>
                             <div>
                                 <div>
-                                    <asp:RadioButton ID="RadioButton4" runat="server" 
+                                    <asp:RadioButton ID="OfflinePayRadioButton" runat="server" 
                                     GroupName="PaymentGroup" 
-                                    Text="线下支付" Checked="True" CssClass="orderDetailRadioGroup2" ClientIDMode="Static" /></div>
-                                <div>
-                                    <asp:RadioButton ID="RadioButton5" runat="server" 
-                                    GroupName="PaymentGroup" 
-                                    Text="银联在线" CssClass="orderDetailRadioGroup2" ClientIDMode="Static"/></div>
+                                    Text="线下支付（请填写个人资料）" Checked="True" CssClass="orderDetailRadioGroup2" ClientIDMode="Static" /></div>
                                 <div>
                                     <asp:RadioButton ID="RadioButton6" runat="server" 
                                     GroupName="PaymentGroup" 
-                                    Text="支付宝" CssClass="orderDetailRadioGroup2" ClientIDMode="Static"/></div>
+                                    Text="支付宝付款" CssClass="orderDetailRadioGroup2" ClientIDMode="Static"/></div>
+                            </div>
+                            <div id="orderDetailOfflineLabel" class="orderDetailOfflineLabel">
+                                <span>若您选择“线下支付”付款方式请填写个人资料后，我们的工作人员会通过电话与您取得联系。</span>
                             </div>
                         </div>
                     </td>
@@ -153,7 +163,7 @@
                     </div>
                     <div class="cartClearingOptionDiv">
                         <asp:Button ID="Button1" runat="server" Text="确认订单" 
-                            CssClass="button cartOptionButton orderDetailOptionButton" />
+                            CssClass="button orderDetailOptionButton" />
                     </div>
                 </div>
             </div>

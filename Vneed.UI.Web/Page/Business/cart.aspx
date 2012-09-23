@@ -9,13 +9,17 @@
 <div class="contentWrapperDiv cartContentWrapperDiv">
     <uc1:OrderProcessWebUserControl ID="OrderProcessWebUserControl1" runat="server" />
     <div class="cartContentDiv">
-        <table id="cartTable" cellpadding="0" cellspacing="0">
+        <asp:Table ID="cartTable" runat="server" CellPadding="0" CellSpacing="0" ClientIDMode="Static">
+            
+        </asp:Table>
+        <%--<table id="cartTable" cellpadding="0" cellspacing="0">
             <tr class="cartTitleTR">
                 <th class="carTitleProductTH">商品</th>
                 <th class="carTitleOtherTH">数量</th>
                 <th class="carTitleOtherTH">Vneed价</th>
                 <th class="carTitleOtherTH">操作</th>
             </tr>
+            
             <tr class="cartContentTR">
                 <td class="cartContentTD">
                     <div class="cartProductDiv">
@@ -55,11 +59,12 @@
                 <td class="cartContentTD">$XXXX</td>
                 <td class="cartContentTD"></td>
             </tr>
-        </table>
+        </table>--%>
         <div class="cartClearingDiv">
             <div class="cartClearingPriceDiv">
                 <span>合计:&nbsp</span>
                 <span>$XXXX</span>
+                <%--<asp:Label ID="TotalPriceLabel" runat="server" Text=""></asp:Label>--%>
             </div>
             <div class="cartClearingOptionDiv">
                 <asp:HyperLink ID="HyperLink1" runat="server" CssClass="cartOptionLink" NavigateUrl="#">继续购物&gt</asp:HyperLink>

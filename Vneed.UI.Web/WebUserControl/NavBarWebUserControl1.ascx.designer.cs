@@ -85,6 +85,15 @@ namespace Vneed.UI.Web.WebUserControl {
         protected global::System.Web.UI.WebControls.Image ProductNumImage;
         
         /// <summary>
+        /// MyVneedLogoutButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button MyVneedLogoutButton;
+        
+        /// <summary>
         /// headMyVneedDiv2 control.
         /// </summary>
         /// <remarks>
