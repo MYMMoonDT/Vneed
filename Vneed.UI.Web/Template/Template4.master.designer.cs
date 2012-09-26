@@ -7,36 +7,27 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Vneed.UI.Web.Page.Business {
+namespace Vneed.UI.Web.Template {
     
     
-    public partial class orderSuccess {
+    public partial class Template4 {
         
         /// <summary>
-        /// OrderProcessWebUserControl1 control.
+        /// TitleContentPlaceHolder control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Vneed.UI.Web.WebUserControl.OrderProcessWebUserControl OrderProcessWebUserControl1;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder TitleContentPlaceHolder;
         
         /// <summary>
-        /// Button1 control.
+        /// MainContentPlaceHolder control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
-        
-        /// <summary>
-        /// Button2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContentPlaceHolder;
     }
 }

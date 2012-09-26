@@ -66,6 +66,14 @@
 
     <div id="headDiv1">
     	<div id="headDiv2">
+            <div id="headLinkDiv">
+                <a target="_blank" href="http://page.renren.com/601126132">
+                    <img src="../Resource/Image/icon/btn-renren.png">
+                </a>
+                <a target="_blank" href="http://weibo.com/vneed2011">
+                    <img src="../Resource/Image/icon/btn-weibo.png">
+                </a>
+            </div>
         	<div id="headLogoDiv">
                 <asp:HyperLink ID="HomepageHyperLink" runat="server" NavigateUrl="~/Page/index.aspx">
                     <asp:Image ID="headLogoImage" runat="server" ImageUrl="~/Resource/Image/header/header_logo.png" />
@@ -79,21 +87,34 @@
                         <tr>
                             <td><asp:TextBox ID="searchContent" runat="server" CssClass="text searchText"></asp:TextBox></td>
                             <td><asp:Button ID="searchButton" runat="server" Text="搜索" 
-                            CssClass="button searchButton"/></td>
+                            CssClass="button searchButton" onclick="searchButton_Click1"/></td>
                         </tr>
                     </table>
                 </div>
        	  	</div>
           	<div id="headMyVneedDiv">
                   <asp:Panel ID="headMyVneedDiv1" runat="server" ClientIDMode="Static">
-                  <asp:HyperLink ID="MyVneedHyperLink" runat="server" CssClass="font1 headFont1" NavigateUrl="~/Page/User/orderList.aspx">我的Vneed</asp:HyperLink>
-                  <asp:HyperLink ID="MyCartHyperLink" runat="server" NavigateUrl="~/Page/Business/cart.aspx">
-                    <asp:Image ID="ProductNumImage" runat="server" CssClass="headImg1" ImageUrl="~/Resource/Image/header/header_cartlogo_1.png" />
-                  </asp:HyperLink>
-                  <asp:Button ID="MyVneedLogoutButton" runat="server" Text="退出" 
-                          CssClass="font1 headFont2" onclick="MyVneedLogoutButton_Click"/>
-
+                    <table cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td>
+                                <asp:HyperLink ID="MyVneedHyperLink" runat="server" CssClass="font1 headFont1" 
+                                    NavigateUrl="~/Page/User/orderList.aspx">我的Vneed</asp:HyperLink>
+                            </td>
+                            <td rowspan="2">
+                                <asp:HyperLink ID="MyCartHyperLink" runat="server" NavigateUrl="~/Page/Business/cart.aspx">
+                                    <asp:Image ID="ProductNumImage" runat="server" CssClass="headImg1" ImageUrl="~/Resource/Image/header/header_cartlogo_1.png" />
+                                </asp:HyperLink>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <asp:Button ID="MyVneedLogoutButton" runat="server" Text="退出" 
+                                    CssClass="font1 headFont2" onclick="MyVneedLogoutButton_Click"/>
+                            </td>
+                        </tr>
+                    </table>
                   </asp:Panel>
+
                   <asp:Panel ID="headMyVneedDiv2" runat="server" ClientIDMode="Static">
                     <asp:HyperLink ID="RegisterHyperLink" CssClass="font1 headFont2" runat="server" 
                         NavigateUrl="~/Page/Account/register.aspx">注册</asp:HyperLink>

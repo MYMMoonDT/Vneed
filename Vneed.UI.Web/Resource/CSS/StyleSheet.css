@@ -115,6 +115,14 @@ a:hover
 	margin-right:auto;
 	position:relative;
 }
+#headDiv2 #headLinkDiv
+{
+    position:absolute;
+    right:-150px;
+    top:50px;
+    width:100px;
+    height:100px;
+}
 #headLogoDiv
 {
 	background: url(../Image/header/header_logo.png) center no-repeat;
@@ -194,11 +202,20 @@ a:hover
 	left:0px;
 	height:86px;
 }
+#headMyVneedDiv #headMyVneedDiv1 table
+{
+    text-align:right;
+    margin-left:20px;
+    margin-top:30px;
+    float:right;
+}
 #headMyVneedDiv #headMyVneedDiv1 .headFont1
 {
+    /*
     position: absolute;
     left: 20px;
     top: 45px;
+    */
 }
 #headMyVneedDiv #headMyVneedDiv1 .headFont1:hover
 {
@@ -208,17 +225,22 @@ a:hover
 {
 	width:56px;
 	height:50px;
+	/*
 	position:absolute;
 	left:143px;
 	top:22px;
+    */
+    margin-left:15px;
 	border:none;
 }
 #headMyVneedDiv #headMyVneedDiv1 .headFont2
 {
     border-style: none;
+    /*
     position: absolute;
     left: 90px;
     top: 70px;
+    */
     font-family: 'microsoft yahei';
     font-size: 14px;
     font-weight: 600;
@@ -1503,7 +1525,7 @@ a:hover
 .registerSuccessFont
 {
     font-size: 22px;
-    font-weight: bold;
+    font-weight: 500;
     color: #000000;
     margin-left: 20px;
 }
@@ -1989,6 +2011,12 @@ a:hover
     width:465px;
     height:470px;
 }
+.orderDetailError
+{
+    margin-left:25px;
+    width:375px;
+    margin-top:10px;
+}
 .orderDetailContactDiv .orderDetailContactTitle
 {
     font-size:32px;
@@ -2009,6 +2037,7 @@ a:hover
 {
     color: #D9D9D9;
 }
+
 .orderDetailDistributionDiv
 {
     margin-left:25px;
@@ -2076,4 +2105,223 @@ a:hover
     letter-spacing: 2px;
     line-height: 60px;
     padding: 10px 13px 10px 20px
+}
+/*orderSuccess*/
+.orderSuccessContentWrapperDiv
+{
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+    border-right-color: #EBEBEB;
+    border-bottom-color: #EBEBEB;
+    border-left-color: #EBEBEB;
+    height:700px;
+}
+.orderSuccessContentDiv
+{
+    border: 1px solid #C0C0C0;
+    width: 700px;
+    height: 420px;
+    position: absolute;
+    margin-left: 140px;
+    margin-right: 140px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    background-repeat: repeat;
+    background-color: #F2F2F2;
+}
+.orderSuccessContentDiv .orderSuccessTitle
+{
+    font-size: 24px;
+    font-weight: 500;
+    color: #000000;
+    margin-left: 50px;
+    margin-top:20px;
+}
+.orderSuccessContentDiv .orderSuccessMessage
+{
+    font-size:16px;
+    margin-left:50px;
+}
+.orderSuccessButton
+{
+    font-size:18px;
+    padding:5px 20px 5px 20px;
+    margin-left:20px;
+}
+.orderSuccessMessage .orderSuccessMessageButtonDiv
+{
+    margin-left:80px;
+    margin-top:30px;
+}
+/*search*/
+.searchContentWrapperDiv
+{
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+    border-right-color: #EBEBEB;
+    border-bottom-color: #EBEBEB;
+    border-left-color: #EBEBEB;
+}
+.searchResultTable
+{
+    width:940px;
+    margin-left:20px;
+    margin-right:20px;
+    text-align:left;
+}
+.searchResultTable .searchResultTitleTR
+{
+    height: 70px;
+    line-height: 70px;
+    font-size: 22px;
+}
+.searchResultTable .searchResultTitleTR .searchResultTitleProductTH
+{
+    width: 400px;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-bottom-color: #EBEBEB;
+    font-weight: 500;
+}
+.searchResultTable .searchResultTitleTR .searchResultTitleDescriptionTH
+{
+    width: 380px;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-bottom-color: #EBEBEB;
+    font-weight: 500;
+}
+.searchResultTable .searchResultTitleTR .searchResultTitlePriceTH
+{
+    width:160px;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-bottom-color: #EBEBEB;
+    font-weight:500;
+}
+.searchResultTable .searchResultContentTR
+{
+    height:135px;
+    font-size:16px;
+}
+.searchResultTable .searchResultContentTR .searchResultContentTD
+{
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-bottom-color: #EBEBEB;
+}
+.searchResultProductDiv
+{
+    margin-top:18px;
+    margin-bottom:17px;
+    height:100px;
+    width:400px;
+}
+.searchResultProductDiv .searchResultProductImageDiv
+{
+    float:left;
+    width:160px;
+    height:100px;
+    margin-left:5px;
+}
+.searchResultProductDiv .searchResultProductImageDiv img
+{
+    border: 2px solid #FFFFFF;
+    height: 100px;
+    width: 135px;
+}
+.searchResultProductDiv .searchResultProductTitleDiv
+{
+    float:left;
+    margin-top:5px;
+    height:90px;
+    width:225px;  
+}
+/*catalog*/
+.catalogContentWrapperDiv
+{
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+    border-right-color: #EBEBEB;
+    border-bottom-color: #EBEBEB;
+    border-left-color: #EBEBEB;
+    height:1000px;
+}
+.catalogMainAreaDiv
+{
+    margin-left:auto;
+    margin-right:auto;
+    width:940px;
+    height:1000px;
+    position:relative;
+}
+.catalogMainAreaDiv .catalogMainAreaLeftDiv
+{
+    height: 710px;
+	width: 320px;
+	position:absolute;
+	left:0px;
+	top:45px;
+}
+.catalogMainAreaDiv .catalogMainAreaLeftDiv .catalogMainAreaLeftTabsDiv
+{
+    height:20px;
+}
+.catalogMainAreaLeftTabsDiv .tabItemSelected
+{
+    height:20px;
+	width:89px;
+	background-image: url(../Image/index/mainarea/leftarea/index_leftarea_tab_blue.png);
+	float:left;
+	line-height: 20px;
+	color: #FFF;
+	text-indent: 25px;
+	cursor:pointer;
+}
+.catalogMainAreaDiv .catalogMainAreaLeftDiv .catalogMainAreaLeftContentDiv
+{
+    border-style: solid;
+    border-width: 20px 1px 1px 1px;
+    border-color: #01A8C8 #C2C2C2 #C2C2C2 #C2C2C2;
+    height: 670px;
+    width: 320px;
+}
+.catalogMainAreaDiv .catalogMainAreaRightDiv
+{
+    position:absolute;
+	right:0px;
+	top:65px;
+	width:600px;
+	height:690px;
+}
+.catalogMainAreaDiv .catalogMainAreaRightDiv .catalogMainAreaRightContentDiv
+{
+    border-style: solid;
+    border-width: 20px 1px 1px 1px;
+    border-color: #01A8C8 #C2C2C2 #C2C2C2 #C2C2C2;
+    width: 600px;
+    height: 670px;
+    position: relative;
+}
+.catalogMainAreaRightContentDiv .catalogMainAreaRightContentSelectDiv
+{
+    
+}
+.catalogMainAreaRightContentSelectDiv .catalogListBox
+{
+    width:160px;
+    height:30px;
 }

@@ -7,17 +7,22 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
 <script type="text/javascript">
-    $(document).ready(function () {
-        var orderDetailRadio = new OrderDetailRadio();
-        var orderDetailText = new OrderDetailText();
-    });
-</script>
-<script type="text/javascript">
     function OrderDetailText() {
         this.init();
     }
-    OrderDetailText.prototype.validation = function () {
-        return false;
+    OrderDetailText.validation = function () {
+        var orderDetailTextInfo = [{ id: "#NameTextBox", defaultStr: "姓名" },
+                                   { id: "#SchoolTextBox", defaultStr: "学校" },
+                                   { id: "#ContactTextBox", defaultStr: "联系方式" },
+                                   { id: "#IDNumTextBox", defaultStr: "身份证号(用以报班使用)" },
+                                   { id: "#EmailTextBox", defaultStr: "邮箱(选填)"}];
+        for (var index = 0; index < orderDetailTextInfo.length; ++index) {
+            var orderDetailTextBox = orderDetailTextInfo[index];
+            if ($(orderDetailTextBox.id).val() == "" || $(orderDetailTextBox.id).val() == orderDetailTextBox.defaultStr) {
+                $("#orderDetailError").html("<div class='error'>提交订单失败，请填写完整个人资料</div>");
+                return false;
+            } 
+        }
     };
     OrderDetailText.prototype.init = function () {
         var orderDetailTextInfo = [{ id: "#NameTextBox", defaultStr: "姓名" },
@@ -34,6 +39,7 @@
                         $(orderDetailTextBox.id).addClass("orderDetailContactDefault");
                     }
                 }).focus(function () {
+                    $("#orderDetailError").html("");
                     if ($(orderDetailTextBox.id).val() == orderDetailTextBox.defaultStr) {
                         $(orderDetailTextBox.id).val("");
                         $(orderDetailTextBox.id).removeClass("orderDetailContactDefault");
@@ -73,6 +79,12 @@
         }
     };
 </script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var orderDetailRadio = new OrderDetailRadio();
+        var orderDetailText = new OrderDetailText();
+    });
+</script>
     <div class="contentWrapperDiv orderDetailContentWrapperDiv">
         <uc1:OrderProcessWebUserControl ID="OrderProcessWebUserControl1" runat="server" />
         <div class="orderDetailContentDiv">
@@ -88,6 +100,9 @@
                                 <asp:TextBox ID="IDNumTextBox" runat="server" CssClass="text orderDetailContactTextBox orderDetailContactDefault" Text="身份证号(用以报班使用)" ClientIDMode="Static"></asp:TextBox>
                                 <asp:TextBox ID="EmailTextBox" runat="server" CssClass="text orderDetailContactTextBox orderDetailContactDefault" Text="邮箱(选填)" ClientIDMode="Static"></asp:TextBox>
                             </div>
+                        </div>
+                        <div id="orderDetailError" class="orderDetailError">
+                            <%--<div class="error">提交订单失败，请填写完整个人资料</div>--%>
                         </div>
                     </td>
                     <td class="orderDetailTableRightTD">
@@ -115,64 +130,16 @@
                 <asp:Table ID="cartTable" runat="server" CellPadding="0" CellSpacing="0" ClientIDMode="Static">
             
                 </asp:Table>
-                 <%--<table id="cartTable" cellpadding="0" cellspacing="0">
-                    <tr class="cartTitleTR">
-                        <th class="carTitleProductTH">商品</th>
-                        <th class="carTitleOtherTH">数量</th>
-                        <th class="carTitleOtherTH">Vneed价</th>
-                        <th class="carTitleOtherTH">操作</th>
-                    </tr>
-                    <tr class="cartContentTR">
-                        <td class="cartContentTD">
-                            <div class="cartProductDiv">
-                                <div class="cartProductImage">
-                                    <asp:Image ID="cartProductImage" runat="server" ImageUrl="~/Image/ItemImage/default.jpg" />
-                                </div>
-                                <div class="cartProductTitle"><span>新东方高考英语考前点题走读个性化</span></div>
-                            </div>
-                        </td>
-                        <td class="cartContentTD">1</td>
-                        <td class="cartContentTD">$XXXX</td>
-                        <td class="cartContentTD"></td>
-                    </tr>
-                    <tr class="cartContentTR">
-                        <td class="cartContentTD">
-                            <div class="cartProductDiv">
-                                <div class="cartProductImage">
-                                    <asp:Image ID="Image1" runat="server" ImageUrl="~/Image/ItemImage/default.jpg" />
-                                </div>
-                                <div class="cartProductTitle"><span>新东方高考英语考前点题走读个性化</span></div>
-                            </div>
-                        </td>
-                        <td class="cartContentTD">1</td>
-                        <td class="cartContentTD">$XXXX</td>
-                        <td class="cartContentTD"></td>
-                    </tr>
-                    <tr class="cartContentTR">
-                        <td class="cartContentTD">
-                            <div class="cartProductDiv">
-                                <div class="cartProductImage">
-                                    <asp:Image ID="Image2" runat="server" ImageUrl="~/Image/ItemImage/default.jpg" />
-                                </div>
-                                <div class="cartProductTitle"><span>新东方高考英语考前点题走读个性化</span></div>
-                            </div>
-                        </td>
-                        <td class="cartContentTD">1</td>
-                        <td class="cartContentTD">$XXXX</td>
-                        <td class="cartContentTD"></td>
-                    </tr>
-                </table>--%>
                 <div class="cartClearingDiv">
                     <div class="cartClearingPriceDiv">
                         <span>合计:&nbsp</span>
-                        <%--<span>$XXXX</span>--%>
                         <asp:Label ID="cartClearingPriceLabel" runat="server" Text=""></asp:Label>
                     </div>
                     <div class="cartClearingOptionDiv">
                         <asp:Button ID="CommmitButton" runat="server" Text="确认订单" 
                             CssClass="button orderDetailOptionButton" 
                             onclick="CommmitButton_Click" 
-                            OnClientClick="return orderDetailText.validation();" />
+                            OnClientClick="return OrderDetailText.validation();" />
                     </div>
                 </div>
             </div>

@@ -1,0 +1,21 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Template/Template1.Master" AutoEventWireup="true" CodeBehind="Template4.master.cs" Inherits="Vneed.UI.Web.Template.Template4" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
+    <div class="titleMainDiv">
+        <div class="titleWrapperDiv myVneedTitleWrapperDiv">
+            <div id="myVneedTitleDiv1">
+                <asp:ContentPlaceHolder ID="TitleContentPlaceHolder" runat="server">
+                    
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+    </div>
+    <div class="divider1"></div>
+    <div class="contentMainDiv">
+        <asp:ContentPlaceHolder ID="MainContentPlaceHolder" runat="server">
+                    
+        </asp:ContentPlaceHolder>
+        <div style="height:100px;"></div>
+    </div>
+</asp:Content>
