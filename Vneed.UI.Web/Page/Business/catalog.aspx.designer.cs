@@ -21,6 +21,7 @@ namespace Vneed.UI.Web.Page.Business {
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label CatalogContentLabel;
 <<<<<<< HEAD
+<<<<<<< HEAD
         
         /// <summary>
         /// CatalogList1 control.
@@ -39,6 +40,8 @@ namespace Vneed.UI.Web.Page.Business {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Vneed.UI.Web.WebUserControl.FilterList FilterList1;
+=======
+>>>>>>> bf0d0a776c409310c626163ea7c9d97e97542f96
 =======
 >>>>>>> bf0d0a776c409310c626163ea7c9d97e97542f96
     }
