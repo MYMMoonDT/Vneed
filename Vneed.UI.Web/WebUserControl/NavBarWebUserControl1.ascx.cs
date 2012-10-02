@@ -55,8 +55,14 @@ namespace Vneed.UI.Web.WebUserControl
             if (AuthenticationService.GetUsername() != null)
             {
                 AuthenticationService.Logout();
-                Response.Redirect(Request.Url.ToString());
+                Response.Redirect("/Page/index.aspx");
             }
+        }
+
+        protected void searchButton_Click1(object sender, EventArgs e)
+        {
+            String url = "/Page/Business/search.aspx?search=" + this.searchContent.Text;
+            Response.Redirect(url);
         }
     }
 }
