@@ -19,31 +19,10 @@
             </div>
             <div class="catalogMainAreaRightDiv">
                 <div class="catalogMainAreaRightContentDiv">
-<<<<<<< HEAD
-<<<<<<< HEAD
                     <uc2:FilterList ID="FilterList1" runat="server" />
                 </div>
             </div>
         </div>
-        <%--<div id="mainAreaDiv">
-        	<div id="mainAreaContentDiv">
-            	
-                <div id="leftAreaDiv">
-                	<div id="leftAreaTabsDiv">
-                        <div id="classTab" class="tabItemSelected">
-                        	<span>分类</span>
-=======
-                    <div class="catalogMainAreaRightContentSelectDiv">
-                        <div class="dropdownListBox">
->>>>>>> bf0d0a776c409310c626163ea7c9d97e97542f96
-=======
-                    <div class="catalogMainAreaRightContentSelectDiv">
-                        <div class="dropdownListBox">
->>>>>>> bf0d0a776c409310c626163ea7c9d97e97542f96
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+
     </div>
 </asp:Content>
