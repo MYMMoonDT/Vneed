@@ -29,5 +29,15 @@ namespace Vneed.BLL
             }
             CartService.DeletaCartRecordByUserID(newOrder.UserID);
         }
+
+        public static List<Order> FindOrdersByUserID(int UserID)
+        {
+            return OrderRepository.FindOrdersByUserID(UserID);
+        }
+
+        public static Decimal GetOrderPrice(string OrderID)
+        {
+            return OrderRepository.GetOrderPrice(OrderID);
+        }
     }
 }

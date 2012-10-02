@@ -42,6 +42,30 @@ namespace Vneed.DAL
             return orderID;
         }
 
+        public static Decimal GetOrderPrice(string OrderID)
+        {
+            string connectionString = WebConfigurationManager.ConnectionStrings["defaultConnectionString"].ToString();
+            SqlConnection sqlConn = new SqlConnection(connectionString);
+            sqlConn.Open();
+
+            string cmdString = "SELECT SUM(TotalPrice) FROM OrderDetail WHERE OrderID=@orderID";
+            SqlCommand sqlCmd = new SqlCommand(cmdString, sqlConn);
+            sqlCmd.Parameters.Add(new SqlParameter("orderID", OrderID));
+
+            SqlDataReader sqlDataReader = sqlCmd.ExecuteReader();
+            Decimal result = 99999999;
+            if (sqlDataReader.HasRows)
+            {
+                while (sqlDataReader.Read())
+                {
+                    result = (Decimal)sqlDataReader[0];
+                }
+                sqlDataReader.Close();
+            }
+
+            return result;
+        }
+
         public static void AddOrderDetail(OrderDetail newOrderDetail)
         {
 
@@ -65,6 +89,49 @@ namespace Vneed.DAL
             sqlCmd.ExecuteNonQuery();
 
             sqlConn.Close();
+        }
+
+        public static List<Order> FindOrdersByUserID(int UserID)
+        {
+            List<Order> result = new List<Order>();
+
+            string connectionString = WebConfigurationManager.ConnectionStrings["defaultConnectionString"].ToString();
+            SqlConnection sqlConn = new SqlConnection(connectionString);
+            sqlConn.Open();
+
+            string cmdString = "SELECT * FROM [Order] WHERE UserID = @userID";
+            SqlCommand sqlCmd = new SqlCommand(cmdString, sqlConn);
+            sqlCmd.Parameters.Add(new SqlParameter("userID", UserID));
+
+            SqlDataReader sqlDataReader = sqlCmd.ExecuteReader();
+            if (sqlDataReader.HasRows)
+            {
+                while (sqlDataReader.Read())
+                {
+                    Order newOrder = new Order();
+                    FillOrder(sqlDataReader, newOrder);
+                    result.Add(newOrder);
+                }
+                sqlDataReader.Close();
+            }
+
+            return result;
+        }
+
+        static void FillOrder(SqlDataReader sqlDataReader, Order newOrder)
+        {
+            newOrder.OrderSerialNumber = (int)sqlDataReader["OrderSerialNumber"];
+            newOrder.OrderID = (string)sqlDataReader["OrderID"];
+            newOrder.Status = (int)sqlDataReader["Status"];
+            newOrder.Payment = (int)sqlDataReader["Payment"];
+            newOrder.Delivery = (int)sqlDataReader["Delivery"];
+            newOrder.UserID = (int)sqlDataReader["UserID"];
+            newOrder.ModiefiedDate = (DateTime)sqlDataReader["ModiefiedDate"];
+            newOrder.Name = (string)sqlDataReader["Name"];
+            newOrder.School = (string)sqlDataReader["School"];
+            newOrder.Contact = (string)sqlDataReader["Contact"];
+            newOrder.Email = (string)sqlDataReader["Email"];
+            newOrder.IdentityNo = (string)sqlDataReader["IdentityNo"];
         }
     }
 }

@@ -67,12 +67,12 @@
     <div id="headDiv1">
     	<div id="headDiv2">
             <div id="headLinkDiv">
-                <a target="_blank" href="http://page.renren.com/601126132">
-                    <img src="../Resource/Image/icon/btn-renren.png">
-                </a>
-                <a target="_blank" href="http://weibo.com/vneed2011">
-                    <img src="../Resource/Image/icon/btn-weibo.png">
-                </a>
+                <asp:HyperLink ID="HyperLink1" runat="server" Target="_blank" NavigateUrl="http://page.renren.com/601126132">
+                    <asp:Image ID="RenRenImage" runat="server" ImageUrl="~/Resource/Image/icon/btn-renren.png" />
+                </asp:HyperLink>
+                <asp:HyperLink ID="HyperLink2" runat="server" Target="_blank" NavigateUrl="http://weibo.com/vneed2011">
+                    <asp:Image ID="WeiboImage" runat="server" ImageUrl="~/Resource/Image/icon/btn-weibo.png" />
+                </asp:HyperLink>
             </div>
         	<div id="headLogoDiv">
                 <asp:HyperLink ID="HomepageHyperLink" runat="server" NavigateUrl="~/Page/index.aspx">

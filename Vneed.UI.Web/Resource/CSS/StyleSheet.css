@@ -1,6 +1,10 @@
 ﻿/* CSS Document */
 
 /*For All*/
+*
+{
+	border:none;
+}
 body
 {
 	background-color: #F1F1F1;
@@ -119,7 +123,7 @@ a:hover
 {
     position:absolute;
     right:-150px;
-    top:50px;
+    top:45px;
     width:100px;
     height:100px;
 }
@@ -172,7 +176,7 @@ a:hover
 }
 #headSearchTextDiv #headSearchTextDiv1 .searchButton
 {
-    padding: 5px 6px 5px 8px;
+    padding: 5px 6px 5px 10px;
     cursor: pointer;
     font-size: 20px;
     letter-spacing: 5px;
@@ -907,11 +911,11 @@ a:hover
 }
 #productTitleContentDiv #productTitlePrice #productVneedPriceDiv
 {
-    
+    display: block; 
 }
 #productTitleContentDiv #productTitlePrice #productOfficialPriceDiv
 {
-    
+    display: block;
 }
 .productTitleFont1
 {
@@ -1830,10 +1834,9 @@ a:hover
 }
 .cartClearingOptionDiv .cartOptionButton
 {
-    padding:10px 10px 10px 20px;
-    line-height: 60px;
+    padding:8px 15px 8px 20px;
     font-size: 22px;
-    letter-spacing: 10px;
+    letter-spacing: 5px;
 }
 .cartClearingOptionDiv .cartOptionLink
 {
@@ -2103,8 +2106,7 @@ a:hover
     float: right;
     font-size: 22px;
     letter-spacing: 2px;
-    line-height: 60px;
-    padding: 10px 13px 10px 20px
+    padding: 8px 13px 8px 20px
 }
 /*orderSuccess*/
 .orderSuccessContentWrapperDiv
@@ -2320,8 +2322,15 @@ a:hover
 {
     
 }
-.catalogMainAreaRightContentSelectDiv .catalogListBox
+.dropdownListBox
 {
-    width:160px;
-    height:30px;
+    width: 170px;
+    height: 30px;
+    background-image: url('../Image/icon/dropdownlist-normal.png');
+    background-repeat: no-repeat;
+}
+.dropdownListBox:hover
+{
+    background-image: url('../Image/icon/dropdownlist-hover.png');
+    background-repeat: no-repeat;
 }

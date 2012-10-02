@@ -34,5 +34,10 @@ namespace Vneed.BLL
         {
             return ItemRepository.FindItemsBySalesVolumeAndCatalog(catalogID);
         }
+
+        public static List<Item> GetItemsByCatalogAndAttributes(int catalogID, int attributeA, int attributeB, int attributeC)
+        {
+            return ItemRepository.FindItemsByCatalogAndAttributes(catalogID, attributeA, attributeB, attributeC);
+        }
     }
 }

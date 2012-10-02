@@ -20,32 +20,26 @@ namespace Vneed.UI.Web.Page.Business {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label CatalogContentLabel;
+<<<<<<< HEAD
         
         /// <summary>
-        /// DropDownList1 control.
+        /// CatalogList1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::Vneed.UI.Web.WebUserControl.CatalogList CatalogList1;
         
         /// <summary>
-        /// DropDownList2 control.
+        /// FilterList1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList2;
-        
-        /// <summary>
-        /// DropDownList3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList3;
+        protected global::Vneed.UI.Web.WebUserControl.FilterList FilterList1;
+=======
+>>>>>>> bf0d0a776c409310c626163ea7c9d97e97542f96
     }
 }
