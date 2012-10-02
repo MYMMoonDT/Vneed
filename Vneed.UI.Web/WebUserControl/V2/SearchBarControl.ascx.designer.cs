@@ -7,18 +7,27 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Vneed.UI.Web.Page.Business {
+namespace Vneed.UI.Web.WebUserControl.V2 {
     
     
-    public partial class catalog {
+    public partial class SearchBarControl {
         
         /// <summary>
-        /// CatalogContentLabel control.
+        /// SearchBarTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label CatalogContentLabel;
+        protected global::System.Web.UI.WebControls.TextBox SearchBarTextBox;
+        
+        /// <summary>
+        /// SearchBarButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button SearchBarButton;
     }
 }

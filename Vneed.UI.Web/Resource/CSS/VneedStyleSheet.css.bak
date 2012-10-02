@@ -1,0 +1,382 @@
+﻿/* CSS Document */
+
+/* Vneed Common CSS */
+*
+{
+	padding: 0;
+	margin: 0;
+}
+
+body 
+{
+	background-color: #F1F1F1;
+	font-size: 12px;
+	font-family: "microsoft yahei",tahoma,simsun,Helvetica,Arial,"sans-serif";
+}
+
+a
+{
+	text-decoration: none;
+	cursor: pointer;
+}
+
+a:hover
+{
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+a img
+{
+	border: none;
+}
+
+input[type="text"]
+{
+	color: #01A8C8;
+    display: inline;
+	border: 2px solid #01A8C8;
+    font-family: "microsoft yahei",tahoma,simsun,Helvetica,Arial,"sans-serif";
+	border-radius: 3px;
+}
+
+/*
+.text
+{
+    color: #01A8C8;
+    display: inline;
+	border: 2px solid #01A8C8;
+    font-family: "microsoft yahei",tahoma,simsun,Helvetica,Arial,"sans-serif";
+}
+*/
+
+input[type="button"], input[type="submit"]
+{
+	color: #FFFFFF;
+    display: inline;
+    text-align: center;
+	vertical-align: middle;
+    border: none;
+    font-family: "microsoft yahei",tahoma,simsun,Helvetica,Arial,"sans-serif";
+	border-radius: 3px;
+	cursor: pointer;
+}
+
+input[type="button"]:hover, input[type="submit"]:hover
+{
+	border-radius: 3px;
+	cursor: pointer;
+}
+
+/*
+.button
+{
+    color: #FFFFFF;
+    display: inline;
+    text-align: center;
+	vertical-align: middle;
+    border: none;
+    font-family: "microsoft yahei",tahoma,simsun,Helvetica,Arial,"sans-serif";
+}
+*/
+
+.contentBg
+{
+	width:100%;
+}
+
+.contentContainer
+{
+	width:980px;
+	margin-left:auto;
+	margin-right:auto;
+	position:relative;
+}
+
+/* TopBarControl */
+
+#topBarBg
+{
+	height:144px;
+	width:100%;
+	background-image: url(../Image/header/header_background.png);
+}
+
+#topBarContainer
+{
+	height:144px;
+	width:980px;
+	margin-left:auto;
+	margin-right:auto;
+	position:relative;
+}
+
+#topBarContainer #topBarLogo
+{
+	height:144px;
+	width:210px;
+	float:left;
+}
+
+#topBarContainer #topBarLogo img
+{
+	margin-top: 32px;
+}
+
+#topBarContainer .topBarDivider
+{
+	width:40px;
+	height:144px;
+	background: url(../Image/header/header_divider.png) center no-repeat;
+	float:left;
+}
+
+#topBarContainer #topBarSearchContainer
+{
+	height:144px;
+	width:500px;
+	float:left;
+	margin-top:55px;
+	margin-left:10px;
+}
+
+#topBarContainer #topBarMyVneedContainer
+{
+	height:144px;
+	float:right;
+	color: #01A8C8;
+	text-align: right;
+}
+
+#topBarContainer #topBarSNSContactContainer
+{
+	position:absolute;
+	right:-120px;
+	top:40px;
+	width:100px;
+}
+
+#topBarContainer #topBarMyVneedContainer .topBarMyVneedLoginContainer
+{
+    font-size: 18px;
+    margin-top: 50px;
+}
+
+.topBarMyVneedLoginContainer img
+{
+	margin-left: 10px;
+}
+
+.topBarMyVneedLoginContainer .logoutButton
+{
+	font-size: 14px;
+	border: none;
+	background:none;
+	color: #01A8C8;
+}
+
+#topBarContainer #topBarMyVneedContainer .topBarMyVneedLogoutContainer
+{
+	margin-top:60px;
+	font-size: 18px;
+}
+
+/* BottomBarControl */
+
+#bottomBarBg
+{
+	width:100%;
+	height:79px;
+	background-image: url(../Image/footer/footer_background.png);	
+}
+
+#bottomBarContainer
+{
+	width:980px;
+	height:79px;
+	margin-left:auto;
+	margin-right:auto;
+	position:relative;
+	color: #333;
+}
+
+#bottomBarContainer #bottomBarContactInfo
+{
+	position:absolute;
+	left:120px;
+	top:20px;
+}
+
+#bottomBarContactInfo a
+{
+	color: #333;
+}
+
+#bottomBarContainer #bottomBarCompanyInfo
+{
+	position:absolute;
+	right:0;
+	top:20px;
+	text-align: right;
+}
+
+/* SearchBarControl */
+
+.searchBarContainer
+{
+	height:32px;
+	vertical-align: middle;
+}
+
+.searchBarText
+{
+	width:400px;
+	height:30px;
+	font-size:16px;
+	line-height:30px;
+	float:left;
+}
+
+.searchBarButton
+{
+    background-position: center center;
+    height: 32px;
+    font-size: 18px;
+    line-height: 32px;
+    width: 60px;
+    float: left;
+    background-image: url('../Image/header/searchButton_normal.png');
+    background-repeat: no-repeat;
+}
+
+.searchBarButton:hover
+{
+    background-position: center center;
+    height: 32px;
+    font-size: 18px;
+    line-height: 32px;
+    width: 60px;
+    float: left;
+    background-image: url('../Image/header/searchButton_hover.png');
+    background-repeat: no-repeat;
+}
+
+/* ProductImageShow */
+
+#productImageShowBg
+{
+	width:100%;
+	position:relative;
+	background-color: #E8E8E8;
+}
+
+#productImageShowContainer
+{
+	width:980px;
+	margin-left:auto;
+	margin-right:auto;
+	position:relative;
+	height:380px;
+}
+
+.productImageShowDivider
+{
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-top-color: #C2C2C2;
+	border-bottom-color: #C2C2C2;
+	height:10px;
+	width:100%;
+	background-color: #E8E8E8;
+}
+
+/* CSS in index.aspx */
+#indexContentBg
+{
+	background-color: #F9F9F9;
+}
+
+#indexContentContainer
+{
+	height:1050px;
+}
+
+#indexSideContentContainer
+{
+	width: 340px;
+	height:710px;
+	float:left;
+	margin-top: 65px;
+}
+
+#indexSideContentContainer .sideTabTitleContainer
+{
+	height:20px;
+}
+
+.sideTabTitleContainer .tabItem
+{
+	height:20px;
+	width:89px;
+	background-image: url(../Image/index/mainarea/leftarea/index_leftarea_tab_grey.png);
+	float:left;
+	line-height: 20px;
+	color: #565656;
+	text-indent: 25px;
+	cursor:pointer;
+}
+
+.sideTabTitleContainer .tabItem:hover
+{
+	height:20px;
+	width:89px;
+	background-image: url(../Image/index/mainarea/leftarea/index_leftarea_tab_blue.png);
+	float:left;
+	line-height: 20px;
+	color: #565656;
+	text-indent: 25px;
+	cursor:pointer;
+}
+
+.sideTabTitleContainer .tabItemSelected
+{
+	height:20px;
+	width:89px;
+	background-image: url(../Image/index/mainarea/leftarea/index_leftarea_tab_blue.png);
+	float:left;
+	line-height: 20px;
+	color: #FFF;
+	text-indent: 25px;
+	cursor:pointer;
+}
+
+#indexSideContentContainer .sideTabContentContainer
+{
+    border-style: solid;
+    border-width: 20px 1px 1px 1px;
+    border-color: #01A8C8 #C2C2C2 #C2C2C2 #C2C2C2;
+    height: 670px;
+    width: 338px;
+}
+
+#indexMainContentContainer
+{
+	width:640px;
+	float:right;
+	height:690px;
+	margin-top: 85px;
+}
+
+.indexMainContent
+{
+	border-style: solid;
+    border-width: 20px 1px 1px 1px;
+    border-color: #01A8C8 #C2C2C2 #C2C2C2 #C2C2C2;
+	height: 670px;
+	width:622px;
+	float:right;
+}
+
+/* RankListControl */

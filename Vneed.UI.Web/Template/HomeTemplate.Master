@@ -1,0 +1,31 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="HomeTemplate.master.cs" Inherits="Vneed.UI.Web.Template.HomeTemplate" %>
+
+
+
+<%@ Register src="../WebUserControl/V2/TopBarControl.ascx" tagname="TopBarControl" tagprefix="uc1" %>
+<%@ Register src="../WebUserControl/V2/BottomBarControl.ascx" tagname="BottomBarControl" tagprefix="uc2" %>
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <link href="../Resource/CSS/VneedStyleSheet.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <!--TopBarControl-->
+    <uc1:TopBarControl ID="TopBarControl1" runat="server" />
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            
+        </asp:ContentPlaceHolder>
+    </div>
+    <!--BottomBarControl-->
+    <uc2:BottomBarControl ID="BottomBarControl1" runat="server" />
+    </form>
+</body>
+</html>
