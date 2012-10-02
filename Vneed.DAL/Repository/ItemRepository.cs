@@ -16,7 +16,7 @@ namespace Vneed.DAL.Repository
             SqlConnection sqlConn = new SqlConnection(connectionString);
             sqlConn.Open();
 
-            string cmdString = "INSERT INTO [Item] (ItemID, Title, Description, ImageUrl, Price, OriginalPrice, CatalogID, ModifiedDate) VALUES (@itemID, @title, @description, @imageUrl, @price, @originalPrice, @catalogID, @modifiedDate)";
+            string cmdString = "INSERT INTO [Item] (ItemID, Title, Description, ImageUrl, Price, OriginalPrice, CatalogID, ModifiedDate, AttributeAID, AttributeBID, AttributeCID) VALUES (@itemID, @title, @description, @imageUrl, @price, @originalPrice, @catalogID, @modifiedDate, @attributeAID, @attributeBID, @attributeCID)";
             SqlCommand sqlCmd = new SqlCommand(cmdString, sqlConn);
             sqlCmd.Parameters.Add(new SqlParameter("itemID", System.Guid.NewGuid().ToString()));
             sqlCmd.Parameters.Add(new SqlParameter("title", newItem.Title));
@@ -26,6 +26,9 @@ namespace Vneed.DAL.Repository
             sqlCmd.Parameters.Add(new SqlParameter("originalPrice", newItem.OriginalPrice));
             sqlCmd.Parameters.Add(new SqlParameter("catalogID", newItem.CatalogID));
             sqlCmd.Parameters.Add(new SqlParameter("modifiedDate", DateTime.Now));
+            sqlCmd.Parameters.Add(new SqlParameter("attributeAID", newItem.AttributeAID));
+            sqlCmd.Parameters.Add(new SqlParameter("attributeBID", newItem.AttributeBID));
+            sqlCmd.Parameters.Add(new SqlParameter("attributeCID", newItem.AttributeCID));
 
             sqlCmd.ExecuteNonQuery();
 
@@ -43,6 +46,58 @@ namespace Vneed.DAL.Repository
             string cmdString = "SELECT * FROM [Item] WHERE CatalogID = @catalogID";
             SqlCommand sqlCmd = new SqlCommand(cmdString, sqlConn);
             sqlCmd.Parameters.Add(new SqlParameter("catalogID", catalogID));
+
+            SqlDataReader sqlDataReader = sqlCmd.ExecuteReader();
+            if (sqlDataReader.HasRows)
+            {
+                while (sqlDataReader.Read())
+                {
+                    Item newItem = new Item();
+                    FillItem(sqlDataReader, newItem);
+                    result.Add(newItem);
+                }
+                sqlDataReader.Close();
+            }
+
+            return result;
+        }
+
+        public static List<Item> FindItemsByCatalogAndAttributes(int catalogID, int attributeA, int attributeB, int attributeC)
+        {
+            List<Item> result = new List<Item>();
+
+            string connectionString = WebConfigurationManager.ConnectionStrings["defaultConnectionString"].ToString();
+            SqlConnection sqlConn = new SqlConnection(connectionString);
+            sqlConn.Open();
+
+            string cmdString = "SELECT * FROM [Item] WHERE CatalogID = @catalogID "; 
+            if (attributeA != 0)
+            {
+                cmdString += "AND AttributeAID = @attributeAID ";
+            }
+            if (attributeB != 0)
+            {
+                cmdString += "AND AttributeBID = @attributeBID ";
+            }
+            if (attributeC != 0)
+            {
+                cmdString += "AND AttributeCID = @attributeCID ";
+            }
+            SqlCommand sqlCmd = new SqlCommand(cmdString, sqlConn);
+            sqlCmd.Parameters.Add(new SqlParameter("catalogID", catalogID));
+            if (attributeA != 0)
+            {
+                sqlCmd.Parameters.Add(new SqlParameter("attributeAID", attributeA));
+            }
+            if (attributeB != 0)
+            {
+                sqlCmd.Parameters.Add(new SqlParameter("attributeBID", attributeB));
+            }
+            if (attributeC != 0)
+            {
+                sqlCmd.Parameters.Add(new SqlParameter("attributeCID", attributeC));
+            }
+
 
             SqlDataReader sqlDataReader = sqlCmd.ExecuteReader();
             if (sqlDataReader.HasRows)
@@ -90,7 +145,7 @@ namespace Vneed.DAL.Repository
             SqlConnection sqlConn = new SqlConnection(connectionString);
             sqlConn.Open();
 
-            string cmdString = "SELECT [Item].[ItemSerialNumber],[Item].[ItemID],[Item].[Title],[Item].[Description],[Item].[ImageUrl],[Item].[Price],[Item].[OriginalPrice],[Item].[CatalogID],[Item].[ModifiedDate]" +
+            string cmdString = "SELECT [Item].[ItemSerialNumber],[Item].[ItemID],[Item].[Title],[Item].[Description],[Item].[ImageUrl],[Item].[Price],[Item].[OriginalPrice],[Item].[CatalogID],[Item].[ModifiedDate],[Item].[AttributeAID],[Item].[AttributeBID],[Item].[AttributeCID]" +
                                "FROM Item INNER JOIN RecommendList ON Item.ItemID = RecommendList.ItemID";
                                //"ORDER BY RecommendList.Oder";
             SqlCommand sqlCmd = new SqlCommand(cmdString, sqlConn);
@@ -118,7 +173,7 @@ namespace Vneed.DAL.Repository
             SqlConnection sqlConn = new SqlConnection(connectionString);
             sqlConn.Open();
 
-            string cmdString = "SELECT [Item].[ItemSerialNumber],[Item].[ItemID],[Item].[Title],[Item].[Description],[Item].[ImageUrl],[Item].[Price],[Item].[OriginalPrice],[Item].[CatalogID],[Item].[ModifiedDate]" +
+            string cmdString = "SELECT [Item].[ItemSerialNumber],[Item].[ItemID],[Item].[Title],[Item].[Description],[Item].[ImageUrl],[Item].[Price],[Item].[OriginalPrice],[Item].[CatalogID],[Item].[ModifiedDate],[Item].[AttributeAID],[Item].[AttributeBID],[Item].[AttributeCID]" +
                                "FROM Item INNER JOIN BestsellerList ON Item.ItemID = BestsellerList.ItemID";
             SqlCommand sqlCmd = new SqlCommand(cmdString, sqlConn);
 
@@ -201,6 +256,9 @@ namespace Vneed.DAL.Repository
             newItem.OriginalPrice = (decimal)sqlDataReader["OriginalPrice"];
             newItem.CatalogID = (int)sqlDataReader["CatalogID"];
             newItem.ModifiedDate = (DateTime)sqlDataReader["ModifiedDate"];
+            newItem.AttributeAID = (int)sqlDataReader["AttributeAID"];
+            newItem.AttributeBID = (int)sqlDataReader["AttributeBID"];
+            newItem.AttributeCID = (int)sqlDataReader["AttributeCID"];
         }
     }
 }

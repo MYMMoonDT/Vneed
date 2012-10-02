@@ -44,6 +44,7 @@
     <Compile Include="Catalog.cs" />
     <Compile Include="Comment.cs" />
     <Compile Include="Item.cs" />
+    <Compile Include="ItemAttribute.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="OrderDetail.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

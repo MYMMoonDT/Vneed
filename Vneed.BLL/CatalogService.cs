@@ -23,5 +23,20 @@ namespace Vneed.BLL
         {
             return CatalogRepository.FindAllSecondLevelCatalogs();
         }
+
+        public static void AddCatalog(Catalog newCatalog)
+        {
+            CatalogRepository.AddNewCatalog(newCatalog);
+        }
+
+        public static void ModifyCatalog(Catalog newCatalog)
+        {
+            CatalogRepository.ModifyCatalog(newCatalog);
+        }
+
+        public static void DeleteCatalog(Catalog oldCatalog)
+        {
+            CatalogRepository.DeleteCatalog(oldCatalog);
+        }
     }
 }

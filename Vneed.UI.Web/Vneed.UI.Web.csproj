@@ -59,6 +59,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin\AddItem.aspx" />
+    <Content Include="Admin\CatalogManagement.aspx" />
+    <Content Include="Admin\ItemAttributeManagement.aspx" />
     <Content Include="ckeditor\adapters\jquery.js" />
     <Content Include="ckeditor\CHANGES.html" />
     <Content Include="ckeditor\ckeditor.asp" />
@@ -1022,6 +1025,7 @@
     <Content Include="Test\CommentTest.aspx" />
     <Content Include="Test\CookieTest.aspx" />
     <Content Include="Test\DescriptionTest.aspx" />
+    <Content Include="Test\FilterListTest.aspx" />
     <Content Include="Test\OrderTest.aspx" />
     <Content Include="Test\RecommendedItemListTest.aspx" />
     <Content Include="Test\UserTest.aspx" />
@@ -1037,13 +1041,43 @@
     <Content Include="WebUserControl\BestsellerItemList.ascx" />
     <Content Include="WebUserControl\CatalogList.ascx" />
     <Content Include="WebUserControl\CommentBox.ascx" />
+    <Content Include="WebUserControl\FilterList.ascx" />
     <Content Include="WebUserControl\ItemDescriptionBox.ascx" />
     <Content Include="WebUserControl\NavBarWebUserControl1.ascx" />
     <Content Include="WebUserControl\OrderProcessWebUserControl.ascx" />
     <Content Include="WebUserControl\RecommendedItemList.ascx" />
     <Content Include="WebUserControl\ShowAreaWebUserControl1.ascx" />
+    <Content Include="WebUserControl\WebUserControl1.ascx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\AddItem.aspx.cs">
+      <DependentUpon>AddItem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddItem.aspx.designer.cs">
+      <DependentUpon>AddItem.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Admin.Master.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Admin.Master.designer.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\CatalogManagement.aspx.cs">
+      <DependentUpon>CatalogManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CatalogManagement.aspx.designer.cs">
+      <DependentUpon>CatalogManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ItemAttributeManagement.aspx.cs">
+      <DependentUpon>ItemAttributeManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ItemAttributeManagement.aspx.designer.cs">
+      <DependentUpon>ItemAttributeManagement.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Page\Account\register.aspx.cs">
       <DependentUpon>register.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1171,6 +1205,13 @@
     <Compile Include="Test\DescriptionTest.aspx.designer.cs">
       <DependentUpon>DescriptionTest.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Test\FilterListTest.aspx.cs">
+      <DependentUpon>FilterListTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test\FilterListTest.aspx.designer.cs">
+      <DependentUpon>FilterListTest.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Test\OrderTest.aspx.cs">
       <DependentUpon>OrderTest.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1213,6 +1254,13 @@
     <Compile Include="WebUserControl\CommentBox.ascx.designer.cs">
       <DependentUpon>CommentBox.ascx</DependentUpon>
     </Compile>
+    <Compile Include="WebUserControl\FilterList.ascx.cs">
+      <DependentUpon>FilterList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControl\FilterList.ascx.designer.cs">
+      <DependentUpon>FilterList.ascx</DependentUpon>
+    </Compile>
     <Compile Include="WebUserControl\ItemDescriptionBox.ascx.cs">
       <DependentUpon>ItemDescriptionBox.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1248,6 +1296,13 @@
     <Compile Include="WebUserControl\ShowAreaWebUserControl1.ascx.designer.cs">
       <DependentUpon>ShowAreaWebUserControl1.ascx</DependentUpon>
     </Compile>
+    <Compile Include="WebUserControl\WebUserControl1.ascx.cs">
+      <DependentUpon>WebUserControl1.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControl\WebUserControl1.ascx.designer.cs">
+      <DependentUpon>WebUserControl1.ascx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Vneed.BLL\Vneed.BLL.csproj">
@@ -1265,6 +1320,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="Admin\Admin.Master" />
     <None Include="ckeditor\.htaccess" />
     <None Include="ckeditor\ckeditor.pack" />
     <None Include="ckeditor\ckeditor.php" />

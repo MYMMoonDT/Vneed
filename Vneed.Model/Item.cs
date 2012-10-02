@@ -16,5 +16,8 @@ namespace Vneed.Model
         public decimal OriginalPrice { get; set; }
         public int CatalogID { get; set; }
         public DateTime ModifiedDate { get; set; }
+        public int AttributeAID { get; set; }
+        public int AttributeBID { get; set; }
+        public int AttributeCID { get; set; }
     }
 }
