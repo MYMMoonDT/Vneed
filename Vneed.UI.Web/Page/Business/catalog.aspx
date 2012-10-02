@@ -16,11 +16,41 @@
             <div class="catalogMainAreaRightDiv">
                 <div class="catalogMainAreaRightContentDiv">
                     <div class="catalogMainAreaRightContentSelectDiv">
-                        <div class="dropdownListBox">
-                        </div>
+                        <asp:DropDownList ID="DropDownList1" runat="server" CssClass="catalogListBox">
+                            <asp:ListItem>Test</asp:ListItem>
+                        </asp:DropDownList>
+                        <asp:DropDownList ID="DropDownList2" runat="server" CssClass="catalogListBox"></asp:DropDownList>
+                        <asp:DropDownList ID="DropDownList3" runat="server" CssClass="catalogListBox"></asp:DropDownList>
                     </div>
                 </div>
             </div>
         </div>
+        <%--<div id="mainAreaDiv">
+        	<div id="mainAreaContentDiv">
+            	
+                <div id="leftAreaDiv">
+                	<div id="leftAreaTabsDiv">
+                        <div id="classTab" class="tabItemSelected">
+                        	<span>分类</span>
+                        </div>
+                    </div>
+                    <div id="dividerDiv2"></div>
+                    <div id="leftAreaContentDiv">
+                        
+                    </div>
+                </div>
+
+                <div id="rightAreaDiv">
+                	<div id="dividerDiv3"></div>
+                    <div id="rightAreaContentDiv">
+                    	<div id="rightAreaItemContainer">                
+                            
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>--%>
+
     </div>
 </asp:Content>
