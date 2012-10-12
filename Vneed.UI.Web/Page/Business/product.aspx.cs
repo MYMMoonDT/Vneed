@@ -95,7 +95,21 @@ namespace Vneed.UI.Web.Page.Business
 
         protected void BuyButton_Click(object sender, EventArgs e)
         {
-
+            if (AuthenticationService.GetUsername() == null)
+            {
+                Response.Redirect("/Page/index.aspx");
+            }
+            else
+            {
+                int UserID = AuthenticationService.GetUser().UserID;
+                CartService.DeletaCartRecordByUserID(UserID);
+                CartRecord cartRecord = new CartRecord();
+                cartRecord.UserID = UserID;
+                cartRecord.ItemID = productItem.ItemID;
+                cartRecord.Count = int.Parse(this.ProductNumTextBox.Text);
+                CartService.AddCartRecord(cartRecord);
+                Response.Redirect("/Page/Business/orderDetail.aspx");
+            }
         }
     }
 }

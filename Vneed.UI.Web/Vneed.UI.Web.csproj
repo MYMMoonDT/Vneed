@@ -60,8 +60,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin\AddItem.aspx" />
+    <Content Include="Admin\BestsellerListManagement.aspx" />
     <Content Include="Admin\CatalogManagement.aspx" />
     <Content Include="Admin\ItemAttributeManagement.aspx" />
+    <Content Include="Admin\ItemManagement.aspx" />
+    <Content Include="Admin\ModifyItem.aspx" />
     <Content Include="Admin\OrderManagement.aspx" />
     <Content Include="ckeditor\adapters\jquery.js" />
     <Content Include="ckeditor\CHANGES.html" />
@@ -1107,6 +1110,13 @@
     <Compile Include="Admin\Admin.Master.designer.cs">
       <DependentUpon>Admin.Master</DependentUpon>
     </Compile>
+    <Compile Include="Admin\BestsellerListManagement.aspx.cs">
+      <DependentUpon>BestsellerListManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BestsellerListManagement.aspx.designer.cs">
+      <DependentUpon>BestsellerListManagement.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\CatalogManagement.aspx.cs">
       <DependentUpon>CatalogManagement.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1120,6 +1130,20 @@
     </Compile>
     <Compile Include="Admin\ItemAttributeManagement.aspx.designer.cs">
       <DependentUpon>ItemAttributeManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ItemManagement.aspx.cs">
+      <DependentUpon>ItemManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ItemManagement.aspx.designer.cs">
+      <DependentUpon>ItemManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ModifyItem.aspx.cs">
+      <DependentUpon>ModifyItem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ModifyItem.aspx.designer.cs">
+      <DependentUpon>ModifyItem.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\OrderManagement.aspx.cs">
       <DependentUpon>OrderManagement.aspx</DependentUpon>

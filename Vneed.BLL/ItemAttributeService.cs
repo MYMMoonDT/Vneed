@@ -18,5 +18,15 @@ namespace Vneed.BLL
         {
             return ItemAttributeRepository.FindItemAttributesByCatalogAndLevel(CatalogID, Level);
         }
+
+        public static void UpdateItemAttribute(ItemAttribute itemAttribute)
+        {
+            ItemAttributeRepository.UpdateItemAttribute(itemAttribute);
+        }
+
+        public static void DeleteItemAttribute(ItemAttribute itemAttribute)
+        {
+            ItemAttributeRepository.DeleteItemAttribute(itemAttribute);
+        }
     }
 }

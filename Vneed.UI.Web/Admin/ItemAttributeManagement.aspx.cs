@@ -72,5 +72,22 @@ namespace Vneed.UI.Web.Admin
             ItemAttributeService.AddItemAttribute(newItemAttribute);
             Response.Redirect(Request.Url.ToString());
         }
+
+        protected void ButtonEdit_Click(object sender, EventArgs e)
+        {
+            ItemAttribute newItemAttribute = new ItemAttribute();
+            newItemAttribute.ItemAttributeID = Int32.Parse(TextBoxEditID.Text);
+            newItemAttribute.Name = TextBoxEditNewName.Text;
+            ItemAttributeService.UpdateItemAttribute(newItemAttribute);
+            Response.Redirect(Request.Url.ToString());
+        }
+
+        protected void ButtonDelete_Click(object sender, EventArgs e)
+        {
+            ItemAttribute newItemAttribute = new ItemAttribute();
+            newItemAttribute.ItemAttributeID = Int32.Parse(TextBoxDeleteID.Text);
+            ItemAttributeService.DeleteItemAttribute(newItemAttribute);
+            Response.Redirect(Request.Url.ToString());
+        }
     }
 }

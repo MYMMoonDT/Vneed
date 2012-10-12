@@ -13,5 +13,10 @@ namespace Vneed.UI.Web.Page.Business
         {
             this.OrderProcessWebUserControl1.StepNum = 3;
         }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("\\Page\\orderList.aspx");
+        }
     }
 }
