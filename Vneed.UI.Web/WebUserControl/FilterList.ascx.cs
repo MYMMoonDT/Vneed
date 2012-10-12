@@ -40,10 +40,21 @@ namespace Vneed.UI.Web.WebUserControl
 
         void LoadItems()
         {
+            int page;
+            if (Request.QueryString["page"] == null)
+                page = 0;
+            else
+                page = Int32.Parse(Request.QueryString["page"]);
             Table.Rows.Clear();
             int catalog = Int32.Parse(this.Request.QueryString["catalog"]);
-            List<Item> itemList = ItemService.GetItemsByCatalogAndAttributes(catalog, Int32.Parse(DropDownListAttributeA.SelectedValue), Int32.Parse(DropDownListAttributeB.SelectedValue), Int32.Parse(DropDownListAttributeC.SelectedValue));
+            List<Item> allItems = ItemService.GetItemsByCatalogAndAttributes(catalog, Int32.Parse(DropDownListAttributeA.SelectedValue), Int32.Parse(DropDownListAttributeB.SelectedValue), Int32.Parse(DropDownListAttributeC.SelectedValue));
+            List<Item> itemList = new List<Item>();
             int count = 0;
+            foreach (Item item in allItems)
+            {
+                if ((count >= page * 12) && (count < (page + 1) * 12))
+                    itemList.Add(item);
+            }
             //TableRow trImage = new TableRow();
             //TableRow trName = new TableRow();
             //TableRow trDesc = new TableRow();
@@ -126,12 +137,18 @@ namespace Vneed.UI.Web.WebUserControl
             }
         }
 
+        void LoadPageButtons()
+        {
+
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 LoadAttr();
                 LoadItems();
+                LoadPageButtons();
             }
         }
 

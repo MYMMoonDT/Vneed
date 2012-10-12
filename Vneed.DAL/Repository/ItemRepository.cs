@@ -16,7 +16,7 @@ namespace Vneed.DAL.Repository
             SqlConnection sqlConn = new SqlConnection(connectionString);
             sqlConn.Open();
 
-            string cmdString = "INSERT INTO [Item] (ItemID, Title, Description, ImageUrl, Price, OriginalPrice, CatalogID, ModifiedDate, AttributeAID, AttributeBID, AttributeCID) VALUES (@itemID, @title, @description, @imageUrl, @price, @originalPrice, @catalogID, @modifiedDate, @attributeAID, @attributeBID, @attributeCID)";
+            string cmdString = "INSERT INTO [Item] (ItemID, Title, Description, ImageUrl, Price, OriginalPrice, CatalogID, ModifiedDate, AttributeAID, AttributeBID, AttributeCID, Active) VALUES (@itemID, @title, @description, @imageUrl, @price, @originalPrice, @catalogID, @modifiedDate, @attributeAID, @attributeBID, @attributeCID, 1)";
             SqlCommand sqlCmd = new SqlCommand(cmdString, sqlConn);
             sqlCmd.Parameters.Add(new SqlParameter("itemID", System.Guid.NewGuid().ToString()));
             sqlCmd.Parameters.Add(new SqlParameter("title", newItem.Title));
@@ -33,6 +33,33 @@ namespace Vneed.DAL.Repository
             sqlCmd.ExecuteNonQuery();
 
             sqlConn.Close();
+        }
+
+        public static void ModifyItem(Item newItem, int active)
+        {
+            string connectionString = WebConfigurationManager.ConnectionStrings["defaultConnectionString"].ToString();
+            SqlConnection sqlConn = new SqlConnection(connectionString);
+            sqlConn.Open();
+
+            string cmdString = "UPDATE [Item] SET Title = @title, Description = @description, ImageUrl = @imageUrl, Price = @price, OriginalPrice = @originalPrice, CatalogID=@catalogID, ModifiedDate=@modifiedDate, AttributeAID = @attributeAID, AttributeBID = @attributeBID, AttributeCID = @attributeCID, Active=@active WHERE ItemID = @itemID";
+            SqlCommand sqlCmd = new SqlCommand(cmdString, sqlConn);
+            sqlCmd.Parameters.Add(new SqlParameter("itemID", newItem.ItemID));
+            sqlCmd.Parameters.Add(new SqlParameter("title", newItem.Title));
+            sqlCmd.Parameters.Add(new SqlParameter("description", newItem.Description));
+            sqlCmd.Parameters.Add(new SqlParameter("imageUrl", newItem.ImageUrl));
+            sqlCmd.Parameters.Add(new SqlParameter("price", newItem.Price));
+            sqlCmd.Parameters.Add(new SqlParameter("originalPrice", newItem.OriginalPrice));
+            sqlCmd.Parameters.Add(new SqlParameter("catalogID", newItem.CatalogID));
+            sqlCmd.Parameters.Add(new SqlParameter("modifiedDate", DateTime.Now));
+            sqlCmd.Parameters.Add(new SqlParameter("attributeAID", newItem.AttributeAID));
+            sqlCmd.Parameters.Add(new SqlParameter("attributeBID", newItem.AttributeBID));
+            sqlCmd.Parameters.Add(new SqlParameter("attributeCID", newItem.AttributeCID));
+            sqlCmd.Parameters.Add(new SqlParameter("active", active));
+
+            sqlCmd.ExecuteNonQuery();
+
+            sqlConn.Close();
+
         }
 
         public static List<Item> FindItemsByCatalog(int catalogID)
@@ -173,8 +200,7 @@ namespace Vneed.DAL.Repository
             SqlConnection sqlConn = new SqlConnection(connectionString);
             sqlConn.Open();
 
-            string cmdString = "SELECT [Item].[ItemSerialNumber],[Item].[ItemID],[Item].[Title],[Item].[Description],[Item].[ImageUrl],[Item].[Price],[Item].[OriginalPrice],[Item].[CatalogID],[Item].[ModifiedDate],[Item].[AttributeAID],[Item].[AttributeBID],[Item].[AttributeCID]" +
-                               "FROM Item INNER JOIN BestsellerList ON Item.ItemID = BestsellerList.ItemID";
+            string cmdString = "SELECT * FROM [Item] JOIN BestsellerList ON Item.ItemID = BestsellerList.ItemID ORDER BY BestsellerList.Pos";
             SqlCommand sqlCmd = new SqlCommand(cmdString, sqlConn);
 
             SqlDataReader sqlDataReader = sqlCmd.ExecuteReader();
@@ -190,6 +216,53 @@ namespace Vneed.DAL.Repository
             }
 
             return result;
+        }
+
+        public static void AddItemToBestsellerList(string itemID, int pos)
+        {
+            string connectionString = WebConfigurationManager.ConnectionStrings["defaultConnectionString"].ToString();
+            SqlConnection sqlConn = new SqlConnection(connectionString);
+            sqlConn.Open();
+
+            string cmdString = "INSERT INTO BestsellerList (ItemID, Pos) VALUES (@itemID, @pos)";
+            SqlCommand sqlCmd = new SqlCommand(cmdString, sqlConn);
+            sqlCmd.Parameters.Add(new SqlParameter("itemID", itemID));
+            sqlCmd.Parameters.Add(new SqlParameter("pos", pos));
+
+            sqlCmd.ExecuteNonQuery();
+
+            sqlConn.Close();
+        }
+
+        public static void MoveItemInBestsellerList(string itemID, int newPos)
+        {
+            string connectionString = WebConfigurationManager.ConnectionStrings["defaultConnectionString"].ToString();
+            SqlConnection sqlConn = new SqlConnection(connectionString);
+            sqlConn.Open();
+
+            string cmdString = "UPDATE BestsellerList SET Pos=@newPos WHERE ItemID=@itemID";
+            SqlCommand sqlCmd = new SqlCommand(cmdString, sqlConn);
+            sqlCmd.Parameters.Add(new SqlParameter("itemID", itemID));
+            sqlCmd.Parameters.Add(new SqlParameter("newPos", newPos));
+
+            sqlCmd.ExecuteNonQuery();
+
+            sqlConn.Close();
+        }
+
+        public static void DeleteItemFromBestsellerList(string itemID)
+        {
+            string connectionString = WebConfigurationManager.ConnectionStrings["defaultConnectionString"].ToString();
+            SqlConnection sqlConn = new SqlConnection(connectionString);
+            sqlConn.Open();
+
+            string cmdString = "DELETE FROM BestsellerList WHERE ItemID=@itemID";
+            SqlCommand sqlCmd = new SqlCommand(cmdString, sqlConn);
+            sqlCmd.Parameters.Add(new SqlParameter("itemID", itemID));
+
+            sqlCmd.ExecuteNonQuery();
+
+            sqlConn.Close();
         }
 
         public static List<Item> FindItemsBySalesVolume()
@@ -229,6 +302,33 @@ namespace Vneed.DAL.Repository
             string cmdString = "SELECT * FROM Item, (SELECT OderDetail.ItemID, SUM(Quantity) AS Expr1 FROM OderDetail GROUP BY OderDetail.ItemID) AS T WHERE Item.ItemID = T.ItemId AND Item.CatalogID = @catalogID ORDER BY Expr1 DESC";
             SqlCommand sqlCmd = new SqlCommand(cmdString, sqlConn);
             sqlCmd.Parameters.Add("catalogID", catalogID);
+
+            SqlDataReader sqlDataReader = sqlCmd.ExecuteReader();
+            if (sqlDataReader.HasRows)
+            {
+                while (sqlDataReader.Read())
+                {
+                    Item newItem = new Item();
+                    FillItem(sqlDataReader, newItem);
+                    result.Add(newItem);
+                }
+                sqlDataReader.Close();
+            }
+
+            return result;
+        }
+
+        public static List<Item> SearchItems(string keyword)
+        {
+            List<Item> result = new List<Item>();
+
+            string connectionString = WebConfigurationManager.ConnectionStrings["defaultConnectionString"].ToString();
+            SqlConnection sqlConn = new SqlConnection(connectionString);
+            sqlConn.Open();
+
+            string cmdString = "SELECT * FROM Item WHERE Title LIKE %@keyword%";
+            SqlCommand sqlCmd = new SqlCommand(cmdString, sqlConn);
+            sqlCmd.Parameters.Add("keyword", keyword);
 
             SqlDataReader sqlDataReader = sqlCmd.ExecuteReader();
             if (sqlDataReader.HasRows)

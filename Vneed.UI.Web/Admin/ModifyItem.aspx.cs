@@ -9,7 +9,7 @@ using Vneed.BLL;
 
 namespace Vneed.UI.Web.Admin
 {
-    public partial class AddItem : System.Web.UI.Page
+    public partial class ModifyItem : System.Web.UI.Page
     {
         void LoadAttributes()
         {
@@ -50,18 +50,32 @@ namespace Vneed.UI.Web.Admin
             {
                 DropDownListCatalog.Items.Add(new ListItem(currentCatalog.Name, currentCatalog.CatalogID.ToString()));
             }
+        }
+
+        void LoadItem()
+        {
+            Item item = ItemService.GetItemByItemID(this.Request.QueryString["itemID"]);
+            TextBoxTitle.Text = item.Title;
+            TextBoxDescription.Text = item.Description;
+            TextBoxPrice.Text = item.Price.ToString();
+            TextBoxOriginalPrice.Text = item.OriginalPrice.ToString();
+            LoadCatalogs();
+            DropDownListCatalog.SelectedValue = item.CatalogID.ToString();
             LoadAttributes();
+            DropDownListAttr1.SelectedValue = item.AttributeAID.ToString();
+            DropDownListAttr2.SelectedValue = item.AttributeBID.ToString();
+            DropDownListAttr3.SelectedValue = item.AttributeCID.ToString();
         }
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                LoadCatalogs();
+                LoadItem();
             }
         }
 
-        protected void ButtonAdd_Click(object sender, EventArgs e)
+        protected void ButtonModify_Click(object sender, EventArgs e)
         {
             string imageUrl = @"~\Image\ItemImage\";
             string realUrl = Server.MapPath(@"~\Image\ItemImage\");
@@ -75,10 +89,10 @@ namespace Vneed.UI.Web.Admin
             }
             else
             {
-                imageUrl += "default.jpg";
+                imageUrl += ItemService.GetItemByItemID(this.Request.QueryString["itemID"]).ImageUrl;
             }
 
-            Item newItem = new Item();
+            Item newItem = ItemService.GetItemByItemID(this.Request.QueryString["itemID"]);
             newItem.Title = TextBoxTitle.Text;
             newItem.Description = TextBoxDescription.Text;
             newItem.ImageUrl = imageUrl;
@@ -88,7 +102,7 @@ namespace Vneed.UI.Web.Admin
             newItem.AttributeAID = Int32.Parse(DropDownListAttr1.SelectedValue);
             newItem.AttributeBID = Int32.Parse(DropDownListAttr2.SelectedValue);
             newItem.AttributeCID = Int32.Parse(DropDownListAttr3.SelectedValue);
-            ItemService.AddNewItem(newItem);
+            ItemService.ModifyItem(newItem);
         }
 
         protected void DropDownListCatalog_SelectedIndexChanged(object sender, EventArgs e)

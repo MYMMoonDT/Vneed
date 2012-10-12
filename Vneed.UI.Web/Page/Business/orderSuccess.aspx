@@ -24,7 +24,8 @@
                     <td>
                         <div class="orderSuccessMessageButtonDiv">
                             <asp:Button ID="Button1" runat="server" Text="继续购物" CssClass="button orderSuccessButton"/>
-                            <asp:Button ID="Button2" runat="server" Text="我的Vneed" CssClass="button orderSuccessButton"/>
+                            <asp:Button ID="Button2" runat="server" Text="我的Vneed" 
+                                CssClass="button orderSuccessButton" onclick="Button2_Click"/>
                         </div>
                     </td>
                 </tr>

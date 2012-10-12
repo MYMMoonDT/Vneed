@@ -18,4 +18,16 @@
 </asp:DropDownList>
 &nbsp;<asp:Button ID="ButtonAddAttr" runat="server" 
     onclick="ButtonAddAttr_Click" Text="新增" />
+    <br />
+    <br />
+    编辑属性：<br />
+    属性编号：<asp:TextBox ID="TextBoxEditID" runat="server"></asp:TextBox>
+&nbsp;新名称：<asp:TextBox ID="TextBoxEditNewName" runat="server"></asp:TextBox>
+&nbsp;<asp:Button ID="ButtonEdit" runat="server" onclick="ButtonEdit_Click" 
+        Text="编辑" />
+    <br />
+    删除属性：<br />
+    属性编号：<asp:TextBox ID="TextBoxDeleteID" runat="server"></asp:TextBox>
+    <asp:Button ID="ButtonDelete" runat="server" onclick="ButtonDelete_Click" 
+        Text="删除" />
 </asp:Content>

@@ -27,6 +27,37 @@ namespace Vneed.DAL.Repository
             sqlConn.Close();
         }
 
+        public static void UpdateItemAttribute(ItemAttribute itemAttribute)
+        {
+            string connectionString = WebConfigurationManager.ConnectionStrings["defaultConnectionString"].ToString();
+            SqlConnection sqlConn = new SqlConnection(connectionString);
+            sqlConn.Open();
+
+            string cmdString = "UPDATE [ItemAttribute] SET Name = @name WHERE ItemAttributeID=@itemAttributeID";
+            SqlCommand sqlCmd = new SqlCommand(cmdString, sqlConn);
+            sqlCmd.Parameters.Add(new SqlParameter("name", itemAttribute.Name));
+            sqlCmd.Parameters.Add(new SqlParameter("itemAttributeID", itemAttribute.ItemAttributeID));
+
+            sqlCmd.ExecuteNonQuery();
+
+            sqlConn.Close();
+        }
+
+        public static void DeleteItemAttribute(ItemAttribute itemAttribute)
+        {
+            string connectionString = WebConfigurationManager.ConnectionStrings["defaultConnectionString"].ToString();
+            SqlConnection sqlConn = new SqlConnection(connectionString);
+            sqlConn.Open();
+
+            string cmdString = "DELETE FROM [ItemAttribute] WHERE ItemAttributeID=@itemAttributeID";
+            SqlCommand sqlCmd = new SqlCommand(cmdString, sqlConn);
+            sqlCmd.Parameters.Add(new SqlParameter("itemAttributeID", itemAttribute.ItemAttributeID));
+
+            sqlCmd.ExecuteNonQuery();
+
+            sqlConn.Close();
+        }
+
         public static List<ItemAttribute> FindItemAttributesByCatalogAndLevel(int CatalogID, int Level)
         {
             List<ItemAttribute> result = new List<ItemAttribute>();

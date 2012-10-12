@@ -61,7 +61,7 @@ namespace Vneed.UI.Web.WebUserControl
 
         protected void searchButton_Click1(object sender, EventArgs e)
         {
-            String url = "/Page/Business/search.aspx?search=" + this.searchContent.Text;
+            String url = "/Page/Business/search.aspx?keyword=" + this.searchContent.Text;
             Response.Redirect(url);
         }
     }

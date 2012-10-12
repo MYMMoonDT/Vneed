@@ -7,54 +7,54 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Vneed.UI.Web.WebUserControl {
+namespace Vneed.UI.Web.Admin {
     
     
-    public partial class FilterList {
+    public partial class ItemManagement {
         
         /// <summary>
-        /// DropDownListAttributeA control.
+        /// ListBoxCatalog control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownListAttributeA;
+        protected global::System.Web.UI.WebControls.ListBox ListBoxCatalog;
         
         /// <summary>
-        /// DropDownListAttributeB control.
+        /// ListBoxItem control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownListAttributeB;
+        protected global::System.Web.UI.WebControls.ListBox ListBoxItem;
         
         /// <summary>
-        /// DropDownListAttributeC control.
+        /// ButtonEdit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownListAttributeC;
+        protected global::System.Web.UI.WebControls.Button ButtonEdit;
         
         /// <summary>
-        /// Table control.
+        /// ButtonDelete control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table Table;
+        protected global::System.Web.UI.WebControls.Button ButtonDelete;
         
         /// <summary>
-        /// TablePage control.
+        /// ButtonAdd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table TablePage;
+        protected global::System.Web.UI.WebControls.Button ButtonAdd;
     }
 }
