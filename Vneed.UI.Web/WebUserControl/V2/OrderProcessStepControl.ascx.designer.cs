@@ -7,81 +7,90 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Vneed.UI.Web.Test {
+namespace Vneed.UI.Web.WebUserControl.V2 {
     
     
-    public partial class CartTest {
+    public partial class OrderProcessStepControl {
         
         /// <summary>
-        /// form1 control.
+        /// orderProcessPanel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Panel orderProcessPanel;
         
         /// <summary>
-        /// Label1 control.
+        /// orderProcessStep1Panel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.Panel orderProcessStep1Panel;
         
         /// <summary>
-        /// Button1 control.
+        /// orderProcessStep1Label control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Label orderProcessStep1Label;
         
         /// <summary>
-        /// Button2 control.
+        /// orderProcessStep1to2Panel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
+        protected global::System.Web.UI.WebControls.Panel orderProcessStep1to2Panel;
         
         /// <summary>
-        /// TextBox1 control.
+        /// orderProcessStep2Panel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.Panel orderProcessStep2Panel;
         
         /// <summary>
-        /// Button3 control.
+        /// orderProcessStep2Label control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button3;
+        protected global::System.Web.UI.WebControls.Label orderProcessStep2Label;
         
         /// <summary>
-        /// Table1 control.
+        /// orderProcessStep2to3Panel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table Table1;
+        protected global::System.Web.UI.WebControls.Panel orderProcessStep2to3Panel;
         
         /// <summary>
-        /// TextBox2 control.
+        /// orderProcessStep3Panel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.Panel orderProcessStep3Panel;
+        
+        /// <summary>
+        /// orderProcessStep3Label control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label orderProcessStep3Label;
     }
 }

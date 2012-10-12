@@ -24,6 +24,8 @@
         <asp:Table ID="Table1" runat="server">
         </asp:Table>
     
+        <asp:TextBox ID="TextBox2" runat="server" AutoPostBack="true" ontextchanged="TextBox2_TextChanged"></asp:TextBox>
+    
     </div>
     </form>
 </body>

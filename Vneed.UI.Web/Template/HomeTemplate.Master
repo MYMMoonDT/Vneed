@@ -1,0 +1,37 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="HomeTemplate.master.cs" Inherits="Vneed.UI.Web.Template.HomeTemplate" %>
+
+
+
+<%@ Register src="../WebUserControl/V2/TopBarControl.ascx" tagname="TopBarControl" tagprefix="uc1" %>
+<%@ Register src="../WebUserControl/V2/BottomBarControl.ascx" tagname="BottomBarControl" tagprefix="uc2" %>
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="../Resource/CSS/VneedStyleSheet.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <!--添加引用JS-->
+    <script type="text/javascript" src='<%=ResolveClientUrl("../Resource/JS/jquery-1.8.2.js")%>'></script>
+    <script type="text/javascript" src='<%=ResolveClientUrl("../Resource/JS/jquery.simplemodal-1.4.2.js")%>'></script>
+    <script type="text/javascript" src='<%=ResolveClientUrl("../Resource/JS/V2/VneedUtil.js")%>'></script>
+
+    <form id="form" runat="server">
+    <asp:scriptmanager ID="MainScriptmanager" runat="server"></asp:scriptmanager>
+    <!--TopBarControl-->
+    <uc1:TopBarControl ID="TopBarControl1" runat="server" />
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            
+        </asp:ContentPlaceHolder>
+    </div>
+    <!--BottomBarControl-->
+    <uc2:BottomBarControl ID="BottomBarControl1" runat="server" />
+    </form>
+</body>
+</html>

@@ -69,5 +69,10 @@ namespace Vneed.UI.Web.Test
             CartService.DeleteCartRecord(cr);
             Refresh();
         }
+
+        protected void TextBox2_TextChanged(object sender, EventArgs e)
+        {
+            Console.WriteLine("Test");
+        }
     }
 }

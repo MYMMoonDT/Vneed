@@ -1,0 +1,32 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Template/SubTitleTemplate.master" AutoEventWireup="true" CodeBehind="MyVneedTemplate.master.cs" Inherits="Vneed.UI.Web.Template.MyVneedTemplate" %>
+<%@ Register src="../WebUserControl/V2/MyVneedSideNavBarControl.ascx" tagname="MyVneedSideNavBarControl" tagprefix="uc1" %>
+<%@ Register src="../WebUserControl/V2/MyVneedUserInfoControl.ascx" tagname="MyVneedUserInfoControl" tagprefix="uc2" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head2" runat="server">
+    <asp:ContentPlaceHolder ID="head3" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="subHeadLeft" runat="server">
+    <div class="subTitleFont">我的Vneed</div>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="subHeadRight" runat="server">
+    <uc2:MyVneedUserInfoControl ID="MyVneedUserInfoControl1" runat="server" />
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+    <div class="contentBg">
+        <div class="contentContainer myVneedTempateContentContainer">
+            <table>
+                <tr>
+                    <td class="myVneedTemplateContentDivider myVneetTemplateSideContentContainer">
+                        <uc1:MyVneedSideNavBarControl ID="MyVneedSideNavBarControl1" runat="server" />
+                    </td>
+                    <td class="myVneetTemplateMainContentContainer">
+                        <asp:ContentPlaceHolder ID="myVneedTemplateMainContent" runat="server">
+                        
+                        </asp:ContentPlaceHolder>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="myVneedTemplateBottomDivider"></div>
+    </div>
+</asp:Content>

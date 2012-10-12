@@ -1,0 +1,23 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Template/SubTitleTemplate.master" AutoEventWireup="true" CodeBehind="OrderProcessTemplate.master.cs" Inherits="Vneed.UI.Web.Template.OrderProcessTemplate" %>
+<%@ Register src="../WebUserControl/V2/MyVneedUserInfoControl.ascx" tagname="MyVneedUserInfoControl" tagprefix="uc1" %>
+<%@ Register src="../WebUserControl/V2/OrderProcessStepControl.ascx" tagname="OrderProcessStepControl" tagprefix="uc2" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head2" runat="server">
+    <asp:ContentPlaceHolder ID="head3" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="subHeadLeft" runat="server">
+    <asp:ContentPlaceHolder ID="subTitle" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="subHeadRight" runat="server">  
+    <uc1:MyVneedUserInfoControl ID="MyVneedUserInfoControl1" runat="server" />
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+    <div id="orderProcessTemplateBg" class="contentBg">
+        <div id="orderProcessTemplateContentContainer" class="contentContainer">
+            <asp:ContentPlaceHolder ID="OrderProcessMainContentPlaceHolder" runat="server">  
+            </asp:ContentPlaceHolder>
+        </div>
+        <div class="orderProcessTemplateBottomDivider"></div>
+    </div>
+</asp:Content>

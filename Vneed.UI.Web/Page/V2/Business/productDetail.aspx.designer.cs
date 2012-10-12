@@ -7,81 +7,99 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Vneed.UI.Web.Test {
+namespace Vneed.UI.Web.Page.V2.Business {
     
     
-    public partial class CartTest {
+    public partial class productDetail {
         
         /// <summary>
-        /// form1 control.
+        /// productDetailImage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Image productDetailImage;
         
         /// <summary>
-        /// Label1 control.
+        /// productDetailTitleLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.Label productDetailTitleLabel;
         
         /// <summary>
-        /// Button1 control.
+        /// ProductVneedPriceLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Label ProductVneedPriceLabel;
         
         /// <summary>
-        /// Button2 control.
+        /// ProductOfficialPriceLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
+        protected global::System.Web.UI.WebControls.Label ProductOfficialPriceLabel;
         
         /// <summary>
-        /// TextBox1 control.
+        /// productDetailDescriptionLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.Label productDetailDescriptionLabel;
         
         /// <summary>
-        /// Button3 control.
+        /// productDetailProductNumTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button3;
+        protected global::System.Web.UI.WebControls.TextBox productDetailProductNumTextBox;
         
         /// <summary>
-        /// Table1 control.
+        /// ProductDetailBuyNowButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table Table1;
+        protected global::System.Web.UI.WebControls.Button ProductDetailBuyNowButton;
         
         /// <summary>
-        /// TextBox2 control.
+        /// ProductDetailAddCartButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.Button ProductDetailAddCartButton;
+        
+        /// <summary>
+        /// ProductDetailCollectButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ProductDetailCollectButton;
+        
+        /// <summary>
+        /// SimilarProductsControl1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Vneed.UI.Web.WebUserControl.V2.SimilarProductsControl SimilarProductsControl1;
     }
 }

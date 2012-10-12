@@ -1,0 +1,1524 @@
+﻿/* CSS Document */
+
+/* Vneed Common CSS */
+*
+{
+	padding: 0;
+	margin: 0;
+}
+
+body 
+{
+	background-color: #F1F1F1;
+	font-size: 12px;
+	font-family: "microsoft yahei",tahoma,simsun,Helvetica,Arial,"sans-serif";
+}
+
+a, a:active, a:visited
+{
+	text-decoration: none;
+	cursor: pointer;
+}
+
+a:hover
+{
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+a img
+{
+	border: none;
+}
+
+input[type="text"],input[type="password"]
+{
+	color: #01A8C8;
+    display: inline;
+	border: 1px solid #01A8C8;
+    font-family: "microsoft yahei",tahoma,simsun,Helvetica,Arial,"sans-serif";
+	border-radius: 3px;
+}
+
+/*
+.text
+{
+    color: #01A8C8;
+    display: inline;
+	border: 2px solid #01A8C8;
+    font-family: "microsoft yahei",tahoma,simsun,Helvetica,Arial,"sans-serif";
+}
+*/
+
+input[type="button"], input[type="submit"]
+{
+	color: #FFFFFF;
+    display: inline;
+    text-align: center;
+	vertical-align: middle;
+    border: none;
+    font-family: "microsoft yahei",tahoma,simsun,Helvetica,Arial,"sans-serif";
+	border-radius: 3px;
+	cursor: pointer;
+}
+
+input[type="button"]:hover, input[type="submit"]:hover
+{
+	border-radius: 3px;
+	cursor: pointer;
+}
+
+/*
+.button
+{
+    color: #FFFFFF;
+    display: inline;
+    text-align: center;
+	vertical-align: middle;
+    border: none;
+    font-family: "microsoft yahei",tahoma,simsun,Helvetica,Arial,"sans-serif";
+}
+*/
+
+.error
+{
+    background-position: 5px center;
+    border: 1px solid #CD0A0A;
+    background-color: #FEF1EC;
+    border-radius: 5px;
+    color: #CD0A0A;
+    font-size: 12px;
+    line-height: 30px;
+    padding-left: 25px;
+    padding-right:5px;
+    background-image: url('../Image/icon/icons_alert.png');
+    background-repeat: no-repeat;
+}
+
+.ModalDialogClose
+{
+	background-position: center center;
+    width: 16px;
+    height: 16px;
+    display: inline;
+    z-index: 3200;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    background-image: url('../Image/icon/popup_close_x_normal.png');
+    background-repeat: no-repeat;
+}
+
+.ModalDialogClose:hover
+{
+	background-image: url('../Image/icon/popup_close_x_hover.png');
+}
+
+.contentBg
+{
+	width:100%;
+}
+
+.contentContainer
+{
+	width:980px;
+	margin-left:auto;
+	margin-right:auto;
+	position:relative;
+}
+
+/* TopBarControl */
+
+#topBarBg
+{
+	height:144px;
+	width:100%;
+	background-image: url(../Image/header/header_background.png);
+}
+
+#topBarContainer
+{
+	height:144px;
+	width:980px;
+	margin-left:auto;
+	margin-right:auto;
+	position:relative;
+}
+
+#topBarContainer #topBarLogo
+{
+	height:144px;
+	width:210px;
+	float:left;
+}
+
+#topBarContainer #topBarLogo img
+{
+	margin-top: 32px;
+}
+
+#topBarContainer .topBarDivider
+{
+	width:40px;
+	height:144px;
+	background: url(../Image/header/header_divider.png) center no-repeat;
+	float:left;
+}
+
+#topBarContainer #topBarSearchContainer
+{
+	height:144px;
+	width:500px;
+	float:left;
+	margin-top:55px;
+	margin-left:10px;
+}
+
+#topBarContainer #topBarMyVneedContainer
+{
+	height:144px;
+	float:right;
+	color: #01A8C8;
+	text-align: right;
+}
+
+#topBarMyVneedContainer a, #topBarMyVneedContainer a:hover
+{
+	color: #01A8C8;
+}
+
+#topBarContainer #topBarSNSContactContainer
+{
+	position:absolute;
+	right:-120px;
+	top:40px;
+	width:100px;
+}
+
+#topBarContainer #topBarMyVneedContainer .topBarMyVneedLoginContainer
+{
+    font-size: 18px;
+    margin-top: 50px;
+}
+
+.topBarMyVneedLoginContainer img
+{
+	margin-left: 10px;
+}
+
+.topBarMyVneedLoginContainer .logoutButton
+{
+	font-size: 14px;
+	border: none;
+	background:none;
+	color: #01A8C8;
+}
+
+#topBarContainer #topBarMyVneedContainer .topBarMyVneedLogoutContainer
+{
+	margin-top:60px;
+	font-size: 18px;
+}
+
+#loginDialogContainer
+{
+	background-image: url("../Image/pop_up/login/pop-up_login_base.png");
+    display: none;
+    height: 357px;
+    position: relative;
+    width: 476px;
+}
+
+#loginDialogTextContainer
+{
+	left:60px;
+	top:75px;
+	position:absolute;
+	width:352px;
+}
+
+#loginDialogOptionContainer
+{
+	left:60px;
+	top:180px;
+	position:absolute;
+	width:352px;
+}
+
+.loginContentTextBox
+{
+	height: 32px;
+    width: 350px;
+	font-size:18px;
+	line-height:32px;
+	margin-bottom:20px;
+	float:right;
+}
+
+.loginContentButton
+{
+    float: right;
+    background-position: center center;
+    cursor: pointer;
+    float: right;
+    font-size: 18px;
+    height: 40px;
+    width: 75px;
+    background-image: url('../Image/pop_up/login/loginButton_normal.png');
+    background-repeat: no-repeat;
+}
+
+.loginContentButton:hover
+{
+    background-image: url('../Image/pop_up/login/loginButton_hover.png');
+}
+
+.loginContentLink
+{
+	color: #44B7CF;
+    float: right;
+    line-height: 40px;
+	margin-right:3px;
+	font-size:14px;
+	text-decoration: underline;
+}
+
+#loginDialogErrorContainer
+{
+	float:left;
+}
+
+/* BottomBarControl */
+
+#bottomBarBg
+{
+	width:100%;
+	height:79px;
+	background-image: url(../Image/footer/footer_background.png);	
+}
+
+#bottomBarContainer
+{
+	width:980px;
+	height:79px;
+	margin-left:auto;
+	margin-right:auto;
+	position:relative;
+	color: #333;
+}
+
+#bottomBarContainer #bottomBarContactInfo
+{
+	position:absolute;
+	left:120px;
+	top:20px;
+}
+
+#bottomBarContactInfo a
+{
+	color: #333;
+}
+
+#bottomBarContainer #bottomBarCompanyInfo
+{
+	position:absolute;
+	right:0;
+	top:20px;
+	text-align: right;
+}
+
+/* SearchBarControl */
+
+.searchBarContainer
+{
+	height:32px;
+	vertical-align: middle;
+}
+
+.searchBarText
+{
+	width:400px;
+	height:30px;
+	font-size:16px;
+	line-height:30px;
+	float:left;
+}
+
+.searchBarButton
+{
+    background-position: center center;
+    height: 32px;
+    font-size: 18px;
+    line-height: 32px;
+    width: 60px;
+    float: left;
+    background-image: url('../Image/header/searchButton_normal.png');
+    background-repeat: no-repeat;
+}
+
+.searchBarButton:hover
+{
+    background-position: center center;
+    height: 32px;
+    font-size: 18px;
+    line-height: 32px;
+    width: 60px;
+    float: left;
+    background-image: url('../Image/header/searchButton_hover.png');
+    background-repeat: no-repeat;
+}
+
+/* ProductImageShowControl */
+
+#productImageShowBg
+{
+	width:100%;
+	position:relative;
+	background-color: #E8E8E8;
+}
+
+#productImageShowContainer
+{
+	width:980px;
+	margin-left:auto;
+	margin-right:auto;
+	position:relative;
+	height:380px;
+}
+
+.productImageShowDivider
+{
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-top-color: #C2C2C2;
+	border-bottom-color: #C2C2C2;
+	height:10px;
+	width:100%;
+	background-color: #E8E8E8;
+}
+
+/* CatalogListControl */
+
+.catalogListItemContainer
+{
+	width:100%;
+}
+
+.catalogItemFirstClass
+{
+	color: #01A8C8;
+    font-size: 25px;
+    line-height: 45px;
+	margin-left: 15px;
+}
+
+.catalogItemSecondClass
+{
+	color: #909090;
+    font-size: 20px;
+    line-height: 25px;
+	margin-left: 25px;
+}
+.catalogItemSecondClass a
+{
+	color: #909090;
+}
+
+
+/* BestSellerItemListControl */
+
+#bestSellerItemListContainer
+{
+	
+}
+
+.bestSellerItemContainer
+{
+    background-position: center bottom;
+    height: 120px;
+    width: 330px;
+    background-image: url("../Image/index/mainarea/leftarea/index_leftarea_divider.png");
+    background-repeat: no-repeat;
+}
+
+.bestSellerItemImageContainer
+{
+	height: 67px;
+    width: 93px;
+	border-radius: 5px 5px 5px 5px;
+	border: 2px solid #CCCCCC;
+	margin-left: 25px;
+    margin-top: 25px;
+	float:left;
+}
+
+.bestSellerItemImageContainer img
+{
+	height: 67px;
+    width: 93px;
+	border-radius: 5px 5px 5px 5px;
+}
+
+.bestSellerItemTextContainer
+{
+	margin-left: 25px;
+    margin-top: 25px;
+	float:left;
+	color: #646464;
+    font-size: 14px;
+	width:150px;
+}
+
+.bestSellerItemTextContainer a
+{
+	color: #000;
+}
+
+.bestSellerItemTextContainer a:hover
+{
+	color: #FF5500;
+}
+
+/* RecommendedItemListControl */
+
+#recommendedItemListContainer
+{
+	margin-left:18px;
+	margin-top:15px;
+}
+
+.recommendedItemContainer
+{
+	height: 210px;
+    width: 148px;
+}
+
+.recommendedItemImgContainer
+{
+	background-image: url("../Image/index/mainarea/rightarea/index_rightarea_picbase.png");
+    height: 108px;
+    width: 140px;
+}
+
+.recommendedItemImgContainer img
+{
+	height: 100px;
+    width: 133px;
+}
+
+.recommendedItemTextContainer
+{
+	height: 90px;
+    width: 140px;
+	margin-top:10px;
+}
+
+.recommendedItemTitleContainer
+{
+	font-size: 16px;
+    line-height: 20px;
+}
+
+.recommendedItemTitleContainer a
+{
+	color: #000;
+}
+
+.recommendedItemTitleContainer a:hover
+{
+	color: #FF5500;
+}
+
+
+/* MyVneedSideNavBarControl */
+
+#myVneedSideNavBarContainer
+{
+	margin-left: 15px;
+    margin-right: 15px;
+    width: 305px;
+}
+
+.myVneedSideNavBarTitle
+{
+	border-bottom: 2px solid #EBEBEB;
+    height: 70px;
+    margin-bottom: 5px;
+    width: 100%;
+	font-size: 22px;
+    line-height: 70px;
+}
+
+.myVneedSideNavBarSubTitle
+{
+	height: 25px;
+    width: 100%;
+	font-size: 16px;
+    line-height: 25px;
+	margin-left:10px;
+}
+
+.myVneedSideNavBarSubTitle a
+{
+	color:#000;
+}
+
+/* MyVneedMyOrderListControl */
+
+.myVneedMyOrderListContainer
+{
+	
+}
+
+.myVneedMyOrderListContainer .myOrderItemContainer
+{
+    width: 600px;
+	height: 110px;
+}
+
+.myOrderItemContainer .myOrderItemImageContainer
+{
+	float:left;
+	height: 110px;
+    width: 150px;
+}
+
+.myOrderItemContainer .myOrderItemImageContainer img
+{
+	height: 100px;
+    width: 135px;
+	margin-top:10px;
+	margin-left:15px;
+}
+
+.myOrderItemContainer .myOrderItemDetailContainer
+{
+	float:left;
+	margin-top:10px;
+	margin-left:15px;
+	width:320px;
+	font-size:14px;
+	line-height:20px;
+}
+.myOrderItemDetailContainer ul
+{
+    list-style-type: none;
+}
+
+.myOrderItemContainer .myOrderItemStatusContainer
+{
+	float:right;
+	width:80px;
+	margin-top:15px;
+}
+
+.myOrderItemStatusContainer .myOrderItemStatusButton
+{
+	background-image: url("../Image/header/searchButton_normal.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    font-size: 14px;
+    height: 32px;
+    line-height: 32px;
+    width: 60px;
+}
+
+.myOrderItemStatusContainer .myOrderItemStatusButton:hover
+{
+	background-image: url("../Image/header/searchButton_hover.png");
+}
+
+/* OrderProcessStepControl */
+
+.orderProcessWrapper
+{
+    width:980px;
+    height:170px;
+    position:relative;
+}
+.orderProcessWrapper .orderProcessDiv
+{
+    width: 500px;
+    height:170px;
+    margin-left:auto;
+    margin-right:auto;
+}
+.orderProcessDiv .orderProcessContentDiv
+{
+    background-position: bottom;
+    width: 450px;
+    background-image: url('../Image/order/order_process_background.png');
+    background-repeat: no-repeat;
+    height: 110px;
+    margin-left:25px;
+    margin-right:25px;
+    position:relative;
+}
+
+.orderProcessContentDiv .orderProcessStepContainer
+{
+    width:450px;
+    height:60px;
+    position:absolute;
+    top:43px;
+}
+.orderProcessStepContainer #orderProcessStep1Panel
+{
+    width:60px;
+    height:60px;
+    position:absolute;
+    left:10px;
+    top:0;
+    text-align:center;
+}
+.orderProcessStepContainer #orderProcessStep1to2Panel
+{
+    height:60px;
+    width:150px;
+    position:absolute;
+    left:58px;
+    top:0;
+}
+.orderProcessStepContainer #orderProcessStep2Panel
+{
+    width:60px;
+    height:60px;
+    position:absolute;
+    left:195px;
+    top:0;
+    text-align:center;
+}
+.orderProcessStepContainer #orderProcessStep2to3Panel
+{
+    height:60px;
+    width:150px;
+    position:absolute;
+    left:240px;
+    top:0;
+}
+.orderProcessStepContainer #orderProcessStep3Panel
+{
+    width:60px;
+    height:60px;
+    position:absolute;
+    left:379px;
+    top:0;
+    text-align:center;
+}
+.orderProcessStepContainer .orderProcessStepDiv
+{
+    background-image: url('../Image/order/order_process_step.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.orderProcessStepContainer .orderProcessStepBackDiv
+{
+    background-image: url('../Image/order/order_process_step_background.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.orderProcessStepContainer .orderProcessStepCompletedDiv
+{
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url('../Image/order/order_process_completed.png');
+}
+.orderProcessStepContainer .orderProcessStepText
+{
+    line-height: 60px;
+    font-size: 26px;
+    font-weight: 500;
+    color: #FFFFFF;
+}
+.orderProcessStepContainer .orderProcessNormalText
+{
+    line-height: 60px;
+    font-size: 26px;
+    font-weight: 500;
+    color: #4A4A4A;
+}
+.orderProcessDiv .orderProcessTextDiv
+{
+    font-size: 14px;
+    color: #01A7C8;
+    font-weight:bold;
+    line-height:30px;
+    width:500px;
+}
+.orderProcessTextDiv .orderProcessCenterItem
+{
+    width:250px;
+    text-align:center;
+    float:left;
+}
+.orderProcessTextDiv .orderProcessLeftRightItem
+{
+    width:125px;
+    text-align:center;
+    float:left;
+}
+
+/* CartTableControl */
+
+#cartTableContainer
+{
+	margin-left:20px;
+}
+
+#cartTableContainer th, #cartTableContainer td
+{
+	border-bottom: 2px solid #EBEBEB;
+}
+
+#cartTableContainer th
+{
+	font-size: 18px;
+    line-height: 60px;
+	font-weight:normal;
+}
+
+.cartTableItemProductContainer
+{
+	height:135px;
+	width:420px;
+}
+
+.cartTableItemProductContainer .cartTableItemProductImageContainer
+{
+	background-image: url("../Image/index/mainarea/rightarea/index_rightarea_picbase.png");
+    height: 108px;
+    width: 140px;
+	margin-left:20px;
+	margin-top:20px;
+	float:left;
+}
+
+.cartTableItemProductContainer .cartTableItemProductImageContainer img
+{
+	height: 100px;
+    width: 133px;
+}
+
+.cartTableItemProductContainer .cartTableItemProductTextContainer
+{
+	height: 100px;
+    width: 230px;
+	margin-left:20px;
+	margin-top:20px;
+	float:left;
+	font-size: 16px;
+}
+
+.cartTableItemNumContainer
+{
+	width:120px;
+	margin-left:50px;
+}
+.cartTableItemNumContainer td
+{
+	border:none !important;
+}
+
+.cartTableItemPriceContainer
+{
+	width:120px;
+	margin-left:50px;
+	font-size:16px;
+}
+
+.cartTableItemOptionContainer
+{
+	width:120px;
+	margin-left:50px;
+	font-size:16px;
+}
+
+.cartTableItemOptionContainer a
+{
+	color: #006DC8;
+}
+
+.cartTableItemOptionContainer a:hover
+{
+	color: #FF5500;
+}
+
+.cartTableBottomContainer
+{
+	width:100%;
+	height:140px;
+}
+
+.cartTableTotalPriceAndOptionContainer
+{
+	float:right;
+	margin-right:25px;
+}
+
+.cartTableTotalPriceContainer
+{
+	font-size: 22px;
+    height: 70px;
+    line-height: 70px;
+}
+
+.cartTableOptionContainer
+{
+	
+}
+
+.cartTableOptionContainer a
+{
+	color: #000;
+    font-size: 16px;
+    text-decoration: underline;
+}
+
+.cartTableOptionContainer a:hover
+{
+	color: #FF5500;
+}
+
+.cartTableButton
+{
+	font-size:20px;
+    background-position: center center;
+    width: 80px;
+    height: 45px;
+    background-image: url('../Image/order/cartButton_normal.png');
+    background-repeat: no-repeat;
+}
+
+.cartTableButton:hover
+{
+    background-position: center center;
+    background-image: url('../Image/order/carthButton_hover.png');
+    background-repeat: no-repeat;
+}
+
+/* CSS in SubTitleTemplate.master */
+
+.subTitleBg
+{
+	width:100%;
+	height:110px;
+	background-color: #EEE;
+}
+
+.subTitleContainer
+{
+	width:980px;
+    height:110px;
+    margin-left:auto;
+    margin-right:auto;
+	position:relative;
+}
+
+.subTitleContainer .subTitleLeftSideContainer
+{
+	width:490px;
+	height:110px;
+	left:0;
+	top:0;
+	position:absolute;
+}
+
+.subTitleContainer .subTitleRightSideContainer
+{
+	width:490px;
+	height:110px;
+	right:0;
+	top:0;
+	position:absolute;
+}
+
+.subTitleDivider
+{
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-top-color: #C2C2C2;
+	height:10px;
+	background-color: #DCDCDC;
+	border-bottom-color: #C2C2C2;
+}
+
+.subTitleFont
+{
+	color: #474747;
+    font-size: 30px;
+    line-height: 110px;
+}
+
+/* CSS in OrderProcessTemplate.master */
+
+#orderProcessTemplateBg
+{
+	background-color: #EBEBEB;
+}
+
+#orderProcessTemplateContentContainer
+{
+	background-color: #F9F9F9;
+    border-left: 1px solid #D8D8D8;
+    border-right: 1px solid #D8D8D8;
+	border-bottom: 1px solid #D8D8D8;
+}
+
+.orderProcessTemplateBottomDivider
+{
+	height:100px;
+}
+
+/* CSS in MyVneedTemplate.master */
+
+#myVneedSubTitleRightContainer
+{
+	text-align: right;
+	float:right;
+}
+
+.myVneedSubTitleUserNameContainer
+{
+	float:right;
+	margin-top:30px;
+	margin-left:10px;
+}
+
+.myVneedSubTitleUserNameContainer .myVneedSubTitleUserName
+{
+	color: #474747;
+    font-size: 25px;
+}
+
+.myVneedSubTitleUserNameContainer .myVneedSubTitleUserType
+{
+	font-size: 12px;
+}
+
+.myVneedSubTitleUserImageContainer
+{
+	margin-top:20px;
+	float:right;
+}
+
+.myVneedSubTitleUserImageContainer img
+{
+	border-radius: 5px;
+    height: 66px;
+    width: 66px;
+}
+
+.myVneedTempateContentContainer
+{
+	border-bottom: 2px solid #EBEBEB;
+    border-left: 2px solid #EBEBEB;
+    border-right: 2px solid #EBEBEB;
+    height: 1000px;
+	background-color: #F8F8F8;
+}
+
+.myVneedTempateContentContainer table
+{
+	height:100%;
+	width:100%;
+}
+
+.myVneedTemplateContentDivider
+{
+	border-right: 2px solid #EBEBEB;
+}
+
+.myVneedTemplateBottomDivider
+{
+	height:100px;
+}
+
+.myVneetTemplateSideContentContainer
+{
+	height: 100%;
+    vertical-align: top;
+    width: 35%;
+}
+
+.myVneetTemplateMainContentContainer
+{
+	height: 100%;
+    vertical-align: top;
+    width: 65%;
+}
+
+
+/* CSS in index.aspx */
+#indexContentBg
+{
+	background-color: #F9F9F9;
+}
+
+#indexContentContainer
+{
+	height:1050px;
+}
+
+#indexSideContentContainer
+{
+	width: 340px;
+	height:710px;
+	float:left;
+	margin-top: 65px;
+}
+
+#indexSideContentContainer .sideTabTitleContainer
+{
+	height:20px;
+}
+
+.sideTabTitleContainer .tabItem
+{
+	height:20px;
+	width:89px;
+	background-image: url(../Image/index/mainarea/leftarea/index_leftarea_tab_grey.png);
+	float:left;
+	line-height: 20px;
+	color: #565656;
+	text-indent: 25px;
+	cursor:pointer;
+}
+
+.sideTabTitleContainer .tabItem:hover
+{
+	height:20px;
+	width:89px;
+	background-image: url(../Image/index/mainarea/leftarea/index_leftarea_tab_blue.png);
+	float:left;
+	line-height: 20px;
+	color: #565656;
+	text-indent: 25px;
+	cursor:pointer;
+}
+
+.sideTabTitleContainer .tabItemSelected
+{
+	height:20px;
+	width:89px;
+	background-image: url(../Image/index/mainarea/leftarea/index_leftarea_tab_blue.png);
+	float:left;
+	line-height: 20px;
+	color: #FFF;
+	text-indent: 25px;
+	cursor:pointer;
+}
+
+#indexSideContentContainer .sideTabContentContainer
+{
+    border-style: solid;
+    border-width: 20px 1px 1px 1px;
+    border-color: #01A8C8 #C2C2C2 #C2C2C2 #C2C2C2;
+    height: 670px;
+    width: 338px;
+	position:relative;
+}
+.sideTabContentContainer #catalogTabContent
+{
+    width:330px;
+    height:650px;
+	position:absolute;
+	top:0;
+	left:0;
+}
+
+.sideTabContentContainer #rankTabContent
+{
+    width:330px;
+    height:650px;  
+	position:absolute;
+	top:0;
+	left:0;
+}
+
+#indexMainContentContainer
+{
+	width:640px;
+	float:right;
+	height:690px;
+	margin-top: 85px;
+}
+
+.indexMainContent
+{
+	border-style: solid;
+    border-width: 20px 1px 1px 1px;
+    border-color: #01A8C8 #C2C2C2 #C2C2C2 #C2C2C2;
+	height: 670px;
+	width:622px;
+	float:right;
+}
+
+/* CSS in register.aspx */
+#registerContentBg
+{
+	background-color: #F2F2F2;
+}
+
+#registerContentContainer
+{
+	height: 1000px;
+    position: relative;
+	background-color: #F8F8F8;
+}
+
+#registerTableContainer
+{
+	position:absolute;
+	left:110px;
+	top:105px;
+}
+
+#registerTableContainer table, #registerTableContainer table tr, #registerTableContainer table tr td
+{
+    vertical-align: top;
+}
+
+#registerAgreementTableContainer
+{
+	position:absolute;
+	left:40px;
+	top:390px;
+}
+
+.registerAgreementContainer
+{
+    border: 1px solid #ECECEC;
+    height: 450px;
+    width: 900px;
+    background-color: #FFFFFF;
+    overflow: auto;
+}
+
+.registerContentTextBox
+{
+	color: #9C9C9C;
+    float: right;
+    font-size: 18px;
+    height: 32px;
+    line-height: 32px;
+    margin-bottom: 30px;
+    width: 355px;
+}
+
+.registerContentButton
+{
+    background-position: center center;
+    float: right;
+    font-size: 18px;
+    height: 45px;
+    width: 200px;
+    background-image: url('../Image/register/registerButton_normal.png');
+    background-repeat: no-repeat;
+	margin-top:20px;
+}
+
+.registerContentButton:hover
+{
+    background-image: url('../Image/register/registerButton_hover.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.registerError
+{
+	margin-bottom: 30px;
+	margin-left:20px;
+	width:200px;
+}
+
+/* CSS in productDetail.aspx */
+.productDetailImageContainer
+{
+	background-image: url("../Image/product_page/product_productlogo.png");
+    height: 88px;
+    left: 11px;
+    position: absolute;
+    top: 11px;
+    width: 88px;
+}
+
+.productDetailImageContainer img
+{
+    height: 80px;
+    width: 80px;    
+}
+
+.productDetailTitleContainer
+{
+	left: 115px;
+    position: absolute;
+}
+
+.productDetailTitleContainer .productDetailTitleFont
+{
+	font-size: 28px;
+    font-weight: 500;
+    line-height: 110px;
+}
+
+.productDetailPriceContainer
+{
+	margin-top:20px;
+	float:right;
+	text-align:right;
+}
+.productDetailVneedPriceFont
+{
+	color: #019EBC;
+    font-size: 28px;
+    font-weight: 500;
+}
+.productDetailOfficialPriceFont
+{
+	color: #979797;
+    font-size: 16px;
+}
+
+#productDetailBg
+{
+	background-color: #EBEBEB;
+}
+
+#productDetailContainer
+{
+	background-color: #F9F9F9;
+    border-left: 1px solid #D8D8D8;
+    border-right: 1px solid #D8D8D8;
+}
+
+#productDetailContainer table, #productDetailContainer table tr, #productDetailContainer table tr td
+{
+    vertical-align: top;
+}
+
+.productDetailMainContentContainer
+{
+	width:575px;
+	border-right: 1px solid #D8D8D8;
+}
+
+.productDetailMainSubTitle
+{
+	border-bottom: 1px solid #CCCCCC;
+    font-size: 22px;
+    font-weight: 500;
+    height: 70px;
+    line-height: 70px;
+    margin-left: 35px;
+    position: relative;
+    width: 515px;
+}
+
+.productDetailMainDescription
+{
+	color: #5D5D5D;
+    font-size: 16px;
+    font-weight: 500;
+    margin-left: 35px;
+    margin-top: 20px;
+    width: 515px;
+}
+
+.productDetailSideContentContainer
+{
+	width: 400px;
+}
+
+.productDetailSideContentContainer .productDetailSideOptionContainer
+{
+	height: 200px;
+    position: relative;
+    width: 400px;
+}
+
+.productDetailProductNumOptionContainer
+{
+	font-size:14px;
+	line-height:20px;
+	margin-left:30px;
+	margin-top:25px;
+}
+
+.productDetailPlusProductIcon
+{
+    background-position: center center;
+    width: 16px;
+    height: 16px;
+    background-image: url('../Image/icon/product_plus_icon.png');
+    background-repeat: no-repeat;
+	border: 1px solid #D9D9D9;
+	cursor:pointer;
+}
+.productDetailPlusProductIcon:hover
+{
+	border: 1px solid #A1A1A1;
+}
+
+.productDetailMinusProductIcon
+{
+	background-position: center center;
+    width: 16px;
+    height: 16px;
+    background-image: url('../Image/icon/product_minus_icon.png');
+    background-repeat: no-repeat;
+	border: 1px solid #D9D9D9;
+	cursor:pointer;
+}
+
+.productDetailMinusProductIcon:hover
+{
+	border: 1px solid #A1A1A1;
+}
+
+.productDetailProductNumText
+{
+    width: 30px;
+    height: 16px;
+    border: 1px solid #D9D9D9 !important;
+    border-radius: 0 !important;
+    color: #000 !important;
+    line-height:16px;
+}
+
+#productDetailProductProcessOptionContainer
+{
+	margin-left:30px;
+	margin-top:25px;
+}
+
+#productDetailProductProcessOptionContainer table, #productDetailProductProcessOptionContainer table tr, #productDetailProductProcessOptionContainer table tr td
+{
+    vertical-align: middle;
+}
+
+.productDetailOptionBuyNowButton
+{
+    background-position: center center;
+    width: 100px;
+    height: 60px;
+    background-image: url('../Image/product_page/buyNowButton_normal.png');
+    background-repeat: no-repeat;
+	font-size:20px;
+	margin-right:10px;
+}
+.productDetailOptionBuyNowButton:hover
+{
+    background-image: url('../Image/product_page/buyNowButton_hover.png'); 
+}
+
+.productDetailOptionAddCartButton
+{
+    background-position: center center;
+    width: 125px;
+    height: 60px;
+    background-image: url('../Image/product_page/addCartButton_normal.png');
+    background-repeat: no-repeat;
+	font-size:20px;
+	margin-right:10px;
+}
+
+.productDetailOptionAddCartButton:hover
+{
+    background-image: url('../Image/product_page/addCartButton_hover.png');
+}
+
+.productDetailOptionCollectButton
+{
+    background-position: left center;
+    background-color: #FFF;
+    background-image: url("../Image/product_page/product_icon_collection.png");
+    background-repeat: no-repeat;
+    border-style: none;
+    color: #000 !important;
+    font-size: 16px;
+    font-weight: 500;
+	line-height:20px;
+    width: 60px;
+	padding-left:15px;
+}
+
+.productDetailOptionCollectButton:hover
+{
+	color: #EF8000 !important;
+}
+
+.productDetailSimilarProductsContainer
+{
+	margin-left: 35px;
+}
+
+.productDetailSimilarProductsTitle
+{
+	border-bottom: 1px solid #B1B1B1;
+    font-size: 22px;
+    height: 40px;
+    width: 330px;
+}
+
+.SimilarProductsItemContainer
+{
+    width: 300px;
+    height: 90px;
+    border-bottom-style: solid;
+    border-bottom-width: 10px;
+    border-bottom-color: #E7E7E7;
+}
+
+.SimilarProductsItemContainer .itemImageBg
+{
+    border: 2px solid #CCCCCC;
+    height: 65px;
+    width: 95px;
+    margin-left: 15px;
+    margin-top: 10px;
+    border-radius:5px;
+}
+
+.SimilarProductsItemContainer .itemImageBg img
+{
+	height: 65px;
+    width: 95px;
+	border-radius:5px;
+}
+
+.SimilarProductsItemContainer .itemImageTitle
+{
+    border-right-style: solid;
+    border-right-width: 2px;
+    border-right-color: #B4B4B4;
+    height: 65px;
+	width:150px;
+    margin-left: 15px;
+    margin-top: 10px;
+	padding-right: 10px;
+	font-size:14px;
+}
+
+/* CSS in myVneedMyOrder.aspx */
+
+.myVneedMyOrderContainer
+{
+	margin-left: 15px;
+    margin-right: 15px;
+    width: 600px;
+}
+
+.myVneedMyOrderTitle
+{
+	font-size: 22px;
+    line-height: 70px;
+	border-bottom: 2px solid #EBEBEB;
+    height: 70px;
+    margin-bottom: 5px;
+    width: 100%;
+}
