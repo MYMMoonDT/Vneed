@@ -165,8 +165,8 @@ namespace Vneed.UI.Web.WebUserControl.V2
         {
             Panel cartTableBottomContainer = new Panel();
             cartTableBottomContainer.CssClass = "cartTableBottomContainer";
-            Panel cartTableTotalPriceAndOptionContainer = new Panel();
-            cartTableTotalPriceAndOptionContainer.CssClass = "cartTableTotalPriceAndOptionContainer";
+            //Panel cartTableTotalPriceAndOptionContainer = new Panel();
+            //cartTableTotalPriceAndOptionContainer.CssClass = "cartTableTotalPriceAndOptionContainer";
             
             Panel cartTableTotalPriceContainer = new Panel();
             cartTableTotalPriceContainer.CssClass = "cartTableTotalPriceContainer";
@@ -174,19 +174,19 @@ namespace Vneed.UI.Web.WebUserControl.V2
             priceLabel.Text = "总计:&nbsp;" + ProductsTotalPriceInCart(currentCart);
             cartTableTotalPriceContainer.Controls.Add(priceLabel);
 
-            Panel cartTableOptionContainer = new Panel();
-            cartTableOptionContainer.CssClass = "cartTableOptionContainer";
-            HyperLink continueShoppingHyperLink = new HyperLink();
-            continueShoppingHyperLink.Text = "继续购物&gt;";
-            Button payForProductInCartButton = new Button();
-            payForProductInCartButton.CssClass = "cartTableButton";
-            payForProductInCartButton.Text = "结算";
-            cartTableOptionContainer.Controls.Add(continueShoppingHyperLink);
-            cartTableOptionContainer.Controls.Add(payForProductInCartButton);
+            //Panel cartTableOptionContainer = new Panel();
+            //cartTableOptionContainer.CssClass = "cartTableOptionContainer";
+            //HyperLink continueShoppingHyperLink = new HyperLink();
+            //continueShoppingHyperLink.Text = "继续购物&gt;";
+            //Button payForProductInCartButton = new Button();
+            //payForProductInCartButton.CssClass = "cartTableButton";
+            //payForProductInCartButton.Text = "结算";
+            //cartTableOptionContainer.Controls.Add(continueShoppingHyperLink);
+            //cartTableOptionContainer.Controls.Add(payForProductInCartButton);
 
-            cartTableTotalPriceAndOptionContainer.Controls.Add(cartTableTotalPriceContainer);
-            cartTableTotalPriceAndOptionContainer.Controls.Add(cartTableOptionContainer);
-            cartTableBottomContainer.Controls.Add(cartTableTotalPriceAndOptionContainer);
+            //cartTableTotalPriceAndOptionContainer.Controls.Add(cartTableTotalPriceContainer);
+            //cartTableTotalPriceAndOptionContainer.Controls.Add(cartTableOptionContainer);
+            cartTableBottomContainer.Controls.Add(cartTableTotalPriceContainer);
             this.CartTableBottomPanel.Controls.Add(cartTableBottomContainer);
         }
 

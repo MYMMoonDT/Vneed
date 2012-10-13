@@ -7,45 +7,36 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Vneed.UI.Web.Page.V2.Business {
+namespace Vneed.UI.Web.WebUserControl.V2 {
     
     
-    public partial class cartDetail {
+    public partial class CatalogFilterControl {
         
         /// <summary>
-        /// OrderProcessStepControl1 control.
+        /// DropDownListAttributeA control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Vneed.UI.Web.WebUserControl.V2.OrderProcessStepControl OrderProcessStepControl1;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListAttributeA;
         
         /// <summary>
-        /// CartTableControl control.
+        /// DropDownListAttributeB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Vneed.UI.Web.WebUserControl.V2.CartTableControl CartTableControl;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListAttributeB;
         
         /// <summary>
-        /// ContinueShoppingHyperLink control.
+        /// DropDownListAttributeC control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink ContinueShoppingHyperLink;
-        
-        /// <summary>
-        /// PayForProductInCartButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button PayForProductInCartButton;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListAttributeC;
     }
 }

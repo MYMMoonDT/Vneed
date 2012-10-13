@@ -931,6 +931,7 @@
     <Content Include="Page\User\orderList.aspx" />
     <Content Include="Page\V2\Account\register.aspx" />
     <Content Include="Page\V2\Business\cartDetail.aspx" />
+    <Content Include="Page\V2\Business\catalogDetail.aspx" />
     <Content Include="Page\V2\Business\orderDetail.aspx" />
     <Content Include="Page\V2\Business\productDetail.aspx" />
     <Content Include="Page\V2\Help\registerSuccess.aspx" />
@@ -991,6 +992,8 @@
     <Content Include="Resource\Image\index\showarea\index_showarea_space_side.png" />
     <Content Include="Resource\Image\order\cartButton_normal.png" />
     <Content Include="Resource\Image\order\carthButton_hover.png" />
+    <Content Include="Resource\Image\order\orderSumitButton_hover.png" />
+    <Content Include="Resource\Image\order\orderSumitButton_normal.png" />
     <Content Include="Resource\Image\order\order_process_background.png" />
     <Content Include="Resource\Image\order\order_process_completed.png" />
     <Content Include="Resource\Image\order\order_process_step.png" />
@@ -1049,6 +1052,7 @@
     <Content Include="Resource\JS\jquery.timer.js" />
     <Content Include="Resource\JS\register.js" />
     <Content Include="Resource\JS\util.js" />
+    <Content Include="Resource\JS\jquery.simplemodal-1.4.3.js" />
     <Content Include="Resource\JS\V2\VneedUtil.js" />
     <Content Include="Test\AuthenticationTest.aspx" />
     <Content Include="Test\BestsellerListTestaspx.aspx" />
@@ -1083,6 +1087,7 @@
     <Content Include="WebUserControl\V2\BestSellerItemListControl.ascx" />
     <Content Include="WebUserControl\V2\BottomBarControl.ascx" />
     <Content Include="WebUserControl\V2\CartTableControl.ascx" />
+    <Content Include="WebUserControl\V2\CatalogFilterControl.ascx" />
     <Content Include="WebUserControl\V2\CatalogListControl.ascx" />
     <Content Include="WebUserControl\V2\MyVneedMyOrderListControl.ascx" />
     <Content Include="WebUserControl\V2\MyVneedSideNavBarControl.ascx" />
@@ -1235,6 +1240,13 @@
     </Compile>
     <Compile Include="Page\V2\Business\cartDetail.aspx.designer.cs">
       <DependentUpon>cartDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Page\V2\Business\catalogDetail.aspx.cs">
+      <DependentUpon>catalogDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\V2\Business\catalogDetail.aspx.designer.cs">
+      <DependentUpon>catalogDetail.aspx</DependentUpon>
     </Compile>
     <Compile Include="Page\V2\Business\orderDetail.aspx.cs">
       <DependentUpon>orderDetail.aspx</DependentUpon>
@@ -1495,6 +1507,13 @@
     </Compile>
     <Compile Include="WebUserControl\V2\CartTableControl.ascx.designer.cs">
       <DependentUpon>CartTableControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControl\V2\CatalogFilterControl.ascx.cs">
+      <DependentUpon>CatalogFilterControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControl\V2\CatalogFilterControl.ascx.designer.cs">
+      <DependentUpon>CatalogFilterControl.ascx</DependentUpon>
     </Compile>
     <Compile Include="WebUserControl\V2\CatalogListControl.ascx.cs">
       <DependentUpon>CatalogListControl.ascx</DependentUpon>

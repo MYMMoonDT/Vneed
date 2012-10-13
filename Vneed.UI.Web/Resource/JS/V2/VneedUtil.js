@@ -137,3 +137,39 @@ NumSelector.prototype.Init = function () {
         }
     });
 };
+
+function RadioManager() {
+    this.Init();
+}
+
+RadioManager.prototype.Init = function () {
+    this.Show();
+    $(".VneedRadio").click(function () {
+        var children = $(this).children();
+        var input = children[0];
+        var label = children[1];
+
+        var inputName = $(input).attr("name");
+        var inputs = $(".VneedRadio input");
+        var labels = $(".VneedRadio label");
+        for (var i = 0; i < inputs.length; i++) {
+            if ($(inputs[i]).attr("name") == inputName && inputs[i] != input) {
+                $(inputs[i]).removeAttr("checked");
+                $(labels[i]).removeClass("checked");
+            }
+        }
+
+        $(input).attr("checked", "checked");
+        $(label).addClass("checked");
+    });
+};
+
+RadioManager.prototype.Show = function () {
+    var inputs = $(".VneedRadio input");
+    var labels = $(".VneedRadio label");
+    for (var i = 0; i < inputs.length; i++) {
+        if ($(inputs[i]).attr("checked") == "checked") {
+            $(labels[i]).addClass("checked");
+        }
+    }
+};

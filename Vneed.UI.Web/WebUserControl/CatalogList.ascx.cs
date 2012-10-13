@@ -43,7 +43,7 @@ namespace Vneed.UI.Web.WebUserControl
                     childPanel.CssClass = "catalogItemSecond";
                     HyperLink childLevel = new HyperLink();
                     childLevel.Text = childCatalog.Name;
-                    childLevel.NavigateUrl = "\\Page\\Business\\catalog.aspx?catalog=" + childCatalog.CatalogID.ToString();
+                    childLevel.NavigateUrl = "/Page/Business/catalog.aspx?catalog=" + childCatalog.CatalogID.ToString();
                     childPanel.Controls.Add(childLevel);
                     firstPanel.Controls.Add(childPanel);
                 }

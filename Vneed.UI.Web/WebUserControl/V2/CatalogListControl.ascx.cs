@@ -44,7 +44,7 @@ namespace Vneed.UI.Web.WebUserControl.V2
 
                 HyperLink secondClassLink = new HyperLink();
                 secondClassLink.Text = childCatalog.Name;
-                secondClassLink.NavigateUrl = "~/Page/Business/catalog.aspx?catalog=" + childCatalog.CatalogID.ToString();
+                secondClassLink.NavigateUrl = "~/Page/V2/Business/catalogDetail.aspx?catalog=" + childCatalog.CatalogID.ToString();
                 catalogItemSecondClass.Controls.Add(secondClassLink);
 
                 catalogListItemContainer.Controls.Add(catalogItemSecondClass);

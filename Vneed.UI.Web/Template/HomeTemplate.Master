@@ -18,7 +18,7 @@
 <body>
     <!--添加引用JS-->
     <script type="text/javascript" src='<%=ResolveClientUrl("../Resource/JS/jquery-1.8.2.js")%>'></script>
-    <script type="text/javascript" src='<%=ResolveClientUrl("../Resource/JS/jquery.simplemodal-1.4.2.js")%>'></script>
+    <script type="text/javascript" src='<%=ResolveClientUrl("../Resource/JS/jquery.simplemodal-1.4.3.js")%>'></script>
     <script type="text/javascript" src='<%=ResolveClientUrl("../Resource/JS/V2/VneedUtil.js")%>'></script>
 
     <form id="form" runat="server">

@@ -36,7 +36,7 @@
                 </table>
             </asp:Panel>
             <asp:Panel ID="topBarMyVneedLogoutContainer" runat="server" CssClass="topBarMyVneedLogoutContainer">
-                <asp:HyperLink ID="LoginVneedHyperLink" runat="server" NavigateUrl="javascript:void(0);">登陆</asp:HyperLink>
+                <asp:HyperLink ID="LoginVneedHyperLink" runat="server">登陆</asp:HyperLink>
                 <asp:HyperLink ID="RegisterVneedHyperLink" runat="server" NavigateUrl="~/Page/V2/Account/register.aspx">注册</asp:HyperLink>
             </asp:Panel>
         </div>

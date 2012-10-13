@@ -16,5 +16,10 @@ namespace Vneed.UI.Web.Page.V2.Business
         {
             this.OrderProcessStepControl1.StepNum = 1;
         }
+
+        protected void PayForProductInCartButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/Page/V2/Business/orderDetail.aspx");
+        }
     }
 }

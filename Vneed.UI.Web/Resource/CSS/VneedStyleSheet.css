@@ -128,6 +128,25 @@ input[type="button"]:hover, input[type="submit"]:hover
 	position:relative;
 }
 
+.VneedRadio input
+{
+	display:none;
+}
+.VneedRadio label
+{
+	background-position: left;
+    background-image: url('../Image/order/order_radio_normal.png');
+    background-repeat: no-repeat;
+    padding-left: 34px;
+    height: 32px;
+    line-height:32px;
+    font-size:20px;
+}
+.VneedRadio label.checked
+{
+	background-image: url('../Image/order/order_radio_selected.png');
+}
+
 /* TopBarControl */
 
 #topBarBg
@@ -849,25 +868,30 @@ input[type="button"]:hover, input[type="submit"]:hover
 .cartTableBottomContainer
 {
 	width:100%;
-	height:140px;
+	height:70px;
 }
 
+/*
 .cartTableTotalPriceAndOptionContainer
 {
 	float:right;
 	margin-right:25px;
 }
+*/
 
 .cartTableTotalPriceContainer
 {
 	font-size: 22px;
     height: 70px;
     line-height: 70px;
+	float:right;
+	margin-right:60px;
 }
 
 .cartTableOptionContainer
 {
-	
+	float:right;
+	margin-right:25px;
 }
 
 .cartTableOptionContainer a
@@ -898,6 +922,51 @@ input[type="button"]:hover, input[type="submit"]:hover
     background-image: url('../Image/order/carthButton_hover.png');
     background-repeat: no-repeat;
 }
+
+/* CatalogFilterControl */
+
+#catalogFilterControlContainer
+{
+	
+}
+
+.catalogFilterContentSelectContainer
+{
+	
+}
+
+.catalogFilterContentResultContainer
+{
+	margin-left: 18px;
+    margin-top: 15px;
+}
+
+.catalogFilterResultItemContainer
+{
+	height: 210px;
+    width: 148px
+}
+
+.catalogFilterResultItemImgContainer
+{
+	background-image: url("../Image/index/mainarea/rightarea/index_rightarea_picbase.png");
+    height: 108px;
+    width: 140px;
+}
+
+.catalogFilterResultItemTextContainer
+{
+	height: 90px;
+    margin-top: 10px;
+    width: 140px
+}
+
+.catalogFilterResultItemTitleContainer
+{
+	font-size: 16px;
+    line-height: 20px;
+}
+
 
 /* CSS in SubTitleTemplate.master */
 
@@ -1521,4 +1590,145 @@ input[type="button"]:hover, input[type="submit"]:hover
     height: 70px;
     margin-bottom: 5px;
     width: 100%;
+}
+
+/* CSS in orderDetail.aspx */
+
+.orderPersonalDataAndPaymentWayContainer
+{
+	width:980px;
+}
+
+.orderPersonalDataContainer
+{
+	width:490px;
+	float:left;
+}
+
+.orderPaymentWayContainer
+{
+	width:490px;
+	float:right;
+}
+
+.orderSubTitle
+{
+	font-size:28px;
+	line-height:60px;
+	margin-left:25px;
+}
+
+.orderPersonalDataTextContainer
+{
+	margin-left:25px;
+}
+
+.orderPersonalDataTextBox
+{
+	float:left;
+	width:360px;
+	height:32px;
+	line-height:32px;
+	font-size: 18px;
+	margin-bottom:30px;
+
+}
+
+.orderPaymentWayRadioContainer
+{
+	margin-left:25px;
+}
+
+#OfflinePayMessageContainer
+{
+	color: #4D4D4D;
+    font-size: 14px;
+	width: 270px;
+	margin-left:15px;
+	margin-top:10px;
+	font-weight:bold;
+}
+
+#orderPersonalDataErrorContainer
+{
+	clear:left;
+	margin-left:25px;
+	width:360px;
+}
+
+.orderDetailSubmitButton
+{
+	background-image: url("../Image/order/orderSumitButton_normal.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    font-size: 20px;
+    height: 53px;
+    width: 100px;
+}
+
+.orderDetailSubmitButton:hover
+{
+    background-image: url('../Image/order/orderSumitButton_hover.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+#orderDetailOptionButtonContainer
+{
+	float:right;
+	margin-right:15px;
+	height:70px;
+}
+
+/* CSS in catalogDetail.aspx */
+
+#catalogDetailPageBg
+{
+	background-color: #F9F9F9;
+}
+
+#catalogDetailPageContentContainer
+{
+	height: 1050px;
+}
+
+#catalogDetailSideContentContainer
+{
+	float: left;
+    height: 710px;
+    margin-top: 65px;
+    width: 340px;
+}
+
+#catalogDetailSideContentContainer .sideTabTitleContainer
+{
+	height:20px;
+}
+
+#catalogDetailSideContentContainer .sideTabContentContainer
+{
+	border-color: #01A8C8 #C2C2C2 #C2C2C2;
+    border-style: solid;
+    border-width: 20px 1px 1px;
+    height: 670px;
+    position: relative;
+    width: 338px;
+}
+
+#catalogDetailMainContentContainer
+{
+	float: right;
+    height: 690px;
+    margin-top: 85px;
+    width: 640px;
+}
+
+.catalogDetailMainContent
+{
+	border-color: #01A8C8 #C2C2C2 #C2C2C2;
+    border-style: solid;
+    border-width: 20px 1px 1px;
+    float: right;
+    height: 670px;
+    width: 622px
 }

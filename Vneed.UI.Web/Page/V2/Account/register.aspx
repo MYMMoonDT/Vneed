@@ -226,11 +226,11 @@
         });
     };
 </script>
-<%--<script type="text/javascript">
+<script type="text/javascript">
     Sys.WebForms.PageRequestManager.getInstance().add_endRequest(function () {
         var registerForm = new RegisterForm();
     });
-</script>--%>
+</script>
 <script type="text/javascript">
     $(document).ready(function () {
         var registerForm = new RegisterForm();

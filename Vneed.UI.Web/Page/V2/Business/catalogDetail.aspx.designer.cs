@@ -10,42 +10,33 @@
 namespace Vneed.UI.Web.Page.V2.Business {
     
     
-    public partial class cartDetail {
+    public partial class catalogDetail {
         
         /// <summary>
-        /// OrderProcessStepControl1 control.
+        /// catalogDetailSubTitleLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Vneed.UI.Web.WebUserControl.V2.OrderProcessStepControl OrderProcessStepControl1;
+        protected global::System.Web.UI.WebControls.Label catalogDetailSubTitleLabel;
         
         /// <summary>
-        /// CartTableControl control.
+        /// CatalogListControl1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Vneed.UI.Web.WebUserControl.V2.CartTableControl CartTableControl;
+        protected global::Vneed.UI.Web.WebUserControl.V2.CatalogListControl CatalogListControl1;
         
         /// <summary>
-        /// ContinueShoppingHyperLink control.
+        /// CatalogFilterControl1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink ContinueShoppingHyperLink;
-        
-        /// <summary>
-        /// PayForProductInCartButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button PayForProductInCartButton;
+        protected global::Vneed.UI.Web.WebUserControl.V2.CatalogFilterControl CatalogFilterControl1;
     }
 }

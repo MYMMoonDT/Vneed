@@ -10,4 +10,11 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="OrderProcessMainContentPlaceHolder" runat="server"> 
     <uc1:OrderProcessStepControl ID="OrderProcessStepControl1" runat="server" />
     <uc2:CartTableControl ID="CartTableControl" runat="server" />
+    <div class="cartTableBottomContainer">
+        <div class="cartTableOptionContainer">
+            <asp:HyperLink ID="ContinueShoppingHyperLink" runat="server" NavigateUrl="~/Page/V2/index.aspx">继续购物&gt;</asp:HyperLink>
+            <asp:Button ID="PayForProductInCartButton" runat="server" Text="结算" 
+                CssClass="cartTableButton" onclick="PayForProductInCartButton_Click"/>
+        </div>
+    </div>
 </asp:Content>
