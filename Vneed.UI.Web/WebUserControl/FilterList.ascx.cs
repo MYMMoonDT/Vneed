@@ -11,6 +11,8 @@ namespace Vneed.UI.Web.WebUserControl
 {
     public partial class FilterList : System.Web.UI.UserControl
     {
+        int totalPage = 0;
+
         void LoadAttr()
         {
             int catalog = Int32.Parse(this.Request.QueryString["catalog"]);
@@ -38,13 +40,8 @@ namespace Vneed.UI.Web.WebUserControl
             }
         }
 
-        void LoadItems()
+        void LoadItems(int page)
         {
-            int page;
-            if (Request.QueryString["page"] == null)
-                page = 0;
-            else
-                page = Int32.Parse(Request.QueryString["page"]);
             Table.Rows.Clear();
             int catalog = Int32.Parse(this.Request.QueryString["catalog"]);
             List<Item> allItems = ItemService.GetItemsByCatalogAndAttributes(catalog, Int32.Parse(DropDownListAttributeA.SelectedValue), Int32.Parse(DropDownListAttributeB.SelectedValue), Int32.Parse(DropDownListAttributeC.SelectedValue));
@@ -52,9 +49,12 @@ namespace Vneed.UI.Web.WebUserControl
             int count = 0;
             foreach (Item item in allItems)
             {
-                if ((count >= page * 12) && (count < (page + 1) * 12))
+                if ((count >= (page - 1) * 12) && (count < page * 12))
                     itemList.Add(item);
+                count++;
             }
+            totalPage = count / 12;
+            if (count % 12 != 0) totalPage++;
             //TableRow trImage = new TableRow();
             //TableRow trName = new TableRow();
             //TableRow trDesc = new TableRow();
@@ -135,26 +135,64 @@ namespace Vneed.UI.Web.WebUserControl
                 //Table.Rows.Add(trDesc);
                 Table.Rows.Add(trProduct);
             }
+
+            LoadPageButtons(page);
         }
 
-        void LoadPageButtons()
+        void LoadPageButtons(int page)
         {
-
+            TablePage.Rows.Clear();
+            TableRow tr = new TableRow();
+            TableCell tc = new TableCell();
+            Button btn = new Button();
+            btn.Text = "1";
+            btn.CommandArgument = "1";
+            btn.Click += ButtonPage_Click;
+            tc.Controls.Add(btn);
+            if (totalPage > 1)
+            {
+                btn = new Button();
+                btn.Text = totalPage.ToString();
+                btn.CommandArgument = totalPage.ToString();
+                btn.Click += ButtonPage_Click;
+                tc.Controls.Add(btn);
+            }
+            int index = page - 1;
+            for (index = page - 1; index < page + 2; index++)
+            {
+                if (index > 1 && index < totalPage)
+                {
+                    btn = new Button();
+                    btn.Text = index.ToString();
+                    btn.CommandArgument = index.ToString();
+                    btn.Click += ButtonPage_Click;
+                    tc.Controls.Add(btn);
+                }
+            }
+            tr.Cells.Add(tc);
+            TablePage.Rows.Add(tr);
         }
+
+        
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 LoadAttr();
-                LoadItems();
-                LoadPageButtons();
+                LoadItems(1);
             }
         }
 
         protected void DropDownListAttributeA_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LoadItems();
+            LoadItems(1);
+        }
+
+        protected void ButtonPage_Click(object sender, EventArgs e)
+        {
+            Button trigger = (Button)sender;
+            LoadItems(Int32.Parse(trigger.CommandArgument));
         }
     }
 }
