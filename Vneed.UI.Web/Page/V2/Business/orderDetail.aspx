@@ -20,6 +20,7 @@
                     <asp:TextBox ID="ContactTextBox" runat="server" CssClass="orderPersonalDataTextBox"></asp:TextBox>
                     <asp:TextBox ID="IDNumTextBox" runat="server" CssClass="orderPersonalDataTextBox"></asp:TextBox>
                     <asp:TextBox ID="EmailTextBox" runat="server" CssClass="orderPersonalDataTextBox"></asp:TextBox>
+                    <asp:CheckBox ID="IsRegistCourseCheckBox" runat="server" Text="是否已经报名该课程" CssClass="orderPersonalDataCheckBox"/>
                 </div>
                 <div id="orderPersonalDataErrorContainer">
                     
@@ -61,7 +62,9 @@
             <div id="orderDetailOptionButtonContainer">
                 <asp:Button ID="orderDetailSubmitButton" runat="server" 
                     Text="确认订单" 
-                    CssClass="orderDetailSubmitButton" OnClientClick="return OrderDetailForm.Validation();"/>
+                    CssClass="orderDetailSubmitButton" 
+                    OnClientClick="return OrderDetailForm.Validation();" 
+                    onclick="orderDetailSubmitButton_Click"/>
             </div>
         </td>
     </tr>

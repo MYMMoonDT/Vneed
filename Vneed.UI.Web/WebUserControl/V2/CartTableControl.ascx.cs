@@ -11,6 +11,14 @@ namespace Vneed.UI.Web.WebUserControl.V2
 {
     public partial class CartTableControl : System.Web.UI.UserControl
     {
+        private bool isReayOnly = false;
+
+        public bool IsReadyOnly
+        {
+            get { return this.isReayOnly; }
+            set { this.isReayOnly = value; }
+        }
+
         public delegate void UpdateProductNumInCartEventHandler();
 
         private UpdateProductNumInCartEventHandler _UpdateProductNumInCart;
@@ -66,7 +74,16 @@ namespace Vneed.UI.Web.WebUserControl.V2
             tc = new TableCell();
             Panel cartTableItemNumContainer = new Panel();
             cartTableItemNumContainer.CssClass = "cartTableItemNumContainer";
-            cartTableItemNumContainer.Controls.Add(renderProductNumSelector(cartRecord));
+            if (!isReayOnly)
+            {
+                cartTableItemNumContainer.Controls.Add(renderProductNumSelector(cartRecord));
+            }
+            else
+            {
+                Label numLabel = new Label();
+                numLabel.Text = cartRecord.Count.ToString();
+                cartTableItemNumContainer.Controls.Add(numLabel);
+            }
             tc.Controls.Add(cartTableItemNumContainer);
             tr.Controls.Add(tc);
 
@@ -82,12 +99,18 @@ namespace Vneed.UI.Web.WebUserControl.V2
             tc = new TableCell();
             Panel cartTableItemOptionContainer = new Panel();
             cartTableItemOptionContainer.CssClass = "cartTableItemOptionContainer";
-            LinkButton deleteLink = new LinkButton();
-            deleteLink.Text = "删除";
-            deleteLink.ID = "delete_" + cartRecord.ItemID;
-            deleteLink.Click += DeleteLinkButton_Click;
-
-            cartTableItemOptionContainer.Controls.Add(deleteLink);
+            if (!isReayOnly)
+            {
+                LinkButton deleteLink = new LinkButton();
+                deleteLink.Text = "删除";
+                deleteLink.ID = "delete_" + cartRecord.ItemID;
+                deleteLink.Click += DeleteLinkButton_Click;
+                cartTableItemOptionContainer.Controls.Add(deleteLink);
+            }
+            else
+            { 
+                
+            }
             tc.Controls.Add(cartTableItemOptionContainer);
             tr.Controls.Add(tc);
 
@@ -208,8 +231,9 @@ namespace Vneed.UI.Web.WebUserControl.V2
             deleteCartRecord.ItemID = deleteItemID;
             deleteCartRecord.UserID = AuthenticationService.GetUser().UserID;
             CartService.DeleteCartRecord(deleteCartRecord);
-            OnUpdateProductNumInCart();
-            renderCartTable();
+            //OnUpdateProductNumInCart();
+            //renderCartTable();
+            Response.Redirect(Request.Url.ToString());
         }
     }
 }

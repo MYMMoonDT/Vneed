@@ -13,7 +13,10 @@ namespace Vneed.UI.Web.WebUserControl.V2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                renderMyOrderItemList();
+            }
         }
 
         private Panel renderMyOrderItem(Order order) 
@@ -62,6 +65,7 @@ namespace Vneed.UI.Web.WebUserControl.V2
             //使用默认订单状态
             button.Text = "已付款";
             button.CssClass = "myOrderItemStatusButton";
+            button.Enabled = false;
             myOrderItemStatusContainer.Controls.Add(button);
 
             myOrderItemContainer.Controls.Add(myOrderItemImageContainer);

@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="MyVneedMyOrderListControl.ascx.cs" Inherits="Vneed.UI.Web.WebUserControl.V2.MyVneedMyOrderListControl" %>
 <asp:Panel ID="MyVneedMyOrderListContainerPanel" runat="server" CssClass="myVneedMyOrderListContainer">
-    <div class="myOrderItemContainer">
+    <%--<div class="myOrderItemContainer">
         <div class="myOrderItemImageContainer">
             <asp:Image ID="myOrderItemImage" runat="server" ImageUrl="~/Image/ItemImage/default.jpg" />
         </div>
@@ -13,5 +13,5 @@
         <div class="myOrderItemStatusContainer">
             <asp:Button runat="server" Text="已付款" CssClass="myOrderItemStatusButton"/>
         </div>
-    </div>
+    </div>--%>
 </asp:Panel>

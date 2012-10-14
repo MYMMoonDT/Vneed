@@ -835,6 +835,7 @@ input[type="button"]:hover, input[type="submit"]:hover
 {
 	width:120px;
 	margin-left:50px;
+	font-size:16px;
 }
 .cartTableItemNumContainer td
 {
@@ -932,7 +933,13 @@ input[type="button"]:hover, input[type="submit"]:hover
 
 .catalogFilterContentSelectContainer
 {
-	
+	margin-left: 18px;
+	margin-top:5px;
+}
+
+.catalogFilterContentSelectContainer .catalogFilterContentSelector
+{
+	width:150px;
 }
 
 .catalogFilterContentResultContainer
@@ -954,6 +961,12 @@ input[type="button"]:hover, input[type="submit"]:hover
     width: 140px;
 }
 
+.catalogFilterResultItemImgContainer img
+{
+	height: 100px;
+    width: 133px;
+}
+
 .catalogFilterResultItemTextContainer
 {
 	height: 90px;
@@ -967,6 +980,142 @@ input[type="button"]:hover, input[type="submit"]:hover
     line-height: 20px;
 }
 
+.catalogFilterResultItemTitleContainer a
+{
+	color:#000;
+}
+
+.catalogFilterResultItemTitleContainer a:hover
+{
+	color:#F50;
+}
+
+.catalogFilterPageLinkContainer
+{
+	margin-left: 18px;
+}
+
+.catalogFilterPageLinkContainer td
+{
+	
+}
+
+.catalogFilterPageLinkContainer a
+{
+    border: 1px solid #CCCCCC;
+    color: #005AA0;
+	float:left;
+    font-size: 14px;
+    height: 20px;
+    line-height: 20px;
+    margin-left: 2px;
+    overflow: hidden;
+    padding: 3px 10px;
+}
+
+.catalogFilterPageLinkContainer a:hover
+{
+    background-color: #005AA0;
+    color: #FFFFFF;
+}
+
+.catalogFilterPageLinkContainer .omit
+{
+	font-size: 14px;
+	padding: 4px 11px;
+	float:left;
+}
+
+.catalogFilterPageLinkContainer .current
+{
+	color: #FF6600;
+	border:none;
+}
+.catalogFilterPageLinkContainer .current:hover
+{
+	color: #FF6600;
+	border:none;
+	background-color: #005AA0;
+}
+
+/* SearchResultControl */
+
+.searchResultControlContainer
+{
+	margin-left:20px;
+}
+
+.searchResultControlContainer table
+{
+	margin-bottom:30px;
+}
+
+.searchResultControlContainer th
+{
+	font-size: 18px;
+    font-weight: normal;
+    line-height: 60px;
+}
+
+.searchResultControlContainer td, .searchResultControlContainer th
+{
+	border-bottom: 2px solid #EBEBEB;
+}
+
+.searchResultTableItemProductContainer
+{
+	width:420px;
+	height: 135px;
+}
+
+.searchResultTableItemProductContainer .searchResultTableItemImageContainer
+{
+	background-image: url("../Image/index/mainarea/rightarea/index_rightarea_picbase.png");
+    float: left;
+    height: 108px;
+    margin-left: 20px;
+    margin-top: 20px;
+    width: 140px;
+}
+
+.searchResultTableItemImageContainer img
+{
+	height: 100px;
+    width: 133px;
+}
+
+.searchResultTableItemProductContainer .searchResultTableItemTitleContainer
+{
+	float: left;
+    font-size: 16px;
+    height: 100px;
+    margin-left: 20px;
+    margin-top: 20px;
+    width: 230px;
+}
+
+.searchResultTableItemTitleContainer a
+{
+	color: #000;
+}
+
+.searchResultTableItemTitleContainer a:hover
+{
+	color: #F50;
+}
+
+.searchResultTableItemDescriptionContainer
+{
+	font-size: 16px;
+	width:350px;
+}
+
+.searchResultTableItemPriceContainer
+{
+	font-size: 16px;
+    margin-left: 50px;
+    width: 110px;
+}
 
 /* CSS in SubTitleTemplate.master */
 
@@ -1193,11 +1342,13 @@ input[type="button"]:hover, input[type="submit"]:hover
 }
 .sideTabContentContainer #catalogTabContent
 {
-    width:330px;
+    width:335px;
     height:650px;
 	position:absolute;
 	top:0;
 	left:0;
+	overflow-y:auto;
+	overflow-x:hidden;
 }
 
 .sideTabContentContainer #rankTabContent
@@ -1634,6 +1785,15 @@ input[type="button"]:hover, input[type="submit"]:hover
 
 }
 
+.orderPersonalDataCheckBox
+{
+	float:left;
+	line-height:20px;
+	font-size: 18px;
+	margin-bottom:30px;
+	width:360px;
+}
+
 .orderPaymentWayRadioContainer
 {
 	margin-left:25px;
@@ -1695,7 +1855,7 @@ input[type="button"]:hover, input[type="submit"]:hover
 #catalogDetailSideContentContainer
 {
 	float: left;
-    height: 710px;
+    height: 760px;
     margin-top: 65px;
     width: 340px;
 }
@@ -1710,15 +1870,26 @@ input[type="button"]:hover, input[type="submit"]:hover
 	border-color: #01A8C8 #C2C2C2 #C2C2C2;
     border-style: solid;
     border-width: 20px 1px 1px;
-    height: 670px;
+    height: 720px;
     position: relative;
     width: 338px;
+}
+
+.sideTabContentContainer #catalogTabContent2
+{
+	width:335px;
+    height:700px;
+	position:absolute;
+	top:0;
+	left:0;
+	overflow-y:auto;
+	overflow-x:hidden;
 }
 
 #catalogDetailMainContentContainer
 {
 	float: right;
-    height: 690px;
+    height: 740px;
     margin-top: 85px;
     width: 640px;
 }
@@ -1729,6 +1900,21 @@ input[type="button"]:hover, input[type="submit"]:hover
     border-style: solid;
     border-width: 20px 1px 1px;
     float: right;
-    height: 670px;
+    height: 720px;
     width: 622px
+}
+
+/* CSS in searchResult.aspx */
+
+#searchResultContentContainer
+{
+	background-color: #F8F8F8;
+    border-bottom: 2px solid #EBEBEB;
+    border-left: 2px solid #EBEBEB;
+    border-right: 2px solid #EBEBEB;
+}
+
+.searchResultBottomDivider
+{
+	height:100px;
 }

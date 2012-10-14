@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="CartTableControl.ascx.cs" Inherits="Vneed.UI.Web.WebUserControl.V2.CartTableControl" %>
-<asp:UpdatePanel ID="CartTableUpdatePanel" runat="server">
-<ContentTemplate>
+<%--<asp:UpdatePanel ID="CartTableUpdatePanel" runat="server">
+<ContentTemplate>--%>
 <div id="cartTableContainer">
     <asp:Table ID="CartTable" runat="server">
     </asp:Table>
@@ -18,8 +18,8 @@
         </div>
     </div>--%>
 </div>
-</ContentTemplate>
-</asp:UpdatePanel>
+<%--</ContentTemplate>
+</asp:UpdatePanel>--%>
 <script type="text/javascript">
     function CartTable() {
         this.Init();

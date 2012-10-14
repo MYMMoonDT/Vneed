@@ -935,6 +935,8 @@
     <Content Include="Page\V2\Business\catalogDetail.aspx" />
     <Content Include="Page\V2\Business\orderDetail.aspx" />
     <Content Include="Page\V2\Business\productDetail.aspx" />
+    <Content Include="Page\V2\Business\searchResult.aspx" />
+    <Content Include="Page\V2\Help\orderSubmitSuccess.aspx" />
     <Content Include="Page\V2\Help\registerSuccess.aspx" />
     <Content Include="Page\V2\index.aspx" />
     <Content Include="Page\V2\MyVneed\myVneedMyOrder.aspx" />
@@ -1097,6 +1099,7 @@
     <Content Include="WebUserControl\V2\ProductImageShowControl.ascx" />
     <Content Include="WebUserControl\V2\RecommendedItemListControl.ascx" />
     <Content Include="WebUserControl\V2\SearchBarControl.ascx" />
+    <Content Include="WebUserControl\V2\SearchResultControl.ascx" />
     <Content Include="WebUserControl\V2\SimilarProductsControl.ascx" />
     <Content Include="WebUserControl\V2\TopBarControl.ascx" />
     <Content Include="WebUserControl\WebUserControl1.ascx" />
@@ -1269,6 +1272,20 @@
     </Compile>
     <Compile Include="Page\V2\Business\productDetail.aspx.designer.cs">
       <DependentUpon>productDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Page\V2\Business\searchResult.aspx.cs">
+      <DependentUpon>searchResult.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\V2\Business\searchResult.aspx.designer.cs">
+      <DependentUpon>searchResult.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Page\V2\Help\orderSubmitSuccess.aspx.cs">
+      <DependentUpon>orderSubmitSuccess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\V2\Help\orderSubmitSuccess.aspx.designer.cs">
+      <DependentUpon>orderSubmitSuccess.aspx</DependentUpon>
     </Compile>
     <Compile Include="Page\V2\Help\registerSuccess.aspx.cs">
       <DependentUpon>registerSuccess.aspx</DependentUpon>
@@ -1578,6 +1595,13 @@
     </Compile>
     <Compile Include="WebUserControl\V2\SearchBarControl.ascx.designer.cs">
       <DependentUpon>SearchBarControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControl\V2\SearchResultControl.ascx.cs">
+      <DependentUpon>SearchResultControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControl\V2\SearchResultControl.ascx.designer.cs">
+      <DependentUpon>SearchResultControl.ascx</DependentUpon>
     </Compile>
     <Compile Include="WebUserControl\V2\SimilarProductsControl.ascx.cs">
       <DependentUpon>SimilarProductsControl.ascx</DependentUpon>
