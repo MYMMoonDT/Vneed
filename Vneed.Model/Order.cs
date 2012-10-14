@@ -19,5 +19,21 @@ namespace Vneed.Model
         public string Contact;
         public string Email;
         public string IdentityNo;
+        public int AlreadySignedIn;
+
+        public void SetStatusToNotPayed()
+        {
+            Status = 0;
+        }
+
+        public void SetStatusToPayed()
+        {
+            Status = 1;
+        }
+
+        public void SetStatusToFinished()
+        {
+            Status = 2;
+        }
     }
 }

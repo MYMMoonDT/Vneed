@@ -13,6 +13,33 @@ namespace Vneed.UI.Web.Admin {
     public partial class OrderManagement {
         
         /// <summary>
+        /// DropDownListStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListStatus;
+        
+        /// <summary>
+        /// DropDownListDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListDate;
+        
+        /// <summary>
+        /// ButtonQuery control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonQuery;
+        
+        /// <summary>
         /// Table control.
         /// </summary>
         /// <remarks>
