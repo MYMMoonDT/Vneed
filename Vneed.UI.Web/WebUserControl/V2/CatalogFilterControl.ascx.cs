@@ -255,7 +255,10 @@ namespace Vneed.UI.Web.WebUserControl.V2
             string pageString = "page=";
             if (page == null)
             {
-                pageString += "1";
+                if (Request.QueryString["page"] == null)
+                    pageString += "1";
+                else
+                    pageString += Request.QueryString["page"];
             }
             else
             {
@@ -264,7 +267,10 @@ namespace Vneed.UI.Web.WebUserControl.V2
             string attr1String = "attr1=";
             if (attr1 == null)
             {
-                attr1String += "0";
+                if (Request.QueryString["attr1"] == null)
+                    attr1String += "0";
+                else
+                    attr1String += Request.QueryString["attr1"];
             }
             else
             {
@@ -273,7 +279,10 @@ namespace Vneed.UI.Web.WebUserControl.V2
             string attr2String = "attr2=";
             if (attr2 == null)
             {
-                attr2String += "0";
+                if (Request.QueryString["attr2"] == null)
+                    attr2String += "0";
+                else
+                    attr2String += Request.QueryString["attr2"];
             }
             else
             {
@@ -282,7 +291,10 @@ namespace Vneed.UI.Web.WebUserControl.V2
             string attr3String = "attr3=";
             if (attr3 == null)
             {
-                attr3String += "0";
+                if (Request.QueryString["attr3"] == null)
+                    attr3String += "0";
+                else
+                    attr3String += Request.QueryString["attr3"];
             }
             else
             {
