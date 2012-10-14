@@ -326,9 +326,10 @@ namespace Vneed.DAL.Repository
             SqlConnection sqlConn = new SqlConnection(connectionString);
             sqlConn.Open();
 
-            string cmdString = "SELECT * FROM Item WHERE Title LIKE %@keyword%";
+            string cmdString = "SELECT * FROM Item WHERE Title LIKE @keyword";
             SqlCommand sqlCmd = new SqlCommand(cmdString, sqlConn);
-            sqlCmd.Parameters.Add("keyword", keyword);
+            string keywordStr = "%" + keyword + "%";
+            sqlCmd.Parameters.Add("keyword", keywordStr);
 
             SqlDataReader sqlDataReader = sqlCmd.ExecuteReader();
             if (sqlDataReader.HasRows)

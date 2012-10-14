@@ -13,5 +13,11 @@ namespace Vneed.UI.Web.WebUserControl.V2
         {
 
         }
+
+        protected void SearchBarButton_Click(object sender, EventArgs e)
+        {
+            String url = "/Page/V2/Business/searchResult.aspx?keyword=" + this.SearchBarTextBox.Text;
+            Response.Redirect(url);
+        }
     }
 }

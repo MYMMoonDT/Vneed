@@ -17,7 +17,9 @@
                     <div class="tabItemSelected">分类</div>
                 </div>
                 <div class="sideTabContentContainer">
+                    <div id="catalogTabContent2">
                         <uc1:CatalogListControl ID="CatalogListControl1" runat="server" />
+                    </div>
                 </div>
             </div>
             <div id="catalogDetailMainContentContainer">

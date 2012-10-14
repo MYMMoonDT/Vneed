@@ -15,6 +15,12 @@ namespace Vneed.UI.Web.Page.V2.Business
         protected void Page_Load(object sender, EventArgs e)
         {
             this.OrderProcessStepControl1.StepNum = 1;
+            this.CartTableControl.UpdateProductNumInCart += new WebUserControl.V2.CartTableControl.UpdateProductNumInCartEventHandler(CartTableControl_UpdateProductNumInCart);
+        }
+
+        void CartTableControl_UpdateProductNumInCart()
+        {
+            
         }
 
         protected void PayForProductInCartButton_Click(object sender, EventArgs e)

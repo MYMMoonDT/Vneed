@@ -9,7 +9,7 @@
         </asp:DropDownList>
     </div>
     <div class="catalogFilterContentResultContainer">
-        <table>
+        <%--<table>
         <tr>
             <td>
                 <div class="catalogFilterResultItemContainer">
@@ -52,90 +52,6 @@
                 </div>
             </td>
         </tr>
-        <tr>
-            <td>
-                <div class="catalogFilterResultItemContainer">
-                    <div class="catalogFilterResultItemImgContainer"></div>
-                    <div class="catalogFilterResultItemTextContainer">
-                        <div class="catalogFilterResultItemTitleContainer">
-                            
-                        </div>
-                    </div>
-                </div>
-            </td>
-            <td>
-                <div class="catalogFilterResultItemContainer">
-                    <div class="catalogFilterResultItemImgContainer"></div>
-                    <div class="catalogFilterResultItemTextContainer">
-                        <div class="catalogFilterResultItemTitleContainer">
-                            
-                        </div>
-                    </div>
-                </div>
-            </td>
-            <td>
-                <div class="catalogFilterResultItemContainer">
-                    <div class="catalogFilterResultItemImgContainer"></div>
-                    <div class="catalogFilterResultItemTextContainer">
-                        <div class="catalogFilterResultItemTitleContainer">
-                            
-                        </div>
-                    </div>
-                </div>
-            </td>
-            <td>
-                <div class="catalogFilterResultItemContainer">
-                    <div class="catalogFilterResultItemImgContainer"></div>
-                    <div class="catalogFilterResultItemTextContainer">
-                        <div class="catalogFilterResultItemTitleContainer">
-                            
-                        </div>
-                    </div>
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <div class="catalogFilterResultItemContainer">
-                    <div class="catalogFilterResultItemImgContainer"></div>
-                    <div class="catalogFilterResultItemTextContainer">
-                        <div class="catalogFilterResultItemTitleContainer">
-                            
-                        </div>
-                    </div>
-                </div>
-            </td>
-            <td>
-                <div class="catalogFilterResultItemContainer">
-                    <div class="catalogFilterResultItemImgContainer"></div>
-                    <div class="catalogFilterResultItemTextContainer">
-                        <div class="catalogFilterResultItemTitleContainer">
-                            
-                        </div>
-                    </div>
-                </div>
-            </td>
-            <td>
-                <div class="catalogFilterResultItemContainer">
-                    <div class="catalogFilterResultItemImgContainer"></div>
-                    <div class="catalogFilterResultItemTextContainer">
-                        <div class="catalogFilterResultItemTitleContainer">
-                            
-                        </div>
-                    </div>
-                </div>
-            </td>
-            <td>
-                <div class="catalogFilterResultItemContainer">
-                    <div class="catalogFilterResultItemImgContainer"></div>
-                    <div class="catalogFilterResultItemTextContainer">
-                        <div class="catalogFilterResultItemTitleContainer">
-                            
-                        </div>
-                    </div>
-                </div>
-            </td>
-        </tr>
-        </table>
+        </table>--%>
     </div>
 </div>

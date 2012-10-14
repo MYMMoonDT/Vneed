@@ -61,7 +61,9 @@
             <div id="orderDetailOptionButtonContainer">
                 <asp:Button ID="orderDetailSubmitButton" runat="server" 
                     Text="确认订单" 
-                    CssClass="orderDetailSubmitButton" OnClientClick="return OrderDetailForm.Validation();"/>
+                    CssClass="orderDetailSubmitButton" 
+                    OnClientClick="return OrderDetailForm.Validation();" 
+                    onclick="orderDetailSubmitButton_Click"/>
             </div>
         </td>
     </tr>
