@@ -72,7 +72,9 @@
                                     <div id="productDetailProductProcessOptionContainer">
                                         <table>
                                         <tr>
-                                        <td><asp:Button ID="ProductDetailBuyNowButton" runat="server" Text="立即购买" CssClass="productDetailOptionBuyNowButton"/></td>
+                                        <td><asp:Button ID="ProductDetailBuyNowButton" runat="server" Text="立即购买" 
+                                                CssClass="productDetailOptionBuyNowButton" 
+                                                onclick="ProductDetailBuyNowButton_Click"/></td>
                                         <td><asp:Button ID="ProductDetailAddCartButton" runat="server" Text="加入购物车" 
                                                 CssClass="productDetailOptionAddCartButton" 
                                                 onclick="ProductDetailAddCartButton_Click"/></td>

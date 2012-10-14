@@ -50,7 +50,14 @@ namespace Vneed.UI.Web.WebUserControl.V2
             panel = new Panel();
             label = new Label();
             //使用默认付款方式
-            label.Text = "付款方式：" + "线下支付";
+            if (order.Payment == 0)
+            {
+                label.Text = "付款方式：" + "线下支付";
+            }
+            else if (order.Payment == 1)
+            {
+                label.Text = "付款方式：" + "支付宝付款";
+            }
             panel.Controls.Add(label);
             myOrderItemDetailContainer.Controls.Add(panel);
 
@@ -63,7 +70,22 @@ namespace Vneed.UI.Web.WebUserControl.V2
 
             Button button = new Button();
             //使用默认订单状态
-            button.Text = "已付款";
+            if (order.Status == 0) 
+            {
+                button.Text = "未付款";
+            }
+            else if (order.Status == 1)
+            {
+                button.Text = "已付款";
+            }
+            else if (order.Status == 2)
+            {
+                button.Text = "已完成";
+            }
+            else if (order.Status == 3)
+            {
+                button.Text = "已作废";
+            }
             button.CssClass = "myOrderItemStatusButton";
             button.Enabled = false;
             myOrderItemStatusContainer.Controls.Add(button);

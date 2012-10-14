@@ -134,6 +134,8 @@ namespace Vneed.UI.Web.WebUserControl.V2
             textBox.CssClass = "productDetailProductNumText";
             textBox.Text = cartRecord.Count.ToString();
             textBox.ID = "num_" + cartRecord.ItemID;
+            textBox.TextChanged += new EventHandler(textBox_TextChanged);
+            textBox.AutoPostBack = true;
             panel.Controls.Add(textBox);
             tc.Controls.Add(panel);
             tr.Controls.Add(tc);
@@ -146,6 +148,24 @@ namespace Vneed.UI.Web.WebUserControl.V2
 
             table.Controls.Add(tr);
             return table;
+        }
+
+        void textBox_TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+            String changeItemID = textBox.ID.Substring("num_".Length);
+            List<CartRecord> currentCart = CartService.GetCartRecodByUserID(AuthenticationService.GetUser().UserID);
+            foreach (CartRecord cartRecord in currentCart)
+            {
+                if (cartRecord.ItemID == changeItemID)
+                {
+                    CartService.DeleteCartRecord(cartRecord);
+                    cartRecord.Count = Int32.Parse(textBox.Text);
+                    CartService.AddCartRecord(cartRecord);
+                    break;
+                }
+            }
+            renderCartTableBottom(currentCart);
         }
 
         private void renderCartTable()
@@ -186,6 +206,8 @@ namespace Vneed.UI.Web.WebUserControl.V2
 
         private void renderCartTableBottom(List<CartRecord> currentCart)
         {
+            this.CartTableBottomPanel.Controls.Clear();
+
             Panel cartTableBottomContainer = new Panel();
             cartTableBottomContainer.CssClass = "cartTableBottomContainer";
             //Panel cartTableTotalPriceAndOptionContainer = new Panel();

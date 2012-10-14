@@ -8,8 +8,12 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="subHeadRight" runat="server">
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
-3秒后跳转到主页,你也可以点击下面的按钮直接跳转到主页...
-<%
+<div class="contentBg">
+    <div class="contentContainer">
+        3秒后跳转到主页,你也可以点击下面的按钮直接跳转到主页...
+    </div>
+</div>
+<%--<%
     Response.AddHeader("refresh","3;url=/Page/V2/index.aspx");
-%>
+%>--%>
 </asp:Content>

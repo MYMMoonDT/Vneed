@@ -50,5 +50,23 @@ namespace Vneed.UI.Web.Page.V2.Business
                 Response.Redirect("/Page/V2/Business/cartDetail.aspx");
             }
         }
+
+        protected void ProductDetailBuyNowButton_Click(object sender, EventArgs e)
+        {
+            if (AuthenticationService.GetUsername() == null)
+            {
+                Response.Redirect("/Page/V2/index.aspx");
+            }
+            else
+            {
+                CartRecord cartRecord = new CartRecord();
+                cartRecord.UserID = AuthenticationService.GetUser().UserID;
+                cartRecord.ItemID = this.productItem.ItemID;
+                cartRecord.Count = int.Parse(this.productDetailProductNumTextBox.Text);
+                CartService.DeletaCartRecordByUserID(AuthenticationService.GetUser().UserID);
+                CartService.AddCartRecord(cartRecord);
+                Response.Redirect("/Page/V2/Business/orderDetail.aspx");
+            }
+        }
     }
 }
