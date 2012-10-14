@@ -13,9 +13,11 @@ namespace Vneed.UI.Web.WebUserControl
     {
         int totalPage = 0;
 
-        void LoadAttr()
+        void LoadAttr(int catalog, int attr1, int attr2, int attr3)
         {
-            int catalog = Int32.Parse(this.Request.QueryString["catalog"]);
+            DropDownListAttributeA.Items.Clear();
+            DropDownListAttributeB.Items.Clear();
+            DropDownListAttributeC.Items.Clear();
             DropDownListAttributeA.Items.Add(new ListItem("全部", "0"));
             DropDownListAttributeB.Items.Add(new ListItem("全部", "0"));
             DropDownListAttributeC.Items.Add(new ListItem("全部", "0"));
@@ -38,13 +40,15 @@ namespace Vneed.UI.Web.WebUserControl
                     }
                 }
             }
+                DropDownListAttributeA.SelectedValue = attr1.ToString();
+                DropDownListAttributeB.SelectedValue = attr2.ToString();
+                DropDownListAttributeC.SelectedValue = attr3.ToString();
         }
 
-        void LoadItems(int page)
+        void LoadItems(int catalog, int page, int attr1, int attr2, int attr3)
         {
             Table.Rows.Clear();
-            int catalog = Int32.Parse(this.Request.QueryString["catalog"]);
-            List<Item> allItems = ItemService.GetItemsByCatalogAndAttributes(catalog, Int32.Parse(DropDownListAttributeA.SelectedValue), Int32.Parse(DropDownListAttributeB.SelectedValue), Int32.Parse(DropDownListAttributeC.SelectedValue));
+            List<Item> allItems = ItemService.GetItemsByCatalogAndAttributes(catalog, attr1, attr2, attr3);
             List<Item> itemList = new List<Item>();
             int count = 0;
             foreach (Item item in allItems)
@@ -60,7 +64,7 @@ namespace Vneed.UI.Web.WebUserControl
             //TableRow trDesc = new TableRow();
 
             TableRow trProduct = new TableRow();
-
+            count = 0;
             foreach (Item item in itemList)
             {
                 ////图片
@@ -135,8 +139,6 @@ namespace Vneed.UI.Web.WebUserControl
                 //Table.Rows.Add(trDesc);
                 Table.Rows.Add(trProduct);
             }
-
-            LoadPageButtons(page);
         }
 
         void LoadPageButtons(int page)
@@ -144,30 +146,39 @@ namespace Vneed.UI.Web.WebUserControl
             TablePage.Rows.Clear();
             TableRow tr = new TableRow();
             TableCell tc = new TableCell();
-            Button btn = new Button();
-            btn.Text = "1";
-            btn.CommandArgument = "1";
-            btn.Click += ButtonPage_Click;
-            tc.Controls.Add(btn);
-            if (totalPage > 1)
-            {
-                btn = new Button();
-                btn.Text = totalPage.ToString();
-                btn.CommandArgument = totalPage.ToString();
-                btn.Click += ButtonPage_Click;
-                tc.Controls.Add(btn);
-            }
+            HyperLink hl = new HyperLink();
+            hl.Text = "1";
+            hl.NavigateUrl = BuildUrl(null, 1, null, null, null);
+            tc.Controls.Add(hl);
             int index = page - 1;
+            if (page - 1 > 2)
+            {
+                Label lb = new Label();
+                lb.Text = "...";
+                tc.Controls.Add(lb);
+            }
             for (index = page - 1; index < page + 2; index++)
             {
                 if (index > 1 && index < totalPage)
                 {
-                    btn = new Button();
-                    btn.Text = index.ToString();
-                    btn.CommandArgument = index.ToString();
-                    btn.Click += ButtonPage_Click;
-                    tc.Controls.Add(btn);
+                    hl = new HyperLink();
+                    hl.Text = index.ToString();
+                    hl.NavigateUrl = BuildUrl(null, index, null, null, null);
+                    tc.Controls.Add(hl);
                 }
+            }
+            if (page + 1 < totalPage - 1)
+            {
+                Label lb = new Label();
+                lb.Text = "...";
+                tc.Controls.Add(lb);
+            }
+            if (totalPage > 1)
+            {
+                hl = new HyperLink();
+                hl.Text = totalPage.ToString();
+                hl.NavigateUrl = BuildUrl(null, totalPage, null, null, null);
+                tc.Controls.Add(hl);
             }
             tr.Cells.Add(tc);
             TablePage.Rows.Add(tr);
@@ -177,22 +188,107 @@ namespace Vneed.UI.Web.WebUserControl
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            int page;
+            if (Request.QueryString["page"] == null)
+                page = 1;
+            else
+                page = Int32.Parse(Request.QueryString["page"]);
+            int attr1;
+            if (Request.QueryString["attr1"] == null)
+                attr1 = 0;
+            else
+                attr1 = Int32.Parse(Request.QueryString["attr1"]);
+            int attr2;
+            if (Request.QueryString["attr2"] == null)
+                attr2 = 0;
+            else
+                attr2 = Int32.Parse(Request.QueryString["attr2"]);
+            int attr3;
+            if (Request.QueryString["attr3"] == null)
+                attr3 = 0;
+            else
+                attr3 = Int32.Parse(Request.QueryString["attr3"]);
+            int catalog;
+            if (Request.QueryString["catalog"] == null)
+                return;
+            else
+                catalog = Int32.Parse(Request.QueryString["catalog"]);
             if (!IsPostBack)
             {
-                LoadAttr();
-                LoadItems(1);
+                LoadAttr(catalog, attr1, attr2, attr3);
             }
+                LoadItems(catalog, page, attr1, attr2, attr3);
+                LoadPageButtons(page);
         }
 
         protected void DropDownListAttributeA_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LoadItems(1);
+            Response.Redirect(BuildUrl(null, 1, Int32.Parse(DropDownListAttributeA.SelectedValue), null, null));
         }
 
-        protected void ButtonPage_Click(object sender, EventArgs e)
+        string BuildUrl(int? catalog, int? page, int? attr1, int? attr2, int? attr3)
         {
-            Button trigger = (Button)sender;
-            LoadItems(Int32.Parse(trigger.CommandArgument));
+            string querystring;
+            string thisPage = "/Page/Business/catalog.aspx";
+            string catalogString = "catalog=";
+            if (catalog == null)
+            {
+                catalogString += Request.QueryString["catalog"];
+            }
+            else
+            {
+                catalogString += catalog.ToString();
+            }
+            string pageString = "page=";
+            if (page == null)
+            {
+                pageString += "1";
+            }
+            else
+            {
+                pageString += page.ToString();
+            }
+            string attr1String = "attr1=";
+            if (attr1 == null)
+            {
+                attr1String += "0";
+            }
+            else
+            {
+                attr1String += attr1.ToString();
+            }
+            string attr2String = "attr2=";
+            if (attr2 == null)
+            {
+                attr2String += "0";
+            }
+            else
+            {
+                attr2String += attr2.ToString();
+            }
+            string attr3String = "attr3=";
+            if (attr3 == null)
+            {
+                attr3String += "0";
+            }
+            else
+            {
+                attr3String += attr3.ToString();
+            }
+            querystring = thisPage + "?" + catalogString + "&" + pageString + "&" + attr1String + "&" + attr2String + "&" + attr3String;
+            return querystring;
+        }
+
+        protected void DropDownListAttributeB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            Response.Redirect(BuildUrl(null, 1, null, Int32.Parse(DropDownListAttributeB.SelectedValue), null));
+        }
+
+        protected void DropDownListAttributeC_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            Response.Redirect(BuildUrl(null, 1, null, null, Int32.Parse(DropDownListAttributeC.SelectedValue)));
         }
     }
 }
