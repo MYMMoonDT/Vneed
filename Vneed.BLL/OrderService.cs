@@ -36,6 +36,16 @@ namespace Vneed.BLL
             return OrderRepository.FindOrdersByUserID(UserID);
         }
 
+        public static Order FindOrderByOrderID(string orderID)
+        {
+            return OrderRepository.FindOrderByOrderID(orderID);
+        }
+
+        public static List<OrderDetail> FindOrderDetailsByOrderID(string orderID)
+        {
+            return OrderRepository.FindOrderDetailsByOrderID(orderID);
+        }
+
         public static List<Order> FindOrdersByStatusAndDate(int status, int day)
         {
             return OrderRepository.FindOrdersByStatusAndDate(status, day);
@@ -44,6 +54,11 @@ namespace Vneed.BLL
         public static Decimal GetOrderPrice(string OrderID)
         {
             return OrderRepository.GetOrderPrice(OrderID);
+        }
+
+        public static void FinishOrder(string orderID)
+        {
+            OrderRepository.UpdateOrderStatus(orderID, 2);
         }
     }
 }
