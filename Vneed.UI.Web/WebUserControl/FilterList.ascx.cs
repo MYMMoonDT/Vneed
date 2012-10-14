@@ -151,6 +151,12 @@ namespace Vneed.UI.Web.WebUserControl
             hl.NavigateUrl = BuildUrl(null, 1, null, null, null);
             tc.Controls.Add(hl);
             int index = page - 1;
+            if (page - 1 > 2)
+            {
+                Label lb = new Label();
+                lb.Text = "...";
+                tc.Controls.Add(lb);
+            }
             for (index = page - 1; index < page + 2; index++)
             {
                 if (index > 1 && index < totalPage)
@@ -160,6 +166,12 @@ namespace Vneed.UI.Web.WebUserControl
                     hl.NavigateUrl = BuildUrl(null, index, null, null, null);
                     tc.Controls.Add(hl);
                 }
+            }
+            if (page + 1 < totalPage - 1)
+            {
+                Label lb = new Label();
+                lb.Text = "...";
+                tc.Controls.Add(lb);
             }
             if (totalPage > 1)
             {
