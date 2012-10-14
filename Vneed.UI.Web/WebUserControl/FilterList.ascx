@@ -4,11 +4,11 @@
 <asp:DropDownList ID="DropDownListAttributeA" runat="server" AutoPostBack="True" 
         onselectedindexchanged="DropDownListAttributeA_SelectedIndexChanged">
 </asp:DropDownList>
-<asp:DropDownList ID="DropDownListAttributeB" runat="server" AutoPostBack="True" 
-        onselectedindexchanged="DropDownListAttributeA_SelectedIndexChanged">
+<asp:DropDownList ID="DropDownListAttributeB" runat="server" AutoPostBack="True" onselectedindexchanged="DropDownListAttributeB_SelectedIndexChanged" 
+        >
 </asp:DropDownList>
-<asp:DropDownList ID="DropDownListAttributeC" runat="server" AutoPostBack="True" 
-        onselectedindexchanged="DropDownListAttributeA_SelectedIndexChanged">
+<asp:DropDownList ID="DropDownListAttributeC" runat="server" AutoPostBack="True" onselectedindexchanged="DropDownListAttributeC_SelectedIndexChanged" 
+        >
 </asp:DropDownList>
 </div>
 
