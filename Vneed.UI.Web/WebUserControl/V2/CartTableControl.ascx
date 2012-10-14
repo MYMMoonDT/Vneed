@@ -25,7 +25,7 @@
         this.Init();
     }
     CartTable.prototype.Init = function () {
-        this.numSelector = new NumSelector();
+        this.numSelector = new NumSelectorPostBack();
     };
 </script>
 <script type="text/javascript">

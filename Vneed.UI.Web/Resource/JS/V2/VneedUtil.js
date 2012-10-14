@@ -138,6 +138,47 @@ NumSelector.prototype.Init = function () {
     });
 };
 
+function NumSelectorPostBack() {
+    this.Init();
+}
+NumSelectorPostBack.prototype.Init = function () {
+    $(".productDetailProductNumText").keyup(function () {
+
+        this.value = this.value.replace(/\D/g, '');
+        if (this.value == '') {
+            this.value = '1';
+        } else if (parseInt(this.value) > 99) {
+            this.value = '99';
+        }
+
+        var name = $(this).attr("name");
+        var func = "__doPostBack('" + name + "','')";
+        setTimeout(func, 0);
+    });
+
+    $(".productDetailMinusProductIcon").click(function () {
+        var numInput = $(this).parent().next().children().children()[0];
+        var num = parseInt($(numInput).val()) - 1;
+        if (num >= 1) {
+            $(numInput).val(num);
+            var name = $(numInput).attr("name");
+            var func = "__doPostBack('" + name + "','')";
+            setTimeout(func, 0);
+        }
+
+    });
+    $(".productDetailPlusProductIcon").click(function () {
+        var numInput = $(this).parent().prev().children().children()[0];
+        var num = parseInt($(numInput).val()) + 1;
+        if (num <= 99) {
+            $(numInput).val(num);
+            var name = $(numInput).attr("name");
+            var func = "__doPostBack('" + name + "','')";
+            setTimeout(func, 0);
+        }
+    });
+};
+
 function RadioManager() {
     this.Init();
 }
