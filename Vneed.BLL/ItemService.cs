@@ -15,16 +15,21 @@ namespace Vneed.BLL
             return true;
         }
 
+        public static void DeleteItem(string itemID)
+        {
+            ItemRepository.DeleteItem(itemID);
+        }
+
         public static void ModifyItem(Item newItem)
         {
             ItemRepository.ModifyItem(newItem, 1);
         }
 
-        public static void DeleteItem(string ItemID)
-        {
-            Item item = ItemService.GetItemByItemID(ItemID);
-            ItemRepository.ModifyItem(item, 0);
-        }
+//         public static void DeleteItem(string ItemID)
+//         {
+//             Item item = ItemService.GetItemByItemID(ItemID);
+//             ItemRepository.ModifyItem(item, 0);
+//         }
 
         public static Item GetItemByItemID(string itemID)
         {

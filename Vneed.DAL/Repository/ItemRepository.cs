@@ -35,6 +35,21 @@ namespace Vneed.DAL.Repository
             sqlConn.Close();
         }
 
+        public static void DeleteItem(string itemID)
+        {
+            string connectionString = WebConfigurationManager.ConnectionStrings["defaultConnectionString"].ToString();
+            SqlConnection sqlConn = new SqlConnection(connectionString);
+            sqlConn.Open();
+
+            string cmdString = "DELETE FROM [Item] WHERE ItemID=@itemID)";
+            SqlCommand sqlCmd = new SqlCommand(cmdString, sqlConn);
+            sqlCmd.Parameters.Add(new SqlParameter("itemID", itemID));
+
+            sqlCmd.ExecuteNonQuery();
+
+            sqlConn.Close();
+        }
+
         public static void ModifyItem(Item newItem, int active)
         {
             string connectionString = WebConfigurationManager.ConnectionStrings["defaultConnectionString"].ToString();
