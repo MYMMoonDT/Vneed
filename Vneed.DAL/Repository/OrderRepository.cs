@@ -18,8 +18,8 @@ namespace Vneed.DAL
 
             string cmdString;
             SqlCommand sqlCmd = new SqlCommand();
-            cmdString = "INSERT INTO [Order] (OrderID, Status, Payment, Delivery, UserID, ModiefiedDate, Name, School, Contact, Email, IdentityNo)" +
-                "VALUES (@orderID, @status, @payment, @delivery, @userID, @modifiedDate, @name, @school, @contact, @email, @identityNo)";
+            cmdString = "INSERT INTO [Order] (OrderID, Status, Payment, Delivery, UserID, ModiefiedDate, Name, School, Contact, Email, IdentityNo, AlreadySignedIn)" +
+                "VALUES (@orderID, @status, @payment, @delivery, @userID, @modifiedDate, @name, @school, @contact, @email, @identityNo, @alreadySignedIn)";
             sqlCmd = new SqlCommand(cmdString, sqlConn);
             string orderID = System.Guid.NewGuid().ToString();
             sqlCmd.Parameters.Add(new SqlParameter("orderID", orderID));
@@ -35,11 +35,29 @@ namespace Vneed.DAL
             sqlCmd.Parameters.Add(new SqlParameter("contact", newOrder.Contact));
             sqlCmd.Parameters.Add(new SqlParameter("email", newOrder.Email));
             sqlCmd.Parameters.Add(new SqlParameter("identityNo", newOrder.IdentityNo));
+            sqlCmd.Parameters.Add(new SqlParameter("alreadySignedIn", newOrder.AlreadySignedIn));
             sqlCmd.ExecuteNonQuery();
 
             sqlConn.Close();
 
             return orderID;
+        }
+
+        public static void UpdateOrderStatus(string orderID, int status)
+        {
+            string connectionString = WebConfigurationManager.ConnectionStrings["defaultConnectionString"].ToString();
+            SqlConnection sqlConn = new SqlConnection(connectionString);
+            sqlConn.Open();
+
+            string cmdString;
+            SqlCommand sqlCmd = new SqlCommand();
+            cmdString = "UPDATE [Order] SET Status=@status WHERE OrderID=@orderID";
+            sqlCmd = new SqlCommand(cmdString, sqlConn);
+            sqlCmd.Parameters.Add(new SqlParameter("orderID", orderID));
+            sqlCmd.Parameters.Add(new SqlParameter("status", status));
+            sqlCmd.ExecuteNonQuery();
+
+            sqlConn.Close();
         }
 
         public static Decimal GetOrderPrice(string OrderID)
@@ -118,9 +136,9 @@ namespace Vneed.DAL
             return result;
         }
 
-        public static List<Order> FindOrderByOrderID(string orderID)
+        public static Order FindOrderByOrderID(string orderID)
         {
-            List<Order> result = new List<Order>();
+            Order result = new Order();
 
             string connectionString = WebConfigurationManager.ConnectionStrings["defaultConnectionString"].ToString();
             SqlConnection sqlConn = new SqlConnection(connectionString);
@@ -135,9 +153,7 @@ namespace Vneed.DAL
             {
                 while (sqlDataReader.Read())
                 {
-                    Order newOrder = new Order();
-                    FillOrder(sqlDataReader, newOrder);
-                    result.Add(newOrder);
+                    FillOrder(sqlDataReader, result);
                 }
                 sqlDataReader.Close();
             }
@@ -214,6 +230,7 @@ namespace Vneed.DAL
             newOrder.Contact = (string)sqlDataReader["Contact"];
             newOrder.Email = (string)sqlDataReader["Email"];
             newOrder.IdentityNo = (string)sqlDataReader["IdentityNo"];
+            newOrder.AlreadySignedIn = (int)sqlDataReader["AlreadySignedIn"];
         }
 
         static void FillOrderDetail(SqlDataReader sqlDataReader, OrderDetail newOrderDetail)
@@ -223,7 +240,7 @@ namespace Vneed.DAL
             newOrderDetail.ItemID = (string)sqlDataReader["ItemID"];
             newOrderDetail.Title = (string)sqlDataReader["Title"];
             newOrderDetail.Price = (Decimal)sqlDataReader["Price"];
-            newOrderDetail.Quantity = (int)sqlDataReader["Price"];
+            newOrderDetail.Quantity = (int)sqlDataReader["Quantity"];
             newOrderDetail.TotalPrice = (Decimal)sqlDataReader["TotalPrice"];
             newOrderDetail.ImageUrl = (string)sqlDataReader["ImageUrl"];
         }

@@ -38,7 +38,7 @@ namespace Vneed.UI.Web.Admin
                 tc = new TableCell();
                 HyperLink hl = new HyperLink();
                 hl.Text = "操作";
-                hl.NavigateUrl = "/Admin/OrderDetail.aspx?orderID=" + order.OrderID;
+                hl.NavigateUrl = "/Admin/OrderInfo.aspx?orderID=" + order.OrderID;
                 tc.Controls.Add(hl);
                 tr.Cells.Add(tc);
                 Table.Rows.Add(tr);

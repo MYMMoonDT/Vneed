@@ -65,7 +65,7 @@
     <Content Include="Admin\ItemAttributeManagement.aspx" />
     <Content Include="Admin\ItemManagement.aspx" />
     <Content Include="Admin\ModifyItem.aspx" />
-    <Content Include="Admin\OrderDetail.aspx" />
+    <Content Include="Admin\OrderInfo.aspx" />
     <Content Include="Admin\OrderManagement.aspx" />
     <Content Include="ckeditor\adapters\jquery.js" />
     <Content Include="ckeditor\CHANGES.html" />
@@ -1154,12 +1154,12 @@
     <Compile Include="Admin\ModifyItem.aspx.designer.cs">
       <DependentUpon>ModifyItem.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\OrderDetail.aspx.cs">
-      <DependentUpon>OrderDetail.aspx</DependentUpon>
+    <Compile Include="Admin\OrderInfo.aspx.cs">
+      <DependentUpon>OrderInfo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\OrderDetail.aspx.designer.cs">
-      <DependentUpon>OrderDetail.aspx</DependentUpon>
+    <Compile Include="Admin\OrderInfo.aspx.designer.cs">
+      <DependentUpon>OrderInfo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\OrderManagement.aspx.cs">
       <DependentUpon>OrderManagement.aspx</DependentUpon>
