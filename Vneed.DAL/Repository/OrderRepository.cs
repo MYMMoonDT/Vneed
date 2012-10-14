@@ -118,6 +118,88 @@ namespace Vneed.DAL
             return result;
         }
 
+        public static List<Order> FindOrderByOrderID(string orderID)
+        {
+            List<Order> result = new List<Order>();
+
+            string connectionString = WebConfigurationManager.ConnectionStrings["defaultConnectionString"].ToString();
+            SqlConnection sqlConn = new SqlConnection(connectionString);
+            sqlConn.Open();
+
+            string cmdString = "SELECT * FROM [Order] WHERE OrderID = @orderID";
+            SqlCommand sqlCmd = new SqlCommand(cmdString, sqlConn);
+            sqlCmd.Parameters.Add(new SqlParameter("orderID", orderID));
+
+            SqlDataReader sqlDataReader = sqlCmd.ExecuteReader();
+            if (sqlDataReader.HasRows)
+            {
+                while (sqlDataReader.Read())
+                {
+                    Order newOrder = new Order();
+                    FillOrder(sqlDataReader, newOrder);
+                    result.Add(newOrder);
+                }
+                sqlDataReader.Close();
+            }
+
+            return result;
+        }
+
+        public static List<Order> FindOrdersByStatusAndDate(int status, int day)
+        {
+            List<Order> result = new List<Order>();
+
+            string connectionString = WebConfigurationManager.ConnectionStrings["defaultConnectionString"].ToString();
+            SqlConnection sqlConn = new SqlConnection(connectionString);
+            sqlConn.Open();
+
+            string cmdString = "SELECT * FROM [Order] WHERE Status=@status AND DATEDIFF(day, ModiefiedDate, GETDATE()) <= @day";
+            SqlCommand sqlCmd = new SqlCommand(cmdString, sqlConn);
+            sqlCmd.Parameters.Add(new SqlParameter("status", status));
+            sqlCmd.Parameters.Add(new SqlParameter("day", day));
+
+            SqlDataReader sqlDataReader = sqlCmd.ExecuteReader();
+            if (sqlDataReader.HasRows)
+            {
+                while (sqlDataReader.Read())
+                {
+                    Order newOrder = new Order();
+                    FillOrder(sqlDataReader, newOrder);
+                    result.Add(newOrder);
+                }
+                sqlDataReader.Close();
+            }
+
+            return result;
+        }
+
+        public static List<OrderDetail> FindOrderDetailsByOrderID(string orderID)
+        {
+            List<OrderDetail> result = new List<OrderDetail>();
+
+            string connectionString = WebConfigurationManager.ConnectionStrings["defaultConnectionString"].ToString();
+            SqlConnection sqlConn = new SqlConnection(connectionString);
+            sqlConn.Open();
+
+            string cmdString = "SELECT * FROM [OrderDetail] WHERE OrderID=@orderID";
+            SqlCommand sqlCmd = new SqlCommand(cmdString, sqlConn);
+            sqlCmd.Parameters.Add(new SqlParameter("orderID", orderID));
+
+            SqlDataReader sqlDataReader = sqlCmd.ExecuteReader();
+            if (sqlDataReader.HasRows)
+            {
+                while (sqlDataReader.Read())
+                {
+                    OrderDetail newOrderDetail = new OrderDetail();
+                    FillOrderDetail(sqlDataReader, newOrderDetail);
+                    result.Add(newOrderDetail);
+                }
+                sqlDataReader.Close();
+            }
+
+            return result;
+        }
+
         static void FillOrder(SqlDataReader sqlDataReader, Order newOrder)
         {
             newOrder.OrderSerialNumber = (int)sqlDataReader["OrderSerialNumber"];
@@ -132,6 +214,18 @@ namespace Vneed.DAL
             newOrder.Contact = (string)sqlDataReader["Contact"];
             newOrder.Email = (string)sqlDataReader["Email"];
             newOrder.IdentityNo = (string)sqlDataReader["IdentityNo"];
+        }
+
+        static void FillOrderDetail(SqlDataReader sqlDataReader, OrderDetail newOrderDetail)
+        {
+            newOrderDetail.OrderID = (string)sqlDataReader["OrderID"];
+            newOrderDetail.OrderDetailID = (int)sqlDataReader["OrderDetailID"];
+            newOrderDetail.ItemID = (string)sqlDataReader["ItemID"];
+            newOrderDetail.Title = (string)sqlDataReader["Title"];
+            newOrderDetail.Price = (Decimal)sqlDataReader["Price"];
+            newOrderDetail.Quantity = (int)sqlDataReader["Price"];
+            newOrderDetail.TotalPrice = (Decimal)sqlDataReader["TotalPrice"];
+            newOrderDetail.ImageUrl = (string)sqlDataReader["ImageUrl"];
         }
     }
 }
