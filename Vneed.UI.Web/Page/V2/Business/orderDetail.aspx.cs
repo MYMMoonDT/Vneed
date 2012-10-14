@@ -14,6 +14,7 @@ namespace Vneed.UI.Web.Page.V2.Business
         protected void Page_Load(object sender, EventArgs e)
         {
             this.OrderProcessStepControl1.StepNum = 2;
+            this.CartTableControl1.IsReadyOnly = true;
         }
 
         protected void orderDetailSubmitButton_Click(object sender, EventArgs e)
@@ -33,6 +34,7 @@ namespace Vneed.UI.Web.Page.V2.Business
             newOrder.Contact = this.ContactTextBox.Text;
             newOrder.IdentityNo = this.IDNumTextBox.Text;
             newOrder.Email = this.EmailTextBox.Text == "邮箱(选填)" ? "" : this.EmailTextBox.Text;
+            
             OrderService.SubmitOrder(newOrder);
             Response.Redirect("/Page/V2/Help/orderSubmitSuccess.aspx");
         }

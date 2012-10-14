@@ -26,7 +26,6 @@ namespace Vneed.UI.Web.Page.V2.Business
                 this.catalogNum = Int32.Parse(catalogNumStr);
             }
             renderCatalogSubTitle();
-            this.CatalogFilterControl1.CatalogID = this.catalogNum;
         }
         private void renderCatalogSubTitle()
         {

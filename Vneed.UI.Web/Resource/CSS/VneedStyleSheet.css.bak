@@ -932,7 +932,13 @@ input[type="button"]:hover, input[type="submit"]:hover
 
 .catalogFilterContentSelectContainer
 {
-	
+	margin-left: 18px;
+	margin-top:5px;
+}
+
+.catalogFilterContentSelectContainer .catalogFilterContentSelector
+{
+	width:150px;
 }
 
 .catalogFilterContentResultContainer
@@ -954,6 +960,12 @@ input[type="button"]:hover, input[type="submit"]:hover
     width: 140px;
 }
 
+.catalogFilterResultItemImgContainer img
+{
+	height: 100px;
+    width: 133px;
+}
+
 .catalogFilterResultItemTextContainer
 {
 	height: 90px;
@@ -967,6 +979,63 @@ input[type="button"]:hover, input[type="submit"]:hover
     line-height: 20px;
 }
 
+.catalogFilterResultItemTitleContainer a
+{
+	color:#000;
+}
+
+.catalogFilterResultItemTitleContainer a:hover
+{
+	color:#F50;
+}
+
+.catalogFilterPageLinkContainer
+{
+	margin-left: 18px;
+}
+
+.catalogFilterPageLinkContainer td
+{
+	
+}
+
+.catalogFilterPageLinkContainer a
+{
+    border: 1px solid #CCCCCC;
+    color: #005AA0;
+	float:left;
+    font-size: 14px;
+    height: 20px;
+    line-height: 20px;
+    margin-left: 2px;
+    overflow: hidden;
+    padding: 3px 10px;
+}
+
+.catalogFilterPageLinkContainer a:hover
+{
+    background-color: #005AA0;
+    color: #FFFFFF;
+}
+
+.catalogFilterPageLinkContainer .omit
+{
+	font-size: 14px;
+	padding: 4px 11px;
+	float:left;
+}
+
+.catalogFilterPageLinkContainer .current
+{
+	color: #FF6600;
+	border:none;
+}
+.catalogFilterPageLinkContainer .current:hover
+{
+	color: #FF6600;
+	border:none;
+	background-color: #005AA0;
+}
 
 /* SearchResultControl */
 
@@ -1715,6 +1784,15 @@ input[type="button"]:hover, input[type="submit"]:hover
 
 }
 
+.orderPersonalDataCheckBox
+{
+	float:left;
+	line-height:20px;
+	font-size: 18px;
+	margin-bottom:30px;
+	width:360px;
+}
+
 .orderPaymentWayRadioContainer
 {
 	margin-left:25px;
@@ -1799,7 +1877,7 @@ input[type="button"]:hover, input[type="submit"]:hover
 .sideTabContentContainer #catalogTabContent2
 {
 	width:335px;
-    height:680px;
+    height:700px;
 	position:absolute;
 	top:0;
 	left:0;

@@ -14,14 +14,23 @@ namespace Vneed.UI.Web.Page.V2.Business
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.OrderProcessStepControl1.StepNum = 1;
-            this.CartTableControl.UpdateProductNumInCart += new WebUserControl.V2.CartTableControl.UpdateProductNumInCartEventHandler(CartTableControl_UpdateProductNumInCart);
+            if (!this.IsPostBack)
+            {
+                this.OrderProcessStepControl1.StepNum = 1;
+                //this.CartTableControl.UpdateProductNumInCart += new WebUserControl.V2.CartTableControl.UpdateProductNumInCartEventHandler(CartTableControl_UpdateProductNumInCart);
+            }
+            if (CartService.GetCartRecodByUserID(AuthenticationService.GetUser().UserID).Count <= 0)
+            {
+                this.PayForProductInCartButton.Enabled = false;
+            }
         }
 
-        void CartTableControl_UpdateProductNumInCart()
-        {
-            
-        }
+        //void CartTableControl_UpdateProductNumInCart()
+        //{
+        //    MasterPage homeTemplate = this.Master.Master.Master;
+        //    TopBarControl topBarControl1 = (TopBarControl)homeTemplate.FindControl("TopBarControl1");
+        //    topBarControl1.updateProductNumInCart();
+        //}
 
         protected void PayForProductInCartButton_Click(object sender, EventArgs e)
         {

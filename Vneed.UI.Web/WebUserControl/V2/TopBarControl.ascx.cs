@@ -28,6 +28,13 @@ namespace Vneed.UI.Web.WebUserControl.V2
             this.ProductInCartNumImage.ImageUrl = "~/Resource/Image/header/header_cartlogo_" +
                     CartService.GetCartRecodByUserID(AuthenticationService.GetUser().UserID).Count.ToString() + ".png";
         }
+
+        public void updateProductNumInCart()
+        {
+            this.ProductInCartNumImage.ImageUrl = "~/Resource/Image/header/header_cartlogo_" +
+                    CartService.GetCartRecodByUserID(AuthenticationService.GetUser().UserID).Count.ToString() + ".png";
+        }
+
         private void logoutVneed() 
         {
             this.topBarMyVneedLoginContainer.Style["display"] = "none";

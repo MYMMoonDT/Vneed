@@ -58,15 +58,6 @@ namespace Vneed.UI.Web.WebUserControl.V2 {
         protected global::System.Web.UI.WebControls.HyperLink GoToMyVneedHyperLink;
         
         /// <summary>
-        /// ProductInCartNumUpdatePanel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel ProductInCartNumUpdatePanel;
-        
-        /// <summary>
         /// GoToMyCartHyperLink control.
         /// </summary>
         /// <remarks>

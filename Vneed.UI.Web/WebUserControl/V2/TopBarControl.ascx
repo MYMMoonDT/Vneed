@@ -18,13 +18,9 @@
                     <tr>
                         <td><asp:HyperLink ID="GoToMyVneedHyperLink" runat="server" NavigateUrl="~/Page/V2/MyVneed/myVneedMyOrder.aspx">我的Vneed</asp:HyperLink></td>
                         <td rowspan="2">
-                            <asp:UpdatePanel ID="ProductInCartNumUpdatePanel" runat="server" UpdateMode="Conditional">
-                                <ContentTemplate>
-                                    <asp:HyperLink ID="GoToMyCartHyperLink" runat="server" NavigateUrl="~/Page/V2/Business/cartDetail.aspx">
-                                        <asp:Image ID="ProductInCartNumImage" runat="server"/>
-                                    </asp:HyperLink>
-                                </ContentTemplate>
-                            </asp:UpdatePanel>
+                            <asp:HyperLink ID="GoToMyCartHyperLink" runat="server" NavigateUrl="~/Page/V2/Business/cartDetail.aspx">
+                                <asp:Image ID="ProductInCartNumImage" runat="server"/>
+                            </asp:HyperLink>  
                         </td>
                     </tr>      
                     <tr>

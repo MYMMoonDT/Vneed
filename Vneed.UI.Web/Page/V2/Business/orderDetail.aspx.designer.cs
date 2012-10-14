@@ -67,6 +67,15 @@ namespace Vneed.UI.Web.Page.V2.Business {
         protected global::System.Web.UI.WebControls.TextBox EmailTextBox;
         
         /// <summary>
+        /// IsRegistCourseCheckBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox IsRegistCourseCheckBox;
+        
+        /// <summary>
         /// OfflinePayRadioButton control.
         /// </summary>
         /// <remarks>
