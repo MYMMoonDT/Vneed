@@ -34,7 +34,7 @@ namespace Vneed.UI.Web.Page.V2.Business
             newOrder.Contact = this.ContactTextBox.Text;
             newOrder.IdentityNo = this.IDNumTextBox.Text;
             newOrder.Email = this.EmailTextBox.Text == "邮箱(选填)" ? "" : this.EmailTextBox.Text;
-            
+            newOrder.AlreadySignedIn = this.IsRegistCourseCheckBox.Checked ? 1 : 0;
             OrderService.SubmitOrder(newOrder);
             Response.Redirect("/Page/V2/Help/orderSubmitSuccess.aspx");
         }

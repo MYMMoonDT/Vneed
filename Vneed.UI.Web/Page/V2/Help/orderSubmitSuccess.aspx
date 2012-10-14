@@ -8,4 +8,7 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="OrderProcessMainContentPlaceHolder" runat="server">
     <uc1:OrderProcessStepControl ID="OrderProcessStepControl1" runat="server" />
+    <div>
+        恭喜您，提交订单成功！
+    </div>
 </asp:Content>

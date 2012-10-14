@@ -13,6 +13,8 @@ namespace Vneed.UI.Web.WebUserControl.V2
     {
         private String searchContent = "";
 
+        private int DESCRIPTION_MAX_LENGTH = 100;
+
         public String SearchContent
         {
             get { return this.searchContent; }
@@ -88,6 +90,14 @@ namespace Vneed.UI.Web.WebUserControl.V2
             Panel searchResultTableItemDescriptionContainer = new Panel();
             searchResultTableItemDescriptionContainer.CssClass = "searchResultTableItemDescriptionContainer";
             Label descriptionLabel = new Label();
+            //if (item.Description.Length >= DESCRIPTION_MAX_LENGTH)
+            //{
+            //    descriptionLabel.Text = item.Description.Substring(0, DESCRIPTION_MAX_LENGTH) + "...";
+            //}
+            //else
+            //{
+            //    descriptionLabel.Text = item.Description;
+            //}
             descriptionLabel.Text = item.Description;
             searchResultTableItemDescriptionContainer.Controls.Add(descriptionLabel);
             tc.Controls.Add(searchResultTableItemDescriptionContainer);
