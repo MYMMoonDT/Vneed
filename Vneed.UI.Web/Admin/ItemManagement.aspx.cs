@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Vneed.Model;
 using Vneed.BLL;
+using System.Collections;
 
 namespace Vneed.UI.Web.Admin
 {
@@ -57,7 +58,7 @@ namespace Vneed.UI.Web.Admin
 
         protected void ButtonDelete_Click(object sender, EventArgs e)
         {
-
+            ItemService.DeleteItem(ListBoxItem.SelectedValue);
         }
     }
 }
