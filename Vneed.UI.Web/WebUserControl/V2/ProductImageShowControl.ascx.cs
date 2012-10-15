@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Vneed.Model;
 
 namespace Vneed.UI.Web.WebUserControl.V2
 {
@@ -15,6 +16,16 @@ namespace Vneed.UI.Web.WebUserControl.V2
             {
                 renderProductImageShow();
             }
+        }
+
+        private HyperLink renderProductImage(CoverFlowItem coverFlowItem)
+        {
+            HyperLink imgLink = new HyperLink();
+            imgLink.NavigateUrl = coverFlowItem.NavUrl;
+            Image img = new Image();
+            img.ImageUrl = coverFlowItem.ImageUrl;
+            imgLink.Controls.Add(img);
+            return imgLink;
         }
 
         private void renderProductImageShow()
@@ -32,7 +43,7 @@ namespace Vneed.UI.Web.WebUserControl.V2
             slider.ID = "slider";
             slider.ClientIDMode = System.Web.UI.ClientIDMode.Static;
 
-
+            
 
             sliderWrapper.Controls.Add(slider);
             productImageShowWrapper.Controls.Add(sliderWrapper);
