@@ -98,6 +98,29 @@ namespace Vneed.DAL.Repository
                 return null;
         }
 
+        public static bool IsAdmin(string username)
+        {
+            string connectionString = WebConfigurationManager.ConnectionStrings["defaultConnectionString"].ToString();
+            SqlConnection sqlConn = new SqlConnection(connectionString);
+            sqlConn.Open();
+
+            string cmdString = "SELECT * FROM [Admin] WHERE Username = @username";
+            SqlCommand sqlCmd = new SqlCommand(cmdString, sqlConn);
+            sqlCmd.Parameters.Add(new SqlParameter("username", username));
+
+            SqlDataReader sqlDataReader = sqlCmd.ExecuteReader();
+            if (sqlDataReader.HasRows)
+            {
+                sqlDataReader.Close();
+                return true;
+            }
+            else
+            {
+                sqlDataReader.Close();
+                return false;
+            }
+        }
+
         static void FillUser(SqlDataReader sqlDataReader, User newUser)
         {
             newUser.UserID = (int)sqlDataReader["UserID"];

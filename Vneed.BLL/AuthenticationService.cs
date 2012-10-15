@@ -5,6 +5,7 @@ using System.Text;
 using System.Security.Cryptography;
 using System.Web;
 using Vneed.Model;
+using Vneed.DAL.Repository;
 
 namespace Vneed.BLL
 {
@@ -61,6 +62,11 @@ namespace Vneed.BLL
                     return null;
             }
             return (string)HttpContext.Current.Request.Cookies["Username"].Value;
+        }
+
+        public static bool IsAdmin(string username)
+        {
+            return UserRepository.IsAdmin(username);
         }
 
         static byte[] GetSaltBytes()
