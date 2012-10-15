@@ -89,13 +89,13 @@ namespace Vneed.UI.Web.Admin
             }
             else
             {
-                imageUrl += ItemService.GetItemByItemID(this.Request.QueryString["itemID"]).ImageUrl;
+                imageUrl = null;
             }
 
             Item newItem = ItemService.GetItemByItemID(this.Request.QueryString["itemID"]);
             newItem.Title = TextBoxTitle.Text;
             newItem.Description = TextBoxDescription.Text;
-            newItem.ImageUrl = imageUrl;
+            newItem.ImageUrl = imageUrl == null ? newItem.ImageUrl : imageUrl;
             newItem.Price = Decimal.Parse(TextBoxPrice.Text);
             newItem.OriginalPrice = Decimal.Parse(TextBoxOriginalPrice.Text);
             newItem.CatalogID = Int32.Parse(DropDownListCatalog.SelectedValue);

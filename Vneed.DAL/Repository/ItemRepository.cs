@@ -41,7 +41,7 @@ namespace Vneed.DAL.Repository
             SqlConnection sqlConn = new SqlConnection(connectionString);
             sqlConn.Open();
 
-            string cmdString = "DELETE FROM [Item] WHERE ItemID=@itemID)";
+            string cmdString = "DELETE FROM [Item] WHERE ItemID=@itemID";
             SqlCommand sqlCmd = new SqlCommand(cmdString, sqlConn);
             sqlCmd.Parameters.Add(new SqlParameter("itemID", itemID));
 

@@ -62,6 +62,7 @@
     <Content Include="Admin\AddItem.aspx" />
     <Content Include="Admin\BestsellerListManagement.aspx" />
     <Content Include="Admin\CatalogManagement.aspx" />
+    <Content Include="Admin\Index.aspx" />
     <Content Include="Admin\ItemAttributeManagement.aspx" />
     <Content Include="Admin\ItemManagement.aspx" />
     <Content Include="Admin\ModifyItem.aspx" />
@@ -1159,6 +1160,13 @@
     </Compile>
     <Compile Include="Admin\CatalogManagement.aspx.designer.cs">
       <DependentUpon>CatalogManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\ItemAttributeManagement.aspx.cs">
       <DependentUpon>ItemAttributeManagement.aspx</DependentUpon>

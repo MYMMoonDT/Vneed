@@ -11,6 +11,15 @@
 <body>
     <form id="form1" runat="server">
     <div>
+        <asp:HyperLink ID="HyperLink1" runat="server" 
+            NavigateUrl="~/Admin/ItemManagement.aspx">物品管理</asp:HyperLink>
+&nbsp;<asp:HyperLink ID="HyperLink2" runat="server" 
+            NavigateUrl="~/Admin/ItemAttributeManagement.aspx">物品属性管理</asp:HyperLink>
+&nbsp;<asp:HyperLink ID="HyperLink3" runat="server" 
+            NavigateUrl="~/Admin/CatalogManagement.aspx">分类管理</asp:HyperLink>
+&nbsp;<asp:HyperLink ID="HyperLink4" runat="server" 
+            NavigateUrl="~/Admin/OrderManagement.aspx">订单管理</asp:HyperLink>
+        <br />
         <asp:ContentPlaceHolder ID="body" runat="server">
         
         </asp:ContentPlaceHolder>
