@@ -25,7 +25,9 @@ namespace Vneed.BLL
             HashAlgorithm hash = new SHA256Managed();
             byte[] hashBytes = hash.ComputeHash(clearTextWithSaltBytes);
             //存储进cookie
-            HttpContext.Current.Response.Cookies["Username"].Value = Username;
+            string tmp = HttpUtility.UrlEncode(Username, Encoding.UTF8);
+            string tmp2 = HttpUtility.UrlDecode(tmp, Encoding.UTF8);
+            HttpContext.Current.Response.Cookies["Username"].Value = HttpUtility.UrlEncode(Username, Encoding.UTF8);
             HttpContext.Current.Response.Cookies["Ticket"].Value = Convert.ToBase64String(hashBytes);
         }
 
@@ -44,7 +46,8 @@ namespace Vneed.BLL
         {
             if (HttpContext.Current.Request.Cookies["Username"] == null)
                 return null;
-            byte[] clearTextBytes = Encoding.UTF8.GetBytes((string)HttpContext.Current.Request.Cookies["Username"].Value);
+            string username = (string)HttpUtility.UrlDecode(HttpContext.Current.Request.Cookies["Username"].Value, Encoding.UTF8);
+            byte[] clearTextBytes = Encoding.UTF8.GetBytes(username);
             byte[] saltBytes = GetSaltBytes();
             byte[] clearTextWithSaltBytes = new byte[clearTextBytes.Length + saltBytes.Length];
             for (int i = 0; i < clearTextBytes.Length; i++)
@@ -61,7 +64,7 @@ namespace Vneed.BLL
                 if (hashBytes[i] != storedHashBytes[i])
                     return null;
             }
-            return (string)HttpContext.Current.Request.Cookies["Username"].Value;
+            return username;
         }
 
         public static bool IsAdmin(string username)
