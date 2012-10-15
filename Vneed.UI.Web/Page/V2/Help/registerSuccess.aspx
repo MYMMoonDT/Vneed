@@ -9,11 +9,35 @@
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
 <div class="contentBg">
-    <div class="contentContainer">
-        3秒后跳转到主页,你也可以点击下面的按钮直接跳转到主页...
+    <div class="contentContainer registerSuccessContentContainer">
+        <div class="registerSuccessMainContentContainer">
+            <table>
+                <tr>
+                    <td>
+                        <div class="registerSuccessSubTitle">恭喜您，注册成功！</div>
+                    </td>
+                    <td>
+                        <img src="../../../Resource/Image/register/success_register.png" alt=""/>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        3秒后跳转到主页,你也可以点击下面的按钮直接跳转到主页...
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <div class="registerSuccessButtonContainer">
+                            <asp:Button ID="VneedHomePageButton" runat="server" Text="跳转到主页" 
+                                CssClass="registerSuccessButton" onclick="VneedHomePageButton_Click"/>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
     </div>
 </div>
-<%--<%
+<%
     Response.AddHeader("refresh","3;url=/Page/V2/index.aspx");
-%>--%>
+%>
 </asp:Content>

@@ -69,7 +69,7 @@
                 <tr>
                     <td>
                         <div class="registerAgreementContainer">
-<!--                             <asp:TextBox ID="RegisterAgreementLabel" runat="server"></asp:TextBox> -->
+                        <!--<asp:TextBox ID="RegisterAgreementLabel" runat="server"></asp:TextBox>-->
                             <asp:TextBox ID="RegisterAgreementTextBox" runat="server" Height="445px" 
                                 ReadOnly="True" Rows="10" TextMode="MultiLine" Width="898px">Vneed网站用户注册协议
 本协议是您与Vneed网站（简称“本站”，网址：www.vneed.org）所有者（以下简称为“Vneed”）之间就Vneed网站服务等相关事宜所订立的契约，请您仔细阅读本注册协议，您点击“同意”按钮后，本协议即构成对双方有约束力的法律文件。
@@ -137,7 +137,7 @@ Vneed
 12.1Vneed网站所有者是指在政府部门依法许可或备案的Vneed网站经营主体。
 12.2Vneed尊重用户和消费者的合法权利，本协议及本网站上发布的各类规则、声明等其他内容，均是为了更好的、更加便利的为用户和消费者提供服务。本站欢迎用户和社会各界提出意见和建议，Vneed将虚心接受并适时修改本协议及本站上的各类规则。 
 12.3本协议内容中以黑体、加粗、下划线、斜体等方式显著标识的条款，请用户着重阅读。
-12.4您点击本协议上方的“同意以下协议，提交”按钮即视为您完全接受本协议，在点击之前请您再次确认已知悉并完全理解本协议的全部内容。</asp:TextBox>
+12.4您点击本协议上方的“同意以上协议，提交”按钮即视为您完全接受本协议，在点击之前请您再次确认已知悉并完全理解本协议的全部内容。</asp:TextBox>
                         </div>
                     </td>
                 </tr>

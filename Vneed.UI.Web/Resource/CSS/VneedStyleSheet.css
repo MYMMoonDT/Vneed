@@ -347,6 +347,11 @@ input[type="button"]:hover, input[type="submit"]:hover
 	text-align: right;
 }
 
+#bottomBarCompanyInfo a
+{
+    color: #333;
+}
+
 /* SearchBarControl */
 
 .searchBarContainer
@@ -1430,7 +1435,7 @@ input[type="button"]:hover, input[type="submit"]:hover
     height: 450px;
     width: 900px;
     background-color: #FFFFFF;
-    overflow: auto;
+    /*overflow: auto;*/
 }
 
 .registerContentTextBox
@@ -1931,4 +1936,151 @@ input[type="button"]:hover, input[type="submit"]:hover
 .searchResultBottomDivider
 {
 	height:100px;
+}
+
+/* CSS in contactUS.aspx */
+
+.contactUsContentContainer
+{
+	height:800px;
+	font-size:24px;
+	line-height:75px;
+	color: #474747;
+}
+
+.contactUsMainContentContainer
+{
+	margin-top:40px;
+	margin-left:40px;
+}
+
+.contactUsCodeImageContainer
+{
+	margin-left:40px;
+	margin-top:20px;
+}
+
+/* CSS in aboutUS.aspx */
+
+.aboutUsContentContainer
+{
+	color: #474747;
+	height:1200px;
+	font-size:20px;
+	line-height:40px;
+}
+
+.aboutUsMainContentContainer
+{
+	margin-top:20px;
+	margin-left:10px;
+}
+
+.aboutUsSubTitle
+{
+	font-size:26px;
+	line-height:60px;
+}
+
+/* CSS in registerSuccess.aspx */
+
+.registerSuccessContentContainer
+{
+	height:400px;
+}
+
+.registerSuccessMainContentContainer
+{
+	background-color: #F8F8F8;
+    border: 1px solid #C0C0C0;
+    border-radius: 5px 5px 5px 5px;
+    height: 300px;
+    width: 500px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:30px;
+	font-size:14px;
+}
+
+.registerSuccessMainContentContainer table
+{
+	margin-left:50px;
+}
+
+.registerSuccessSubTitle
+{
+	font-size: 22px;
+}
+
+.registerSuccessButtonContainer
+{
+	margin-top:20px;
+	margin-left:90px;
+}
+
+.registerSuccessButton
+{
+    width: 185px;
+    height: 36px;
+    background-image: url('../Image/register/successButton_normal.png');
+    background-repeat: no-repeat;
+	font-size:14px;
+}
+
+.registerSuccessButton:hover
+{
+    background-image: url('../Image/register/successButton_hover.png');
+    background-repeat: no-repeat;
+}
+
+/* CSS in orderSubmitSuccess.aspx */
+
+.orderSubmitSuccessContentContainer
+{
+	height:600px;
+}
+
+.orderSubmitSuccessMainContentContainer
+{
+	background-color: #F2F2F2;
+    border: 1px solid #C0C0C0;
+    border-radius: 5px 5px 5px 5px;
+    height: 420px;
+    width: 700px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:20px;
+	font-size:14px;
+}
+
+.orderSubmitSuccessMainContentContainer table
+{
+	margin-left:50px;
+	margin-top:20px;
+}
+
+.orderSubmitSuccessSubTitle
+{
+	font-size: 22px;
+}
+
+.orderSubmitSuccessButtonContainer
+{
+	margin-left:60px;
+	margin-top:30px;
+}
+
+.orderSubmitSuccessButton
+{
+    width: 130px;
+    height: 36px;
+    background-image: url('../Image/order/successButton_normal.png');
+    background-repeat: no-repeat;
+    font-size: 14px;
+}
+
+.orderSubmitSuccessButton:hover
+{
+    background-image: url('../Image/order/successButton_hover.png');
+    background-repeat: no-repeat;
 }

@@ -25,7 +25,7 @@
             </div>
         </div>
     </div>
-    <%
+    <%--<%
         Response.AddHeader("refresh","3;url=/Page/index.aspx");
-    %>
+    %>--%>
 </asp:Content>

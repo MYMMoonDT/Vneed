@@ -8,7 +8,31 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="OrderProcessMainContentPlaceHolder" runat="server">
     <uc1:OrderProcessStepControl ID="OrderProcessStepControl1" runat="server" />
-    <div>
-        恭喜您，提交订单成功！
+    <div class="orderSubmitSuccessContentContainer">
+        <div class="orderSubmitSuccessMainContentContainer">
+            <table>
+                <tr>
+                    <td>
+                        <div class="orderSubmitSuccessSubTitle">恭喜您，提交订单成功！</div>
+                    </td>
+                    <td>
+                        <img src="../../../Resource/Image/register/success_register.png" alt=""/>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                       您可以点击“继续购物”按钮继续购物，也可以点击“我的Vneed”按钮查看订单情况。
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <div class="orderSubmitSuccessButtonContainer">
+                            <asp:Button ID="BuyButton" runat="server" Text="继续购物" CssClass="orderSubmitSuccessButton"/>
+                            <asp:Button ID="MyVneedButton" runat="server" Text="我的Vneed" CssClass="orderSubmitSuccessButton"/>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
     </div>
 </asp:Content>

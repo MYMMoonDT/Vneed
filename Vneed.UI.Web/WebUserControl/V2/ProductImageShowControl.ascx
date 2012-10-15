@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ProductImageShowControl.ascx.cs" Inherits="Vneed.UI.Web.WebUserControl.V2.ProductImageShow" %>
-<link href="../../Resource/NivoSlider/default.css" rel="stylesheet" type="text/css" />
-<link href="../../Resource/NivoSlider/nivo-slider.css" rel="stylesheet" type="text/css" />
+<link href="../../Resource/NivoSlider/default.css" rel="stylesheet" type="text/css" media="screen"/>
+<link href="../../Resource/NivoSlider/nivo-slider.css" rel="stylesheet" type="text/css" media="screen"/>
 <asp:Panel ID="productImageShowPanel" runat="server">
 </asp:Panel>
 <%--<div class="productImageShowBg">
@@ -16,10 +16,7 @@
         </div>
     </div>
 </div>
-
-
 <div class="productImageShowDivider"></div>--%>
-<script src="../../Resource/NivoSlider/jquery.nivo.slider.js" type="text/javascript"></script>
 <script type="text/javascript">
     $(document).ready(function () {
         $('#slider').nivoSlider();

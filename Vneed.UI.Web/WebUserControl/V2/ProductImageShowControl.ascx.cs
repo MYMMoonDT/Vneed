@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Vneed.Model;
+using Vneed.BLL;
 
 namespace Vneed.UI.Web.WebUserControl.V2
 {
@@ -22,6 +23,7 @@ namespace Vneed.UI.Web.WebUserControl.V2
         {
             HyperLink imgLink = new HyperLink();
             imgLink.NavigateUrl = coverFlowItem.NavUrl;
+            imgLink.Target = "_blank";
             Image img = new Image();
             img.ImageUrl = coverFlowItem.ImageUrl;
             imgLink.Controls.Add(img);
@@ -42,14 +44,19 @@ namespace Vneed.UI.Web.WebUserControl.V2
             slider.CssClass = "nivoSlider";
             slider.ID = "slider";
             slider.ClientIDMode = System.Web.UI.ClientIDMode.Static;
-
-            
-
+            List<CoverFlowItem> coverFlowList = CoverFlowService.FindAllCoverFlowItems();
+            foreach (CoverFlowItem item in coverFlowList)
+            {
+                slider.Controls.Add(renderProductImage(item));
+            }
             sliderWrapper.Controls.Add(slider);
             productImageShowWrapper.Controls.Add(sliderWrapper);
             productImageShowContainer.Controls.Add(productImageShowWrapper);
             productImageShowBg.Controls.Add(productImageShowContainer);
+            Panel productImageShowDivider = new Panel();
+            productImageShowDivider.CssClass = "productImageShowDivider";
             this.productImageShowPanel.Controls.Add(productImageShowBg);
+            this.productImageShowPanel.Controls.Add(productImageShowDivider);
         }
     }
 }

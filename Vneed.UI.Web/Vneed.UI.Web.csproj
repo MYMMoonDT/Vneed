@@ -940,6 +940,8 @@
     <Content Include="Page\V2\Business\orderDetail.aspx" />
     <Content Include="Page\V2\Business\productDetail.aspx" />
     <Content Include="Page\V2\Business\searchResult.aspx" />
+    <Content Include="Page\V2\Help\aboutUs.aspx" />
+    <Content Include="Page\V2\Help\contactUs.aspx" />
     <Content Include="Page\V2\Help\orderSubmitSuccess.aspx" />
     <Content Include="Page\V2\Help\registerSuccess.aspx" />
     <Content Include="Page\V2\index.aspx" />
@@ -977,6 +979,7 @@
     <Content Include="Resource\Image\icon\btn-renren.png" />
     <Content Include="Resource\Image\icon\btn-weibo.png" />
     <Content Include="Resource\Image\icon\button_back.png" />
+    <Content Include="Resource\Image\icon\contact_code.png" />
     <Content Include="Resource\Image\icon\icons_alert.png" />
     <Content Include="Resource\Image\icon\icons_red.png" />
     <Content Include="Resource\Image\icon\product_minus_icon.png" />
@@ -1013,6 +1016,8 @@
     <Content Include="Resource\Image\order\order_process_step_background.png" />
     <Content Include="Resource\Image\order\order_radio_normal.png" />
     <Content Include="Resource\Image\order\order_radio_selected.png" />
+    <Content Include="Resource\Image\order\successButton_hover.png" />
+    <Content Include="Resource\Image\order\successButton_normal.png" />
     <Content Include="Resource\Image\popup_collection.png" />
     <Content Include="Resource\Image\popup_login.png" />
     <Content Include="Resource\Image\pop_up\cart\pop_up_cart_base.png" />
@@ -1056,6 +1061,8 @@
     <Content Include="Resource\Image\product_page\product_productlogo_cover.png" />
     <Content Include="Resource\Image\register\registerButton_hover.png" />
     <Content Include="Resource\Image\register\registerButton_normal.png" />
+    <Content Include="Resource\Image\register\successButton_hover.png" />
+    <Content Include="Resource\Image\register\successButton_normal.png" />
     <Content Include="Resource\Image\register\success_background.png" />
     <Content Include="Resource\Image\register\success_register.png" />
     <Content Include="Resource\JS\index.js" />
@@ -1299,6 +1306,20 @@
     </Compile>
     <Compile Include="Page\V2\Business\searchResult.aspx.designer.cs">
       <DependentUpon>searchResult.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Page\V2\Help\aboutUs.aspx.cs">
+      <DependentUpon>aboutUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\V2\Help\aboutUs.aspx.designer.cs">
+      <DependentUpon>aboutUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Page\V2\Help\contactUs.aspx.cs">
+      <DependentUpon>contactUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\V2\Help\contactUs.aspx.designer.cs">
+      <DependentUpon>contactUs.aspx</DependentUpon>
     </Compile>
     <Compile Include="Page\V2\Help\orderSubmitSuccess.aspx.cs">
       <DependentUpon>orderSubmitSuccess.aspx</DependentUpon>

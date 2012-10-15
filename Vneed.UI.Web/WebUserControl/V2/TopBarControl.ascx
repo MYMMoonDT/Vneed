@@ -18,8 +18,8 @@
                     <tr>
                         <td><asp:HyperLink ID="GoToMyVneedHyperLink" runat="server" NavigateUrl="~/Page/V2/MyVneed/myVneedMyOrder.aspx">我的Vneed</asp:HyperLink></td>
                         <td rowspan="2">
-                            <asp:HyperLink ID="GoToMyCartHyperLink" runat="server" NavigateUrl="~/Page/V2/Business/cartDetail.aspx">
-                                <asp:Image ID="ProductInCartNumImage" runat="server"/>
+                            <asp:HyperLink ID="GoToMyCartHyperLink" runat="server" NavigateUrl="~/Page/V2/Business/cartDetail.aspx" ToolTip="Vneed首页">
+                                <asp:Image ID="ProductInCartNumImage" runat="server" ToolTip="Vneed首页"/>
                             </asp:HyperLink>  
                         </td>
                     </tr>      
