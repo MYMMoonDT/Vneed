@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Vneed.BLL;
 
 namespace Vneed.UI.Web.Admin
 {
@@ -11,7 +12,11 @@ namespace Vneed.UI.Web.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            string username = AuthenticationService.GetUsername();
+            if ((username == null) || (AuthenticationService.IsAdmin(username) == false))
+            {
+                Response.Redirect("/Page/V2/index.aspx");
+            }
         }
     }
 }
