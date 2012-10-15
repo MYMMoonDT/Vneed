@@ -913,7 +913,11 @@
     <Content Include="ckeditor\_source\skins\v2\toolbar.css" />
     <Content Include="ckeditor\_source\themes\default\theme.js" />
     <Content Include="External\CKEditor.NET.dll" />
+    <Content Include="Image\Gallery\nemo.jpg" />
     <Content Include="Image\Gallery\test5.jpg" />
+    <Content Include="Image\Gallery\toystory.jpg" />
+    <Content Include="Image\Gallery\up.jpg" />
+    <Content Include="Image\Gallery\walle.jpg" />
     <Content Include="Image\ItemImage\default.jpg" />
     <Content Include="Image\Portrait\Default.jpg" />
     <Content Include="Image\Gallery\test1.jpg" />
@@ -942,6 +946,12 @@
     <Content Include="Page\V2\MyVneed\myVneedMyOrder.aspx" />
     <Content Include="Resource\CSS\StyleSheet.css" />
     <Content Include="Resource\CSS\VneedStyleSheet.css" />
+    <Content Include="Resource\ImageFlow\imageflow.css" />
+    <Content Include="Resource\ImageFlow\imageflow.js" />
+    <Content Include="Resource\ImageFlow\imageflow.packed.css" />
+    <Content Include="Resource\ImageFlow\imageflow.packed.js" />
+    <Content Include="Resource\ImageFlow\reflect.aspx" />
+    <Content Include="Resource\ImageFlow\reflect.png" />
     <Content Include="Resource\Image\footer\footer_background.png" />
     <Content Include="Resource\Image\header\header_background.png" />
     <Content Include="Resource\Image\header\header_background_980.png" />
@@ -1057,6 +1067,16 @@
     <Content Include="Resource\JS\util.js" />
     <Content Include="Resource\JS\jquery.simplemodal-1.4.3.js" />
     <Content Include="Resource\JS\V2\VneedUtil.js" />
+    <Content Include="Resource\NivoSlider\arrows.png" />
+    <Content Include="Resource\NivoSlider\bullets.png" />
+    <Content Include="Resource\NivoSlider\default.css" />
+    <Content Include="Resource\NivoSlider\jquery.nivo.slider.js" />
+    <Content Include="Resource\NivoSlider\jquery.nivo.slider.pack.js" />
+    <Content Include="Resource\NivoSlider\loading.gif" />
+    <Content Include="Resource\NivoSlider\nivo-slider.css" />
+    <Content Include="Resource\SlideBox\jquery.slideBox.css" />
+    <Content Include="Resource\SlideBox\jquery.slideBox.js" />
+    <Content Include="Resource\SlideBox\jquery.slideBox.min.js" />
     <Content Include="Test\AuthenticationTest.aspx" />
     <Content Include="Test\BestsellerListTestaspx.aspx" />
     <Content Include="Test\CartTest.aspx" />
@@ -1309,6 +1329,10 @@
       <DependentUpon>myVneedMyOrder.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resource\ImageFlow\reflect.aspx.cs">
+      <DependentUpon>reflect.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Template\HomeTemplate.Master.cs">
       <DependentUpon>HomeTemplate.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1658,6 +1682,8 @@
     <None Include="ckeditor\_samples\php\standalone.php" />
     <None Include="ckeditor\_samples\sample_posteddata.php" />
     <Content Include="Template\Template1.Master" />
+    <None Include="Resource\ImageFlow\reflect2.php" />
+    <None Include="Resource\ImageFlow\reflect3.php" />
     <None Include="Resource\Image\header\header_logo.psd" />
     <None Include="Resource\Image\header\header_searchbar_normal.psd" />
     <Content Include="Template\Template2.master" />

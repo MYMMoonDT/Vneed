@@ -390,33 +390,47 @@ input[type="button"]:hover, input[type="submit"]:hover
 
 /* ProductImageShowControl */
 
-#productImageShowBg
+.productImageShowBg
 {
-	width:100%;
-	position:relative;
-	background-color: #E8E8E8;
+    width: 100%;
+    /*background-color: #E8E8E8;*/
+    background-color:transparent !important;
+    position:relative;
 }
 
-#productImageShowContainer
+.productImageShowContainer
 {
 	width:980px;
 	margin-left:auto;
 	margin-right:auto;
 	position:relative;
-	height:380px;
+	height:480px;
+}
+
+.productImageShowWrapper
+{
+    position:absolute;
+    width:980px;
+    top:20px;
+    left:0; 
+}
+
+.slider-wrapper
+{
+    width:100%;
 }
 
 .productImageShowDivider
 {
-	border-top-width: 1px;
-	border-bottom-width: 1px;
-	border-top-style: solid;
-	border-bottom-style: solid;
-	border-top-color: #C2C2C2;
-	border-bottom-color: #C2C2C2;
-	height:10px;
-	width:100%;
-	background-color: #E8E8E8;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-top-color: #C2C2C2;
+    border-bottom-color: #C2C2C2;
+    height: 10px;
+    width: 100%;
+    background-color: #E8E8E8;
 }
 
 /* CatalogListControl */

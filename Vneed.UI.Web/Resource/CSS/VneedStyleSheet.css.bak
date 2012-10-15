@@ -390,33 +390,48 @@ input[type="button"]:hover, input[type="submit"]:hover
 
 /* ProductImageShowControl */
 
-#productImageShowBg
+.productImageShowBg
 {
-	width:100%;
-	position:relative;
-	background-color: #E8E8E8;
+    width: 100%;
+    position: relative;
+    background-color: #474747;
 }
 
-#productImageShowContainer
+.productImageShowContainer
 {
 	width:980px;
 	margin-left:auto;
 	margin-right:auto;
 	position:relative;
-	height:380px;
+	height:300px;
+}
+
+.slideBoxContainer
+{
+	width:800px;
+	height:300px;
+	position:absolute;
+	top:0;
+	left:90px;
+}
+
+.slideBoxContainer img
+{
+	width:800px;
+	height:300px;
 }
 
 .productImageShowDivider
 {
-	border-top-width: 1px;
-	border-bottom-width: 1px;
-	border-top-style: solid;
-	border-bottom-style: solid;
-	border-top-color: #C2C2C2;
-	border-bottom-color: #C2C2C2;
-	height:10px;
-	width:100%;
-	background-color: #E8E8E8;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-top-color: #C2C2C2;
+    border-bottom-color: #C2C2C2;
+    height: 10px;
+    width: 100%;
+    background-color: #ABABAB;
 }
 
 /* CatalogListControl */
@@ -835,6 +850,7 @@ input[type="button"]:hover, input[type="submit"]:hover
 {
 	width:120px;
 	margin-left:50px;
+	font-size:16px;
 }
 .cartTableItemNumContainer td
 {

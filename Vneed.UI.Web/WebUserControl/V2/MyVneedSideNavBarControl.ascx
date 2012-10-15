@@ -2,7 +2,7 @@
 <div id="myVneedSideNavBarContainer">
     <div class="myVneedSideNavBarTitle">&nbsp;交易管理</div>
     <div class="myVneedSideNavBarSubTitle">
-        <asp:HyperLink ID="myVneedOrderHyperLink" runat="server" NavigateUrl="#">我的订单</asp:HyperLink>
+        <asp:HyperLink ID="myVneedOrderHyperLink" runat="server" NavigateUrl="~/Page/V2/MyVneed/myVneedMyOrder.aspx">我的订单</asp:HyperLink>
     </div>
     <div class="myVneedSideNavBarSubTitle">
         <asp:HyperLink ID="myVneedCollectionHyperLink" runat="server">我的收藏</asp:HyperLink>
