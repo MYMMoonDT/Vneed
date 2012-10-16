@@ -86,15 +86,11 @@
                             </tr>
                         </table>
                     </div>
-                    <div class="productDetailSimilarProductsContainer">
-                        <uc1:SimilarProductsControl ID="SimilarProductsControl1" runat="server" />
-                    </div>
+                    
                 </td>
             </tr>
             <tr>
-                <td colspan="2">
-                   <div class="productDetailMainSubTitle">评论</div>
-                </td>
+
             </tr>
         </table>
     </div>

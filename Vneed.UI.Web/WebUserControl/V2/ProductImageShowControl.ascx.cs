@@ -55,8 +55,8 @@ namespace Vneed.UI.Web.WebUserControl.V2
             productImageShowBg.Controls.Add(productImageShowContainer);
             Panel productImageShowDivider = new Panel();
             productImageShowDivider.CssClass = "productImageShowDivider";
-            this.productImageShowPanel.Controls.Add(productImageShowBg);
-            this.productImageShowPanel.Controls.Add(productImageShowDivider);
+            productImageShowPanel.Controls.Add(productImageShowBg);
+            productImageShowPanel.Controls.Add(productImageShowDivider);
         }
     }
 }
