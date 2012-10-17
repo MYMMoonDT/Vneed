@@ -38,6 +38,12 @@
 	margin:0;
 	z-index:6;
 	display:none;
+	background-color:#fff;  
+	filter:alpha(opacity=0);  
+	/other than IE/
+	-moz-opacity:0;
+	-khtml-opacity: 0;
+	opacity: 0; 
 }
 /* The slices and boxes in the Slider */
 .nivo-slice {
