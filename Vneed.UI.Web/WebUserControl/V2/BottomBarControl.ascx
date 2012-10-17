@@ -5,6 +5,8 @@
             <asp:HyperLink ID="AboutUsHyperLink" runat="server" NavigateUrl="~/Page/V2/Help/aboutUs.aspx">关于我们</asp:HyperLink>
             <asp:HyperLink ID="ContactUsHyperLink" runat="server" NavigateUrl="~/Page/V2/Help/contactUs.aspx">联系我们</asp:HyperLink>
             <%--<asp:HyperLink ID="ICPHyperLink" runat="server" NavigateUrl="http://www.miibeian.gov.cn" Target="_blank">沪ICP备12039679号</asp:HyperLink>--%>
+            <asp:Label ID="FriendLinkLabel" runat="server" Text="友情链接:"></asp:Label>
+            <asp:HyperLink ID="MyTongjiHyperLink" runat="server" NavigateUrl="http://www.wotongji.com">我同济</asp:HyperLink>
         </div>
         <div id="bottomBarCompanyInfo">
             <asp:Label ID="CompanyInfoLabel" runat="server" 

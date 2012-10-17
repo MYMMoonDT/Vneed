@@ -40,7 +40,7 @@
                         <asp:RadioButton ID="AlipayRadioButton" runat="server" 
                             GroupName="PaymentGroup" 
                             Text="支付宝付款"
-                            CssClass="VneedRadio"/>
+                            CssClass="VneedRadio" style="display:none;"/>
                     </div>
                     <div id="OfflinePayMessageContainer">
                         若您选择“线下支付”付款方式请填写个人资料后，我们的工作人员会通过电话与您取得联系。

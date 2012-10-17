@@ -31,6 +31,24 @@ namespace Vneed.UI.Web.WebUserControl.V2 {
         protected global::System.Web.UI.WebControls.HyperLink ContactUsHyperLink;
         
         /// <summary>
+        /// FriendLinkLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label FriendLinkLabel;
+        
+        /// <summary>
+        /// MyTongjiHyperLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink MyTongjiHyperLink;
+        
+        /// <summary>
         /// CompanyInfoLabel control.
         /// </summary>
         /// <remarks>

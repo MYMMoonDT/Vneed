@@ -914,6 +914,9 @@
     <Content Include="ckeditor\_source\skins\v2\toolbar.css" />
     <Content Include="ckeditor\_source\themes\default\theme.js" />
     <Content Include="External\CKEditor.NET.dll" />
+    <Content Include="Image\Gallery\czznjh.jpg" />
+    <Content Include="Image\Gallery\mxjhjh.jpg" />
+    <Content Include="Image\Gallery\mxtjjh.jpg" />
     <Content Include="Image\Gallery\nemo.jpg" />
     <Content Include="Image\Gallery\test5.jpg" />
     <Content Include="Image\Gallery\toystory.jpg" />
