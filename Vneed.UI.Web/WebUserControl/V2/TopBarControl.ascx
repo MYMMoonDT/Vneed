@@ -32,7 +32,7 @@
                 </table>
             </asp:Panel>
             <asp:Panel ID="topBarMyVneedLogoutContainer" runat="server" CssClass="topBarMyVneedLogoutContainer">
-                <asp:HyperLink ID="LoginVneedHyperLink" runat="server">登陆</asp:HyperLink>
+                <asp:HyperLink ID="LoginVneedHyperLink" runat="server">登录</asp:HyperLink>
                 <asp:HyperLink ID="RegisterVneedHyperLink" runat="server" NavigateUrl="~/Page/V2/Account/register.aspx">注册</asp:HyperLink>
             </asp:Panel>
         </div>
@@ -55,7 +55,7 @@
         <asp:TextBox ID="loginPasswordTextBoxHide" runat="server" CssClass="loginContentTextBox" style="display:none;" TextMode="Password"></asp:TextBox>
     </div>
     <div id="loginDialogOptionContainer">
-        <asp:Button ID="loginVneedButton" runat="server" Text="登陆" 
+        <asp:Button ID="loginVneedButton" runat="server" Text="登录" 
             CssClass="loginContentButton" 
             onclick="loginVneedButton_Click" 
             OnClientClick="return LoginDialog.Validation();"

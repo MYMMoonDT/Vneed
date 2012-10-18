@@ -914,6 +914,8 @@
     <Content Include="ckeditor\_source\skins\v2\toolbar.css" />
     <Content Include="ckeditor\_source\themes\default\theme.js" />
     <Content Include="External\CKEditor.NET.dll" />
+    <Content Include="Image\Gallery\81.jpg" />
+    <Content Include="Image\Gallery\82.jpg" />
     <Content Include="Image\Gallery\czznjh.jpg" />
     <Content Include="Image\Gallery\mxjhjh.jpg" />
     <Content Include="Image\Gallery\mxtjjh.jpg" />
@@ -946,6 +948,7 @@
     <Content Include="Page\V2\Business\searchResult.aspx" />
     <Content Include="Page\V2\Help\aboutUs.aspx" />
     <Content Include="Page\V2\Help\contactUs.aspx" />
+    <Content Include="Page\V2\Help\handbook.aspx" />
     <Content Include="Page\V2\Help\orderSubmitSuccess.aspx" />
     <Content Include="Page\V2\Help\registerSuccess.aspx" />
     <Content Include="Page\V2\index.aspx" />
@@ -959,6 +962,11 @@
     <Content Include="Resource\ImageFlow\reflect.aspx" />
     <Content Include="Resource\ImageFlow\reflect.png" />
     <Content Include="Resource\Image\footer\footer_background.png" />
+    <Content Include="Resource\Image\handbook\handbook_1.png" />
+    <Content Include="Resource\Image\handbook\handbook_2.png" />
+    <Content Include="Resource\Image\handbook\handbook_3.png" />
+    <Content Include="Resource\Image\handbook\handbook_4.png" />
+    <Content Include="Resource\Image\handbook\handbook_5.png" />
     <Content Include="Resource\Image\header\header_background.png" />
     <Content Include="Resource\Image\header\header_background_980.png" />
     <Content Include="Resource\Image\header\header_cartlogo_0.png" />
@@ -1331,6 +1339,13 @@
     </Compile>
     <Compile Include="Page\V2\Help\contactUs.aspx.designer.cs">
       <DependentUpon>contactUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Page\V2\Help\handbook.aspx.cs">
+      <DependentUpon>handbook.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\V2\Help\handbook.aspx.designer.cs">
+      <DependentUpon>handbook.aspx</DependentUpon>
     </Compile>
     <Compile Include="Page\V2\Help\orderSubmitSuccess.aspx.cs">
       <DependentUpon>orderSubmitSuccess.aspx</DependentUpon>

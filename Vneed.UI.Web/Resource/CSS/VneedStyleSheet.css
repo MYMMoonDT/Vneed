@@ -1528,11 +1528,17 @@ input[type="button"]:hover, input[type="submit"]:hover
 	background-color: #EBEBEB;
 }
 
+.productDetailDivider
+{
+    height:100px;    
+}
+
 #productDetailContainer
 {
 	background-color: #F9F9F9;
     border-left: 1px solid #D8D8D8;
     border-right: 1px solid #D8D8D8;
+    border-bottom: 1px solid #D8D8D8;
 }
 
 #productDetailContainer table, #productDetailContainer table tr, #productDetailContainer table tr td
@@ -1544,6 +1550,7 @@ input[type="button"]:hover, input[type="submit"]:hover
 {
 	width:575px;
 	border-right: 1px solid #D8D8D8;
+	padding-bottom:30px;
 }
 
 .productDetailMainSubTitle
@@ -2084,3 +2091,37 @@ input[type="button"]:hover, input[type="submit"]:hover
     background-image: url('../Image/order/successButton_hover.png');
     background-repeat: no-repeat;
 }
+
+/* CSS in handbook.aspx */
+
+.handbookContentContainer
+{
+    height: 1300px;
+    font-size: 18px;
+    line-height: 24px;
+    color: #353535;
+}
+
+.handbookContentContainer table
+{
+    width: 100%; 
+}
+
+.handbookContentContainer td
+{
+	width:50%;
+	vertical-align: top;
+}
+
+.handbookSubTitle
+{
+	font-size:30px;
+	line-height:60px;
+}
+
+.handbookStepTitle
+{
+	font-size:22px;
+	line-height:40px;
+}
+

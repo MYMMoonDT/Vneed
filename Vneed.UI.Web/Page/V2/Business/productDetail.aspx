@@ -94,6 +94,7 @@
             </tr>
         </table>
     </div>
+    <div class="productDetailDivider"></div>
    </div>
 <script type="text/javascript">
     function ProductDetail() {
