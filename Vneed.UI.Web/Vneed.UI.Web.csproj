@@ -1116,6 +1116,7 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <Content Include="WebService\VneedWebService.asmx" />
     <Content Include="WebUserControl\BestsellerItemList.ascx" />
     <Content Include="WebUserControl\CatalogList.ascx" />
     <Content Include="WebUserControl\CommentBox.ascx" />
@@ -1512,6 +1513,10 @@
     </Compile>
     <Compile Include="Test\UserTest.aspx.designer.cs">
       <DependentUpon>UserTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebService\VneedWebService.asmx.cs">
+      <DependentUpon>VneedWebService.asmx</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="WebUserControl\BestsellerItemList.ascx.cs">
       <DependentUpon>BestsellerItemList.ascx</DependentUpon>
