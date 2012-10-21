@@ -27,8 +27,10 @@
                 <tr>
                     <td colspan="2">
                         <div class="orderSubmitSuccessButtonContainer">
-                            <asp:Button ID="BuyButton" runat="server" Text="继续购物" CssClass="orderSubmitSuccessButton"/>
-                            <asp:Button ID="MyVneedButton" runat="server" Text="我的Vneed" CssClass="orderSubmitSuccessButton"/>
+                            <asp:Button ID="BuyButton" runat="server" Text="继续购物" 
+                                CssClass="orderSubmitSuccessButton" onclick="BuyButton_Click"/>
+                            <asp:Button ID="MyVneedButton" runat="server" Text="我的Vneed" 
+                                CssClass="orderSubmitSuccessButton" onclick="MyVneedButton_Click"/>
                         </div>
                     </td>
                 </tr>

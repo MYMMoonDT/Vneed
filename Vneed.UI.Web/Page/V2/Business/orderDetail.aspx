@@ -137,7 +137,7 @@ OrderDetailForm.Validation = function () {
     var IDNumTextBoxRegExpValidation = new Validator({
         id: IDNumTextBoxFullID,
         type: "regexp",
-        regexp: /(^\d{15}$)|(^\d{17}([0-9]|X)$)/
+        regexp: /(^\d{15}$)|(^\d{17}([0-9]|X|x)$)/
     });
 
     var EmailTextBoxRegExpValidation = new Validator({

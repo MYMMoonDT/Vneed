@@ -13,5 +13,15 @@ namespace Vneed.UI.Web.Page.V2.Help
         {
             this.OrderProcessStepControl1.StepNum = 3; 
         }
+
+        protected void BuyButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/Page/V2/index.aspx");
+        }
+
+        protected void MyVneedButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/Page/V2/MyVneed/myVneedMyOrder.aspx");
+        }
     }
 }

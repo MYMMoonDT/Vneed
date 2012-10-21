@@ -14,6 +14,8 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <link href="../Resource/CSS/VneedStyleSheet.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" href="../Resource/Image/icon/vneed_logo.ico" type="image/x-icon"/>
+    <link rel="Shortcut Icon" href="../Resource/Image/icon/vneed_logo.ico" type="image/x-icon"/>
 </head>
 <body>
     <!--添加引用JS-->
