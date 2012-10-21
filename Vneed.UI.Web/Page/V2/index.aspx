@@ -9,7 +9,7 @@
 <%@ Register src="../../WebUserControl/V2/BestSellerItemListControl.ascx" tagname="BestSellerItemListControl" tagprefix="uc4" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <title>首页</title>
+    <title>Vneed教育平台</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     
