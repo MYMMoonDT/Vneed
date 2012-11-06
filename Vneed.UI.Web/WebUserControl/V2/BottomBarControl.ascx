@@ -11,6 +11,7 @@
         <div id="bottomBarCompanyInfo">
             <asp:Label ID="CompanyInfoLabel" runat="server" 
                 Text="&copy;2012. www.vneed.org. All Rights Reserved. <a href='http://www.miibeian.gov.cn' target='_blank'>沪ICP备12039679号</a><br/>Design by Vneed Group"></asp:Label>
+                    <script src="http://s23.cnzz.com/stat.php?id=4664228&web_id=4664228" language="JavaScript"></script>
         </div>
     </div>
 </div>

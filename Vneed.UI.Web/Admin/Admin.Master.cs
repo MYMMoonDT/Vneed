@@ -12,13 +12,12 @@ namespace Vneed.UI.Web.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            /*
+            
             string username = AuthenticationService.GetUsername();
             if ((username == null) || (AuthenticationService.IsAdmin(username) == false))
             {
                 Response.Redirect("/Page/V2/index.aspx");
             }
-             */
         }
     }
 }
