@@ -996,6 +996,7 @@
     <Content Include="Resource\Image\icon\icons_red.png" />
     <Content Include="Resource\Image\icon\product_minus_icon.png" />
     <Content Include="Resource\Image\icon\product_plus_icon.png" />
+    <Content Include="Resource\Image\icon\search_empty_notic.png" />
     <Content Include="Resource\Image\icon\vneed_logo.ico" />
     <Content Include="Resource\Image\index site.png" />
     <Content Include="Resource\Image\index\mainarea\index_mainarea_divider.png" />

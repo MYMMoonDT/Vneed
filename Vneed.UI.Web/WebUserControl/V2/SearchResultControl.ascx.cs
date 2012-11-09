@@ -13,7 +13,7 @@ namespace Vneed.UI.Web.WebUserControl.V2
     {
         private String searchContent = "";
 
-        private int DESCRIPTION_MAX_LENGTH = 100;
+        //private int DESCRIPTION_MAX_LENGTH = 100;
 
         public String SearchContent
         {
@@ -34,7 +34,21 @@ namespace Vneed.UI.Web.WebUserControl.V2
         private void renderSearchResultItems(List<Item> searchResultItems)
         {
             if (searchResultItems.Count <= 0)
+            {
+                Panel searchResultEmptyContainer = new Panel();
+                searchResultEmptyContainer.CssClass = "searchResultEmptyContainer";
+                Image img = new Image();
+                img.ImageUrl = "/Resource/Image/icon/search_empty_notic.png";
+                Panel searchResultEmptyContent = new Panel();
+                searchResultEmptyContent.CssClass = "searchResultEmptyContent";
+                Label label = new Label();
+                label.Text = "对不起，找不到您所输入的课程，可能因为：<br/>您的课程已经开课or您输入有误。<br/>请将您所需要的课程号与您的联系方式发送至kf@vneed.org。<br/>我们的工作人员会在12小时内与您联系。<br/>感谢您的支持。";
+                searchResultEmptyContent.Controls.Add(label);
+                searchResultEmptyContainer.Controls.Add(img);
+                searchResultEmptyContainer.Controls.Add(searchResultEmptyContent);
+                searchResultControlContainerPanel.Controls.Add(searchResultEmptyContainer);
                 return;
+            }
 
             Table searchResultTable = new Table();
             
