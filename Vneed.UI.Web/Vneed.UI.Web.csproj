@@ -1108,6 +1108,7 @@
     <Content Include="Test\OrderTest.aspx" />
     <Content Include="Test\RecommendedItemListTest.aspx" />
     <Content Include="Test\UserTest.aspx" />
+    <Content Include="Test\WebServiceTest.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -1514,6 +1515,13 @@
     </Compile>
     <Compile Include="Test\UserTest.aspx.designer.cs">
       <DependentUpon>UserTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Test\WebServiceTest.aspx.cs">
+      <DependentUpon>WebServiceTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test\WebServiceTest.aspx.designer.cs">
+      <DependentUpon>WebServiceTest.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebService\VneedWebService.asmx.cs">
       <DependentUpon>VneedWebService.asmx</DependentUpon>
