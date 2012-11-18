@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.Services;
 using Vneed.BLL;
 using Vneed.Model;
 
@@ -34,39 +35,77 @@ namespace Vneed.UI.Web.Page.V2.Business
             this.productDetailDescriptionLabel.Text = this.productItem.Description;
         }
 
-        protected void ProductDetailAddCartButton_Click(object sender, EventArgs e)
+        //protected void ProductDetailAddCartButton_Click(object sender, EventArgs e)
+        //{
+        //    if (AuthenticationService.GetUsername() == null)
+        //    {
+        //        Response.Redirect("/Page/V2/index.aspx");
+        //    }
+        //    else
+        //    {
+        //        CartRecord cartRecord = new CartRecord();
+        //        cartRecord.UserID = AuthenticationService.GetUser().UserID;
+        //        cartRecord.ItemID = this.productItem.ItemID;
+        //        cartRecord.Count = int.Parse(this.productDetailProductNumTextBox.Text);
+        //        CartService.AddCartRecord(cartRecord);
+        //        Response.Redirect("/Page/V2/Business/cartDetail.aspx");
+        //    }
+        //}
+        [WebMethod]
+        public static bool ProductDetailAddCartButton_Click(string productID, string productNum)
         {
-            if (AuthenticationService.GetUsername() == null)
-            {
-                Response.Redirect("/Page/V2/index.aspx");
-            }
-            else
+            if (AuthenticationService.GetUsername() != null)
             {
                 CartRecord cartRecord = new CartRecord();
                 cartRecord.UserID = AuthenticationService.GetUser().UserID;
-                cartRecord.ItemID = this.productItem.ItemID;
-                cartRecord.Count = int.Parse(this.productDetailProductNumTextBox.Text);
+                cartRecord.ItemID = productID;
+                cartRecord.Count = int.Parse(productNum);
                 CartService.AddCartRecord(cartRecord);
-                Response.Redirect("/Page/V2/Business/cartDetail.aspx");
+                //Response.Redirect("/Page/V2/Business/cartDetail.aspx");
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
 
-        protected void ProductDetailBuyNowButton_Click(object sender, EventArgs e)
+        [WebMethod]
+        public static bool ProductDetailBuyNowButton_Click(string productID, string productNum)
         {
-            if (AuthenticationService.GetUsername() == null)
-            {
-                Response.Redirect("/Page/V2/index.aspx");
-            }
-            else
+            if (AuthenticationService.GetUsername() != null)
             {
                 CartRecord cartRecord = new CartRecord();
                 cartRecord.UserID = AuthenticationService.GetUser().UserID;
-                cartRecord.ItemID = this.productItem.ItemID;
-                cartRecord.Count = int.Parse(this.productDetailProductNumTextBox.Text);
+                cartRecord.ItemID = productID;
+                cartRecord.Count = int.Parse(productNum);
                 CartService.DeletaCartRecordByUserID(AuthenticationService.GetUser().UserID);
                 CartService.AddCartRecord(cartRecord);
-                Response.Redirect("/Page/V2/Business/orderDetail.aspx");
+                //Response.Redirect("/Page/V2/Business/orderDetail.aspx");
+                return true;
+            }
+            else 
+            {
+                return false;
             }
         }
+
+        //protected void ProductDetailBuyNowButton_Click(object sender, EventArgs e)
+        //{
+        //    if (AuthenticationService.GetUsername() == null)
+        //    {
+        //        Response.Redirect("/Page/V2/index.aspx");
+        //    }
+        //    else
+        //    {
+        //        CartRecord cartRecord = new CartRecord();
+        //        cartRecord.UserID = AuthenticationService.GetUser().UserID;
+        //        cartRecord.ItemID = this.productItem.ItemID;
+        //        cartRecord.Count = int.Parse(this.productDetailProductNumTextBox.Text);
+        //        CartService.DeletaCartRecordByUserID(AuthenticationService.GetUser().UserID);
+        //        CartService.AddCartRecord(cartRecord);
+        //        Response.Redirect("/Page/V2/Business/orderDetail.aspx");
+        //    }
+        //}
     }
 }
