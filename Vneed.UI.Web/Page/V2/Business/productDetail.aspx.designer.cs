@@ -67,24 +67,6 @@ namespace Vneed.UI.Web.Page.V2.Business {
         protected global::System.Web.UI.WebControls.TextBox productDetailProductNumTextBox;
         
         /// <summary>
-        /// ProductDetailBuyNowButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ProductDetailBuyNowButton;
-        
-        /// <summary>
-        /// ProductDetailAddCartButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ProductDetailAddCartButton;
-        
-        /// <summary>
         /// ProductDetailCollectButton control.
         /// </summary>
         /// <remarks>

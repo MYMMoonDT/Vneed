@@ -72,12 +72,22 @@
                                     <div id="productDetailProductProcessOptionContainer">
                                         <table>
                                         <tr>
-                                        <td><asp:Button ID="ProductDetailBuyNowButton" runat="server" Text="立即购买" 
-                                                CssClass="productDetailOptionBuyNowButton" 
-                                                onclick="ProductDetailBuyNowButton_Click"/></td>
-                                        <td><asp:Button ID="ProductDetailAddCartButton" runat="server" Text="加入购物车" 
-                                                CssClass="productDetailOptionAddCartButton" 
-                                                onclick="ProductDetailAddCartButton_Click"/></td>
+                                        <td>
+                                            <%--<asp:Button ID="ProductDetailBuyNowButton" runat="server" Text="立即购买" 
+                                                CssClass="productDetailOptionBuyNowButton"/>--%>
+                                            <input id="ProductDetailBuyNowButton" 
+                                                type="button" 
+                                                value="立即购买" 
+                                                class="productDetailOptionBuyNowButton"/>
+                                        </td>
+                                        <td>
+                                            <%--<asp:Button ID="ProductDetailAddCartButton" runat="server" Text="加入购物车" 
+                                                CssClass="productDetailOptionAddCartButton"/>--%>
+                                            <input id="ProductDetailAddCartButton" 
+                                                type="button" 
+                                                value="加入购物车" 
+                                                class="productDetailOptionAddCartButton"/>
+                                        </td>
                                         <td><asp:Button ID="ProductDetailCollectButton" runat="server" Text="收藏" CssClass="productDetailOptionCollectButton"/></td>
                                         </tr>
                                         </table>
@@ -89,10 +99,7 @@
                     
                 </td>
             </tr>
-            <tr>
-
-            </tr>
-        </table>
+            </table>
     </div>
     <div class="productDetailDivider"></div>
    </div>
@@ -102,6 +109,42 @@
     }
     ProductDetail.prototype.Init = function () {
         this.numSelector = new NumSelector();
+        $("#ProductDetailBuyNowButton").click(function () {
+            var productID = $.getUrlVar('product');
+            var productNum = $("#ContentPlaceHolder1_ContentPlaceHolder2_productDetailProductNumTextBox").val();
+            $.ajax({
+                type: "post",
+                url: "productDetail.aspx/ProductDetailBuyNowButton_Click",
+                contentType: "application/json; charset=utf-8",
+                data: "{ 'productID': '" + productID + "', 'productNum':'" + productNum + "'}",
+                dataType: "json",
+                success: function (data) {
+                    if (data.d == false) {
+                        $("#TopBarControl1_LoginVneedHyperLink").click();
+                    } else {
+                        window.location.href = "/Page/V2/Business/orderDetail.aspx";
+                    }
+                }
+            });
+        });
+        $("#ProductDetailAddCartButton").click(function () {
+            var productID = $.getUrlVar('product');
+            var productNum = $("#ContentPlaceHolder1_ContentPlaceHolder2_productDetailProductNumTextBox").val();
+            $.ajax({
+                type: "post",
+                url: "productDetail.aspx/ProductDetailAddCartButton_Click",
+                contentType: "application/json; charset=utf-8",
+                data: "{ 'productID': '" + productID + "', 'productNum':'" + productNum + "'}",
+                dataType: "json",
+                success: function (data) {
+                    if (data.d == false) {
+                        $("#TopBarControl1_LoginVneedHyperLink").click();
+                    } else {
+                        window.location.href = "/Page/V2/Business/cartDetail.aspx";
+                    }
+                }
+            });
+        });
     };
 </script>
 <script type="text/javascript">
