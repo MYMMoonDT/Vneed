@@ -49,6 +49,7 @@ namespace Vneed.UI.Web.WebUserControl.V2
 
         protected void CustomValidatorLogin_ServerValidate(object source, ServerValidateEventArgs args)
         {
+            //似乎这里的Login调用会失灵，所以在loginVneedButton_Click重做了一次。
             args.IsValid = UserService.VerifyPassword(this.loginNameTextBox.Text, this.loginPasswordTextBoxHide.Text);
             if (args.IsValid == false)
             {

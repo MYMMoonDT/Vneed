@@ -1103,8 +1103,10 @@
     <Content Include="Test\CartTest.aspx" />
     <Content Include="Test\CatalogListTest.aspx" />
     <Content Include="Test\CommentTest.aspx" />
+    <Content Include="Test\Cookie.aspx" />
     <Content Include="Test\CookieTest.aspx" />
     <Content Include="Test\DescriptionTest.aspx" />
+    <Content Include="Test\EasyLogin.aspx" />
     <Content Include="Test\FilterListTest.aspx" />
     <Content Include="Test\OrderTest.aspx" />
     <Content Include="Test\RecommendedItemListTest.aspx" />
@@ -1475,6 +1477,13 @@
     <Compile Include="Test\CommentTest.aspx.designer.cs">
       <DependentUpon>CommentTest.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Test\Cookie.aspx.cs">
+      <DependentUpon>Cookie.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test\Cookie.aspx.designer.cs">
+      <DependentUpon>Cookie.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Test\CookieTest.aspx.cs">
       <DependentUpon>CookieTest.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1488,6 +1497,13 @@
     </Compile>
     <Compile Include="Test\DescriptionTest.aspx.designer.cs">
       <DependentUpon>DescriptionTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Test\EasyLogin.aspx.cs">
+      <DependentUpon>EasyLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test\EasyLogin.aspx.designer.cs">
+      <DependentUpon>EasyLogin.aspx</DependentUpon>
     </Compile>
     <Compile Include="Test\FilterListTest.aspx.cs">
       <DependentUpon>FilterListTest.aspx</DependentUpon>
