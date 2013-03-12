@@ -32,7 +32,7 @@
                     <div>
                         <asp:RadioButton ID="OfflinePayRadioButton" runat="server" 
                             GroupName="PaymentGroup" 
-                            Text="线下支付（请填写个人资料）"
+                            Text="线下支付"
                             Checked="True"
                             CssClass="VneedRadio"/>
                     </div>
@@ -40,10 +40,25 @@
                         <asp:RadioButton ID="AlipayRadioButton" runat="server" 
                             GroupName="PaymentGroup" 
                             Text="支付宝付款"
-                            CssClass="VneedRadio" style="display:none;"/>
+                            CssClass="VneedRadio" />
                     </div>
-                    <div id="OfflinePayMessageContainer">
-                        若您选择“线下支付”付款方式请填写个人资料后，我们的工作人员会通过电话与您取得联系。
+                    <div>
+                        <asp:RadioButton ID="PhonePayRadioButton" runat="server"
+                            GroupName="PaymentGroup"
+                            Text="话费充值"
+                            CssClass="VneedRadio" />
+                    </div>
+                    <div>
+                        <asp:RadioButton ID="NetworkedGameRadioButton" runat="server"
+                            GroupName="PaymentGroup"
+                            Text="网游充值"
+                            CssClass="VneedRadio" />
+                    </div>
+                    <div>
+                        <asp:RadioButton ID="BankcardRadioButton" runat="server"
+                            GroupName="PaymentGroup"
+                            Text="银行卡转账"
+                            CssClass="VneedRadio" />
                     </div>
                 </div>
             </div>

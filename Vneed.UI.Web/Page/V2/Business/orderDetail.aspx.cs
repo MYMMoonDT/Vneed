@@ -29,6 +29,19 @@ namespace Vneed.UI.Web.Page.V2.Business
             {
                 newOrder.Payment = 1;
             }
+            else if (this.PhonePayRadioButton.Checked)
+            {
+                newOrder.Payment = 2;
+            }
+            else if (this.NetworkedGameRadioButton.Checked)
+            {
+                newOrder.Payment = 3;
+            }
+            else if (this.BankcardRadioButton.Checked)
+            {
+                newOrder.Payment = 4;
+            }
+
             newOrder.Name = this.NameTextBox.Text;
             newOrder.School = this.SchoolTextBox.Text;
             newOrder.Contact = this.ContactTextBox.Text;
