@@ -18,8 +18,8 @@ namespace Vneed.DAL
 
             string cmdString;
             SqlCommand sqlCmd = new SqlCommand();
-            cmdString = "INSERT INTO [Order] (OrderID, Status, Payment, Delivery, UserID, ModiefiedDate, Name, School, Contact, Email, IdentityNo, AlreadySignedIn)" +
-                "VALUES (@orderID, @status, @payment, @delivery, @userID, @modifiedDate, @name, @school, @contact, @email, @identityNo, @alreadySignedIn)";
+            cmdString = "INSERT INTO [Order] (OrderID, Status, Payment, Delivery, UserID, ModiefiedDate, Name, School, Contact, Email, IdentityNo, AlreadySignedIn, ExtraInfo)" +
+                "VALUES (@orderID, @status, @payment, @delivery, @userID, @modifiedDate, @name, @school, @contact, @email, @identityNo, @alreadySignedIn, @extraInfo)";
             sqlCmd = new SqlCommand(cmdString, sqlConn);
             string orderID = System.Guid.NewGuid().ToString();
             sqlCmd.Parameters.Add(new SqlParameter("orderID", orderID));
@@ -36,6 +36,7 @@ namespace Vneed.DAL
             sqlCmd.Parameters.Add(new SqlParameter("email", newOrder.Email));
             sqlCmd.Parameters.Add(new SqlParameter("identityNo", newOrder.IdentityNo));
             sqlCmd.Parameters.Add(new SqlParameter("alreadySignedIn", newOrder.AlreadySignedIn));
+            sqlCmd.Parameters.Add(new SqlParameter("extraInfo", newOrder.ExtraInfo));
             sqlCmd.ExecuteNonQuery();
 
             sqlConn.Close();
@@ -231,6 +232,7 @@ namespace Vneed.DAL
             newOrder.Email = (string)sqlDataReader["Email"];
             newOrder.IdentityNo = (string)sqlDataReader["IdentityNo"];
             newOrder.AlreadySignedIn = (int)sqlDataReader["AlreadySignedIn"];
+            newOrder.ExtraInfo = sqlDataReader["ExtraInfo"] == null ? "" : (string)sqlDataReader["ExtraInfo"];
         }
 
         static void FillOrderDetail(SqlDataReader sqlDataReader, OrderDetail newOrderDetail)

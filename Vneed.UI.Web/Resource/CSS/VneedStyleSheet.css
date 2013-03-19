@@ -1847,6 +1847,12 @@ input[type="button"]:hover, input[type="submit"]:hover
 	margin-left:25px;
 }
 
+.orderPaymentWayTextBoxContainer
+{
+	margin-left:30px;
+	margin-top:25px;
+}
+
 #OfflinePayMessageContainer
 {
 	color: #4D4D4D;

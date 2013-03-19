@@ -20,48 +20,81 @@
                     <asp:TextBox ID="ContactTextBox" runat="server" CssClass="orderPersonalDataTextBox"></asp:TextBox>
                     <asp:TextBox ID="IDNumTextBox" runat="server" CssClass="orderPersonalDataTextBox"></asp:TextBox>
                     <asp:TextBox ID="EmailTextBox" runat="server" CssClass="orderPersonalDataTextBox"></asp:TextBox>
-                    <asp:CheckBox ID="IsRegistCourseCheckBox" runat="server" Text="是否已经报名该课程" CssClass="orderPersonalDataCheckBox"/>
+                    <asp:CheckBox ID="IsRegistCourseCheckBox" runat="server" Text="是否已经报名该课程" 
+                        CssClass="orderPersonalDataCheckBox" AutoPostBack="True" 
+                        oncheckedchanged="IsRegistCourseCheckBox_CheckedChanged"/>
                 </div>
                 <div id="orderPersonalDataErrorContainer">
                     
                 </div>
             </div>
-            <div class="orderPaymentWayContainer">
-                <div class="orderSubTitle">付款方式：</div>
-                <div class="orderPaymentWayRadioContainer">
-                    <div>
-                        <asp:RadioButton ID="OfflinePayRadioButton" runat="server" 
-                            GroupName="PaymentGroup" 
-                            Text="线下支付"
-                            Checked="True"
-                            CssClass="VneedRadio"/>
-                    </div>
-                    <div>
-                        <asp:RadioButton ID="AlipayRadioButton" runat="server" 
-                            GroupName="PaymentGroup" 
-                            Text="支付宝付款"
-                            CssClass="VneedRadio" />
-                    </div>
-                    <div>
-                        <asp:RadioButton ID="PhonePayRadioButton" runat="server"
-                            GroupName="PaymentGroup"
-                            Text="话费充值"
-                            CssClass="VneedRadio" />
-                    </div>
-                    <div>
-                        <asp:RadioButton ID="NetworkedGameRadioButton" runat="server"
-                            GroupName="PaymentGroup"
-                            Text="网游充值"
-                            CssClass="VneedRadio" />
-                    </div>
-                    <div>
-                        <asp:RadioButton ID="BankcardRadioButton" runat="server"
-                            GroupName="PaymentGroup"
-                            Text="银行卡转账"
-                            CssClass="VneedRadio" />
+            <asp:Panel ID="orderPaymentWayPanel" runat="server">   
+                <div class="orderPaymentWayContainer">
+                    <div class="orderSubTitle">付款方式：</div>
+                    <div class="orderPaymentWayRadioContainer">
+                        <div>
+                            <asp:RadioButton ID="OfflinePayRadioButton" runat="server" 
+                                GroupName="PaymentGroup" 
+                                Text="线下支付"
+                                Checked="True"
+                                CssClass="VneedRadio"/>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </asp:Panel>
+            <asp:Panel ID="orderReturnWayPanel" runat="server" Visible="False">   
+                <div class="orderPaymentWayContainer">
+                    <div class="orderSubTitle">返款方式：</div>
+                    <div class="orderPaymentWayRadioContainer">
+                        <div>
+                            <asp:RadioButton ID="PhonePayRadioButton" runat="server"
+                                GroupName="PaymentGroup"
+                                Text="话费充值"
+                                CssClass="VneedRadio" AutoPostBack="True" 
+                                oncheckedchanged="PhonePayRadioButton_CheckedChanged" />
+                        </div>
+                        <div>
+                            <asp:RadioButton ID="NetworkedGameRadioButton" runat="server"
+                                GroupName="PaymentGroup"
+                                Text="网游充值"
+                                CssClass="VneedRadio" AutoPostBack="True" 
+                                oncheckedchanged="NetworkedGameRadioButton_CheckedChanged" />
+                        </div>
+                        <div>
+                            <asp:RadioButton ID="AlipayRadioButton" runat="server" 
+                                GroupName="PaymentGroup" 
+                                Text="支付宝付款"
+                                CssClass="VneedRadio" AutoPostBack="True" 
+                                oncheckedchanged="AlipayRadioButton_CheckedChanged" />
+                        </div>
+                        <div>
+                            <asp:RadioButton ID="BankcardRadioButton" runat="server"
+                                GroupName="PaymentGroup"
+                                Text="银行卡转账"
+                                CssClass="VneedRadio" AutoPostBack="True" 
+                                oncheckedchanged="BankcardRadioButton_CheckedChanged" />
+                        </div>
+                    </div>
+                    <div class="orderPaymentWayTextBoxContainer">
+                        <asp:Panel ID="PhonePayPanel" runat="server" Visible = "false">
+                            <asp:TextBox ID="PhoneNoTextBox" runat="server" CssClass="orderPersonalDataTextBox">手机号码</asp:TextBox>
+                        </asp:Panel>
+                        <asp:Panel ID="NetworkedGamePayPanel" runat="server" Visible = "false">
+                            <asp:TextBox ID="GameNameTextBox" runat="server" CssClass="orderPersonalDataTextBox">游戏名称</asp:TextBox>
+                            <asp:TextBox ID="GameAccountTextBox" runat="server" CssClass="orderPersonalDataTextBox">游戏账户</asp:TextBox>
+                            <asp:TextBox ID="GameOtherInfoTextBox" runat="server" CssClass="orderPersonalDataTextBox">其他信息</asp:TextBox>
+                        </asp:Panel>
+                        <asp:Panel ID="AlipayPanel" runat="server" Visible = "false">
+                            <asp:TextBox ID="AlipayAccountTextBox" runat="server" CssClass="orderPersonalDataTextBox">支付宝账户</asp:TextBox>
+                            <asp:TextBox ID="AlipayAccountOwnerNameTextBox" runat="server" CssClass="orderPersonalDataTextBox">户主</asp:TextBox>
+                        </asp:Panel>
+                        <asp:Panel ID="BankcardPayPanel" runat="server" Visible = "false">
+                            <asp:TextBox ID="BankcardAccountTextBox" runat="server" CssClass="orderPersonalDataTextBox">银行卡号</asp:TextBox>
+                            <asp:TextBox ID="BankcardAccountOwnerNameTextBox" runat="server" CssClass="orderPersonalDataTextBox">户主</asp:TextBox>
+                        </asp:Panel>
+                    </div>
+                </div>
+            </asp:Panel>
         </div>
     </td></tr>
     <tr>
@@ -143,15 +176,10 @@ OrderDetailForm.Validation = function () {
         regexp: /(^\d{11}$)|(^((\d{7,8})|(\d{4}|\d{3})-(\d{7,8})|(\d{4}|\d{3})-(\d{7,8})-(\d{4}|\d{3}|\d{2}|\d{1})|(\d{7,8})-(\d{4}|\d{3}|\d{2}|\d{1}))$)/
     });
 
-    var IDNumTextBoxRequiredValidation = new Validator({
-        id: IDNumTextBoxFullID,
-        type: "required",
-        defaultStr: "身份证号(用以报班使用)"
-    });
-
     var IDNumTextBoxRegExpValidation = new Validator({
         id: IDNumTextBoxFullID,
         type: "regexp",
+        defaultStr: "身份证号(用以报班使用，选填)",
         regexp: /(^\d{15}$)|(^\d{17}([0-9]|X|x)$)/
     });
 
@@ -173,19 +201,17 @@ OrderDetailForm.Validation = function () {
         $("#orderPersonalDataErrorContainer").html("<div class='error'>提交订单失败，请填写完整个人资料</div>");
         return false;
     }
-    if (!IDNumTextBoxRequiredValidation.Validation()) {
-        $("#orderPersonalDataErrorContainer").html("<div class='error'>提交订单失败，请填写完整个人资料</div>");
-        return false;
-    }
 
     if (!ContactTextBoxRegExpValidation.Validation()) {
         $("#orderPersonalDataErrorContainer").html("<div class='error'>提交订单失败，请填写正确的联系方式</div>");
         return false;
     }
 
-    if (!IDNumTextBoxRegExpValidation.Validation()) {
-        $("#orderPersonalDataErrorContainer").html("<div class='error'>提交订单失败，请填写正确的身份证号</div>");
-        return false;
+    if (!($(IDNumTextBoxFullID).val() == "" || $(IDNumTextBoxFullID).val() == "身份证号(用以报班使用，选填)")) {
+        if (!IDNumTextBoxRegExpValidation.Validation()) {
+            $("#orderPersonalDataErrorContainer").html("<div class='error'>提交订单失败，请填写正确的身份证号</div>");
+            return false;
+        }
     }
 
     if (!($(EmailTextBoxFullID).val() == "" || $(EmailTextBoxFullID).val() == "邮箱(选填)")) {
@@ -216,7 +242,7 @@ OrderDetailForm.prototype.Init = function () {
     });
     this.IDNumTextBox = new TextBox({
         id: this.IDNumTextBoxFullID,
-        defaultStr: "身份证号(用以报班使用)",
+        defaultStr: "身份证号(用以报班使用，选填)",
         type: "text"
     });
     this.EmailTextBox = new TextBox({

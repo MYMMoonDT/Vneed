@@ -20,6 +20,7 @@ namespace Vneed.Model
         public string Email;
         public string IdentityNo;
         public int AlreadySignedIn;
+        public string ExtraInfo;
 
         public void SetStatusToNotPayed()
         {
