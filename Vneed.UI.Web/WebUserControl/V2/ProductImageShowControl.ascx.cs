@@ -44,7 +44,7 @@ namespace Vneed.UI.Web.WebUserControl.V2
             slider.CssClass = "nivoSlider";
             slider.ID = "slider";
             slider.ClientIDMode = System.Web.UI.ClientIDMode.Static;
-            List<CoverFlowItem> coverFlowList = CoverFlowService.FindAllCoverFlowItems();
+            List<CoverFlowItem> coverFlowList = CoverFlowService.GetAll();
             foreach (CoverFlowItem item in coverFlowList)
             {
                 slider.Controls.Add(renderProductImage(item));

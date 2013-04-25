@@ -47,10 +47,13 @@ namespace Vneed.UI.Web.Admin
             tc = new TableCell();
             tc.Text = "是否已经报名 " + order.AlreadySignedIn.ToString();
             tr.Cells.Add(tc);
+            Table.Rows.Add(tr);
+            tr = new TableRow();
             tc = new TableCell();
             tc.Text = "额外信息" + order.ExtraInfo;
             tr.Cells.Add(tc);
             Table.Rows.Add(tr);
+
             List<OrderDetail> details = OrderService.FindOrderDetailsByOrderID(orderID);
             foreach (OrderDetail detail in details)
             {

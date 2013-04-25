@@ -19,6 +19,8 @@
             NavigateUrl="~/Admin/CatalogManagement.aspx">分类管理</asp:HyperLink>
 &nbsp;<asp:HyperLink ID="HyperLink4" runat="server" 
             NavigateUrl="~/Admin/OrderManagement.aspx">订单管理</asp:HyperLink>
+&nbsp;<asp:HyperLink ID="HyperLink5" runat="server" 
+            NavigateUrl="~/Admin/CoverFlowManagement.aspx">首页交互管理</asp:HyperLink>
         <br />
         <asp:ContentPlaceHolder ID="body" runat="server">
         

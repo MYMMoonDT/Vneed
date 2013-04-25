@@ -316,7 +316,7 @@ namespace Vneed.DAL.Repository
 
             string cmdString = "SELECT * FROM Item, (SELECT OderDetail.ItemID, SUM(Quantity) AS Expr1 FROM OderDetail GROUP BY OderDetail.ItemID) AS T WHERE Item.ItemID = T.ItemId AND Item.CatalogID = @catalogID ORDER BY Expr1 DESC";
             SqlCommand sqlCmd = new SqlCommand(cmdString, sqlConn);
-            sqlCmd.Parameters.Add("catalogID", catalogID);
+            sqlCmd.Parameters.AddWithValue("catalogID", catalogID);
 
             SqlDataReader sqlDataReader = sqlCmd.ExecuteReader();
             if (sqlDataReader.HasRows)
@@ -344,7 +344,7 @@ namespace Vneed.DAL.Repository
             string cmdString = "SELECT * FROM Item WHERE Title LIKE @keyword";
             SqlCommand sqlCmd = new SqlCommand(cmdString, sqlConn);
             string keywordStr = "%" + keyword + "%";
-            sqlCmd.Parameters.Add("keyword", keywordStr);
+            sqlCmd.Parameters.AddWithValue("keyword", keywordStr);
 
             SqlDataReader sqlDataReader = sqlCmd.ExecuteReader();
             if (sqlDataReader.HasRows)
