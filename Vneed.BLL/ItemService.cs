@@ -41,14 +41,52 @@ namespace Vneed.BLL
             return ItemRepository.SearchItems(keyword);
         }
 
+        /* API for RecommendList */
         public static List<Item> GetRecommendedItems()
         {
             return ItemRepository.FindItemsByRecommendList();
         }
 
+        public static string GetRecommendItemIDByPos(int pos)
+        {
+            return ItemRepository.GetRecommendItemIDByPos(pos);
+        }
+
+        public static bool UpdateRecommendItem(string itemID, int pos)
+        {
+            if (itemID == "")
+            {
+                return ItemRepository.DeleteItemFromRecommendList(pos);
+            }
+            else
+            {
+                return ItemRepository.UpdateItemInRecommendList(itemID, pos) ||
+                    ItemRepository.AddItemToRecommendList(itemID, pos);
+            }
+        }
+
+        /* API for bestsellers */
         public static List<Item> GetBestsellers()
         {
             return ItemRepository.FindItemsByBestsellerList();
+        }
+
+        public static string GetBestsellerItemIDByPos(int pos)
+        {
+            return ItemRepository.GetBestsellerItemIDByPos(pos);
+        }
+
+        public static bool UpdateBestsellerItem(string itemID, int pos)
+        {
+            if (itemID == "")
+            {
+                return ItemRepository.DeleteItemFromBestsellerList(pos);
+            }
+            else
+            {
+                return ItemRepository.UpdateItemInBestsellerList(itemID, pos) ||
+                    ItemRepository.AddItemToBestsellerList(itemID, pos);
+            }
         }
 
         public static List<Item> GetBestSellersByCatalog(int catalogID)
@@ -60,7 +98,7 @@ namespace Vneed.BLL
         {
             return ItemRepository.FindItemsByCatalogAndAttributes(catalogID, attributeA, attributeB, attributeC);
         }
-
+        /*
         public static void AddItemToBestsellerList(string itemID, int pos)
         {
             ItemRepository.AddItemToBestsellerList(itemID, pos);
@@ -75,5 +113,6 @@ namespace Vneed.BLL
         {
             ItemRepository.DeleteItemFromBestsellerList(itemID);
         }
+         * */
     }
 }

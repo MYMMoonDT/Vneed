@@ -69,6 +69,7 @@
     <Content Include="Admin\ModifyItem.aspx" />
     <Content Include="Admin\OrderInfo.aspx" />
     <Content Include="Admin\OrderManagement.aspx" />
+    <Content Include="Admin\RecommendListManagement.aspx" />
     <Content Include="ckeditor\adapters\jquery.js" />
     <Content Include="ckeditor\CHANGES.html" />
     <Content Include="ckeditor\ckeditor.asp" />
@@ -1227,6 +1228,13 @@
     </Compile>
     <Compile Include="Admin\OrderManagement.aspx.designer.cs">
       <DependentUpon>OrderManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\RecommendListManagement.aspx.cs">
+      <DependentUpon>RecommendListManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\RecommendListManagement.aspx.designer.cs">
+      <DependentUpon>RecommendListManagement.aspx</DependentUpon>
     </Compile>
     <Compile Include="Page\Account\register.aspx.cs">
       <DependentUpon>register.aspx</DependentUpon>

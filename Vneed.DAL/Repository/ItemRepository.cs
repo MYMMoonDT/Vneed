@@ -188,8 +188,7 @@ namespace Vneed.DAL.Repository
             sqlConn.Open();
 
             string cmdString = "SELECT [Item].[ItemSerialNumber],[Item].[ItemID],[Item].[Title],[Item].[Description],[Item].[ImageUrl],[Item].[Price],[Item].[OriginalPrice],[Item].[CatalogID],[Item].[ModifiedDate],[Item].[AttributeAID],[Item].[AttributeBID],[Item].[AttributeCID]" +
-                               "FROM Item INNER JOIN RecommendList ON Item.ItemID = RecommendList.ItemID";
-                               //"ORDER BY RecommendList.Oder";
+                               "FROM Item INNER JOIN RecommendList ON Item.ItemID = RecommendList.ItemID ORDER BY RecommendList.Pos";
             SqlCommand sqlCmd = new SqlCommand(cmdString, sqlConn);
 
             SqlDataReader sqlDataReader = sqlCmd.ExecuteReader();
@@ -205,6 +204,84 @@ namespace Vneed.DAL.Repository
             }
 
             return result;
+        }
+
+        public static string GetRecommendItemIDByPos(int pos)
+        {
+            string itemID = "";
+
+            string connectionString = WebConfigurationManager.ConnectionStrings["defaultConnectionString"].ToString();
+            SqlConnection sqlConn = new SqlConnection(connectionString);
+            sqlConn.Open();
+
+            string cmdString = "SELECT ItemID FROM RecommendList WHERE Pos=@pos";
+            SqlCommand sqlCmd = new SqlCommand(cmdString, sqlConn);
+            sqlCmd.Parameters.Add(new SqlParameter("pos", pos));
+
+            SqlDataReader sqlDataReader = sqlCmd.ExecuteReader();
+            if (sqlDataReader.HasRows)
+            {
+                while (sqlDataReader.Read())
+                {
+                    itemID = (string)sqlDataReader["ItemID"];
+                }
+                sqlDataReader.Close();
+            }
+
+            return itemID;
+        }
+
+        public static bool DeleteItemFromRecommendList(int pos)
+        {
+            string connectionString = WebConfigurationManager.ConnectionStrings["defaultConnectionString"].ToString();
+            SqlConnection sqlConn = new SqlConnection(connectionString);
+            sqlConn.Open();
+
+            string cmdString = "DELETE FROM RecommendList WHERE Pos = @pos ";
+            SqlCommand sqlCmd = new SqlCommand(cmdString, sqlConn);
+            sqlCmd.Parameters.Add(new SqlParameter("pos", pos));
+
+            int affectedRow = sqlCmd.ExecuteNonQuery();
+
+            sqlConn.Close();
+
+            return affectedRow > 0 ? true : false;
+        }
+
+        public static bool AddItemToRecommendList(string itemID, int pos)
+        {
+            string connectionString = WebConfigurationManager.ConnectionStrings["defaultConnectionString"].ToString();
+            SqlConnection sqlConn = new SqlConnection(connectionString);
+            sqlConn.Open();
+
+            string cmdString = "INSERT INTO RecommendList (ItemID, Pos) VALUES (@itemID, @pos)";
+            SqlCommand sqlCmd = new SqlCommand(cmdString, sqlConn);
+            sqlCmd.Parameters.Add(new SqlParameter("itemID", itemID));
+            sqlCmd.Parameters.Add(new SqlParameter("pos", pos));
+
+            int affectedRow = sqlCmd.ExecuteNonQuery();
+
+            sqlConn.Close();
+
+            return affectedRow > 0 ? true : false;
+        }
+
+        public static bool UpdateItemInRecommendList(string itemID, int pos)
+        {
+            string connectionString = WebConfigurationManager.ConnectionStrings["defaultConnectionString"].ToString();
+            SqlConnection sqlConn = new SqlConnection(connectionString);
+            sqlConn.Open();
+
+            string cmdString = "UPDATE RecommendList SET ItemID=@itemID WHERE Pos=@pos";
+            SqlCommand sqlCmd = new SqlCommand(cmdString, sqlConn);
+            sqlCmd.Parameters.Add(new SqlParameter("itemID", itemID));
+            sqlCmd.Parameters.Add(new SqlParameter("pos", pos));
+
+            int affectedRow = sqlCmd.ExecuteNonQuery();
+
+            sqlConn.Close();
+
+            return affectedRow > 0 ? true : false;
         }
 
         public static List<Item> FindItemsByBestsellerList()
@@ -233,7 +310,31 @@ namespace Vneed.DAL.Repository
             return result;
         }
 
-        public static void AddItemToBestsellerList(string itemID, int pos)
+        public static string GetBestsellerItemIDByPos(int pos)
+        {
+            string connectionString = WebConfigurationManager.ConnectionStrings["defaultConnectionString"].ToString();
+            SqlConnection sqlConn = new SqlConnection(connectionString);
+            sqlConn.Open();
+
+            string cmdString = "SELECT ItemID FROM BestsellerList Where Pos = @pos";
+            SqlCommand sqlCmd = new SqlCommand(cmdString, sqlConn);
+            sqlCmd.Parameters.Add(new SqlParameter("pos", pos));
+
+            string itemID = "";
+            SqlDataReader sqlDataReader = sqlCmd.ExecuteReader();
+            if (sqlDataReader.HasRows)
+            {
+                while (sqlDataReader.Read())
+                {
+                    itemID = (string)sqlDataReader["ItemID"];
+                }
+                sqlDataReader.Close();
+            }
+
+            return itemID;
+        }
+
+        public static bool AddItemToBestsellerList(string itemID, int pos)
         {
             string connectionString = WebConfigurationManager.ConnectionStrings["defaultConnectionString"].ToString();
             SqlConnection sqlConn = new SqlConnection(connectionString);
@@ -244,9 +345,46 @@ namespace Vneed.DAL.Repository
             sqlCmd.Parameters.Add(new SqlParameter("itemID", itemID));
             sqlCmd.Parameters.Add(new SqlParameter("pos", pos));
 
-            sqlCmd.ExecuteNonQuery();
+            int affectedRow = sqlCmd.ExecuteNonQuery();
 
             sqlConn.Close();
+
+            return affectedRow > 0 ? true : false;
+        }
+
+        public static bool UpdateItemInBestsellerList(string itemID, int pos)
+        {
+            string connectionString = WebConfigurationManager.ConnectionStrings["defaultConnectionString"].ToString();
+            SqlConnection sqlConn = new SqlConnection(connectionString);
+            sqlConn.Open();
+
+            string cmdString = "UPDATE BestsellerList SET ItemID=@itemID WHERE Pos=@pos";
+            SqlCommand sqlCmd = new SqlCommand(cmdString, sqlConn);
+            sqlCmd.Parameters.Add(new SqlParameter("itemID", itemID));
+            sqlCmd.Parameters.Add(new SqlParameter("pos", pos));
+
+            int affectedRow = sqlCmd.ExecuteNonQuery();
+
+            sqlConn.Close();
+
+            return affectedRow > 0 ? true : false;
+        }
+
+        public static bool DeleteItemFromBestsellerList(int pos)
+        {
+            string connectionString = WebConfigurationManager.ConnectionStrings["defaultConnectionString"].ToString();
+            SqlConnection sqlConn = new SqlConnection(connectionString);
+            sqlConn.Open();
+
+            string cmdString = "DELETE FROM BestsellerList WHERE Pos=@pos";
+            SqlCommand sqlCmd = new SqlCommand(cmdString, sqlConn);
+            sqlCmd.Parameters.Add(new SqlParameter("pos", pos));
+
+            int affectedRow = sqlCmd.ExecuteNonQuery();
+
+            sqlConn.Close();
+
+            return affectedRow > 0 ? true : false;
         }
 
         public static void MoveItemInBestsellerList(string itemID, int newPos)
@@ -259,21 +397,6 @@ namespace Vneed.DAL.Repository
             SqlCommand sqlCmd = new SqlCommand(cmdString, sqlConn);
             sqlCmd.Parameters.Add(new SqlParameter("itemID", itemID));
             sqlCmd.Parameters.Add(new SqlParameter("newPos", newPos));
-
-            sqlCmd.ExecuteNonQuery();
-
-            sqlConn.Close();
-        }
-
-        public static void DeleteItemFromBestsellerList(string itemID)
-        {
-            string connectionString = WebConfigurationManager.ConnectionStrings["defaultConnectionString"].ToString();
-            SqlConnection sqlConn = new SqlConnection(connectionString);
-            sqlConn.Open();
-
-            string cmdString = "DELETE FROM BestsellerList WHERE ItemID=@itemID";
-            SqlCommand sqlCmd = new SqlCommand(cmdString, sqlConn);
-            sqlCmd.Parameters.Add(new SqlParameter("itemID", itemID));
 
             sqlCmd.ExecuteNonQuery();
 

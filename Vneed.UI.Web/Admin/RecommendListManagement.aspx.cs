@@ -4,12 +4,12 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Vneed.Model;
+
 using Vneed.BLL;
 
 namespace Vneed.UI.Web.Admin
 {
-    public partial class BestsellerListManagement : System.Web.UI.Page
+    public partial class RecommendListManagement : System.Web.UI.Page
     {
         private List<TextBox> tbItemIDs = new List<TextBox>();
 
@@ -63,7 +63,7 @@ namespace Vneed.UI.Web.Admin
         private void CreateControls()
         {
             CreateHeadRow();
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 12; i++)
             {
                 CreateItemRow(i);
             }
@@ -75,7 +75,7 @@ namespace Vneed.UI.Web.Admin
             foreach (TextBox tb in tbItemIDs)
             {
                 int pos = Int32.Parse(tb.ID);
-                tb.Text = ItemService.GetBestsellerItemIDByPos(pos);
+                tb.Text = ItemService.GetRecommendItemIDByPos(pos);
             }
         }
 
@@ -84,7 +84,7 @@ namespace Vneed.UI.Web.Admin
             foreach (TextBox tb in tbItemIDs)
             {
                 int pos = Int32.Parse(tb.ID);
-                ItemService.UpdateBestsellerItem(tb.Text, pos);
+                ItemService.UpdateRecommendItem(tb.Text, pos);
             }
 
             Response.Write("<script>alert('更新成功');document.location.reload();</script>");

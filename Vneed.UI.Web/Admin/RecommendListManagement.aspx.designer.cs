@@ -10,7 +10,7 @@
 namespace Vneed.UI.Web.Admin {
     
     
-    public partial class BestsellerListManagement {
+    public partial class RecommendListManagement {
         
         /// <summary>
         /// table 控件。
